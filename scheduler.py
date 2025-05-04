@@ -43,14 +43,14 @@ def run_monitoring():
 if __name__ == "__main__":
     logging.info("네이버 검색 노출 모니터링 스케줄러가 시작되었습니다.")
     
-    # 1시간마다 실행하도록 스케줄 설정
-    schedule.every(1).hours.do(run_monitoring)
+    # 3시간마다 실행하도록 스케줄 설정
+    schedule.every(3).hours.do(run_monitoring)
     
     # 시작할 때 한 번 즉시 실행 (선택 사항)
     logging.info("초기 모니터링 실행 중...")
     run_monitoring()
     
-    logging.info("스케줄러가 1시간마다 모니터링을 실행하도록 설정되었습니다.")
+    logging.info("스케줄러가 3시간마다 모니터링을 실행하도록 설정되었습니다.")
     
     # 무한 루프로 스케줄러 실행
     try:
