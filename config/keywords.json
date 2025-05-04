@@ -1366,24 +1366,8 @@
         ]
       },
       {
-        "keyword": "트로델비",
-        "urls": []
-      },
-      {
         "keyword": "키트루다 가격",
         "urls": ["https://cafe.naver.com/zoozoocom/270625"]
-      },
-      {
-        "keyword": "리툭시맙",
-        "urls": []
-      },
-      {
-        "keyword": "글리벡",
-        "urls": []
-      },
-      {
-        "keyword": "레트로졸",
-        "urls": []
       },
       {
         "keyword": "이스카도",
@@ -1393,91 +1377,11 @@
         ]
       },
       {
-        "keyword": "린파자",
-        "urls": []
-      },
-      {
-        "keyword": "ALK",
-        "urls": []
-      },
-      {
-        "keyword": "놀바덱스",
-        "urls": []
-      },
-      {
-        "keyword": "독소루비신",
-        "urls": []
-      },
-      {
-        "keyword": "옥살리플라틴",
-        "urls": []
-      },
-      {
-        "keyword": "베바시주맙",
-        "urls": []
-      },
-      {
-        "keyword": "제줄라",
-        "urls": []
-      },
-      {
-        "keyword": "알림타",
-        "urls": []
-      },
-      {
-        "keyword": "키트루다주",
-        "urls": []
-      },
-      {
-        "keyword": "알레센자",
-        "urls": []
-      },
-      {
-        "keyword": "넥사바",
-        "urls": []
-      },
-      {
-        "keyword": "론서프",
-        "urls": []
-      },
-      {
         "keyword": "파리칼시톨",
         "urls": [
           "https://cafe.naver.com/zoozoocom/267858",
           "https://cafe.naver.com/zoozoocom/267858"
         ]
-      },
-      {
-        "keyword": "아드리아마이신",
-        "urls": []
-      },
-      {
-        "keyword": "5-FU",
-        "urls": []
-      },
-      {
-        "keyword": "카보메틱스",
-        "urls": []
-      },
-      {
-        "keyword": "스티바가",
-        "urls": []
-      },
-      {
-        "keyword": "펨브롤리주맙",
-        "urls": []
-      },
-      {
-        "keyword": "아브락산",
-        "urls": []
-      },
-      {
-        "keyword": "엑스탄디",
-        "urls": []
-      },
-      {
-        "keyword": "더발루맙",
-        "urls": []
       },
       {
         "keyword": "렉라자정",
@@ -1490,62 +1394,6 @@
         "urls": [
           "https://cafe.naver.com/zoozoocom/267860"
         ]
-      },
-      {
-        "keyword": "아미반타맙",
-        "urls": []
-      },
-      {
-        "keyword": "탈라타맙",
-        "urls": []
-      },
-      {
-        "keyword": "페르본",
-        "urls": []
-      },
-      {
-        "keyword": "제넥솔",
-        "urls": []
-      },
-      {
-        "keyword": "젬퍼리",
-        "urls": []
-      },
-      {
-        "keyword": "젭젤카",
-        "urls": []
-      },
-      {
-        "keyword": "사이람자",
-        "urls": []
-      },
-      {
-        "keyword": "아테졸리주맙",
-        "urls": []
-      },
-      {
-        "keyword": "오시머티닙",
-        "urls": []
-      },
-      {
-        "keyword": "인라이타",
-        "urls": []
-      },
-      {
-        "keyword": "옥살리틴주",
-        "urls": []
-      },
-      {
-        "keyword": "온베브지",
-        "urls": []
-      },
-      {
-        "keyword": "자궁경부암 원인",
-        "urls": []
-      },
-      {
-        "keyword": "갑상선암 원인",
-        "urls": []
       },
       {
         "keyword": "위암증세",
@@ -1761,7 +1609,7 @@
       {
         "keyword": "유방암에좋은차",
         "urls": [
-  
+          "https://cafe.naver.com/zoozoocom/271208"
         ] 
       },
       {
@@ -1774,6 +1622,42 @@
         "keyword": "신장암 2기",
         "urls": [
           "https://cafe.naver.com/zoozoocom/271202"
+        ] 
+      },
+      {
+        "keyword": "간암 재발",
+        "urls": [
+          "https://cafe.naver.com/zoozoocom/271215"
+        ] 
+      },
+      {
+        "keyword": "유방암 수술 후 관리",
+        "urls": [
+          "https://cafe.naver.com/zoozoocom/271216"
+        ] 
+      },
+      {
+        "keyword": "갑상선암 임파선전이",
+        "urls": [
+          "https://cafe.naver.com/zoozoocom/271209"
+        ] 
+      },
+      {
+        "keyword": "신장암 3기 폐전이",
+        "urls": [
+          "https://cafe.naver.com/zoozoocom/271193"
+        ] 
+      },
+      {
+        "keyword": "유방암 림프절 전이",
+        "urls": [
+          "https://cafe.naver.com/zoozoocom/271194"
+        ] 
+      },
+      {
+        "keyword": "유방암 임파선 전이",
+        "urls": [
+          "https://cafe.naver.com/zoozoocom/271194"
         ] 
       }
     ]
