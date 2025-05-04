@@ -28,7 +28,7 @@ def run_monitoring():
     
     # 스크립트 실행
     try:
-        result = subprocess.run(['python', 'main.py', '--pages', '3', '--export'], 
+        result = subprocess.run(['python3', 'main.py', '--pages', '3', '--export'], 
                               cwd=project_dir,
                               capture_output=True, 
                               text=True, 

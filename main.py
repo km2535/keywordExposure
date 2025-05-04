@@ -6,6 +6,7 @@ from src.monitor import KeywordMonitor
 from src.reporter import Reporter
 
 def main():
+    print("실행")
     parser = argparse.ArgumentParser(description='네이버 검색 노출 모니터링 도구')
     parser.add_argument('--pages', type=int, default=3, help='검색할 페이지 수')
     parser.add_argument('--report', action='store_true', help='최신 결과 보고서 생성')
