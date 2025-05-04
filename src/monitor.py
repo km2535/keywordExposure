@@ -2,6 +2,7 @@ import json
 import os
 from datetime import datetime
 from tqdm import tqdm
+from src.config import DATA_DIR
 
 class KeywordMonitor:
     def __init__(self, scraper, config_path, results_path):
@@ -14,7 +15,10 @@ class KeywordMonitor:
         if os.path.exists(self.config_path):
             with open(self.config_path, 'r', encoding='utf-8') as f:
                 return json.load(f)
-        return {"keywords": []}
+        else:
+            print(f"경고: 설정 파일을 찾을 수 없습니다: {self.config_path}")
+            # 빈 키워드 목록 반환
+            return {"keywords": []}
         
     def save_results(self, results):
         """결과 저장"""
@@ -32,8 +36,8 @@ class KeywordMonitor:
                 return True
         return False
         
-    def monitor_keywords(self, pages_to_check=1):  # 기본값을 1로 변경
-        """모든 키워드 모니터링 - 첫 페이지만 검색"""
+    def monitor_keywords(self, pages_to_check=3):
+        """모든 키워드 모니터링 - 지정된 페이지 수만큼 검색"""
         config = self.load_keywords()
         results = {
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -49,13 +53,14 @@ class KeywordMonitor:
             print(f"\n키워드 '{keyword}' 검색 중...")
             all_search_urls = []
             
-            # 첫 페이지만 검색 (pages_to_check=1)
-            print(f"  페이지 1 검색 중...")
-            soup = self.scraper.get_search_results(keyword, page=1)
-            if soup:
-                page_urls = self.scraper.extract_urls(soup)
-                all_search_urls.extend(page_urls)
-                print(f"  페이지 1에서 {len(page_urls)}개의 URL을 찾았습니다.")
+            # 지정된 페이지 수만큼 검색
+            for page in range(1, pages_to_check + 1):
+                print(f"  페이지 {page} 검색 중...")
+                soup = self.scraper.get_search_results(keyword, page=page)
+                if soup:
+                    page_urls = self.scraper.extract_urls(soup)
+                    all_search_urls.extend(page_urls)
+                    print(f"  페이지 {page}에서 {len(page_urls)}개의 URL을 찾았습니다.")
             
             # 각 URL 노출 여부 확인
             url_results = []

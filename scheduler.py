@@ -4,6 +4,7 @@ import os
 import subprocess
 import logging
 from datetime import datetime
+from src.config import DEFAULT_PAGES, SCHEDULER_INTERVAL
 
 # 로깅 설정
 logging.basicConfig(
@@ -26,9 +27,9 @@ def run_monitoring():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     logging.info(f"실행 시간: {current_time}")
     
-    # 스크립트 실행
+    # 모든 카테고리 실행
     try:
-        result = subprocess.run(['python3', 'main.py', '--pages', '3', '--export'], 
+        result = subprocess.run(['python3', 'main.py', '--pages', str(DEFAULT_PAGES), '--all-categories'], 
                               cwd=project_dir,
                               capture_output=True, 
                               text=True, 
@@ -43,14 +44,14 @@ def run_monitoring():
 if __name__ == "__main__":
     logging.info("네이버 검색 노출 모니터링 스케줄러가 시작되었습니다.")
     
-    # 3시간마다 실행하도록 스케줄 설정
-    schedule.every(3).hours.do(run_monitoring)
+    # 설정된 시간 간격마다 실행하도록 스케줄 설정
+    schedule.every(SCHEDULER_INTERVAL).hours.do(run_monitoring)
     
     # 시작할 때 한 번 즉시 실행 (선택 사항)
     logging.info("초기 모니터링 실행 중...")
     run_monitoring()
     
-    logging.info("스케줄러가 3시간마다 모니터링을 실행하도록 설정되었습니다.")
+    logging.info(f"스케줄러가 {SCHEDULER_INTERVAL}시간마다 모니터링을 실행하도록 설정되었습니다.")
     
     # 무한 루프로 스케줄러 실행
     try:
