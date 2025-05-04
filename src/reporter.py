@@ -84,7 +84,7 @@ class Reporter:
         results = self.load_results()
         
         # 고정 출력 경로 설정
-        output_dir = 'keyword-exposure/public/data'
+        output_dir = '/var/www/keywordE/build/data'
         os.makedirs(output_dir, exist_ok=True)
         
         # CSV 파일명
@@ -138,7 +138,7 @@ class Reporter:
         results = self.load_results()
         
         # 고정 출력 경로 설정
-        output_dir = 'keyword-exposure/public/data'
+        output_dir = '/var/www/keywordE/build/data'
         os.makedirs(output_dir, exist_ok=True)
         json_path = os.path.join(output_dir, 'latest_results.json')
         
