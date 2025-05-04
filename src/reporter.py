@@ -80,11 +80,11 @@ class Reporter:
             print("모든 키워드가 노출되었습니다.")
             
     def export_csv(self):
-        """CSV 형식으로 보고서 내보내기 (keyword-exposure/public/data 경로에 저장)"""
+        """CSV 형식으로 보고서 내보내기 (keyword-exposure/data 경로에 저장)"""
         results = self.load_results()
         
         # 고정 출력 경로 설정
-        output_dir = 'keyword-exposure/public/data'
+        output_dir = '/var/www/keywordE/build/data'
         os.makedirs(output_dir, exist_ok=True)
         
         # CSV 파일명
@@ -138,7 +138,7 @@ class Reporter:
         results = self.load_results()
         
         # 고정 출력 경로 설정
-        output_dir = 'keyword-exposure/public/data'
+        output_dir = '/var/www/keywordE/build/data'
         os.makedirs(output_dir, exist_ok=True)
         json_path = os.path.join(output_dir, 'latest_results.json')
         
