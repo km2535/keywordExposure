@@ -16,6 +16,6 @@ DATA_DIR = 'data'
 CATEGORIES = ['cancer', 'diabetes', 'cream']
 
 # 검색할 기본 페이지 수
-DEFAULT_PAGES = 3
+DEFAULT_PAGES = 1
 
 SCHEDULER_INTERVAL = 3

@@ -25,7 +25,6 @@ def main():
     
     # 실행할 카테고리 목록
     categories_to_run = CATEGORIES if args.all_categories else [args.category]
-    
     for category in categories_to_run:
         print(f"\n===== 카테고리: {category} =====")
         

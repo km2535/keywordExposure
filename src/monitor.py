@@ -36,31 +36,37 @@ class KeywordMonitor:
                 return True
         return False
         
-    def monitor_keywords(self, pages_to_check=3):
-        """모든 키워드 모니터링 - 지정된 페이지 수만큼 검색"""
+    def monitor_keywords(self, pages_to_check=1):
+        """모든 키워드 모니터링 - 1페이지만 검색"""
         config = self.load_keywords()
         results = {
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "results": []
         }
         
-        print(f"총 {len(config['keywords'])} 개의 키워드를 모니터링합니다...")
+        # URL이 있는 키워드만 필터링
+        valid_keywords = [item for item in config['keywords'] if item["urls"]]
+        skipped_keywords = [item for item in config['keywords'] if not item["urls"]]
         
-        for item in tqdm(config['keywords'], desc="키워드 검색 중"):
+        print(f"총 {len(valid_keywords)} 개의 키워드를 모니터링합니다...")
+        if skipped_keywords:
+            print(f"{len(skipped_keywords)} 개의 키워드는 URL이 없어 건너뜁니다.")
+        
+        for item in tqdm(valid_keywords, desc="키워드 검색 중"):
             keyword = item["keyword"]
             target_urls = item["urls"]
             
             print(f"\n키워드 '{keyword}' 검색 중...")
             all_search_urls = []
             
-            # 지정된 페이지 수만큼 검색
-            for page in range(1, pages_to_check + 1):
-                print(f"  페이지 {page} 검색 중...")
-                soup = self.scraper.get_search_results(keyword, page=page)
-                if soup:
-                    page_urls = self.scraper.extract_urls(soup)
-                    all_search_urls.extend(page_urls)
-                    print(f"  페이지 {page}에서 {len(page_urls)}개의 URL을 찾았습니다.")
+            # 1페이지만 검색
+            page = 1
+            print(f"  페이지 {page} 검색 중...")
+            soup = self.scraper.get_search_results(keyword, page=page)
+            if soup:
+                page_urls = self.scraper.extract_urls(soup)
+                all_search_urls.extend(page_urls)
+                print(f"  페이지 {page}에서 {len(page_urls)}개의 URL을 찾았습니다.")
             
             # 각 URL 노출 여부 확인
             url_results = []
@@ -79,6 +85,14 @@ class KeywordMonitor:
                 "urls": url_results
             }
             
+            results["results"].append(keyword_result)
+        
+        # URL이 없는 키워드도 결과에 포함 (하지만 검색은 하지 않음)
+        for item in skipped_keywords:
+            keyword_result = {
+                "keyword": item["keyword"],
+                "urls": []
+            }
             results["results"].append(keyword_result)
             
         self.save_results(results)

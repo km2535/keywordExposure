@@ -24,7 +24,7 @@ class NaverScraper:
         """네이버 검색 결과를 가져오는 함수"""
         if delay:
             # 차단 방지를 위한 랜덤 지연
-            time.sleep(random.uniform(1, 3))
+            time.sleep(random.uniform(0.5, 1.5))
             
         headers = {
             "User-Agent": self.get_random_user_agent(),
