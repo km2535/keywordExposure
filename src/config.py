@@ -19,3 +19,15 @@ CATEGORIES = ['cancer', 'diabetes', 'cream']
 DEFAULT_PAGES = 1
 
 SCHEDULER_INTERVAL = 2
+
+# 이메일 설정
+EMAIL_SENDER = "fmonecompany@gmail.com"  # 발신자 이메일
+EMAIL_PASSWORD = "ugbq mgvv wtat sdbn"  # Gmail의 경우 앱 비밀번호 필요
+EMAIL_RECIPIENTS = [ "km2535@naver.com", "lkm1416@gmail.com", "nnf2913@gmail.com"]  # 수신자 이메일 목록
+
+# 카테고리별 한글 이름 매핑
+CATEGORY_NAMES = {
+    'cancer': '암 카테고리',
+    'diabetes': '당뇨 카테고리',
+    'cream': '갱년기 카테고리'
+}
