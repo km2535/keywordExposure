@@ -18,4 +18,4 @@ CATEGORIES = ['cancer', 'diabetes', 'cream']
 # 검색할 기본 페이지 수
 DEFAULT_PAGES = 1
 
-SCHEDULER_INTERVAL = 3
+SCHEDULER_INTERVAL = 2

@@ -466,7 +466,10 @@
         },
         {
             "keyword": "직장암 초기증상",
-            "urls": ["https://cafe.naver.com/peopledisc/893051"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/893051", 
+                "https://cafe.naver.com/rksghwhantk/1245243"
+            ]
         },
         {
             "keyword": "췌장암 등통증",
@@ -778,7 +781,10 @@
         },
         {
             "keyword": "CA125수치",
-            "urls": ["https://cafe.naver.com/peopledisc/941286"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/941286",
+                "https://cafe.naver.com/rksghwhantk/1240140"
+            ]
         },
         {
             "keyword": "난소암 복수",
@@ -1406,7 +1412,14 @@
         },
         {
             "keyword": "유방암 수술 후 관리",
-            "urls": ["https://cafe.naver.com/zoozoocom/271216"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271216",
+                "https://cafe.naver.com/culturebloom/2709765"
+                ]
+        },
+        {
+            "keyword": "유방암 수술 후",
+            "urls": ["https://cafe.naver.com/culturebloom/2709765"]
         },
         {
             "keyword": "갑상선암 임파선전이",
@@ -1458,7 +1471,10 @@
         },
         {
             "keyword": "위암 3기",
-            "urls": ["https://cafe.naver.com/rksghwhantk/1240606","https://cafe.naver.com/peopledisc/966554"]
+            "urls": [
+                "https://cafe.naver.com/rksghwhantk/1240606",
+                "https://cafe.naver.com/peopledisc/966554"
+            ]
         },
         {
             "keyword": "위암 내시경",
@@ -1471,6 +1487,68 @@
         {
             "keyword": "난소암 생존율",
             "urls": ["https://cafe.naver.com/zoozoocom/267056"]
+        },
+        {
+            "keyword": "유방암 1기 수술",
+            "urls": [
+                "https://cafe.naver.com/rksghwhantk/1247289",
+                "https://cafe.naver.com/peopledisc/1013717"
+            ]
+        },
+        {
+            "keyword": "위암환자 간식",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271466"
+            ]
+        },
+        {
+            "keyword": "갑상선암 선물",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271467"
+            ]
+        },
+        {
+            "keyword": "폐암에 좋은 차",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271464"
+            ]
+        },
+        {
+            "keyword": "암환자 병문안 선물",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271465"
+            ]
+        },
+        {
+            "keyword": "폐암 환자 선물",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271470"
+            ]
+        },
+        {
+            "keyword": "대장암에 좋은 과일",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271471"
+            ]
+        },
+        {
+            "keyword": "위 장상피화생생",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271474"
+            ]
+        },
+        {
+            "keyword": "자궁경부암 항암치료",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271475"
+            ]
+        },
+        {
+            "keyword": "유방암 수술",
+            "urls": [
+                "https://cafe.naver.com/rksghwhantk/1247289",
+                "https://cafe.naver.com/peopledisc/1013717"
+            ]
         }
     ]
 }
