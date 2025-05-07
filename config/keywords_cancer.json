@@ -306,7 +306,10 @@
         },
         {
             "keyword": "젤로다 부작용",
-            "urls": ["https://cafe.naver.com/peopledisc/923111"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/923111",
+                "https://cafe.naver.com/zoozoocom/271647"
+            ]
         },
         {
             "keyword": "유방암진단",
@@ -976,7 +979,10 @@
         },
         {
             "keyword": "유방암0기수술",
-            "urls": ["https://cafe.naver.com/peopledisc/982261"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/982261",
+                "https://cafe.naver.com/zoozoocom/271650"
+            ]
         },
         {
             "keyword": "압노바비스쿰",
@@ -1538,6 +1544,34 @@
                 "https://cafe.naver.com/rksghwhantk/1247289",
                 "https://cafe.naver.com/peopledisc/1013717"
             ]
+        },
+        {
+            "keyword": "유방암수술후관리",
+            "urls": ["https://cafe.naver.com/zoozoocom/271216"]
+        },
+        {
+            "keyword": "CA125정상수치",
+            "urls": ["https://cafe.naver.com/zoozoocom/271648"]
+        },
+        {
+            "keyword": "유방암 수술 후 관리법",
+            "urls": ["https://cafe.naver.com/zoozoocom/271651"]
+        },
+        {
+            "keyword": "면역주사 효과",
+            "urls": ["https://cafe.naver.com/zoozoocom/271653"]
+        },
+        {
+            "keyword": "전립선암 호르몬치료",
+            "urls": ["https://cafe.naver.com/zoozoocom/271654"]
+        },
+        {
+            "keyword": "중입자 암치료",
+            "urls": ["https://cafe.naver.com/zoozoocom/271658"]
+        },
+        {
+            "keyword": "방사선 치료",
+            "urls": ["https://cafe.naver.com/zoozoocom/271659"]
         }
     ]
 }
