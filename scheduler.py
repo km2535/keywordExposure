@@ -40,6 +40,8 @@ def run_monitoring():
     # 현재 시간 기록
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     current_hour = datetime.now().hour
+    current_minute = datetime.now().minute
+    
     logging.info(f"실행 시간: {current_time}")
     
     # 모니터링 디렉토리 확인
@@ -64,8 +66,12 @@ def run_monitoring():
         logging.info("모니터링 작업 완료")
         
         # 아침 7시일 경우 이메일 보고서 전송
-        if current_hour == 7:
+        if current_hour == 7 and current_minute == 0:
+            logging.info("예약된 시간(7시 정각)입니다. 이메일 보고서를 전송합니다.")
             run_email_report()
+        else:
+            logging.info(f"예약된 시간이 아닙니다(현재 {current_hour}시 {current_minute}분). 이메일 보고서를 전송하지 않습니다.")
+            # 시간이 맞지 않으면 실행하지 않음
                 
     except subprocess.CalledProcessError as e:
         logging.error(f"모니터링 실행 중 오류 발생: {e}")
