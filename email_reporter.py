@@ -4,8 +4,6 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
-import schedule
-import time
 from src.config import (
     OUTPUT_DIR, 
     CATEGORIES, 
@@ -129,9 +127,9 @@ def generate_html_report(all_results):
                 continue
                 
             exposed_count = sum(1 for url in urls if url.get("is_exposed", False))
-            total_count = len(urls)
             
-            if exposed_count == total_count and total_count > 0:
+            # 하나의 URL이라도 노출되면 '노출된 키워드'로 분류
+            if exposed_count > 0:
                 exposed_keywords.append(keyword)
             else:
                 not_exposed_keywords.append(keyword)

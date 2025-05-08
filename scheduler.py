@@ -1,38 +1,63 @@
 import schedule
 import time
 import os
+import sys
 import subprocess
 import logging
+import traceback
 from datetime import datetime
-from src.config import DEFAULT_PAGES, SCHEDULER_INTERVAL
-from email_reporter import send_email_report  # 새로 추가된 임포트
+from src.config import DEFAULT_PAGES, SCHEDULER_INTERVAL, OUTPUT_DIR
+
+# 현재 스크립트 디렉토리의 절대 경로
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # 로깅 설정
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('monitoring_scheduler.log'),
+        logging.FileHandler(os.path.join(SCRIPT_DIR, 'monitoring_scheduler.log')),
         logging.StreamHandler()
     ]
 )
+
+# email_reporter 모듈을 확실히 로드하기 위해 시스템 경로에 현재 디렉토리 추가
+sys.path.insert(0, SCRIPT_DIR)
+
+# 이제 email_reporter를 임포트
+try:
+    from email_reporter import send_email_report
+    logging.info("email_reporter 모듈을 성공적으로 로드했습니다.")
+except ImportError as e:
+    logging.error(f"email_reporter 모듈 로드 실패: {str(e)}")
+    logging.error(f"시스템 경로: {sys.path}")
+    sys.exit(1)
 
 def run_monitoring():
     """모니터링 스크립트 실행"""
     logging.info("모니터링 작업 시작")
     
-    # 현재 파일의 디렉토리를 프로젝트 경로로 사용
-    project_dir = os.path.dirname(os.path.abspath(__file__))
-    
     # 현재 시간 기록
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     current_hour = datetime.now().hour
+    current_minute = datetime.now().minute
+    
     logging.info(f"실행 시간: {current_time}")
+    
+    # 모니터링 디렉토리 확인
+    if not os.path.exists(OUTPUT_DIR):
+        try:
+            os.makedirs(OUTPUT_DIR, exist_ok=True)
+            logging.info(f"출력 디렉토리 생성됨: {OUTPUT_DIR}")
+        except Exception as e:
+            logging.error(f"출력 디렉토리 생성 실패: {str(e)}")
     
     # 모든 카테고리 실행
     try:
-        result = subprocess.run(['python3', 'main.py', '--pages', str(DEFAULT_PAGES), '--all-categories'], 
-                              cwd=project_dir,
+        result = subprocess.run(['python3', os.path.join(SCRIPT_DIR, 'main.py'), 
+                                 '--pages', str(DEFAULT_PAGES), 
+                                 '--all-categories'], 
+                              cwd=SCRIPT_DIR,
                               capture_output=True, 
                               text=True, 
                               check=True)
@@ -41,13 +66,12 @@ def run_monitoring():
         logging.info("모니터링 작업 완료")
         
         # 아침 7시일 경우 이메일 보고서 전송
-        if current_hour == 7:
-            logging.info("아침 7시 이메일 보고서 전송 시작")
-            email_sent = send_email_report()
-            if email_sent:
-                logging.info("이메일 보고서 전송 완료")
-            else:
-                logging.error("이메일 보고서 전송 실패")
+        if current_hour == 7 and current_minute == 0:
+            logging.info("예약된 시간(7시 정각)입니다. 이메일 보고서를 전송합니다.")
+            run_email_report()
+        else:
+            logging.info(f"예약된 시간이 아닙니다(현재 {current_hour}시 {current_minute}분). 이메일 보고서를 전송하지 않습니다.")
+            # 시간이 맞지 않으면 실행하지 않음
                 
     except subprocess.CalledProcessError as e:
         logging.error(f"모니터링 실행 중 오류 발생: {e}")
@@ -58,13 +82,39 @@ def run_email_report():
     logging.info("이메일 보고서 전송 작업 시작")
     
     try:
+        # 출력 디렉토리 존재 확인
+        if not os.path.exists(OUTPUT_DIR):
+            logging.error(f"출력 디렉토리가 없습니다: {OUTPUT_DIR}")
+            return False
+            
+        # 결과 파일 존재 확인
+        result_files_exist = False
+        for category in ['cancer', 'diabetes', 'cream']:
+            file_path = os.path.join(OUTPUT_DIR, f'latest_results_{category}.json')
+            if os.path.exists(file_path):
+                result_files_exist = True
+                logging.info(f"결과 파일 확인됨: {file_path}")
+            else:
+                logging.warning(f"결과 파일 없음: {file_path}")
+        
+        if not result_files_exist:
+            logging.error("어떤 결과 파일도 찾을 수 없습니다. 이메일 전송을 중단합니다.")
+            return False
+            
+        # 이메일 전송 시도
+        logging.info("이메일 전송 함수 호출 시작")
         email_sent = send_email_report()
+        
         if email_sent:
             logging.info("이메일 보고서 전송 완료")
+            return True
         else:
             logging.error("이메일 보고서 전송 실패")
+            return False
     except Exception as e:
-        logging.error(f"이메일 보고서 전송 중 오류 발생: {e}")
+        logging.error(f"이메일 보고서 전송 중 예외 발생: {str(e)}")
+        logging.error(traceback.format_exc())  # 스택 트레이스 로깅
+        return False
 
 if __name__ == "__main__":
     logging.info("네이버 검색 노출 모니터링 스케줄러가 시작되었습니다.")
@@ -72,7 +122,7 @@ if __name__ == "__main__":
     # 설정된 시간 간격마다 실행하도록 스케줄 설정
     schedule.every(SCHEDULER_INTERVAL).hours.do(run_monitoring)
     
-    # 아침 7시에 이메일 보고서 전송
+    # 아침 7시에 이메일 보고서 전송 (독립적으로 실행)
     schedule.every().day.at("07:00").do(run_email_report)
     
     # 시작할 때 한 번 즉시 실행 (선택 사항)
@@ -90,4 +140,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         logging.info("사용자에 의해 스케줄러가 중지되었습니다.")
     except Exception as e:
-        logging.error(f"스케줄러 실행 중 오류 발생: {e}")
+        logging.error(f"스케줄러 실행 중 오류 발생: {str(e)}")
+        logging.error(traceback.format_exc())  # 스택 트레이스 로깅
