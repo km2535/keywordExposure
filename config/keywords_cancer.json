@@ -1147,7 +1147,10 @@
         },
         {
             "keyword": "유방암수술후좋은음식",
-            "urls": ["https://cafe.naver.com/peopledisc/1022443"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1022443",
+                "https://cafe.naver.com/zoozoocom/272395"    
+            ]
         },
         {
             "keyword": "직장암 3기 생존율",
@@ -1324,10 +1327,6 @@
             "urls": ["https://cafe.naver.com/zoozoocom/269592"]
         },
         {
-            "keyword": "대장암가스",
-            "urls": []
-        },
-        {
             "keyword": "신장암 예후",
             "urls": ["https://cafe.naver.com/peopledisc/954257"]
         },
@@ -1401,7 +1400,10 @@
         },
         {
             "keyword": "유방암 폐전이",
-            "urls": ["https://cafe.naver.com/zoozoocom/270905"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/270905",
+                "https://cafe.naver.com/zoozoocom/272398"     
+            ]
         },
         {
             "keyword": "갑상선암 목소리",
@@ -1583,6 +1585,30 @@
         {
             "keyword": "유방암폐전이",
             "urls": ["https://cafe.naver.com/zoozoocom/270905"]
+        },
+        {
+            "keyword": "췌장암 중입자치료",
+            "urls": ["https://cafe.naver.com/zoozoocom/272389"]
+        },
+        {
+            "keyword": "폐암 초기증상 손톱",
+            "urls": ["https://cafe.naver.com/zoozoocom/272399"]
+        },
+        {
+            "keyword": "직장암 혈변",
+            "urls": ["https://cafe.naver.com/zoozoocom/272402"]
+        },
+        {
+            "keyword": "직장암 검사",
+            "urls": ["https://cafe.naver.com/zoozoocom/272405"]
+        },
+        {
+            "keyword": "대장 용종암",
+            "urls": ["https://cafe.naver.com/zoozoocom/272407"]
+        },
+        {
+            "keyword": "섬유선종 암",
+            "urls": ["https://cafe.naver.com/zoozoocom/272409"]
         }
     ]
 }
