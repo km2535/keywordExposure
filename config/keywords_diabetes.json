@@ -738,7 +738,7 @@
         },
         {
             "keyword": "여주 당뇨",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/272684"]
         },
         {
             "keyword": "혈당측정 어플",
@@ -827,6 +827,10 @@
         {
             "keyword": "당뇨 간헐적단식",
             "urls": []
+        },
+        {
+            "keyword": "락토핏 당케어",
+            "urls": ["https://cafe.naver.com/zoozoocom/272685"]
         }
     ]
 }
