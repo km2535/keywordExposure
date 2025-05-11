@@ -842,11 +842,17 @@
         },
         {
             "keyword": "바나바 혈당케어",
-            "urls": ["https://cafe.naver.com/zoozoocom/272720"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/272720",
+                "https://cafe.naver.com/zoozoocom/273107"
+            ]
         },
         {
             "keyword": "리얼 여주정",
-            "urls": ["https://cafe.naver.com/zoozoocom/272726"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/272726",
+                "https://cafe.naver.com/zoozoocom/273108"
+            ]
         },
         {
             "keyword": "혈당케어 영양제",
