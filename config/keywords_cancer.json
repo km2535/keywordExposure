@@ -68,6 +68,10 @@
             ]
         },
         {
+            "keyword": "AHCC 효능",
+            "urls": ["https://cafe.naver.com/zoozoocom/272946"]
+        },
+        {
             "keyword": "항암치료비용",
             "urls": ["https://cafe.naver.com/peopledisc/884245"]
         },
@@ -257,7 +261,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/1013719",
                 "https://cafe.naver.com/zoozoocom/268856",
-                "https://cafe.naver.com/zoozoocom/268547"
+                "https://cafe.naver.com/zoozoocom/268547",
+                "https://cafe.naver.com/zoozoocom/273213"
             ]
         },
         {
@@ -396,7 +401,10 @@
         },
         {
             "keyword": "면역력 높이는 주사",
-            "urls": ["https://cafe.naver.com/peopledisc/1007536"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1007536",
+                "https://cafe.naver.com/zoozoocom/273192"
+            ]
         },
         {
             "keyword": "젬시타빈",
@@ -620,7 +628,8 @@
             "keyword": "싸이모신알파1",
             "urls": [
                 "https://cafe.naver.com/peopledisc/885544",
-                "https://cafe.naver.com/zoozoocom/268546"
+                "https://cafe.naver.com/zoozoocom/268546",
+                "https://cafe.naver.com/zoozoocom/272949"
             ]
         },
         {
@@ -681,7 +690,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/917792",
                 "https://cafe.naver.com/zoozoocom/263709",
-                "https://cafe.naver.com/gimhaezumma/2629064"
+                "https://cafe.naver.com/gimhaezumma/2629064",
+                "https://cafe.naver.com/zoozoocom/273217"
             ]
         },
         {
@@ -1574,7 +1584,10 @@
         },
         {
             "keyword": "면역주사 효과",
-            "urls": ["https://cafe.naver.com/zoozoocom/271653"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271653",
+                "https://cafe.naver.com/zoozoocom/273183"
+            ]
         },
         {
             "keyword": "전립선암 호르몬치료",
@@ -1619,6 +1632,14 @@
         {
             "keyword": "섬유선종 암",
             "urls": ["https://cafe.naver.com/zoozoocom/272409"]
+        },
+        {
+            "keyword": "면역력에좋은영양제",
+            "urls": ["https://cafe.naver.com/zoozoocom/273200"]
+        },
+        {
+            "keyword": "면역력 영양제 추천",
+            "urls": ["https://cafe.naver.com/zoozoocom/273204"]
         }
     ]
 }

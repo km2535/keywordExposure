@@ -1,8 +1,13 @@
 {
     "keywords": [
         {
-            "keyword": "발효 황칠골드",
-            "urls": ["https://blog.naver.com/8555tjsdhr/223538843483"]
+            "keyword": "근당대사 식품",
+            "urls": [
+                "https://m.blog.naver.com/aliphelps/223825267269",
+                "https://m.blog.naver.com/atnspdq/223825287246",
+                "https://m.blog.naver.com/knsbjgvhae/223825308610",
+                "https://m.cafe.naver.com/shopjirmsin/10214141"
+            ]
         },
         {
             "keyword": "연속혈당측정기",
@@ -869,6 +874,14 @@
         {
             "keyword": "당뇨에 좋은 식품",
             "urls": ["https://cafe.naver.com/zoozoocom/273111"]
+        },
+        {
+            "keyword": "혈당낮추는차",
+            "urls": ["https://cafe.naver.com/zoozoocom/273472"]
+        },
+        {
+            "keyword": "자디앙듀오정",
+            "urls": ["https://cafe.naver.com/zoozoocom/273473"]
         }
     ]
 }
