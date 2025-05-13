@@ -775,7 +775,7 @@
         },
         {
             "keyword": "당뇨보조제",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/273891"]
         },
         {
             "keyword": "혈당체크방법",
@@ -906,6 +906,38 @@
         {
             "keyword": "알룰로스혈당",
             "urls": ["https://cafe.naver.com/zoozoocom/273522"]
+        },
+        {
+            "keyword": "식후혈당제",
+            "urls": ["https://cafe.naver.com/zoozoocom/273473"]
+        },
+        {
+            "keyword": "당뇨두유",
+            "urls": ["https://cafe.naver.com/zoozoocom/273867"]
+        },
+        {
+            "keyword": "땅콩버터혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/273871"]
+        },
+        {
+            "keyword": "오트밀혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/273874"]
+        },
+        {
+            "keyword": "바나나잎추출물",
+            "urls": ["https://cafe.naver.com/zoozoocom/273877"]
+        },
+        {
+            "keyword": "콤부차 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/273885"]
+        },
+        {
+            "keyword": "혈당 보조제",
+            "urls": ["https://cafe.naver.com/zoozoocom/273888"]
+        },
+        {
+            "keyword": "보리차혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/273893"]
         }
     ]
 }
