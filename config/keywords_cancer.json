@@ -24,7 +24,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/965774",
                 "https://cafe.naver.com/zoozoocom/266582",
-                "https://cafe.naver.com/zoozoocom/270904"
+                "https://cafe.naver.com/zoozoocom/270904",
+                "https://cafe.naver.com/zoozoocom/274871"
             ]
         },
         {
@@ -456,7 +457,8 @@
             "keyword": "갑상선암 완치",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/254059",
-                "https://cafe.naver.com/zoozoocom/266281"
+                "https://cafe.naver.com/zoozoocom/266281",
+                "https://cafe.naver.com/zoozoocom/274878"
             ]
         },
         {
@@ -662,7 +664,8 @@
             "keyword": "전립선암 3기",
             "urls": [
                 "https://cafe.naver.com/peopledisc/927599",
-                "https://cafe.naver.com/zoozoocom/268849"
+                "https://cafe.naver.com/zoozoocom/268849",
+                "https://cafe.naver.com/zoozoocom/274888"
             ]
         },
         {
@@ -888,10 +891,11 @@
             "urls": ["https://cafe.naver.com/peopledisc/960884"]
         },
         {
-            "keyword": "PPPD수술",
+            "keyword": "PPPD 수술",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/252139",
-                "https://cafe.naver.com/zoozoocom/267141"
+                "https://cafe.naver.com/zoozoocom/267141",
+                "https://cafe.naver.com/zoozoocom/274882"
             ]
         },
         {
@@ -1047,7 +1051,8 @@
             "keyword": "방광암 재발",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253180",
-                "https://cafe.naver.com/zoozoocom/268200"
+                "https://cafe.naver.com/zoozoocom/268200",
+                "https://cafe.naver.com/zoozoocom/274875"
             ]
         },
         {
@@ -1160,7 +1165,8 @@
             "keyword": "유방암 유전",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253668",
-                "https://cafe.naver.com/zoozoocom/267368"
+                "https://cafe.naver.com/zoozoocom/267368",
+                "https://cafe.naver.com/zoozoocom/274872"
             ]
         },
         {
@@ -1605,7 +1611,10 @@
         },
         {
             "keyword": "유방암수술후관리",
-            "urls": ["https://cafe.naver.com/zoozoocom/271216"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271216",
+                "https://cafe.naver.com/zoozoocom/274863"
+            ]
         },
         {
             "keyword": "CA125정상수치",
@@ -1676,7 +1685,10 @@
         },
         {
             "keyword": "면역력 영양제 추천",
-            "urls": ["https://cafe.naver.com/zoozoocom/273204"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273204",
+                "https://cafe.naver.com/zoozoocom/274887"
+            ]
         }
     ]
 }
