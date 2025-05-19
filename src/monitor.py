@@ -28,11 +28,16 @@ class KeywordMonitor:
         with open(self.results_path, 'w', encoding='utf-8') as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
             
+    @staticmethod
+    def normalize_url(url):
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        return parsed.netloc + parsed.path
+
     def check_url_in_results(self, url, search_urls):
-        """URL이 검색 결과에 있는지 확인"""
-        # URL 정규화 및 비교 로직을 향상시킬 수 있음
+        target = self.normalize_url(url)
         for search_url in search_urls:
-            if url in search_url or search_url in url:
+            if self.normalize_url(search_url) == target:
                 return True
         return False
         
