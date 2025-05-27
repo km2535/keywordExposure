@@ -822,7 +822,8 @@
                 "https://cafe.naver.com/peopledisc/941286",
                 "https://cafe.naver.com/rksghwhantk/1240140",
                 "https://cafe.naver.com/zoozoocom/271648",
-                "https://cafe.naver.com/zoozoocom/275769"
+                "https://cafe.naver.com/zoozoocom/275769",
+                "https://cafe.naver.com/zoozoocom/277944"
             ]
         },
         {
@@ -1545,7 +1546,8 @@
             "keyword": "유방암 임파선 전이",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271194",
-                "https://cafe.naver.com/zoozoocom/276057"
+                "https://cafe.naver.com/zoozoocom/276057",
+                "https://cafe.naver.com/peopledisc/962891"
             ]
         },
         {
@@ -1612,7 +1614,10 @@
         },
         {
             "keyword": "난소암 생존율",
-            "urls": ["https://cafe.naver.com/zoozoocom/267056"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/267056",
+                "https://cafe.naver.com/zoozoocom/275787"
+            ]
         },
         {
             "keyword": "유방암 1기 수술",
@@ -1683,13 +1688,6 @@
             "urls": [
                 "https://cafe.naver.com/rksghwhantk/1247289",
                 "https://cafe.naver.com/peopledisc/1013717"
-            ]
-        },
-        {
-            "keyword": "유방암수술후관리",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/271216",
-                "https://cafe.naver.com/zoozoocom/274914"
             ]
         },
         {
