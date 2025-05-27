@@ -1341,13 +1341,6 @@
             "urls": ["https://cafe.naver.com/rksghwhantk/1244387"]
         },
         {
-            "keyword": "대장암 변",
-            "urls": [
-                "https://cafe.naver.com/rksghwhantk/1242826",
-                "https://cafe.naver.com/zoozoocom/253184"
-            ]
-        },
-        {
             "keyword": "난소암 초음파",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/269593",
@@ -1488,7 +1481,10 @@
         },
         {
             "keyword": "갑상선암 목소리",
-            "urls": ["https://cafe.naver.com/rksghwhantk/1247755"]
+            "urls": [
+                "https://cafe.naver.com/rksghwhantk/1247755",
+                "https://cafe.naver.com/zoozoocom/277198"
+            ]
         },
         {
             "keyword": "위암 진단",
@@ -1508,7 +1504,10 @@
         },
         {
             "keyword": "유방암혹",
-            "urls": ["https://cafe.naver.com/zoozoocom/271203"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271203",
+                "https://cafe.naver.com/rksghwhantk/1248875"
+            ]
         },
         {
             "keyword": "신장암 2기",
