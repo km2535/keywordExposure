@@ -358,7 +358,8 @@
                 "https://cafe.naver.com/zoozoocom/252751",
                 "https://cafe.naver.com/zoozoocom/267360",
                 "https://cafe.naver.com/zoozoocom/276027",
-                "https://cafe.naver.com/zoozoocom/277931"
+                "https://cafe.naver.com/zoozoocom/277931",
+                "https://cafe.naver.com/zoozoocom/279381"
             ]
         },
         {
@@ -677,7 +678,10 @@
         },
         {
             "keyword": "위암 3기 생존율",
-            "urls": ["https://cafe.naver.com/peopledisc/915178"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/915178",
+                "https://cafe.naver.com/zoozoocom/279383"
+            ]
         },
         {
             "keyword": "췌장암 3기 생존율",
@@ -1120,14 +1124,16 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253667",
                 "https://cafe.naver.com/zoozoocom/267142",
-                "https://cafe.naver.com/zoozoocom/277204"
+                "https://cafe.naver.com/zoozoocom/277204",
+                "https://cafe.naver.com/zoozoocom/279399"
             ]
         },
         {
             "keyword": "유방암 조직검사",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253665",
-                "https://cafe.naver.com/gimhaezumma/2628259"
+                "https://cafe.naver.com/gimhaezumma/2628259",
+                "https://cafe.naver.com/zoozoocom/279392"
             ]
         },
         {
@@ -1485,10 +1491,11 @@
             ]
         },
         {
-            "keyword": "유방암 폐전이",
+            "keyword": "유방암폐전이",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/270905",
-                "https://cafe.naver.com/zoozoocom/272398"
+                "https://cafe.naver.com/zoozoocom/272398",
+                "https://cafe.naver.com/zoozoocom/279398"
             ]
         },
         {
@@ -1574,7 +1581,10 @@
         },
         {
             "keyword": "갑상선암 반절제",
-            "urls": ["https://cafe.naver.com/zoozoocom/271279"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271279",
+                "https://cafe.naver.com/zoozoocom/279396"
+            ]
         },
         {
             "keyword": "전립선암로봇수술비용",
@@ -1605,7 +1615,8 @@
             "keyword": "전립선암 조직검사",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271282",
-                "https://cafe.naver.com/zoozoocom/277567"
+                "https://cafe.naver.com/zoozoocom/277567",
+                "https://cafe.naver.com/zoozoocom/279390"
             ]
         },
         {
@@ -1790,6 +1801,12 @@
                 "https://cafe.naver.com/zoozoocom/273204",
                 "https://cafe.naver.com/zoozoocom/274887",
                 "https://cafe.naver.com/zoozoocom/278344"
+            ]
+        },
+        {
+            "keyword": "자궁경부암 초기증상",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/279395"
             ]
         }
     ]
