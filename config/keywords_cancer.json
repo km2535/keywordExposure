@@ -25,7 +25,7 @@
                 "https://cafe.naver.com/peopledisc/965774",
                 "https://cafe.naver.com/zoozoocom/266582",
                 "https://cafe.naver.com/zoozoocom/270904",
-                "https://cafe.naver.com/zoozoocom/274915", 
+                "https://cafe.naver.com/zoozoocom/274915",
                 "https://cafe.naver.com/zoozoocom/276886"
             ]
         },
@@ -418,7 +418,7 @@
                 "https://cafe.naver.com/zoozoocom/275198",
                 "https://cafe.naver.com/zoozoocom/278339"
             ]
-        },   
+        },
         {
             "keyword": "면역항암제 부작용",
             "urls": [
@@ -552,7 +552,7 @@
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2610610",
                 "https://cafe.naver.com/zoozoocom/268571",
-                "https://cafe.naver.com/zoozoocom/274562", 
+                "https://cafe.naver.com/zoozoocom/274562",
                 "https://cafe.naver.com/zoozoocom/275776",
                 "https://cafe.naver.com/zoozoocom/279034"
             ]
@@ -1184,7 +1184,7 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253666",
                 "https://cafe.naver.com/zoozoocom/277571"
-             ]
+            ]
         },
         {
             "keyword": "폐암초기수술",
@@ -1342,7 +1342,10 @@
         },
         {
             "keyword": "유방암 전조증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/269596"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/269596",
+                "https://cafe.naver.com/zoozoocom/279392"
+            ]
         },
         {
             "keyword": "갑상선암 수술비용",
@@ -1624,7 +1627,7 @@
             "keyword": "위암 복막전이",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271285",
-                "https://cafe.naver.com/zoozoocom/277357"                
+                "https://cafe.naver.com/zoozoocom/277357"
             ]
         },
         {
@@ -1806,9 +1809,7 @@
         },
         {
             "keyword": "자궁경부암 초기증상",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/279395"
-            ]
+            "urls": ["https://cafe.naver.com/zoozoocom/279395"]
         }
     ]
 }
