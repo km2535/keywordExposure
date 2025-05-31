@@ -25,7 +25,7 @@
                 "https://cafe.naver.com/peopledisc/965774",
                 "https://cafe.naver.com/zoozoocom/266582",
                 "https://cafe.naver.com/zoozoocom/270904",
-                "https://cafe.naver.com/zoozoocom/274915", 
+                "https://cafe.naver.com/zoozoocom/274915",
                 "https://cafe.naver.com/zoozoocom/276886"
             ]
         },
@@ -419,7 +419,7 @@
                 "https://cafe.naver.com/zoozoocom/275198",
                 "https://cafe.naver.com/zoozoocom/278339"
             ]
-        },   
+        },
         {
             "keyword": "면역항암제 부작용",
             "urls": [
@@ -554,7 +554,7 @@
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2610610",
                 "https://cafe.naver.com/zoozoocom/268571",
-                "https://cafe.naver.com/zoozoocom/274562", 
+                "https://cafe.naver.com/zoozoocom/274562",
                 "https://cafe.naver.com/zoozoocom/275776",
                 "https://cafe.naver.com/zoozoocom/279034"
             ]
@@ -765,7 +765,8 @@
                 "https://cafe.naver.com/peopledisc/992451",
                 "https://cafe.naver.com/zoozoocom/266025",
                 "https://cafe.naver.com/rksghwhantk/1247602",
-                "https://cafe.naver.com/zoozoocom/275407"
+                "https://cafe.naver.com/zoozoocom/275407",
+                "https://cafe.naver.com/zoozoocom/278358"
             ]
         },
         {
@@ -812,7 +813,8 @@
             "keyword": "대장암 간전이",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1022442",
-                "https://cafe.naver.com/rksghwhantk/1242501"
+                "https://cafe.naver.com/rksghwhantk/1242501",
+                "https://cafe.naver.com/peopledisc/973917"
             ]
         },
         {
@@ -921,7 +923,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/266281",
                 "https://cafe.naver.com/peopledisc/926735",
-                "https://cafe.naver.com/zoozoocom/274878"
+                "https://cafe.naver.com/zoozoocom/274878",
+                "https://cafe.naver.com/gimhaezumma/2628260"
             ]
         },
         {
@@ -980,7 +983,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/990276",
                 "https://cafe.naver.com/zoozoocom/267361",
-                "https://cafe.naver.com/rksghwhantk/1247601"
+                "https://cafe.naver.com/rksghwhantk/1247601",
+                "https://cafe.naver.com/zoozoocom/278356"
             ]
         },
         {
@@ -1014,7 +1018,8 @@
                 "https://cafe.naver.com/zoozoocom/253664",
                 "https://cafe.naver.com/zoozoocom/269985",
                 "https://cafe.naver.com/zoozoocom/275369",
-                "https://cafe.naver.com/zoozoocom/278682"
+                "https://cafe.naver.com/zoozoocom/278682",
+                "https://cafe.naver.com/zoozoocom/279395"
             ]
         },
         {
@@ -1188,7 +1193,7 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253666",
                 "https://cafe.naver.com/zoozoocom/277571"
-             ]
+            ]
         },
         {
             "keyword": "폐암초기수술",
@@ -1219,7 +1224,10 @@
         },
         {
             "keyword": "유방암4기 완치",
-            "urls": ["https://cafe.naver.com/rksghwhantk/1241538"]
+            "urls": [
+                "https://cafe.naver.com/rksghwhantk/1241538",
+                "https://cafe.naver.com/peopledisc/933886"
+            ]
         },
         {
             "keyword": "유방암수술후좋은음식",
@@ -1347,7 +1355,10 @@
         },
         {
             "keyword": "유방암 전조증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/269596"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/269596",
+                "https://cafe.naver.com/zoozoocom/279392"
+            ]
         },
         {
             "keyword": "갑상선암 수술비용",
@@ -1513,7 +1524,11 @@
         },
         {
             "keyword": "유방암 완치",
-            "urls": ["https://cafe.naver.com/rksghwhantk/1241538"]
+            "urls": [
+                "https://cafe.naver.com/rksghwhantk/1241538",
+                "https://cafe.naver.com/zoozoocom/278683",
+                "https://cafe.naver.com/peopledisc/960884"
+            ]
         },
         {
             "keyword": "유방암에좋은차",
@@ -1629,19 +1644,23 @@
             "keyword": "위암 복막전이",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271285",
-                "https://cafe.naver.com/zoozoocom/277357"                
+                "https://cafe.naver.com/zoozoocom/277357"
             ]
         },
         {
             "keyword": "위암 3기",
             "urls": [
                 "https://cafe.naver.com/rksghwhantk/1240606",
-                "https://cafe.naver.com/peopledisc/966554"
+                "https://cafe.naver.com/peopledisc/966554",
+                "https://cafe.naver.com/zoozoocom/279383"
             ]
         },
         {
             "keyword": "전립선암 생존율",
-            "urls": ["https://cafe.naver.com/zoozoocom/269591"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/269591",
+                "https://cafe.naver.com/zoozoocom/277347"
+            ]
         },
         {
             "keyword": "난소암 생존율",
@@ -1818,9 +1837,7 @@
         },
         {
             "keyword": "자궁경부암 초기증상",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/279395"
-            ]
+            "urls": ["https://cafe.naver.com/zoozoocom/279395"]
         }
     ]
 }
