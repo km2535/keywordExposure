@@ -248,7 +248,10 @@
         },
         {
             "keyword": "NK세포검사",
-            "urls": ["https://cafe.naver.com/peopledisc/891690"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/891690",
+                "https://cafe.naver.com/zoozoocom/276037"
+            ]
         },
         {
             "keyword": "NK세포 영양제",
@@ -444,7 +447,8 @@
             "keyword": "전립선암 초기",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/254062",
-                "https://cafe.naver.com/zoozoocom/266289"
+                "https://cafe.naver.com/zoozoocom/266289",
+                "https://cafe.naver.com/zoozoocom/279914"
             ]
         },
         {
@@ -1473,10 +1477,6 @@
         {
             "keyword": "양성자 치료비용",
             "urls": ["https://cafe.naver.com/zoozoocom/270623"]
-        },
-        {
-            "keyword": "소세포폐암 4기",
-            "urls": ["https://cafe.naver.com/rksghwhantk/1241233"]
         },
         {
             "keyword": "위암환자 식단",
