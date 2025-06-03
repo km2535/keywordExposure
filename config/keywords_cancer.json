@@ -926,11 +926,12 @@
             "urls": ["https://cafe.naver.com/peopledisc/960884"]
         },
         {
-            "keyword": "PPPD 수술",
+            "keyword": "pppd 수술",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/252139",
                 "https://cafe.naver.com/zoozoocom/267141",
-                "https://cafe.naver.com/zoozoocom/274882"
+                "https://cafe.naver.com/zoozoocom/274882",
+                "https://cafe.naver.com/zoozoocom/280571"
             ]
         },
         {
@@ -995,12 +996,13 @@
             ]
         },
         {
-            "keyword": "신장암3기",
+            "keyword": "신장암 3기",
             "urls": [
                 "https://cafe.naver.com/peopledisc/990276",
                 "https://cafe.naver.com/zoozoocom/267361",
                 "https://cafe.naver.com/rksghwhantk/1247601",
-                "https://cafe.naver.com/zoozoocom/278356"
+                "https://cafe.naver.com/zoozoocom/278356",
+                "https://cafe.naver.com/zoozoocom/280547"
             ]
         },
         {
@@ -1048,7 +1050,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/980727",
                 "https://cafe.naver.com/zoozoocom/266025",
-                "https://cafe.naver.com/zoozoocom/275407"
+                "https://cafe.naver.com/zoozoocom/275407",
+                "https://cafe.naver.com/zoozoocom/280553"
             ]
         },
         {
@@ -1409,7 +1412,10 @@
         },
         {
             "keyword": "난소암 전조증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/269986"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/269986",
+                "https://cafe.naver.com/zoozoocom/280558"
+            ]
         },
         {
             "keyword": "위암 등통증",
@@ -1468,7 +1474,10 @@
         },
         {
             "keyword": "소세포 폐암 증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/268858"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/268858",
+                "https://cafe.naver.com/zoozoocom/280541"
+            ]
         },
         {
             "keyword": "대장암 수술",
@@ -1580,10 +1589,11 @@
             ]
         },
         {
-            "keyword": "유방암 수술 후 관리",
+            "keyword": "유방암수술후관리",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271216",
-                "https://cafe.naver.com/zoozoocom/274914"
+                "https://cafe.naver.com/zoozoocom/274914",
+                "https://cafe.naver.com/zoozoocom/280567"
             ]
         },
         {
@@ -1818,12 +1828,16 @@
             "keyword": "직장암 혈변",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272402",
-                "https://cafe.naver.com/zoozoocom/277573"
+                "https://cafe.naver.com/zoozoocom/277573",
+                "https://cafe.naver.com/zoozoocom/280554"
             ]
         },
         {
             "keyword": "직장암 검사",
-            "urls": ["https://cafe.naver.com/zoozoocom/272405"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/272405",
+                "https://cafe.naver.com/zoozoocom/280556"
+            ]
         },
         {
             "keyword": "대장 용종암",
