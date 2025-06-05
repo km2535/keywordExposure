@@ -148,6 +148,10 @@
             ]
         },
         {
+            "keyword": "NK세포",
+            "urls": ["https://cafe.naver.com/zoozoocom/276037"]
+        },
+        {
             "keyword": "NK세포활성도검사",
             "urls": [
                 "https://cafe.naver.com/peopledisc/891691",
@@ -427,7 +431,8 @@
                 "https://cafe.naver.com/zoozoocom/273192",
                 "https://cafe.naver.com/zoozoocom/274538",
                 "https://cafe.naver.com/zoozoocom/275198",
-                "https://cafe.naver.com/zoozoocom/278339"
+                "https://cafe.naver.com/zoozoocom/278339",
+                "https://cafe.naver.com/zoozoocom/281248"
             ]
         },
         {
@@ -568,7 +573,8 @@
                 "https://cafe.naver.com/zoozoocom/268571",
                 "https://cafe.naver.com/zoozoocom/274562",
                 "https://cafe.naver.com/zoozoocom/275776",
-                "https://cafe.naver.com/zoozoocom/279034"
+                "https://cafe.naver.com/zoozoocom/279034",
+                "https://cafe.naver.com/zoozoocom/281247"
             ]
         },
         {
@@ -1079,13 +1085,13 @@
             "urls": ["https://cafe.naver.com/zoozoocom/252145"]
         },
         {
-            "keyword": "갑상선암 수술후 관리",
+            "keyword": "갑상선암 수술 후 관리",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/254064",
                 "https://cafe.naver.com/zoozoocom/270254",
                 "https://cafe.naver.com/zoozoocom/275772",
                 "https://cafe.naver.com/zoozoocom/279025",
-                ":https://cafe.naver.com/zoozoocom/280264"
+                "https://cafe.naver.com/zoozoocom/280264"
             ]
         },
         {
@@ -1305,7 +1311,8 @@
                 "https://cafe.naver.com/zoozoocom/267125",
                 "https://cafe.naver.com/zoozoocom/268202",
                 "https://cafe.naver.com/zoozoocom/274960",
-                "https://cafe.naver.com/zoozoocom/276880"
+                "https://cafe.naver.com/zoozoocom/276880",
+                "https://cafe.naver.com/zoozoocom/281252"
             ]
         },
         {
@@ -1405,14 +1412,16 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/269593",
                 "https://cafe.naver.com/zoozoocom/277574",
-                "https://cafe.naver.com/zoozoocom/278690"
+                "https://cafe.naver.com/zoozoocom/278690",
+                "https://cafe.naver.com/zoozoocom/281257"
             ]
         },
         {
             "keyword": "유방암모양",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/267142",
-                "https://cafe.naver.com/zoozoocom/277204"
+                "https://cafe.naver.com/zoozoocom/277204",
+                "https://cafe.naver.com/zoozoocom/281253"
             ]
         },
         {
@@ -1531,7 +1540,8 @@
                 "https://cafe.naver.com/zoozoocom/275401",
                 "https://cafe.naver.com/zoozoocom/276879",
                 "https://cafe.naver.com/zoozoocom/277935",
-                "https://cafe.naver.com/zoozoocom/278694"
+                "https://cafe.naver.com/zoozoocom/278694",
+                "https://cafe.naver.com/zoozoocom/281250"
             ]
         },
         {
@@ -1766,7 +1776,10 @@
         },
         {
             "keyword": "위 장상피화생",
-            "urls": ["https://cafe.naver.com/zoozoocom/271474"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271474",
+                "https://cafe.naver.com/zoozoocom/280961"
+            ]
         },
         {
             "keyword": "자궁경부암 항암치료",
@@ -1798,12 +1811,13 @@
             "urls": ["https://cafe.naver.com/zoozoocom/271651"]
         },
         {
-            "keyword": "면역주사 효과",
+            "keyword": "면역주사효과",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271653",
                 "https://cafe.naver.com/zoozoocom/273183",
                 "https://cafe.naver.com/zoozoocom/274567",
-                "https://cafe.naver.com/zoozoocom/276872"
+                "https://cafe.naver.com/zoozoocom/276872",
+                "https://cafe.naver.com/zoozoocom/281246"
             ]
         },
         {
@@ -1827,7 +1841,10 @@
         },
         {
             "keyword": "췌장암 중입자치료",
-            "urls": ["https://cafe.naver.com/zoozoocom/272389"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/272389",
+                "https://cafe.naver.com/zoozoocom/281255"
+            ]
         },
         {
             "keyword": "폐암 초기증상 손톱",
