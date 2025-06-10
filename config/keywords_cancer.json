@@ -318,7 +318,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/978574",
                 "https://cafe.naver.com/zoozoocom/264173",
-                "https://cafe.naver.com/zoozoocom/279912"
+                "https://cafe.naver.com/zoozoocom/279912",
+                "https://cafe.naver.com/zoozoocom/282818"
             ]
         },
         {
@@ -480,7 +481,8 @@
             "keyword": "방광암 2기",
             "urls": [
                 "https://cafe.naver.com/peopledisc/973930",
-                "https://cafe.naver.com/zoozoocom/266291"
+                "https://cafe.naver.com/zoozoocom/266291",
+                "https://cafe.naver.com/zoozoocom/282815"
             ]
         },
         {
@@ -609,7 +611,10 @@
         },
         {
             "keyword": "대장암 4기 생존율",
-            "urls": ["https://cafe.naver.com/peopledisc/884243"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/884243",
+                "https://cafe.naver.com/zoozoocom/282805"
+            ]
         },
         {
             "keyword": "암환자 선물",
@@ -656,7 +661,10 @@
         },
         {
             "keyword": "위암 4기 생존율",
-            "urls": ["https://cafe.naver.com/peopledisc/946435"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/946435",
+                "https://cafe.naver.com/zoozoocom/282801"
+            ]
         },
         {
             "keyword": "폐암 4기 생존기간",
@@ -739,14 +747,16 @@
             "keyword": "췌장암 3기 생존율",
             "urls": [
                 "https://cafe.naver.com/peopledisc/952780",
-                "https://cafe.naver.com/rksghwhantk/1239692"
+                "https://cafe.naver.com/rksghwhantk/1239692",
+                "https://cafe.naver.com/zoozoocom/282806"
             ]
         },
         {
             "keyword": "췌장암 수치",
             "urls": [
                 "https://cafe.naver.com/peopledisc/952782",
-                "https://cafe.naver.com/zoozoocom/268734"
+                "https://cafe.naver.com/zoozoocom/268734",
+                "https://cafe.naver.com/zoozoocom/282810"
             ]
         },
         {
@@ -938,10 +948,6 @@
             ]
         },
         {
-            "keyword": "유방 암환자 선물",
-            "urls": ["https://cafe.naver.com/peopledisc/924994"]
-        },
-        {
             "keyword": "자궁내막암 1기",
             "urls": ["https://cafe.naver.com/peopledisc/960854"]
         },
@@ -954,7 +960,10 @@
         },
         {
             "keyword": "폐암 2기",
-            "urls": ["https://cafe.naver.com/peopledisc/924990"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/924990",
+                "https://cafe.naver.com/zoozoocom/279886"
+            ]
         },
         {
             "keyword": "폐암환자 식단",
@@ -970,10 +979,6 @@
                 "https://cafe.naver.com/peopledisc/982233",
                 "https://cafe.naver.com/zoozoocom/266027"
             ]
-        },
-        {
-            "keyword": "유방암완치",
-            "urls": ["https://cafe.naver.com/peopledisc/960884"]
         },
         {
             "keyword": "pppd 수술",
@@ -1072,7 +1077,8 @@
             "keyword": "갑상선암 사망률",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1013725",
-                "https://cafe.naver.com/peopledisc/990277"
+                "https://cafe.naver.com/peopledisc/990277",
+                "https://cafe.naver.com/zoozoocom/282822"
             ]
         },
         {
@@ -1112,7 +1118,10 @@
         },
         {
             "keyword": "유방암 림프전이",
-            "urls": ["https://cafe.naver.com/peopledisc/946434"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/946434",
+                "https://cafe.naver.com/zoozoocom/282824"
+            ]
         },
         {
             "keyword": "유방암0기수술",
