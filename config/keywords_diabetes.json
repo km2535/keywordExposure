@@ -865,7 +865,10 @@
         },
         {
             "keyword": "당뇨홍삼",
-            "urls": ["https://cafe.naver.com/zoozoocom/273110"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273110",
+                "https://cafe.naver.com/gimhaezumma/2651022"
+            ]
         },
         {
             "keyword": "당뇨에 좋은 식품",
@@ -873,7 +876,10 @@
         },
         {
             "keyword": "혈당낮추는차",
-            "urls": ["https://cafe.naver.com/zoozoocom/273472"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273472",
+                "https://cafe.naver.com/gimhaezumma/2651020"
+            ]
         },
         {
             "keyword": "자디앙듀오정",
