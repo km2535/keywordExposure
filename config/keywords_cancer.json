@@ -269,7 +269,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/891690",
                 "https://cafe.naver.com/zoozoocom/276037",
-                "https://cafe.naver.com/zoozoocom/283645"
+                "https://cafe.naver.com/zoozoocom/283645",
+                "https://cafe.naver.com/zoozoocom/276037"
             ]
         },
         {
@@ -787,7 +788,8 @@
             "keyword": "유방암3기생존율",
             "urls": [
                 "https://cafe.naver.com/peopledisc/960879",
-                "https://cafe.naver.com/zoozoocom/282329"
+                "https://cafe.naver.com/zoozoocom/282329",
+                "https://cafe.naver.com/zoozoocom/284506"
             ]
         },
         {
@@ -855,7 +857,8 @@
             "keyword": "위암 환자 선물",
             "urls": [
                 "https://cafe.naver.com/peopledisc/924995",
-                "https://cafe.naver.com/zoozoocom/282325"
+                "https://cafe.naver.com/zoozoocom/282325",
+                "https://cafe.naver.com/zoozoocom/284518"
             ]
         },
         {
@@ -1094,7 +1097,10 @@
         },
         {
             "keyword": "췌장암 혈액검사",
-            "urls": ["https://cafe.naver.com/peopledisc/978552"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/978552",
+                "https://cafe.naver.com/zoozoocom/282810"
+            ]
         },
         {
             "keyword": "갑상선암 사망률",
@@ -1119,12 +1125,17 @@
                 "https://cafe.naver.com/zoozoocom/269985",
                 "https://cafe.naver.com/zoozoocom/275369",
                 "https://cafe.naver.com/zoozoocom/278682",
-                "https://cafe.naver.com/zoozoocom/279395"
+                "https://cafe.naver.com/zoozoocom/279395",
+                "https://cafe.naver.com/zoozoocom/284512",
+                "https://cafe.naver.com/zoozoocom/284514"
             ]
         },
         {
             "keyword": "폐암 임파선 전이",
-            "urls": ["https://cafe.naver.com/peopledisc/957747"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/957747",
+                "https://cafe.naver.com/zoozoocom/284520"
+            ]
         },
         {
             "keyword": "유방암 1기 항암",
@@ -1215,7 +1226,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/996482",
                 "https://cafe.naver.com/zoozoocom/267130",
-                "https://cafe.naver.com/zoozoocom/263708"
+                "https://cafe.naver.com/zoozoocom/263708",
+                "https://cafe.naver.com/zoozoocom/284516"
             ]
         },
         {
@@ -1236,7 +1248,8 @@
             "keyword": "대장암 말기",
             "urls": [
                 "https://cafe.naver.com/rksghwhantk/1242826",
-                "https://cafe.naver.com/zoozoocom/253184"
+                "https://cafe.naver.com/zoozoocom/253184",
+                "https://cafe.naver.com/zoozoocom/284522"
             ]
         },
         {
@@ -1272,7 +1285,10 @@
         },
         {
             "keyword": "폐암 폐렴",
-            "urls": ["https://cafe.naver.com/peopledisc/970434"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/970434",
+                "https://cafe.naver.com/zoozoocom/284517"
+            ]        
         },
         {
             "keyword": "위암 말기",
