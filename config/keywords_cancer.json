@@ -16,6 +16,7 @@
                 "https://cafe.naver.com/shopjirmsin/10431753",
                 "https://cafe.naver.com/masanmam/7189380",
                 "https://cafe.naver.com/yccungi/677268",
+                "https://cafe.naver.com/zoozoocom/284265",
                 "https://cafe.naver.com/move79/5584086"
             ]
         },
@@ -647,7 +648,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/1005947",
                 "https://cafe.naver.com/peopledisc/919453",
-                "https://cafe.naver.com/zoozoocom/282323"
+                "https://cafe.naver.com/zoozoocom/282323",
+                "https://cafe.naver.com/zoozoocom/285767"
             ]
         },
         {
@@ -811,7 +813,8 @@
             "keyword": "이뮨셀",
             "urls": [
                 "https://cafe.naver.com/peopledisc/899035",
-                "https://cafe.naver.com/zoozoocom/281733"
+                "https://cafe.naver.com/zoozoocom/281733",
+                "https://cafe.naver.com/zoozoocom/285790"
             ]
         },
         {
@@ -867,12 +870,16 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/927597",
                 "https://cafe.naver.com/zoozoocom/270252",
-                "https://cafe.naver.com/zoozoocom/274292"
+                "https://cafe.naver.com/zoozoocom/274292",
+                "https://cafe.naver.com/zoozoocom/285759"
             ]
         },
         {
             "keyword": "다잘렉스",
-            "urls": ["https://cafe.naver.com/zoozoocom/252760"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/252760",
+                "https://cafe.naver.com/gimhaezumma/2652925"
+            ]
         },
         {
             "keyword": "유방암 항암",
@@ -1051,7 +1058,8 @@
                 "https://cafe.naver.com/zoozoocom/266281",
                 "https://cafe.naver.com/peopledisc/926735",
                 "https://cafe.naver.com/zoozoocom/274878",
-                "https://cafe.naver.com/gimhaezumma/2628260"
+                "https://cafe.naver.com/gimhaezumma/2628260",
+                "https://cafe.naver.com/zoozoocom/285796"
             ]
         },
         {
@@ -1130,7 +1138,8 @@
             "keyword": "췌장암 혈액검사",
             "urls": [
                 "https://cafe.naver.com/peopledisc/978552",
-                "https://cafe.naver.com/zoozoocom/282810"
+                "https://cafe.naver.com/zoozoocom/282810",
+                "https://cafe.naver.com/zoozoocom/285797"
             ]
         },
         {
@@ -1352,7 +1361,8 @@
                 "https://cafe.naver.com/zoozoocom/254067",
                 "https://cafe.naver.com/zoozoocom/268848",
                 "https://cafe.naver.com/zoozoocom/279642",
-                "https://cafe.naver.com/zoozoocom/281949"
+                "https://cafe.naver.com/zoozoocom/281949",
+                "https://cafe.naver.com/zoozoocom/285801"
             ]
         },
         {
@@ -1373,7 +1383,8 @@
             "keyword": "NK 면역세포",
             "urls": [
                 "https://cafe.naver.com/peopledisc/930847",
-                "https://cafe.naver.com/rksghwhantk/1248118"
+                "https://cafe.naver.com/rksghwhantk/1248118",
+                "https://cafe.naver.com/zoozoocom/285765"
             ]
         },
         {
@@ -1731,7 +1742,8 @@
             "keyword": "갑상선암 목소리",
             "urls": [
                 "https://cafe.naver.com/rksghwhantk/1247755",
-                "https://cafe.naver.com/zoozoocom/277198"
+                "https://cafe.naver.com/zoozoocom/277198",
+                "https://cafe.naver.com/zoozoocom/285793"
             ]
         },
         {
@@ -2007,7 +2019,10 @@
         },
         {
             "keyword": "중입자 암치료",
-            "urls": ["https://cafe.naver.com/zoozoocom/271658"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271658",
+                "https://cafe.naver.com/gimhaezumma/2652922"
+            ]
         },
         {
             "keyword": "방사선 치료",
