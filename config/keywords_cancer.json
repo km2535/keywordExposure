@@ -52,7 +52,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/933887",
                 "https://cafe.naver.com/move79/5527211",
-                "https://cafe.naver.com/zoozoocom/275198"
+                "https://cafe.naver.com/zoozoocom/275198",
+                "https://cafe.naver.com/gimhaezumma/2653397"
             ]
         },
         {
@@ -171,7 +172,8 @@
             "keyword": "NK세포",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/276037",
-                "https://cafe.naver.com/zoozoocom/282312"
+                "https://cafe.naver.com/zoozoocom/282312",
+                "https://cafe.naver.com/zoozoocom/286146"
             ]
         },
         {
@@ -183,7 +185,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/891691",
                 "https://cafe.naver.com/zoozoocom/268663",
-                "https://cafe.naver.com/zoozoocom/276037"
+                "https://cafe.naver.com/zoozoocom/276037",
+                "https://cafe.naver.com/zoozoocom/286143"
             ]
         },
         {
@@ -241,7 +244,8 @@
                 "https://cafe.naver.com/peopledisc/932214",
                 "https://cafe.naver.com/zoozoocom/266026",
                 "https://cafe.naver.com/zoozoocom/277359",
-                "https://cafe.naver.com/zoozoocom/279908"
+                "https://cafe.naver.com/zoozoocom/279908",
+                "https://cafe.naver.com/zoozoocom/286149"
             ]
         },
         {
@@ -1106,7 +1110,8 @@
             "keyword": "면역항암제 비용",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1007735",
-                "https://cafe.naver.com/peopledisc/923104"
+                "https://cafe.naver.com/peopledisc/923104",
+                "https://cafe.naver.com/zoozoocom/284341"
             ]
         },
         {
@@ -1185,10 +1190,6 @@
                 "https://cafe.naver.com/zoozoocom/275407",
                 "https://cafe.naver.com/zoozoocom/280553"
             ]
-        },
-        {
-            "keyword": "유방암 수술후 음식",
-            "urls": ["https://cafe.naver.com/peopledisc/1015535"]
         },
         {
             "keyword": "유방암 림프전이",
@@ -1545,7 +1546,10 @@
         },
         {
             "keyword": "위암수술비용",
-            "urls": ["https://cafe.naver.com/zoozoocom/270259"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/270259",
+                "https://cafe.naver.com/zoozoocom/286147"
+            ]
         },
         {
             "keyword": "유방암 전조증상",
@@ -1766,7 +1770,8 @@
             "keyword": "유방암혹",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271203",
-                "https://cafe.naver.com/rksghwhantk/1248875"
+                "https://cafe.naver.com/rksghwhantk/1248875",
+                "https://cafe.naver.com/zoozoocom/286148"
             ]
         },
         {
@@ -1818,7 +1823,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271194",
                 "https://cafe.naver.com/zoozoocom/276057",
-                "https://cafe.naver.com/peopledisc/962891"
+                "https://cafe.naver.com/peopledisc/962891",
+                "https://cafe.naver.com/zoozoocom/286159"
             ]
         },
         {
@@ -2079,7 +2085,8 @@
                 "https://cafe.naver.com/zoozoocom/273200",
                 "https://cafe.naver.com/zoozoocom/274564",
                 "https://cafe.naver.com/zoozoocom/274887",
-                "https://cafe.naver.com/chobomamy/2606571"
+                "https://cafe.naver.com/chobomamy/2606571",
+                "https://cafe.naver.com/zoozoocom/286161"
             ]
         },
         {
@@ -2088,7 +2095,8 @@
                 "https://cafe.naver.com/zoozoocom/273204",
                 "https://cafe.naver.com/zoozoocom/274887",
                 "https://cafe.naver.com/zoozoocom/278344",
-                "https://cafe.naver.com/zoozoocom/281952"
+                "https://cafe.naver.com/zoozoocom/281952",
+                "https://cafe.naver.com/zoozoocom/286162"
             ]
         },
         {
@@ -2098,6 +2106,10 @@
         {
             "keyword": "항암에 좋은 음식",
             "urls": ["https://cafe.naver.com/zoozoocom/281762"]
+        },
+        {
+            "keyword": "면역치료",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2653402"]
         }
     ]
 }
