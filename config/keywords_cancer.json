@@ -151,7 +151,8 @@
             "keyword": "갑상선암 수술후 음식",
             "urls": [
                 "https://cafe.naver.com/peopledisc/951293",
-                "https://cafe.naver.com/zoozoocom/267025"
+                "https://cafe.naver.com/zoozoocom/267025",
+                "https://cafe.naver.com/zoozoocom/286386"
             ]
         },
         {
@@ -391,7 +392,8 @@
             "keyword": "유방암진단",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253659",
-                "https://cafe.naver.com/gimhaezumma/2628673"
+                "https://cafe.naver.com/gimhaezumma/2628673",
+                "https://cafe.naver.com/zoozoocom/286392"
             ]
         },
         {
@@ -900,7 +902,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/924995",
                 "https://cafe.naver.com/zoozoocom/282325",
-                "https://cafe.naver.com/zoozoocom/284518"
+                "https://cafe.naver.com/zoozoocom/284518",
+                "https://cafe.naver.com/zoozoocom/286400"
             ]
         },
         {
@@ -1339,7 +1342,8 @@
             "keyword": "위암 말기",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253186",
-                "https://cafe.naver.com/rksghwhantk/1243214"
+                "https://cafe.naver.com/rksghwhantk/1243214",
+                "https://cafe.naver.com/gimhaezumma/2653754"
             ]
         },
         {
@@ -1802,7 +1806,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271209",
                 "https://cafe.naver.com/zoozoocom/276445",
-                "https://cafe.naver.com/zoozoocom/277950"
+                "https://cafe.naver.com/zoozoocom/277950",
+                "https://cafe.naver.com/gimhaezumma/2653763"
             ]
         },
         {
@@ -2110,6 +2115,26 @@
         {
             "keyword": "면역치료",
             "urls": ["https://cafe.naver.com/gimhaezumma/2653402"]
+        },
+        {
+            "keyword": "자가면역질환 음식",
+            "urls": ["https://cafe.naver.com/zoozoocom/286416"]
+        },
+        {
+            "keyword": "면역관문억제제",
+            "urls": ["https://cafe.naver.com/zoozoocom/286420"]
+        },
+        {
+            "keyword": "면역공방",
+            "urls": ["https://cafe.naver.com/zoozoocom/286426"]
+        },
+        {
+            "keyword": "마늘주사효능",
+            "urls": ["https://cafe.naver.com/zoozoocom/286434"]
+        },
+        {
+            "keyword": "면역 영양제",
+            "urls": ["https://cafe.naver.com/zoozoocom/286439"]
         }
     ]
 }
