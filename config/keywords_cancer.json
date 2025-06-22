@@ -763,7 +763,8 @@
             "keyword": "암예방",
             "urls": [
                 "https://cafe.naver.com/peopledisc/926734",
-                "https://cafe.naver.com/zoozoocom/278680"
+                "https://cafe.naver.com/zoozoocom/278680",
+                "https://cafe.naver.com/zoozoocom/286605"
             ]
         },
         {
@@ -771,7 +772,8 @@
             "urls": [
                 "https://cafe.naver.com/rksghwhantk/1237109",
                 "https://cafe.naver.com/rksghwhantk/1246797",
-                "https://cafe.naver.com/zoozoocom/270253"
+                "https://cafe.naver.com/zoozoocom/270253",
+                "https://cafe.naver.com/zoozoocom/286608"
             ]
         },
         {
@@ -1212,7 +1214,10 @@
         },
         {
             "keyword": "압노바비스쿰",
-            "urls": ["https://cafe.naver.com/zoozoocom/252145"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/252145",
+                "https://cafe.naver.com/chobomamy/2606571"
+            ]
         },
         {
             "keyword": "갑상선암 수술 후 관리",
@@ -1511,7 +1516,10 @@
         },
         {
             "keyword": "삼중음성",
-            "urls": ["https://cafe.naver.com/zoozoocom/270624"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/270624",
+                "https://cafe.naver.com/zoozoocom/286611"
+            ]
         },
         {
             "keyword": "대장암 로봇수술",
@@ -1614,7 +1622,8 @@
                 "https://cafe.naver.com/zoozoocom/269597",
                 "https://cafe.naver.com/zoozoocom/276451",
                 "https://cafe.naver.com/zoozoocom/277951",
-                "https://cafe.naver.com/zoozoocom/281956"
+                "https://cafe.naver.com/zoozoocom/281956",
+                "https://cafe.naver.com/zoozoocom/286616"
             ]
         },
         {
@@ -1834,13 +1843,17 @@
         },
         {
             "keyword": "위암 초기",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2628264"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2628264",
+                "https://cafe.naver.com/zoozoocom/286612"
+            ]
         },
         {
             "keyword": "갑상선암 반절제",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271279",
-                "https://cafe.naver.com/zoozoocom/279396"
+                "https://cafe.naver.com/zoozoocom/279396",
+                "https://cafe.naver.com/zoozoocom/286615"
             ]
         },
         {
@@ -2135,6 +2148,18 @@
         {
             "keyword": "면역 영양제",
             "urls": ["https://cafe.naver.com/zoozoocom/286439"]
+        },
+        {
+            "keyword": "입술 안쪽 물집",
+            "urls": ["https://cafe.naver.com/zoozoocom/286618"]
+        },
+        {
+            "keyword": "구내염먹는약",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2654134"]
+        },
+        {
+            "keyword": "면역력 저하 두드러기",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2654132"]
         }
     ]
 }
