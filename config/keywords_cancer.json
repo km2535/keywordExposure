@@ -993,7 +993,8 @@
             "keyword": "난소암 복수",
             "urls": [
                 "https://cafe.naver.com/peopledisc/944569",
-                "https://cafe.naver.com/rksghwhantk/1244683"
+                "https://cafe.naver.com/rksghwhantk/1244683",
+                "https://cafe.naver.com/zoozoocom/287160"
             ]
         },
         {
@@ -1189,7 +1190,8 @@
             "keyword": "폐암 임파선 전이",
             "urls": [
                 "https://cafe.naver.com/peopledisc/957747",
-                "https://cafe.naver.com/zoozoocom/284520"
+                "https://cafe.naver.com/zoozoocom/284520",
+                "https://cafe.naver.com/zoozoocom/287125"
             ]
         },
         {
@@ -1330,7 +1332,10 @@
         },
         {
             "keyword": "아리미덱스",
-            "urls": ["https://cafe.naver.com/zoozoocom/252755"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/252755",
+                "https://cafe.naver.com/zoozoocom/287130"
+            ]
         },
         {
             "keyword": "갑상선암 항암",
@@ -1706,7 +1711,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/270627",
                 "https://cafe.naver.com/zoozoocom/274571",
-                "https://cafe.naver.com/zoozoocom/281954"
+                "https://cafe.naver.com/zoozoocom/281954",
+                "https://cafe.naver.com/zoozoocom/287132"
             ]
         },
         {
@@ -1764,7 +1770,8 @@
                 "https://cafe.naver.com/zoozoocom/270905",
                 "https://cafe.naver.com/zoozoocom/272398",
                 "https://cafe.naver.com/zoozoocom/279398",
-                "https://cafe.naver.com/zoozoocom/281480"
+                "https://cafe.naver.com/zoozoocom/281480",
+                "https://cafe.naver.com/zoozoocom/287133"
             ]
         },
         {
@@ -2067,7 +2074,10 @@
         },
         {
             "keyword": "중입자치료",
-            "urls": ["https://cafe.naver.com/zoozoocom/271658"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271658",
+                "https://cafe.naver.com/gimhaezumma/2652922"
+            ]
         },
         {
             "keyword": "췌장암 중입자치료",
@@ -2132,7 +2142,10 @@
         },
         {
             "keyword": "자궁경부암 초기증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/279395"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/279395",
+                "https://cafe.naver.com/zoozoocom/287134"
+            ]
         },
         {
             "keyword": "항암에 좋은 음식",
@@ -2173,6 +2186,22 @@
         {
             "keyword": "면역력 저하 두드러기",
             "urls": ["https://cafe.naver.com/gimhaezumma/2654132"]
+        },
+        {
+            "keyword": "면역과민반응",
+            "urls": ["https://cafe.naver.com/zoozoocom/287165"]
+        },
+        {
+            "keyword": "면역력 두드러기",
+            "urls": ["https://cafe.naver.com/zoozoocom/287170"]
+        },
+        {
+            "keyword": "초기 위암 증상",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2654879"]
+        },
+        {
+            "keyword": "대상포진 가려움",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2654881"]
         }
     ]
 }
