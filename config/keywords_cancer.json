@@ -303,7 +303,8 @@
                 "https://cafe.naver.com/peopledisc/923107",
                 "https://cafe.naver.com/zoozoocom/270257",
                 "https://cafe.naver.com/zoozoocom/282312",
-                "https://cafe.naver.com/zoozoocom/283645"
+                "https://cafe.naver.com/zoozoocom/283645",
+                "https://cafe.naver.com/gimhaezumma/2655289"
             ]
         },
         {
@@ -966,7 +967,8 @@
             "keyword": "유방암1기수술",
             "urls": [
                 "https://cafe.naver.com/peopledisc/894347",
-                "https://cafe.naver.com/rksghwhantk/1247289"
+                "https://cafe.naver.com/rksghwhantk/1247289",
+                "https://cafe.naver.com/zoozoocom/287520"
             ]
         },
         {
@@ -1493,7 +1495,8 @@
                 "https://cafe.naver.com/zoozoocom/254063",
                 "https://cafe.naver.com/zoozoocom/265863",
                 "https://cafe.naver.com/zoozoocom/267364",
-                "https://cafe.naver.com/zoozoocom/281477"
+                "https://cafe.naver.com/zoozoocom/281477",
+                "https://cafe.naver.com/zoozoocom/287537"
             ]
         },
         {
@@ -1590,7 +1593,10 @@
         },
         {
             "keyword": "자궁경부암 수술비용",
-            "urls": ["https://cafe.naver.com/zoozoocom/270628"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/270628",
+                "https://cafe.naver.com/zoozoocom/287515"
+            ]
         },
         {
             "keyword": "유방암 등통증",
@@ -1857,7 +1863,8 @@
                 "https://cafe.naver.com/zoozoocom/271194",
                 "https://cafe.naver.com/zoozoocom/276057",
                 "https://cafe.naver.com/peopledisc/962891",
-                "https://cafe.naver.com/zoozoocom/286159"
+                "https://cafe.naver.com/zoozoocom/286159",
+                "https://cafe.naver.com/zoozoocom/287523"
             ]
         },
         {
@@ -2041,7 +2048,10 @@
         },
         {
             "keyword": "유방암 수술 후 관리법",
-            "urls": ["https://cafe.naver.com/zoozoocom/271651"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271651",
+                "https://cafe.naver.com/zoozoocom/287518"
+            ]
         },
         {
             "keyword": "면역주사효과",
@@ -2157,7 +2167,10 @@
         },
         {
             "keyword": "자가면역질환 음식",
-            "urls": ["https://cafe.naver.com/zoozoocom/286416"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/286416",
+                "https://cafe.naver.com/zoozoocom/287532"
+            ]
         },
         {
             "keyword": "면역관문억제제",
@@ -2169,7 +2182,10 @@
         },
         {
             "keyword": "마늘주사효능",
-            "urls": ["https://cafe.naver.com/zoozoocom/286434"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/286434",
+                "https://cafe.naver.com/zoozoocom/287533"
+            ]
         },
         {
             "keyword": "면역 영양제",
@@ -2181,7 +2197,10 @@
         },
         {
             "keyword": "구내염먹는약",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2654134"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2654134",
+                "https://cafe.naver.com/zoozoocom/287530"
+            ]
         },
         {
             "keyword": "면역력 저하 두드러기",
@@ -2202,6 +2221,10 @@
         {
             "keyword": "대상포진 가려움",
             "urls": ["https://cafe.naver.com/gimhaezumma/2654881"]
+        },
+        {
+            "keyword": "면역관리",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2655288"]
         }
     ]
 }
