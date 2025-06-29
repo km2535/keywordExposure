@@ -743,7 +743,10 @@
         },
         {
             "keyword": "여주 당뇨",
-            "urls": ["https://cafe.naver.com/zoozoocom/272684"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/272684",
+                "https://cafe.naver.com/zoozoocom/288802"
+            ]
         },
         {
             "keyword": "혈당측정 어플",
@@ -865,7 +868,10 @@
         },
         {
             "keyword": "바나바잎 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/272730"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/272730",
+                "https://cafe.naver.com/zoozoocom/288803"
+            ]
         },
         {
             "keyword": "당뇨홍삼",
