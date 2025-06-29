@@ -287,7 +287,8 @@
             "keyword": "대장암 수술 후 식사",
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2616137",
-                "https://cafe.naver.com/rksghwhantk/1248494"
+                "https://cafe.naver.com/rksghwhantk/1248494",
+                "https://cafe.naver.com/zoozoocom/288635"
             ]
         },
         {
@@ -353,7 +354,8 @@
                 "https://cafe.naver.com/peopledisc/881885",
                 "https://cafe.naver.com/zoozoocom/268197",
                 "https://cafe.naver.com/zoozoocom/274295",
-                "https://cafe.naver.com/zoozoocom/281738"
+                "https://cafe.naver.com/zoozoocom/281738",
+                "https://cafe.naver.com/zoozoocom/288645"
             ]
         },
         {
@@ -590,7 +592,8 @@
             "keyword": "직장암 초기증상",
             "urls": [
                 "https://cafe.naver.com/peopledisc/893051",
-                "https://cafe.naver.com/rksghwhantk/1245243"
+                "https://cafe.naver.com/rksghwhantk/1245243",
+                "https://cafe.naver.com/zoozoocom/288633"
             ]
         },
         {
@@ -701,7 +704,8 @@
                 "https://cafe.naver.com/zoozoocom/277348",
                 "https://cafe.naver.com/zoozoocom/279038",
                 "https://cafe.naver.com/zoozoocom/282326",
-                "https://cafe.naver.com/zoozoocom/284104"
+                "https://cafe.naver.com/zoozoocom/284104",
+                "https://cafe.naver.com/zoozoocom/288647"
             ]
         },
         {
@@ -789,7 +793,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/926734",
                 "https://cafe.naver.com/zoozoocom/278680",
-                "https://cafe.naver.com/zoozoocom/286605"
+                "https://cafe.naver.com/zoozoocom/286605",
+                "https://cafe.naver.com/zoozoocom/288637"
             ]
         },
         {
@@ -798,7 +803,8 @@
                 "https://cafe.naver.com/rksghwhantk/1237109",
                 "https://cafe.naver.com/rksghwhantk/1246797",
                 "https://cafe.naver.com/zoozoocom/270253",
-                "https://cafe.naver.com/zoozoocom/286608"
+                "https://cafe.naver.com/zoozoocom/286608",
+                "https://cafe.naver.com/zoozoocom/288639"
             ]
         },
         {
@@ -816,7 +822,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/952780",
                 "https://cafe.naver.com/rksghwhantk/1239692",
-                "https://cafe.naver.com/zoozoocom/283332"
+                "https://cafe.naver.com/zoozoocom/283332",
+                "https://cafe.naver.com/zoozoocom/288630"
             ]
         },
         {
@@ -900,7 +907,8 @@
                 "https://cafe.naver.com/zoozoocom/267035",
                 "https://cafe.naver.com/zoozoocom/264172",
                 "https://cafe.naver.com/zoozoocom/275184",
-                "https://cafe.naver.com/zoozoocom/286800"
+                "https://cafe.naver.com/zoozoocom/286800",
+                "https://cafe.naver.com/zoozoocom/288633"
             ]
         },
         {
@@ -965,7 +973,8 @@
             "keyword": "항암 음식",
             "urls": [
                 "https://cafe.naver.com/peopledisc/891689",
-                "https://cafe.naver.com/rksghwhantk/1246802"
+                "https://cafe.naver.com/rksghwhantk/1246802",
+                "https://cafe.naver.com/zoozoocom/288634"
             ]
         },
         {
@@ -2263,6 +2272,10 @@
         {
             "keyword": "면역관리",
             "urls": ["https://cafe.naver.com/gimhaezumma/2655288"]
+        },
+        {
+            "keyword": "대장암 수술후 음식",
+            "urls": ["https://cafe.naver.com/zoozoocom/288635"]
         }
     ]
 }
