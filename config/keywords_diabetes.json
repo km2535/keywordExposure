@@ -882,7 +882,10 @@
         },
         {
             "keyword": "당뇨에 좋은 식품",
-            "urls": ["https://cafe.naver.com/zoozoocom/273111"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273111",
+                "https://cafe.naver.com/zoozoocom/289507"
+            ]
         },
         {
             "keyword": "혈당낮추는차",
@@ -917,11 +920,17 @@
         },
         {
             "keyword": "알룰로스혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/273522"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273522",
+                "https://cafe.naver.com/zoozoocom/289503"
+            ]
         },
         {
             "keyword": "식후혈당제",
-            "urls": ["https://cafe.naver.com/zoozoocom/273473"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273473",
+                "https://cafe.naver.com/zoozoocom/289509"
+            ]
         },
         {
             "keyword": "당뇨두유",
@@ -945,7 +954,10 @@
         },
         {
             "keyword": "혈당 보조제",
-            "urls": ["https://cafe.naver.com/zoozoocom/273888"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273888",
+                "https://cafe.naver.com/zoozoocom/289505"
+            ]
         },
         {
             "keyword": "보리차혈당",
