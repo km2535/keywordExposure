@@ -167,7 +167,7 @@
         },
         {
             "keyword": "식전혈당수치",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/289722"]
         },
         {
             "keyword": "혈당측정",
@@ -243,7 +243,7 @@
         },
         {
             "keyword": "당뇨유산균",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/289710"]
         },
         {
             "keyword": "공복혈당 130",
@@ -595,7 +595,7 @@
         },
         {
             "keyword": "인슐린 저항성 개선",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/289727"]
         },
         {
             "keyword": "1형당뇨 증상",
@@ -790,7 +790,7 @@
         },
         {
             "keyword": "당뇨환자 선물",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/289714"]
         },
         {
             "keyword": "당화혈색소 7",
@@ -962,6 +962,10 @@
         {
             "keyword": "보리차혈당",
             "urls": ["https://cafe.naver.com/zoozoocom/273893"]
+        },
+        {
+            "keyword": "당뇨수치 기준",
+            "urls": ["https://cafe.naver.com/zoozoocom/289704"]
         }
     ]
 }

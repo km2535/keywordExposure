@@ -53,7 +53,8 @@
                 "https://cafe.naver.com/peopledisc/933887",
                 "https://cafe.naver.com/move79/5527211",
                 "https://cafe.naver.com/zoozoocom/275198",
-                "https://cafe.naver.com/gimhaezumma/2653397"
+                "https://cafe.naver.com/gimhaezumma/2653397",
+                "https://cafe.naver.com/zoozoocom/289741"
             ]
         },
         {
@@ -1798,7 +1799,8 @@
                 "https://cafe.naver.com/zoozoocom/274569",
                 "https://cafe.naver.com/zoozoocom/277575",
                 "https://cafe.naver.com/zoozoocom/278686",
-                "https://cafe.naver.com/zoozoocom/281740"
+                "https://cafe.naver.com/zoozoocom/281740",
+                "https://cafe.naver.com/zoozoocom/289733"
             ]
         },
         {
@@ -2162,7 +2164,10 @@
         },
         {
             "keyword": "방사선 치료",
-            "urls": ["https://cafe.naver.com/zoozoocom/271659"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/271659",
+                "https://cafe.naver.com/gimhaezumma/2658194"
+            ]
         },
         {
             "keyword": "중입자치료",
@@ -2219,7 +2224,8 @@
                 "https://cafe.naver.com/zoozoocom/274564",
                 "https://cafe.naver.com/zoozoocom/274887",
                 "https://cafe.naver.com/chobomamy/2606571",
-                "https://cafe.naver.com/zoozoocom/286161"
+                "https://cafe.naver.com/zoozoocom/286161",
+                "https://cafe.naver.com/zoozoocom/289736"
             ]
         },
         {
@@ -2322,6 +2328,10 @@
         {
             "keyword": "갑상선암 재발 확률",
             "urls": ["https://cafe.naver.com/zoozoocom/289113"]
+        },
+        {
+            "keyword": "면역력 높이는 방법",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2658196"]
         }
     ]
 }
