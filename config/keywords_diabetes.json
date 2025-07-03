@@ -723,7 +723,7 @@
         },
         {
             "keyword": "당뇨 1형 2형",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/290263"]
         },
         {
             "keyword": "혈당측정패치",
@@ -745,7 +745,8 @@
             "keyword": "여주 당뇨",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272684",
-                "https://cafe.naver.com/zoozoocom/288802"
+                "https://cafe.naver.com/zoozoocom/288802",
+                "https://cafe.naver.com/zoozoocom/290258"
             ]
         },
         {
@@ -870,7 +871,8 @@
             "keyword": "바나바잎 혈당",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272730",
-                "https://cafe.naver.com/zoozoocom/288803"
+                "https://cafe.naver.com/zoozoocom/288803",
+                "https://cafe.naver.com/zoozoocom/290260"
             ]
         },
         {
@@ -966,6 +968,14 @@
         {
             "keyword": "당뇨수치 기준",
             "urls": ["https://cafe.naver.com/zoozoocom/289704"]
+        },
+        {
+            "keyword": "저당밥솥 효과",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2658706"]
+        },
+        {
+            "keyword": "공복혈당장애",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2658704"]
         }
     ]
 }
