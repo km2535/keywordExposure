@@ -139,7 +139,7 @@
         },
         {
             "keyword": "식후 1시간 혈당수치",
-            "urls": []
+            "urls": ["https://cafe.naver.com/gimhaezumma/2659155"]
         },
         {
             "keyword": "공복혈당 높은이유",
@@ -976,6 +976,10 @@
         {
             "keyword": "공복혈당장애",
             "urls": ["https://cafe.naver.com/gimhaezumma/2658704"]
+        },
+        {
+            "keyword": "당뇨 저혈당",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2659151"]
         }
     ]
 }

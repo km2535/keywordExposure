@@ -666,7 +666,8 @@
                 "https://cafe.naver.com/zoozoocom/267034",
                 "https://cafe.naver.com/zoozoocom/275400",
                 "https://cafe.naver.com/zoozoocom/276877",
-                "https://cafe.naver.com/zoozoocom/285391"
+                "https://cafe.naver.com/zoozoocom/285391",
+                "https://cafe.naver.com/zoozoocom/290811"
             ]
         },
         {
@@ -777,7 +778,8 @@
                 "https://cafe.naver.com/peopledisc/932210",
                 "https://cafe.naver.com/zoozoocom/275171",
                 "https://cafe.naver.com/zoozoocom/277349",
-                "https://cafe.naver.com/zoozoocom/279651"
+                "https://cafe.naver.com/zoozoocom/279651",
+                "https://cafe.naver.com/zoozoocom/290805"
             ]
         },
         {
@@ -828,7 +830,8 @@
                 "https://cafe.naver.com/zoozoocom/268849",
                 "https://cafe.naver.com/zoozoocom/274888",
                 "https://cafe.naver.com/zoozoocom/277347",
-                "https://cafe.naver.com/zoozoocom/288189"
+                "https://cafe.naver.com/zoozoocom/288189",
+                "https://cafe.naver.com/zoozoocom/290807"
             ]
         },
         {
@@ -1456,7 +1459,8 @@
             "keyword": "폐암초기수술",
             "urls": [
                 "https://cafe.naver.com/peopledisc/966559",
-                "https://cafe.naver.com/zoozoocom/285401"
+                "https://cafe.naver.com/zoozoocom/285401",
+                "https://cafe.naver.com/zoozoocom/290815"
             ]
         },
         {
@@ -1697,7 +1701,8 @@
             "keyword": "위암 등통증",
             "urls": [
                 "https://cafe.naver.com/rksghwhantk/1244387",
-                "https://cafe.naver.com/zoozoocom/285396"
+                "https://cafe.naver.com/zoozoocom/285396",
+                "https://cafe.naver.com/zoozoocom/290773"
             ]
         },
         {
@@ -2329,7 +2334,10 @@
         },
         {
             "keyword": "대장암 수술후 음식",
-            "urls": ["https://cafe.naver.com/zoozoocom/288635"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/288635",
+                "https://cafe.naver.com/zoozoocom/290791"
+            ]
         },
         {
             "keyword": "갑상선암 재발 확률",
@@ -2338,6 +2346,22 @@
         {
             "keyword": "면역력 높이는 방법",
             "urls": ["https://cafe.naver.com/gimhaezumma/2658196"]
+        },
+        {
+            "keyword": "췌장암 말기증상",
+            "urls": ["https://cafe.naver.com/zoozoocom/290796"]
+        },
+        {
+            "keyword": "유방암 뼈전이 증상",
+            "urls": ["https://cafe.naver.com/zoozoocom/290799"]
+        },
+        {
+            "keyword": "대장암 3기 증상",
+            "urls": ["https://cafe.naver.com/zoozoocom/290805"]
+        },
+        {
+            "keyword": "전립선암 3기 생존율",
+            "urls": ["https://cafe.naver.com/zoozoocom/290807"]
         }
     ]
 }
