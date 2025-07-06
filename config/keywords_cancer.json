@@ -215,7 +215,8 @@
                 "https://cafe.naver.com/zoozoocom/268663",
                 "https://cafe.naver.com/zoozoocom/276037",
                 "https://cafe.naver.com/zoozoocom/286143",
-                "https://cafe.naver.com/zoozoocom/287805"
+                "https://cafe.naver.com/zoozoocom/287805",
+                "https://cafe.naver.com/zoozoocom/291475"
             ]
         },
         {
@@ -825,7 +826,8 @@
                 "https://cafe.naver.com/rksghwhantk/1246797",
                 "https://cafe.naver.com/zoozoocom/270253",
                 "https://cafe.naver.com/zoozoocom/286608",
-                "https://cafe.naver.com/zoozoocom/288639"
+                "https://cafe.naver.com/zoozoocom/288639",
+                "https://cafe.naver.com/zoozoocom/291480"
             ]
         },
         {
@@ -1068,7 +1070,8 @@
             "keyword": "암 자연치유",
             "urls": [
                 "https://cafe.naver.com/peopledisc/973921",
-                "https://cafe.naver.com/rksghwhantk/1246796"
+                "https://cafe.naver.com/rksghwhantk/1246796",
+                "https://cafe.naver.com/zoozoocom/291485"
             ]
         },
         {
@@ -2381,6 +2384,10 @@
         {
             "keyword": "상황버섯분말",
             "urls": ["https://cafe.naver.com/zoozoocom/291278"]
+        },
+        {
+            "keyword": "이리노테칸 부작용",
+            "urls": ["https://cafe.naver.com/zoozoocom/291496"]
         }
     ]
 }

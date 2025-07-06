@@ -319,7 +319,7 @@
         },
         {
             "keyword": "식후 2시간 혈당 정상수치",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/291503"]
         },
         {
             "keyword": "식후2시간후혈당",
@@ -347,7 +347,7 @@
         },
         {
             "keyword": "20대 당뇨",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/291502"]
         },
         {
             "keyword": "당뇨 귤",
@@ -394,6 +394,10 @@
             "urls": []
         },
         {
+            "keyword": "공복혈당 200",
+            "urls": ["https://cafe.naver.com/zoozoocom/291504"]
+        },
+        {
             "keyword": "당뇨 상처",
             "urls": []
         },
@@ -431,7 +435,7 @@
         },
         {
             "keyword": "GI지수 낮은 과일",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/291499"]
         },
         {
             "keyword": "당뇨병성 신경병증",
@@ -631,7 +635,7 @@
         },
         {
             "keyword": "혈당쇼크",
-            "urls": []
+            "urls": ["https://cafe.naver.com/gimhaezumma/2659818"]
         },
         {
             "keyword": "혈당쇼크 증상",
@@ -980,6 +984,10 @@
         {
             "keyword": "당뇨 저혈당",
             "urls": ["https://cafe.naver.com/gimhaezumma/2659151"]
+        },
+        {
+            "keyword": "고혈당 쇼크 증상",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2659815"]
         }
     ]
 }
