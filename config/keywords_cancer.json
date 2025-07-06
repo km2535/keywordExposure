@@ -29,7 +29,10 @@
         },
         {
             "keyword": "차가버섯",
-            "urls": ["https://cafe.naver.com/peopledisc/886953"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/886953",
+                "https://cafe.naver.com/zoozoocom/291233"
+            ]
         },
         {
             "keyword": "ca19-9 수치",
@@ -92,7 +95,8 @@
                 "https://cafe.naver.com/peopledisc/886951",
                 "https://cafe.naver.com/zoozoocom/274566",
                 "https://cafe.naver.com/cyworldnateid/531021",
-                "https://cafe.naver.com/zoozoocom/276888"
+                "https://cafe.naver.com/zoozoocom/276888",
+                "https://cafe.naver.com/zoozoocom/291261"
             ]
         },
         {
@@ -137,7 +141,8 @@
                 "https://cafe.naver.com/zoozoocom/268662",
                 "https://cafe.naver.com/zoozoocom/274297",
                 "https://cafe.naver.com/zoozoocom/281737",
-                "https://cafe.naver.com/gimhaezumma/2657564"
+                "https://cafe.naver.com/gimhaezumma/2657564",
+                "https://cafe.naver.com/zoozoocom/291269"
             ]
         },
         {
@@ -992,7 +997,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/891689",
                 "https://cafe.naver.com/rksghwhantk/1246802",
-                "https://cafe.naver.com/zoozoocom/288634"
+                "https://cafe.naver.com/zoozoocom/288634",
+                "https://cafe.naver.com/zoozoocom/291273"
             ]
         },
         {
@@ -1809,7 +1815,8 @@
                 "https://cafe.naver.com/zoozoocom/277575",
                 "https://cafe.naver.com/zoozoocom/278686",
                 "https://cafe.naver.com/zoozoocom/281740",
-                "https://cafe.naver.com/zoozoocom/289733"
+                "https://cafe.naver.com/zoozoocom/289733",
+                "https://cafe.naver.com/zoozoocom/291264"
             ]
         },
         {
@@ -2362,6 +2369,18 @@
         {
             "keyword": "전립선암 3기 생존율",
             "urls": ["https://cafe.naver.com/zoozoocom/290807"]
+        },
+        {
+            "keyword": "인삼다당체 분말",
+            "urls": ["https://cafe.naver.com/zoozoocom/291219"]
+        },
+        {
+            "keyword": "인삼다당체 효능",
+            "urls": ["https://cafe.naver.com/zoozoocom/291238"]
+        },
+        {
+            "keyword": "상황버섯분말",
+            "urls": ["https://cafe.naver.com/zoozoocom/291278"]
         }
     ]
 }
