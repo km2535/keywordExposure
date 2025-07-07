@@ -302,7 +302,8 @@
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2616137",
                 "https://cafe.naver.com/rksghwhantk/1248494",
-                "https://cafe.naver.com/zoozoocom/288635"
+                "https://cafe.naver.com/zoozoocom/288635",
+                "https://cafe.naver.com/zoozoocom/290791"
             ]
         },
         {
@@ -907,7 +908,8 @@
             "keyword": "폐암엑스레이",
             "urls": [
                 "https://cafe.naver.com/peopledisc/973912",
-                "https://cafe.naver.com/gimhaezumma/2628256"
+                "https://cafe.naver.com/gimhaezumma/2628256",
+                "https://cafe.naver.com/zoozoocom/292020"
             ]
         },
         {
@@ -1048,7 +1050,8 @@
                 "https://cafe.naver.com/zoozoocom/275769",
                 "https://cafe.naver.com/zoozoocom/277944",
                 "https://cafe.naver.com/zoozoocom/279023",
-                "https://cafe.naver.com/zoozoocom/284343"
+                "https://cafe.naver.com/zoozoocom/284343",
+                "https://cafe.naver.com/zoozoocom/292015"
             ]
         },
         {
@@ -1645,7 +1648,10 @@
         },
         {
             "keyword": "유방암 수술비",
-            "urls": ["https://cafe.naver.com/zoozoocom/270256"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/270256",
+                "https://cafe.naver.com/zoozoocom/292040"
+            ]
         },
         {
             "keyword": "위암수술비용",
@@ -1791,7 +1797,8 @@
                 "https://cafe.naver.com/zoozoocom/269989",
                 "https://cafe.naver.com/zoozoocom/277199",
                 "https://cafe.naver.com/zoozoocom/288186",
-                "https://cafe.naver.com/zoozoocom/288635"
+                "https://cafe.naver.com/zoozoocom/288635",
+                "https://cafe.naver.com/zoozoocom/290791"
             ]
         },
         {
@@ -2388,6 +2395,18 @@
         {
             "keyword": "이리노테칸 부작용",
             "urls": ["https://cafe.naver.com/zoozoocom/291496"]
+        },
+        {
+            "keyword": "유방암 치료비용",
+            "urls": ["https://cafe.naver.com/zoozoocom/292022"]
+        },
+        {
+            "keyword": "췌장암 수술 후 식사",
+            "urls": ["https://cafe.naver.com/zoozoocom/292026"]
+        },
+        {
+            "keyword": "위암 림프절 전이",
+            "urls": ["https://cafe.naver.com/zoozoocom/292032"]
         }
     ]
 }
