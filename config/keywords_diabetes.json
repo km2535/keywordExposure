@@ -803,7 +803,7 @@
         },
         {
             "keyword": "당뇨 비타민",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1090475"]
         },
         {
             "keyword": "당뇨환자 선물",
@@ -811,7 +811,7 @@
         },
         {
             "keyword": "당화혈색소 7",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1090484"]
         },
         {
             "keyword": "당화혈색소 8",
@@ -1004,6 +1004,30 @@
         {
             "keyword": "고혈당 쇼크 증상",
             "urls": ["https://cafe.naver.com/gimhaezumma/2659815"]
+        },
+        {
+            "keyword": "당뇨 눈 침침",
+            "urls": ["https://cafe.naver.com/zoozoocom/292783"]
+        },
+        {
+            "keyword": "혈당컷",
+            "urls": ["https://cafe.naver.com/zoozoocom/292794"]
+        },
+        {
+            "keyword": "당뇨병성 망막병증",
+            "urls": ["https://cafe.naver.com/zoozoocom/292795"]
+        },
+        {
+            "keyword": "당뇨병 예방법",
+            "urls": ["https://cafe.naver.com/peopledisc/1090460"]
+        },
+        {
+            "keyword": "당뇨 갈증",
+            "urls": ["https://cafe.naver.com/peopledisc/1090482"]
+        },
+        {
+            "keyword": "당뇨에 나쁜 음식",
+            "urls": ["https://cafe.naver.com/peopledisc/1090494"]
         }
     ]
 }
