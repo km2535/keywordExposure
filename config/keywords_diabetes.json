@@ -47,7 +47,7 @@
         },
         {
             "keyword": "당뇨 단백뇨",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1091340"]
         },
         {
             "keyword": "당뇨 단호박",
@@ -59,7 +59,7 @@
         },
         {
             "keyword": "취침전 혈당",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1091348"]
         },
         {
             "keyword": "혈당기",
@@ -183,11 +183,11 @@
         },
         {
             "keyword": "당뇨에 좋은 운동",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1091356"]
         },
         {
             "keyword": "당뇨 운동기구",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1091362"]
         },
         {
             "keyword": "당뇨 합병증검사",
@@ -211,7 +211,7 @@
         },
         {
             "keyword": "당뇨 진단",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1091369"]
         },
         {
             "keyword": "당뇨 유전",
@@ -291,7 +291,7 @@
         },
         {
             "keyword": "인슐린수치",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1091375"]
         },
         {
             "keyword": "당뇨 발가락",
@@ -452,6 +452,10 @@
         {
             "keyword": "당뇨병성 말초신경병증",
             "urls": []
+        },
+        {
+            "keyword": "당뇨병성 말초신경염",
+            "urls": ["https://cafe.naver.com/zoozoocom/293439"]
         },
         {
             "keyword": "당뇨병성 족부궤양",
@@ -660,6 +664,10 @@
         {
             "keyword": "당뇨성 케톤산증",
             "urls": []
+        },
+        {
+            "keyword": "당뇨병성 케톤산증",
+            "urls": ["https://cafe.naver.com/zoozoocom/293441"]
         },
         {
             "keyword": "당뇨식이",
