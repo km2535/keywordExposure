@@ -584,7 +584,8 @@
                 "https://cafe.naver.com/zoozoocom/266281",
                 "https://cafe.naver.com/zoozoocom/274878",
                 "https://cafe.naver.com/zoozoocom/277198",
-                "https://cafe.naver.com/zoozoocom/292774"
+                "https://cafe.naver.com/zoozoocom/292774",
+                "https://cafe.naver.com/peopledisc/1092089"
             ]
         },
         {
@@ -1056,7 +1057,8 @@
                 "https://cafe.naver.com/zoozoocom/277944",
                 "https://cafe.naver.com/zoozoocom/279023",
                 "https://cafe.naver.com/zoozoocom/284343",
-                "https://cafe.naver.com/zoozoocom/292015"
+                "https://cafe.naver.com/zoozoocom/292015",
+                "https://cafe.naver.com/peopledisc/1092088"
             ]
         },
         {
@@ -1267,7 +1269,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/957747",
                 "https://cafe.naver.com/zoozoocom/284520",
-                "https://cafe.naver.com/zoozoocom/287125"
+                "https://cafe.naver.com/zoozoocom/287125",
+                "https://cafe.naver.com/zoozoocom/294030"
             ]
         },
         {
@@ -1890,7 +1893,8 @@
                 "https://cafe.naver.com/zoozoocom/272398",
                 "https://cafe.naver.com/zoozoocom/279398",
                 "https://cafe.naver.com/zoozoocom/281480",
-                "https://cafe.naver.com/zoozoocom/287133"
+                "https://cafe.naver.com/zoozoocom/287133",
+                "https://cafe.naver.com/zoozoocom/294034"
             ]
         },
         {
@@ -2285,7 +2289,8 @@
             "keyword": "자궁경부암 초기증상",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/279395",
-                "https://cafe.naver.com/zoozoocom/287134"
+                "https://cafe.naver.com/zoozoocom/287134",
+                "https://cafe.naver.com/zoozoocom/294038"
             ]
         },
         {
@@ -2420,7 +2425,10 @@
         },
         {
             "keyword": "위암 림프절 전이",
-            "urls": ["https://cafe.naver.com/zoozoocom/292032"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/292032",
+                "https://cafe.naver.com/zoozoocom/294040"
+            ]
         }
     ]
 }
