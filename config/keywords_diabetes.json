@@ -34,10 +34,6 @@
             "urls": []
         },
         {
-            "keyword": "당뇨병성 케톤산증",
-            "urls": []
-        },
-        {
             "keyword": "케톤산증 증상",
             "urls": []
         },
@@ -170,6 +166,10 @@
             "urls": ["https://cafe.naver.com/zoozoocom/289722"]
         },
         {
+            "keyword": "식전혈당 정상수치",
+            "urls": ["https://cafe.naver.com/zoozoocom/295740"]
+        },
+        {
             "keyword": "혈당측정",
             "urls": []
         },
@@ -203,7 +203,7 @@
         },
         {
             "keyword": "아침 공복 혈당",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/295393"]
         },
         {
             "keyword": "정상 당뇨수치",
@@ -815,7 +815,10 @@
         },
         {
             "keyword": "당뇨환자 선물",
-            "urls": ["https://cafe.naver.com/zoozoocom/289714"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/289714",
+                "https://cafe.naver.com/zoozoocom/295408"
+            ]
         },
         {
             "keyword": "당화혈색소 7",
@@ -921,7 +924,8 @@
             "keyword": "혈당낮추는차",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/273472",
-                "https://cafe.naver.com/gimhaezumma/2651020"
+                "https://cafe.naver.com/gimhaezumma/2651020",
+                "https://cafe.naver.com/zoozoocom/295381"
             ]
         },
         {
@@ -929,8 +933,11 @@
             "urls": ["https://cafe.naver.com/zoozoocom/273473"]
         },
         {
-            "keyword": "스테비아방울토마토 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/273478"]
+            "keyword": "스테비아 방울토마토 혈당",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273478",
+                "https://cafe.naver.com/zoozoocom/295730"
+            ]
         },
         {
             "keyword": "당뇨통밀빵",
@@ -1036,6 +1043,18 @@
         {
             "keyword": "당뇨에 나쁜 음식",
             "urls": ["https://cafe.naver.com/peopledisc/1090494"]
+        },
+        {
+            "keyword": "약국 식욕억제제",
+            "urls": ["https://cafe.naver.com/zoozoocom/295734"]
+        },
+        {
+            "keyword": "빈뇨증",
+            "urls": ["https://cafe.naver.com/zoozoocom/295735"]
+        },
+        {
+            "keyword": "당뇨증세",
+            "urls": ["https://cafe.naver.com/zoozoocom/295736"]
         }
     ]
 }

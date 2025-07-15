@@ -162,7 +162,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/935193",
                 "https://cafe.naver.com/zoozoocom/287830",
-                "https://cafe.naver.com/zoozoocom/288796"
+                "https://cafe.naver.com/zoozoocom/288796",
+                "https://cafe.naver.com/zoozoocom/294981"
             ]
         },
         {
@@ -178,7 +179,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/951293",
                 "https://cafe.naver.com/zoozoocom/267025",
-                "https://cafe.naver.com/zoozoocom/286386"
+                "https://cafe.naver.com/zoozoocom/286386",
+                "https://cafe.naver.com/zoozoocom/295742"
             ]
         },
         {
@@ -456,7 +458,8 @@
             "keyword": "위암 항암치료",
             "urls": [
                 "https://cafe.naver.com/peopledisc/941285",
-                "https://cafe.naver.com/zoozoocom/281468"
+                "https://cafe.naver.com/zoozoocom/281468",
+                "https://cafe.naver.com/peopledisc/1095600"
             ]
         },
         {
@@ -742,7 +745,8 @@
                 "https://cafe.naver.com/zoozoocom/279038",
                 "https://cafe.naver.com/zoozoocom/282326",
                 "https://cafe.naver.com/zoozoocom/284104",
-                "https://cafe.naver.com/zoozoocom/288647"
+                "https://cafe.naver.com/zoozoocom/288647",
+                "https://cafe.naver.com/peopledisc/1094904"
             ]
         },
         {
@@ -963,7 +967,8 @@
                 "https://cafe.naver.com/peopledisc/927597",
                 "https://cafe.naver.com/zoozoocom/270252",
                 "https://cafe.naver.com/zoozoocom/274292",
-                "https://cafe.naver.com/zoozoocom/285759"
+                "https://cafe.naver.com/zoozoocom/285759",
+                "https://cafe.naver.com/zoozoocom/295377"
             ]
         },
         {
@@ -989,7 +994,8 @@
                 "https://cafe.naver.com/peopledisc/924995",
                 "https://cafe.naver.com/zoozoocom/282325",
                 "https://cafe.naver.com/zoozoocom/284518",
-                "https://cafe.naver.com/zoozoocom/286400"
+                "https://cafe.naver.com/zoozoocom/286400",
+                "https://cafe.naver.com/zoozoocom/295410"
             ]
         },
         {
@@ -1230,7 +1236,8 @@
                 "https://cafe.naver.com/zoozoocom/267361",
                 "https://cafe.naver.com/rksghwhantk/1247601",
                 "https://cafe.naver.com/zoozoocom/278356",
-                "https://cafe.naver.com/zoozoocom/280547"
+                "https://cafe.naver.com/zoozoocom/280547",
+                "https://cafe.naver.com/zoozoocom/295386"
             ]
         },
         {
@@ -1424,7 +1431,8 @@
                 "https://cafe.naver.com/zoozoocom/253665",
                 "https://cafe.naver.com/gimhaezumma/2628259",
                 "https://cafe.naver.com/zoozoocom/279392",
-                "https://cafe.naver.com/zoozoocom/285385"
+                "https://cafe.naver.com/zoozoocom/285385",
+                "https://cafe.naver.com/zoozoocom/295390"
             ]
         },
         {
@@ -1976,7 +1984,8 @@
                 "https://cafe.naver.com/zoozoocom/271209",
                 "https://cafe.naver.com/zoozoocom/276445",
                 "https://cafe.naver.com/zoozoocom/277950",
-                "https://cafe.naver.com/gimhaezumma/2653763"
+                "https://cafe.naver.com/gimhaezumma/2653763",
+                "https://cafe.naver.com/zoozoocom/295746"
             ]
         },
         {
@@ -2010,7 +2019,8 @@
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2628264",
                 "https://cafe.naver.com/zoozoocom/286612",
-                "https://cafe.naver.com/gimhaezumma/2654879"
+                "https://cafe.naver.com/gimhaezumma/2654879",
+                "https://cafe.naver.com/zoozoocom/295389"
             ]
         },
         {
@@ -2223,7 +2233,8 @@
             "keyword": "중입자 암치료",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271658",
-                "https://cafe.naver.com/gimhaezumma/2652922"
+                "https://cafe.naver.com/gimhaezumma/2652922",
+                "https://cafe.naver.com/zoozoocom/295743"
             ]
         },
         {
@@ -2375,7 +2386,10 @@
         },
         {
             "keyword": "초기 위암 증상",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2654879"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2654879",
+                "https://cafe.naver.com/peopledisc/1095599"
+            ]
         },
         {
             "keyword": "대상포진 가려움",
@@ -2437,11 +2451,17 @@
         },
         {
             "keyword": "유방암 치료비용",
-            "urls": ["https://cafe.naver.com/zoozoocom/292022"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/292022",
+                "https://cafe.naver.com/peopledisc/1095598"
+            ]
         },
         {
             "keyword": "췌장암 수술 후 식사",
-            "urls": ["https://cafe.naver.com/zoozoocom/292026"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/292026",
+                "https://cafe.naver.com/peopledisc/1094905"
+            ]
         },
         {
             "keyword": "위암 림프절 전이",
@@ -2449,6 +2469,10 @@
                 "https://cafe.naver.com/zoozoocom/292032",
                 "https://cafe.naver.com/zoozoocom/294040"
             ]
+        },
+        {
+            "keyword": "갑상선 암환자 선물",
+            "urls": ["https://cafe.naver.com/peopledisc/1094906"]
         }
     ]
 }
