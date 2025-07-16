@@ -111,7 +111,10 @@
         },
         {
             "keyword": "식후30분혈당",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2662469"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2662469",
+                "https://cafe.naver.com/peopledisc/1096692"
+            ]
         },
         {
             "keyword": "식후당뇨수치",
@@ -587,7 +590,7 @@
         },
         {
             "keyword": "혈당스파이크 방지",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1096693"]
         },
         {
             "keyword": "혈당스파이크 식곤증",
@@ -842,7 +845,7 @@
         },
         {
             "keyword": "당화혈색소 5.8",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1096694"]
         },
         {
             "keyword": "당화혈색소 5.6",
