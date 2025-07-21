@@ -242,7 +242,10 @@
         },
         {
             "keyword": "당뇨 유산균",
-            "urls": ["https://cafe.naver.com/zoozoocom/289710"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/289710",
+                "https://cafe.naver.com/zoozoocom/297568"
+            ]
         },
         {
             "keyword": "공복혈당 130",
@@ -482,7 +485,7 @@
         },
         {
             "keyword": "공복혈당 120",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/297566"]
         },
         {
             "keyword": "Hba1c 정상수치",
@@ -658,7 +661,7 @@
         },
         {
             "keyword": "당뇨식이",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/297565"]
         },
         {
             "keyword": "임당 식단표",
@@ -778,7 +781,7 @@
         },
         {
             "keyword": "당뇨환자 과자",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1100043"]
         },
         {
             "keyword": "여주차 부작용",
@@ -817,7 +820,7 @@
         },
         {
             "keyword": "당화혈색소 5.7",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1100046"]
         },
         {
             "keyword": "당화혈색소 5.4",
