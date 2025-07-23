@@ -240,7 +240,9 @@
                 "https://cafe.naver.com/zoozoocom/282312",
                 "https://cafe.naver.com/zoozoocom/286146",
                 "https://cafe.naver.com/zoozoocom/287818",
-                "https://cafe.naver.com/zoozoocom/287805"
+                "https://cafe.naver.com/zoozoocom/287805",
+                "https://cafe.naver.com/zoozoocom/288431",
+                "https://cafe.naver.com/zoozoocom/291475"
             ]
         },
         {
@@ -378,7 +380,8 @@
                 "https://cafe.naver.com/zoozoocom/276037",
                 "https://cafe.naver.com/zoozoocom/283645",
                 "https://cafe.naver.com/zoozoocom/276037",
-                "https://cafe.naver.com/zoozoocom/287805"
+                "https://cafe.naver.com/zoozoocom/287805",
+                "https://cafe.naver.com/zoozoocom/291475"
             ]
         },
         {
@@ -1132,7 +1135,8 @@
                 "https://cafe.naver.com/zoozoocom/279023",
                 "https://cafe.naver.com/zoozoocom/284343",
                 "https://cafe.naver.com/zoozoocom/292015",
-                "https://cafe.naver.com/peopledisc/1092088"
+                "https://cafe.naver.com/peopledisc/1092088",
+                "https://cafe.naver.com/peopledisc/1101916"
             ]
         },
         {
@@ -1557,7 +1561,8 @@
             "keyword": "유방암 뇌전이 증상",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253666",
-                "https://cafe.naver.com/zoozoocom/277571"
+                "https://cafe.naver.com/zoozoocom/277571",
+                "https://cafe.naver.com/zoozoocom/298170"
             ]
         },
         {
@@ -2031,7 +2036,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271202",
                 "https://cafe.naver.com/zoozoocom/279027",
-                "https://cafe.naver.com/zoozoocom/293422"
+                "https://cafe.naver.com/zoozoocom/293422",
+                "https://cafe.naver.com/peopledisc/1101915"
             ]
         },
         {
@@ -2405,7 +2411,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/279395",
                 "https://cafe.naver.com/zoozoocom/287134",
-                "https://cafe.naver.com/zoozoocom/294038"
+                "https://cafe.naver.com/zoozoocom/294038",
+                "https://cafe.naver.com/zoozoocom/298171"
             ]
         },
         {
@@ -2519,7 +2526,10 @@
         },
         {
             "keyword": "대장암 3기 증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/290805"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/290805",
+                "https://cafe.naver.com/peopledisc/1101914"
+            ]
         },
         {
             "keyword": "전립선암 3기 생존율",
