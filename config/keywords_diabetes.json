@@ -75,7 +75,7 @@
         },
         {
             "keyword": "바나나 혈당",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/298486"]
         },
         {
             "keyword": "당뇨 수박",
@@ -87,7 +87,7 @@
         },
         {
             "keyword": "당뇨 투석",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/298487"]
         },
         {
             "keyword": "혈당측정기 무채혈",
@@ -206,7 +206,10 @@
         },
         {
             "keyword": "아침 공복 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/295393"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/295393",
+                "https://cafe.naver.com/peopledisc/1102513"
+            ]
         },
         {
             "keyword": "정상 당뇨수치",
@@ -493,7 +496,7 @@
         },
         {
             "keyword": "Hba1c 정상수치",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/298477"]
         },
         {
             "keyword": "임당 증상",
@@ -789,7 +792,10 @@
         },
         {
             "keyword": "당뇨환자 과자",
-            "urls": ["https://cafe.naver.com/peopledisc/1100043"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1100043",
+                "https://cafe.naver.com/peopledisc/1102512"
+            ]
         },
         {
             "keyword": "여주차 부작용",
@@ -828,7 +834,10 @@
         },
         {
             "keyword": "당화혈색소 5.7",
-            "urls": ["https://cafe.naver.com/peopledisc/1100046"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1100046",
+                "https://cafe.naver.com/peopledisc/1102510"
+            ]
         },
         {
             "keyword": "당화혈색소 5.4",
