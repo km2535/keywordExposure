@@ -15,7 +15,10 @@
         },
         {
             "keyword": "당화혈색소 낮추기",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2662466"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2662466",
+                "https://cafe.naver.com/zoozoocom/299206"
+            ]
         },
         {
             "keyword": "당뇨 검사 비용",
@@ -78,12 +81,12 @@
             "urls": ["https://cafe.naver.com/zoozoocom/298486"]
         },
         {
-            "keyword": "당뇨 수박",
-            "urls": []
+            "keyword": "수박 당뇨",
+            "urls": ["https://cafe.naver.com/zoozoocom/299203"]
         },
         {
             "keyword": "당뇨 옥수수",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/299202"]
         },
         {
             "keyword": "당뇨 투석",
@@ -162,7 +165,10 @@
         },
         {
             "keyword": "식전혈당수치",
-            "urls": ["https://cafe.naver.com/zoozoocom/289722"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/289722",
+                "https://cafe.naver.com/zoozoocom/299211"
+            ]
         },
         {
             "keyword": "식전혈당 정상수치",
@@ -580,7 +586,7 @@
         },
         {
             "keyword": "혈당스파이크 증상",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1104385"]
         },
         {
             "keyword": "혈당스파이크 졸음",
@@ -743,8 +749,8 @@
             "urls": []
         },
         {
-            "keyword": "당뇨 양파즙",
-            "urls": []
+            "keyword": "양파즙 당뇨",
+            "urls": ["https://cafe.naver.com/zoozoocom/299205"]
         },
         {
             "keyword": "당뇨 1형 2형",
@@ -868,6 +874,10 @@
             "urls": ["https://cafe.naver.com/zoozoocom/292096"]
         },
         {
+            "keyword": "당화혈색소 6.5",
+            "urls": ["https://cafe.naver.com/peopledisc/1104387"]
+        },
+        {
             "keyword": "당뇨 간헐적단식",
             "urls": ["https://cafe.naver.com/zoozoocom/294056"]
         },
@@ -982,7 +992,10 @@
         },
         {
             "keyword": "땅콩버터혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/273871"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273871",
+                "https://cafe.naver.com/peopledisc/1104386"
+            ]
         },
         {
             "keyword": "오트밀혈당",
