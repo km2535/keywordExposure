@@ -243,7 +243,7 @@
         },
         {
             "keyword": "당뇨 술",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/299489"]
         },
         {
             "keyword": "당뇨 탈모",
@@ -262,7 +262,10 @@
         },
         {
             "keyword": "공복혈당 130",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2662482"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2662482",
+                "https://cafe.naver.com/zoozoocom/299477"
+            ]
         },
         {
             "keyword": "당뇨 흑염소",
@@ -290,7 +293,7 @@
         },
         {
             "keyword": "당뇨 걸리는 이유",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/299487"]
         },
         {
             "keyword": "당뇨 피검사",
@@ -378,7 +381,7 @@
         },
         {
             "keyword": "당뇨 발톱 색깔",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/299488"]
         },
         {
             "keyword": "당뇨 통밀빵",
@@ -494,7 +497,7 @@
         },
         {
             "keyword": "공복혈당 110",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/299484"]
         },
         {
             "keyword": "공복혈당 120",
