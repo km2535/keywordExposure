@@ -48,7 +48,10 @@
         },
         {
             "keyword": "압노바",
-            "urls": ["https://cafe.naver.com/zoozoocom/296986"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/296986",
+                "https://cafe.naver.com/zoozoocom/289116"
+            ]
         },
         {
             "keyword": "미슬토효능",
@@ -256,7 +259,8 @@
                 "https://cafe.naver.com/zoozoocom/276037",
                 "https://cafe.naver.com/zoozoocom/286143",
                 "https://cafe.naver.com/zoozoocom/287805",
-                "https://cafe.naver.com/zoozoocom/291475"
+                "https://cafe.naver.com/zoozoocom/291475",
+                "https://cafe.naver.com/peopledisc/1106114"
             ]
         },
         {
@@ -273,7 +277,8 @@
                 "https://cafe.naver.com/zoozoocom/288187",
                 "https://cafe.naver.com/gimhaezumma/2656032",
                 "https://cafe.naver.com/zoozoocom/294491",
-                "https://cafe.naver.com/peopledisc/1099118"
+                "https://cafe.naver.com/peopledisc/1099118",
+                "https://cafe.naver.com/zoozoocom/299736"
             ]
         },
         {
@@ -893,7 +898,8 @@
                 "https://cafe.naver.com/peopledisc/926734",
                 "https://cafe.naver.com/zoozoocom/278680",
                 "https://cafe.naver.com/zoozoocom/286605",
-                "https://cafe.naver.com/zoozoocom/288637"
+                "https://cafe.naver.com/zoozoocom/288637",
+                "https://cafe.naver.com/zoozoocom/299734"
             ]
         },
         {
@@ -962,7 +968,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/899035",
                 "https://cafe.naver.com/zoozoocom/281733",
-                "https://cafe.naver.com/zoozoocom/285790"
+                "https://cafe.naver.com/zoozoocom/285790",
+                "https://cafe.naver.com/zoozoocom/299743"
             ]
         },
         {
@@ -1518,7 +1525,8 @@
             "keyword": "아리미덱스",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/252755",
-                "https://cafe.naver.com/zoozoocom/287130"
+                "https://cafe.naver.com/zoozoocom/287130",
+                "https://cafe.naver.com/zoozoocom/299738"
             ]
         },
         {
@@ -1845,7 +1853,8 @@
                 "https://cafe.naver.com/rksghwhantk/1244387",
                 "https://cafe.naver.com/zoozoocom/285396",
                 "https://cafe.naver.com/zoozoocom/290773",
-                "https://cafe.naver.com/zoozoocom/296339"
+                "https://cafe.naver.com/zoozoocom/296339",
+                "https://cafe.naver.com/zoozoocom/299741"
             ]
         },
         {
@@ -2601,6 +2610,10 @@
         {
             "keyword": "갑상선 암환자 선물",
             "urls": ["https://cafe.naver.com/peopledisc/1094906"]
+        },
+        {
+            "keyword": "암환자식 배달",
+            "urls": ["https://cafe.naver.com/zoozoocom/299746"]
         }
     ]
 }

@@ -66,7 +66,7 @@
         },
         {
             "keyword": "녹십자 혈당측정기",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/299749"]
         },
         {
             "keyword": "당뇨 허벅지",
@@ -149,7 +149,7 @@
         },
         {
             "keyword": "당뇨환자 간식",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1106111"]
         },
         {
             "keyword": "당뇨영양제",
@@ -397,7 +397,7 @@
         },
         {
             "keyword": "당뇨 피부가려움",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/299752"]
         },
         {
             "keyword": "혈당시험지",
@@ -493,7 +493,7 @@
         },
         {
             "keyword": "당뇨 고기",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1106110"]
         },
         {
             "keyword": "공복혈당 110",
@@ -605,7 +605,10 @@
         },
         {
             "keyword": "당 스파이크",
-            "urls": ["https://cafe.naver.com/peopledisc/1089679"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1089679",
+                "https://cafe.naver.com/zoozoocom/299750"
+            ]
         },
         {
             "keyword": "당뇨와바나나",
@@ -729,7 +732,7 @@
         },
         {
             "keyword": "당뇨 통풍",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/299754"]
         },
         {
             "keyword": "당뇨칡즙",
