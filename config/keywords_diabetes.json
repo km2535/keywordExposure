@@ -50,7 +50,7 @@
         },
         {
             "keyword": "당뇨 단호박",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/300059"]
         },
         {
             "keyword": "소아당뇨",
@@ -154,6 +154,18 @@
         {
             "keyword": "당뇨영양제",
             "urls": []
+        },
+        {
+            "keyword": "혈당영양제",
+            "urls": ["https://cafe.naver.com/zoozoocom/300061"]
+        },
+        {
+            "keyword": "공복혈당영양제",
+            "urls": ["https://cafe.naver.com/zoozoocom/300062"]
+        },
+        {
+            "keyword": "당뇨환자 영양제",
+            "urls": ["https://cafe.naver.com/zoozoocom/300056"]
         },
         {
             "keyword": "당뇨 밥솥",
@@ -569,7 +581,7 @@
         },
         {
             "keyword": "당뇨전단계 식단",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1107039"]
         },
         {
             "keyword": "1형당뇨 완치",
@@ -1081,6 +1093,10 @@
         {
             "keyword": "당뇨증세",
             "urls": ["https://cafe.naver.com/zoozoocom/295736"]
+        },
+        {
+            "keyword": "당독소 다이어트",
+            "urls": ["https://cafe.naver.com/zoozoocom/300060"]
         }
     ]
 }
