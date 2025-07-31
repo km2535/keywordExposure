@@ -293,7 +293,7 @@
         },
         {
             "keyword": "초기당뇨증상",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/300328"]
         },
         {
             "keyword": "당검사기",
@@ -301,7 +301,7 @@
         },
         {
             "keyword": "당뇨자가진단",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/300329"]
         },
         {
             "keyword": "당뇨 걸리는 이유",
@@ -394,10 +394,6 @@
         {
             "keyword": "당뇨 발톱 색깔",
             "urls": ["https://cafe.naver.com/zoozoocom/299488"]
-        },
-        {
-            "keyword": "당뇨 통밀빵",
-            "urls": []
         },
         {
             "keyword": "파스타 혈당",
@@ -501,7 +497,7 @@
         },
         {
             "keyword": "당뇨 입마름",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/300321"]
         },
         {
             "keyword": "당뇨 고기",
@@ -584,6 +580,10 @@
             "urls": ["https://cafe.naver.com/peopledisc/1107039"]
         },
         {
+            "keyword": "당뇨전단계 관리",
+            "urls": ["https://cafe.naver.com/zoozoocom/300326"]
+        },
+        {
             "keyword": "1형당뇨 완치",
             "urls": []
         },
@@ -593,7 +593,7 @@
         },
         {
             "keyword": "혈당체크시간",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/300322"]
         },
         {
             "keyword": "당뇨 발바닥",
@@ -631,6 +631,10 @@
             "urls": []
         },
         {
+            "keyword": "식곤증 당뇨",
+            "urls": ["https://cafe.naver.com/zoozoocom/300324"]
+        },
+        {
             "keyword": "혈당 혈압",
             "urls": ["https://cafe.naver.com/zoozoocom/298181"]
         },
@@ -664,7 +668,7 @@
         },
         {
             "keyword": "혈당 300",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/300319"]
         },
         {
             "keyword": "식후혈당 250",
@@ -976,7 +980,10 @@
         },
         {
             "keyword": "당뇨통밀빵",
-            "urls": ["https://cafe.naver.com/zoozoocom/273479"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273479",
+                "https://cafe.naver.com/peopledisc/1107472"
+            ]
         },
         {
             "keyword": "당뇨 견과류",
@@ -1097,6 +1104,10 @@
         {
             "keyword": "당독소 다이어트",
             "urls": ["https://cafe.naver.com/zoozoocom/300060"]
+        },
+        {
+            "keyword": "당독소 제거",
+            "urls": ["https://cafe.naver.com/zoozoocom/300327"]
         }
     ]
 }
