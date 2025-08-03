@@ -141,7 +141,10 @@
         },
         {
             "keyword": "식후 1시간 혈당수치",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2659155"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2659155",
+                "https://cafe.naver.com/zoozoocom/301140"
+            ]
         },
         {
             "keyword": "공복혈당 높은이유",
@@ -263,7 +266,7 @@
         },
         {
             "keyword": "당뇨 입원",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1109524"]
         },
         {
             "keyword": "당뇨 유산균",
@@ -313,7 +316,7 @@
         },
         {
             "keyword": "당뇨 피검사",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1109525"]
         },
         {
             "keyword": "식전혈당",
@@ -660,7 +663,7 @@
         },
         {
             "keyword": "당뇨 입냄새",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301138"]
         },
         {
             "keyword": "식후혈당 120",
@@ -672,7 +675,7 @@
         },
         {
             "keyword": "식후혈당 300",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301142"]
         },
         {
             "keyword": "혈당 300",
@@ -836,6 +839,10 @@
         {
             "keyword": "여주차 부작용",
             "urls": []
+        },
+        {
+            "keyword": "당뇨여주차",
+            "urls": ["https://cafe.naver.com/zoozoocom/301144"]
         },
         {
             "keyword": "당뇨보조제",
