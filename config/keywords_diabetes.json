@@ -106,7 +106,7 @@
         },
         {
             "keyword": "당뇨전단계증상",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301501"]
         },
         {
             "keyword": "당독소",
@@ -125,7 +125,7 @@
         },
         {
             "keyword": "공복혈당100",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1108472"]
         },
         {
             "keyword": "당뇨전단계",
@@ -191,7 +191,7 @@
         },
         {
             "keyword": "혈당측정",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1110285"]
         },
         {
             "keyword": "당뇨 가려움",
@@ -360,7 +360,7 @@
         },
         {
             "keyword": "식후 3시간 혈당",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301483"]
         },
         {
             "keyword": "식후 4시간 혈당 정상수치",
@@ -492,7 +492,7 @@
         },
         {
             "keyword": "인슐린 저항성 증상",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301486"]
         },
         {
             "keyword": "비만 당뇨",
@@ -624,7 +624,7 @@
         },
         {
             "keyword": "혈당스파이크 식곤증",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301489"]
         },
         {
             "keyword": "당 스파이크",
@@ -667,7 +667,7 @@
         },
         {
             "keyword": "식후혈당 120",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301506"]
         },
         {
             "keyword": "식후혈당 150",
@@ -884,7 +884,7 @@
         },
         {
             "keyword": "당화혈색소 5.4",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301507"]
         },
         {
             "keyword": "당화혈색소 5.2",
@@ -1123,6 +1123,10 @@
         {
             "keyword": "당독소 제거",
             "urls": ["https://cafe.naver.com/zoozoocom/300327"]
+        },
+        {
+            "keyword": "당뇨식단배달",
+            "urls": ["https://cafe.naver.com/zoozoocom/301503"]
         }
     ]
 }
