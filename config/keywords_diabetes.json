@@ -22,7 +22,7 @@
         },
         {
             "keyword": "당뇨 검사 비용",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1111373"]
         },
         {
             "keyword": "당뇨에 좋은 영양제",
@@ -30,7 +30,7 @@
         },
         {
             "keyword": "케톤 측정기",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301796"]
         },
         {
             "keyword": "코로솔산 효능",
@@ -83,6 +83,14 @@
         {
             "keyword": "수박 당뇨",
             "urls": ["https://cafe.naver.com/zoozoocom/299203"]
+        },
+        {
+            "keyword": "수박 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/301799"]
+        },
+        {
+            "keyword": "참외 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/301792"]
         },
         {
             "keyword": "당뇨 옥수수",
@@ -380,7 +388,10 @@
         },
         {
             "keyword": "20대 당뇨",
-            "urls": ["https://cafe.naver.com/zoozoocom/291502"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/291502",
+                "https://cafe.naver.com/zoozoocom/301794"
+            ]
         },
         {
             "keyword": "당뇨 귤",
@@ -723,7 +734,7 @@
         },
         {
             "keyword": "공복혈당 95",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/301795"]
         },
         {
             "keyword": "당뇨 체중감소",
@@ -913,6 +924,10 @@
         {
             "keyword": "당화혈색소 6.5",
             "urls": ["https://cafe.naver.com/peopledisc/1104387"]
+        },
+        {
+            "keyword": "당화혈색소 6.4",
+            "urls": ["https://cafe.naver.com/zoozoocom/301797"]
         },
         {
             "keyword": "당뇨 간헐적단식",
@@ -1127,6 +1142,10 @@
         {
             "keyword": "당뇨식단배달",
             "urls": ["https://cafe.naver.com/zoozoocom/301503"]
+        },
+        {
+            "keyword": "당뇨 공복혈당정상수치",
+            "urls": ["https://cafe.naver.com/peopledisc/1111372"]
         }
     ]
 }

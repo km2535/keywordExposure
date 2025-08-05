@@ -477,7 +477,8 @@
                 "https://cafe.naver.com/peopledisc/903302",
                 "https://cafe.naver.com/zoozoocom/267128",
                 "https://cafe.naver.com/zoozoocom/281741",
-                "https://cafe.naver.com/zoozoocom/286799"
+                "https://cafe.naver.com/zoozoocom/286799",
+                "https://cafe.naver.com/zoozoocom/301784"
             ]
         },
         {
@@ -1305,7 +1306,8 @@
                 "https://cafe.naver.com/peopledisc/974989",
                 "https://cafe.naver.com/rksghwhantk/1248117",
                 "https://cafe.naver.com/zoozoocom/279904",
-                "https://cafe.naver.com/zoozoocom/280952"
+                "https://cafe.naver.com/zoozoocom/280952",
+                "https://cafe.naver.com/zoozoocom/301785"
             ]
         },
         {
@@ -1659,7 +1661,8 @@
                 "https://cafe.naver.com/zoozoocom/272395",
                 "https://cafe.naver.com/peopledisc/962935",
                 "https://cafe.naver.com/zoozoocom/287793",
-                "https://cafe.naver.com/zoozoocom/293410"
+                "https://cafe.naver.com/zoozoocom/293410",
+                "https://cafe.naver.com/zoozoocom/301789"
             ]
         },
         {
@@ -2647,6 +2650,14 @@
         {
             "keyword": "암환자식 배달",
             "urls": ["https://cafe.naver.com/zoozoocom/299746"]
+        },
+        {
+            "keyword": "피검사 염증수치",
+            "urls": ["https://cafe.naver.com/peopledisc/1111375"]
+        },
+        {
+            "keyword": "난소암 재발",
+            "urls": ["https://cafe.naver.com/zoozoocom/301790"]
         }
     ]
 }
