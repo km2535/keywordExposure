@@ -718,7 +718,10 @@
         },
         {
             "keyword": "혈당 300",
-            "urls": ["https://cafe.naver.com/zoozoocom/300319"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/300319",
+                "https://cafe.naver.com/zoozoocom/301142"
+            ]
         },
         {
             "keyword": "식후혈당 250",
@@ -1121,6 +1124,10 @@
         },
         {
             "keyword": "고혈당 쇼크 증상",
+            "urls": ["https://cafe.naver.com/gimhaezumma/2659815"]
+        },
+        {
+            "keyword": "고혈당 쇼크",
             "urls": ["https://cafe.naver.com/gimhaezumma/2659815"]
         },
         {
