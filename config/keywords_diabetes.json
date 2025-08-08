@@ -733,7 +733,10 @@
         },
         {
             "keyword": "혈당쇼크",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2659818"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2659818",
+                "https://cafe.naver.com/zoozoocom/302442"
+            ]
         },
         {
             "keyword": "혈당쇼크 증상",
@@ -817,7 +820,7 @@
         },
         {
             "keyword": "혈당스파크 증상",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/302445"]
         },
         {
             "keyword": "1형당뇨 2형당뇨",
@@ -841,7 +844,7 @@
         },
         {
             "keyword": "당뇨 밥",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/302440"]
         },
         {
             "keyword": "혈당스파이크 기준",
@@ -930,7 +933,7 @@
         },
         {
             "keyword": "당화혈색소 5.2",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/302447"]
         },
         {
             "keyword": "당화혈색소 5.8",
@@ -1074,7 +1077,10 @@
         },
         {
             "keyword": "당뇨두유",
-            "urls": ["https://cafe.naver.com/zoozoocom/273867"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273867",
+                "https://cafe.naver.com/peopledisc/1113098"
+            ]
         },
         {
             "keyword": "땅콩버터혈당",
@@ -1104,7 +1110,10 @@
         },
         {
             "keyword": "보리차혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/273893"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273893",
+                "https://cafe.naver.com/zoozoocom/302451"
+            ]
         },
         {
             "keyword": "당뇨수치 기준",
@@ -1112,7 +1121,10 @@
         },
         {
             "keyword": "저당밥솥 효과",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2658706"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2658706",
+                "https://cafe.naver.com/zoozoocom/302449"
+            ]
         },
         {
             "keyword": "공복혈당장애",

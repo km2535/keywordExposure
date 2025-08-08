@@ -682,7 +682,8 @@
                 "https://cafe.naver.com/zoozoocom/265855",
                 "https://cafe.naver.com/zoozoocom/267056",
                 "https://cafe.naver.com/zoozoocom/275787",
-                "https://cafe.naver.com/zoozoocom/296045"
+                "https://cafe.naver.com/zoozoocom/296045",
+                "https://cafe.naver.com/zoozoocom/302458"
             ]
         },
         {
@@ -1069,7 +1070,8 @@
                 "https://cafe.naver.com/zoozoocom/266025",
                 "https://cafe.naver.com/rksghwhantk/1247602",
                 "https://cafe.naver.com/zoozoocom/275407",
-                "https://cafe.naver.com/zoozoocom/278358"
+                "https://cafe.naver.com/zoozoocom/278358",
+                "https://cafe.naver.com/zoozoocom/302454"
             ]
         },
         {
@@ -2059,7 +2061,8 @@
             "urls": [
                 "https://cafe.naver.com/rksghwhantk/1247755",
                 "https://cafe.naver.com/zoozoocom/277198",
-                "https://cafe.naver.com/zoozoocom/285793"
+                "https://cafe.naver.com/zoozoocom/285793",
+                "https://cafe.naver.com/zoozoocom/302456"
             ]
         },
         {
@@ -2394,7 +2397,8 @@
             "keyword": "방사선 치료",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271659",
-                "https://cafe.naver.com/gimhaezumma/2658194"
+                "https://cafe.naver.com/gimhaezumma/2658194",
+                "https://cafe.naver.com/peopledisc/1113090"
             ]
         },
         {
@@ -2496,7 +2500,10 @@
         },
         {
             "keyword": "면역관문억제제",
-            "urls": ["https://cafe.naver.com/zoozoocom/286420"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/286420",
+                "https://cafe.naver.com/zoozoocom/302460"
+            ]
         },
         {
             "keyword": "면역공방",
@@ -2658,6 +2665,10 @@
         {
             "keyword": "난소암 재발",
             "urls": ["https://cafe.naver.com/zoozoocom/301790"]
+        },
+        {
+            "keyword": "식도암 수술",
+            "urls": ["https://cafe.naver.com/peopledisc/1113097"]
         }
     ]
 }
