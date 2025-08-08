@@ -446,7 +446,8 @@
                 "https://cafe.naver.com/zoozoocom/265862",
                 "https://cafe.naver.com/zoozoocom/267359",
                 "https://cafe.naver.com/zoozoocom/279633",
-                "https://cafe.naver.com/zoozoocom/280961"
+                "https://cafe.naver.com/zoozoocom/280961",
+                "https://cafe.naver.com/zoozoocom/302578"
             ]
         },
         {
@@ -859,7 +860,8 @@
                 "https://cafe.naver.com/peopledisc/946435",
                 "https://cafe.naver.com/zoozoocom/282801",
                 "https://cafe.naver.com/zoozoocom/283628",
-                "https://cafe.naver.com/peopledisc/1107037"
+                "https://cafe.naver.com/peopledisc/1107037",
+                "https://cafe.naver.com/zoozoocom/302571"
             ]
         },
         {
@@ -1814,7 +1816,8 @@
             "keyword": "위암수술비용",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/270259",
-                "https://cafe.naver.com/zoozoocom/286147"
+                "https://cafe.naver.com/zoozoocom/286147",
+                "https://cafe.naver.com/zoozoocom/302573"
             ]
         },
         {
@@ -2273,7 +2276,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271467",
                 "https://cafe.naver.com/zoozoocom/281951",
-                "https://cafe.naver.com/zoozoocom/299209"
+                "https://cafe.naver.com/zoozoocom/299209",
+                "https://cafe.naver.com/peopledisc/1113979"
             ]
         },
         {
@@ -2669,6 +2673,10 @@
         {
             "keyword": "식도암 수술",
             "urls": ["https://cafe.naver.com/peopledisc/1113097"]
+        },
+        {
+            "keyword": "식도암에 좋은 음식",
+            "urls": ["https://cafe.naver.com/zoozoocom/302576"]
         }
     ]
 }

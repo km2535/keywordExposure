@@ -194,7 +194,8 @@
             "keyword": "식전혈당수치",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/289722",
-                "https://cafe.naver.com/zoozoocom/299211"
+                "https://cafe.naver.com/zoozoocom/299211",
+                "https://cafe.naver.com/zoozoocom/302586"
             ]
         },
         {
@@ -554,12 +555,20 @@
             "urls": ["https://cafe.naver.com/peopledisc/1106110"]
         },
         {
+            "keyword": "공복혈당 105",
+            "urls": ["https://cafe.naver.com/zoozoocom/302583"]
+        },
+        {
             "keyword": "공복혈당 110",
             "urls": ["https://cafe.naver.com/zoozoocom/299484"]
         },
         {
             "keyword": "공복혈당 120",
             "urls": ["https://cafe.naver.com/zoozoocom/297566"]
+        },
+        {
+            "keyword": "듀럼밀 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/302585"]
         },
         {
             "keyword": "Hba1c 정상수치",
@@ -812,7 +821,10 @@
         },
         {
             "keyword": "바나바잎 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/290260"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/290260",
+                "https://cafe.naver.com/peopledisc/1113977"
+            ]
         },
         {
             "keyword": "혈당스파크",
@@ -909,7 +921,8 @@
             "keyword": "당뇨환자 선물",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/289714",
-                "https://cafe.naver.com/zoozoocom/295408"
+                "https://cafe.naver.com/zoozoocom/295408",
+                "https://cafe.naver.com/peopledisc/1113980"
             ]
         },
         {
@@ -1065,7 +1078,8 @@
             "keyword": "알룰로스혈당",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/273522",
-                "https://cafe.naver.com/zoozoocom/289503"
+                "https://cafe.naver.com/zoozoocom/289503",
+                "https://cafe.naver.com/zoozoocom/302580"
             ]
         },
         {
