@@ -564,7 +564,10 @@
         },
         {
             "keyword": "공복혈당 120",
-            "urls": ["https://cafe.naver.com/zoozoocom/297566"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/297566",
+                "https://cafe.naver.com/zoozoocom/303074"
+            ]
         },
         {
             "keyword": "듀럼밀 혈당",
@@ -620,7 +623,7 @@
         },
         {
             "keyword": "당뇨검사키트",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1115417"]
         },
         {
             "keyword": "당뇨 인슐린주사",
@@ -757,7 +760,7 @@
         },
         {
             "keyword": "당뇨성 케톤산증",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/303075"]
         },
         {
             "keyword": "당뇨병성 케톤산증",
@@ -822,6 +825,8 @@
         {
             "keyword": "바나바잎 혈당",
             "urls": [
+                "https://cafe.naver.com/zoozoocom/272730",
+                "https://cafe.naver.com/zoozoocom/288803",
                 "https://cafe.naver.com/zoozoocom/290260",
                 "https://cafe.naver.com/peopledisc/1113977"
             ]
@@ -1011,15 +1016,8 @@
             "keyword": "혈당케어 영양제",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272729",
-                "https://cafe.naver.com/gimhaezumma/2651669"
-            ]
-        },
-        {
-            "keyword": "바나바잎 혈당",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/272730",
-                "https://cafe.naver.com/zoozoocom/288803",
-                "https://cafe.naver.com/zoozoocom/290260"
+                "https://cafe.naver.com/gimhaezumma/2651669",
+                "https://cafe.naver.com/zoozoocom/303077"
             ]
         },
         {
@@ -1073,6 +1071,10 @@
         {
             "keyword": "애플사이다비니거정",
             "urls": ["https://cafe.naver.com/zoozoocom/273519"]
+        },
+        {
+            "keyword": "바나바잎 영양제",
+            "urls": ["https://cafe.naver.com/zoozoocom/303078"]
         },
         {
             "keyword": "알룰로스혈당",
