@@ -163,6 +163,10 @@
             "urls": ["https://cafe.naver.com/zoozoocom/292103"]
         },
         {
+            "keyword": "공복혈당만높은이유",
+            "urls": ["https://cafe.naver.com/zoozoocom/303461"]
+        },
+        {
             "keyword": "당뇨환자 간식",
             "urls": ["https://cafe.naver.com/peopledisc/1106111"]
         },
@@ -389,7 +393,7 @@
         },
         {
             "keyword": "식후 4시간 혈당 정상수치",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1116585"]
         },
         {
             "keyword": "당뇨 기준",
@@ -495,8 +499,12 @@
             "urls": []
         },
         {
-            "keyword": "당뇨 사과",
-            "urls": []
+            "keyword": "사과 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1116587"]
+        },
+        {
+            "keyword": "블루베리 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/303459"]
         },
         {
             "keyword": "GI지수 낮은 과일",
@@ -916,7 +924,10 @@
         },
         {
             "keyword": "당뇨인 간식",
-            "urls": ["https://cafe.naver.com/zoozoocom/298823"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/298823",
+                "https://cafe.naver.com/zoozoocom/303462"
+            ]
         },
         {
             "keyword": "당뇨 비타민",
@@ -967,7 +978,7 @@
         },
         {
             "keyword": "당화혈색소 5.1",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/303463"]
         },
         {
             "keyword": "당화혈색소 6.1",
@@ -1149,6 +1160,10 @@
         {
             "keyword": "당뇨 저혈당",
             "urls": ["https://cafe.naver.com/gimhaezumma/2659151"]
+        },
+        {
+            "keyword": "저혈당 당뇨",
+            "urls": ["https://cafe.naver.com/peopledisc/1116619"]
         },
         {
             "keyword": "고혈당 쇼크 증상",
