@@ -202,7 +202,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/289722",
                 "https://cafe.naver.com/zoozoocom/299211",
-                "https://cafe.naver.com/zoozoocom/302586"
+                "https://cafe.naver.com/zoozoocom/302586",
+                "https://cafe.naver.com/zoozoocom/304175"
             ]
         },
         {
@@ -303,7 +304,8 @@
             "keyword": "공복혈당 130",
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2662482",
-                "https://cafe.naver.com/zoozoocom/299477"
+                "https://cafe.naver.com/zoozoocom/299477",
+                "https://cafe.naver.com/zoozoocom/304166"
             ]
         },
         {
@@ -483,7 +485,10 @@
         },
         {
             "keyword": "당뇨 다리 저림",
-            "urls": ["https://cafe.naver.com/zoozoocom/294475"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/294475",
+                "https://cafe.naver.com/zoozoocom/304163"
+            ]
         },
         {
             "keyword": "당뇨 시력 저하",
@@ -551,7 +556,10 @@
         },
         {
             "keyword": "당뇨 비만",
-            "urls": ["https://cafe.naver.com/peopledisc/1089675"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1089675",
+                "https://cafe.naver.com/zoozoocom/304173"
+            ]
         },
         {
             "keyword": "당뇨 피부병",
@@ -1168,6 +1176,10 @@
                 "https://cafe.naver.com/gimhaezumma/2658704",
                 "https://cafe.naver.com/peopledisc/1117372"
             ]
+        },
+        {
+            "keyword": "공복혈당장애 치료",
+            "urls": ["https://cafe.naver.com/zoozoocom/304170"]
         },
         {
             "keyword": "당뇨 저혈당",
