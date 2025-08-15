@@ -189,7 +189,10 @@
         },
         {
             "keyword": "공복혈당영양제",
-            "urls": ["https://cafe.naver.com/zoozoocom/300062"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/300062",
+                "https://cafe.naver.com/zoozoocom/304723"
+            ]
         },
         {
             "keyword": "당뇨환자 영양제",
@@ -669,7 +672,14 @@
         },
         {
             "keyword": "당뇨전단계 관리",
-            "urls": ["https://cafe.naver.com/zoozoocom/300326"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/300326",
+                "https://cafe.naver.com/peopledisc/1119736"
+            ]
+        },
+        {
+            "keyword": "당뇨전단계 관리방법",
+            "urls": ["https://cafe.naver.com/peopledisc/1119736"]
         },
         {
             "keyword": "1형당뇨 완치",
@@ -707,7 +717,8 @@
             "keyword": "당 스파이크",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1089679",
-                "https://cafe.naver.com/zoozoocom/299750"
+                "https://cafe.naver.com/zoozoocom/299750",
+                "https://cafe.naver.com/zoozoocom/304732"
             ]
         },
         {
@@ -879,7 +890,7 @@
         },
         {
             "keyword": "혈당측정패치",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/304720"]
         },
         {
             "keyword": "혈당 약",
@@ -1145,7 +1156,10 @@
         },
         {
             "keyword": "오트밀혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/273874"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273874",
+                "https://cafe.naver.com/zoozoocom/304725"
+            ]
         },
         {
             "keyword": "바나나잎추출물",
@@ -1251,7 +1265,7 @@
             "keyword": "당독소 다이어트",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/300060",
-                "https://cafe.naver.com/zoozoocom/303826"
+                "https://cafe.naver.com/zoozoocom/304729"
             ]
         },
         {
