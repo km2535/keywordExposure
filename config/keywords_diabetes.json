@@ -434,7 +434,7 @@
         },
         {
             "keyword": "당뇨 귤",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/305007"]
         },
         {
             "keyword": "당뇨 밤",
@@ -533,7 +533,10 @@
         },
         {
             "keyword": "당뇨 백내장",
-            "urls": ["https://cafe.naver.com/zoozoocom/294476"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/294476",
+                "https://cafe.naver.com/peopledisc/1119739"
+            ]
         },
         {
             "keyword": "당뇨 혈압",
@@ -576,7 +579,10 @@
         },
         {
             "keyword": "당뇨 입마름",
-            "urls": ["https://cafe.naver.com/zoozoocom/300321"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/300321",
+                "https://cafe.naver.com/peopledisc/1120413"
+            ]
         },
         {
             "keyword": "당뇨 고기",
@@ -683,7 +689,7 @@
         },
         {
             "keyword": "1형당뇨 완치",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1120414"]
         },
         {
             "keyword": "2형당뇨 완치",
@@ -778,7 +784,7 @@
         },
         {
             "keyword": "당뇨전단계수치",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/305003"]
         },
         {
             "keyword": "혈당쇼크",
@@ -1130,7 +1136,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/273522",
                 "https://cafe.naver.com/zoozoocom/289503",
-                "https://cafe.naver.com/zoozoocom/302580"
+                "https://cafe.naver.com/zoozoocom/302580",
+                "https://cafe.naver.com/zoozoocom/305015"
             ]
         },
         {
