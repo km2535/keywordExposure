@@ -112,7 +112,7 @@
         },
         {
             "keyword": "혈당측정기 무채혈",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/305357"]
         },
         {
             "keyword": "케어센스",
@@ -151,7 +151,10 @@
         },
         {
             "keyword": "식후혈당 200",
-            "urls": ["https://cafe.naver.com/zoozoocom/297908"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/297908",
+                "https://cafe.naver.com/zoozoocom/305360"
+            ]
         },
         {
             "keyword": "당뇨약 부작용",
@@ -470,7 +473,10 @@
         },
         {
             "keyword": "당뇨 피부가려움",
-            "urls": ["https://cafe.naver.com/zoozoocom/299752"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/299752",
+                "https://cafe.naver.com/peopledisc/1121302"
+            ]
         },
         {
             "keyword": "혈당시험지",
@@ -733,7 +739,7 @@
         },
         {
             "keyword": "당뇨체크기",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1121303"]
         },
         {
             "keyword": "식곤증 당뇨",
@@ -749,7 +755,10 @@
         },
         {
             "keyword": "인슐린 저항성 개선",
-            "urls": ["https://cafe.naver.com/zoozoocom/289727"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/289727",
+                "https://cafe.naver.com/zoozoocom/305352"
+            ]
         },
         {
             "keyword": "1형당뇨 증상",
@@ -884,7 +893,7 @@
         },
         {
             "keyword": "1형당뇨 2형당뇨",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1121300"]
         },
         {
             "keyword": "양파즙 당뇨",
