@@ -776,7 +776,8 @@
                 "https://cafe.naver.com/zoozoocom/285391",
                 "https://cafe.naver.com/zoozoocom/290811",
                 "https://cafe.naver.com/zoozoocom/300313",
-                "https://cafe.naver.com/peopledisc/1119187"
+                "https://cafe.naver.com/peopledisc/1119187",
+                "https://cafe.naver.com/zoozoocom/305618"
             ]
         },
         {
@@ -1098,7 +1099,8 @@
                 "https://cafe.naver.com/zoozoocom/275407",
                 "https://cafe.naver.com/zoozoocom/278358",
                 "https://cafe.naver.com/zoozoocom/302454",
-                "https://cafe.naver.com/peopledisc/1119186"
+                "https://cafe.naver.com/peopledisc/1119186",
+                "https://cafe.naver.com/peopledisc/1122026"
             ]
         },
         {
@@ -1762,7 +1764,8 @@
                 "https://cafe.naver.com/zoozoocom/265863",
                 "https://cafe.naver.com/zoozoocom/267364",
                 "https://cafe.naver.com/zoozoocom/281477",
-                "https://cafe.naver.com/zoozoocom/287537"
+                "https://cafe.naver.com/zoozoocom/287537",
+                "https://cafe.naver.com/zoozoocom/305617"
             ]
         },
         {
@@ -2078,7 +2081,8 @@
                 "https://cafe.naver.com/zoozoocom/277935",
                 "https://cafe.naver.com/zoozoocom/278694",
                 "https://cafe.naver.com/zoozoocom/281250",
-                "https://cafe.naver.com/zoozoocom/294982"
+                "https://cafe.naver.com/zoozoocom/294982",
+                "https://cafe.naver.com/peopledisc/1122025"
             ]
         },
         {
@@ -2734,6 +2738,10 @@
         {
             "keyword": "식도암에 좋은 음식",
             "urls": ["https://cafe.naver.com/zoozoocom/302576"]
+        },
+        {
+            "keyword": "비소세포폐암",
+            "urls": ["https://cafe.naver.com/peopledisc/1122022"]
         }
     ]
 }

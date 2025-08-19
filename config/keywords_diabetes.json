@@ -215,7 +215,8 @@
                 "https://cafe.naver.com/zoozoocom/289722",
                 "https://cafe.naver.com/zoozoocom/299211",
                 "https://cafe.naver.com/zoozoocom/302586",
-                "https://cafe.naver.com/zoozoocom/304175"
+                "https://cafe.naver.com/zoozoocom/304175",
+                "https://cafe.naver.com/zoozoocom/305640"
             ]
         },
         {
@@ -502,7 +503,8 @@
             "keyword": "당뇨 다리 저림",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/294475",
-                "https://cafe.naver.com/zoozoocom/304163"
+                "https://cafe.naver.com/zoozoocom/304163",
+                "https://cafe.naver.com/zoozoocom/305621"
             ]
         },
         {
@@ -570,7 +572,10 @@
         },
         {
             "keyword": "비만 당뇨",
-            "urls": ["https://cafe.naver.com/peopledisc/1089675"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1089675",
+                "https://cafe.naver.com/zoozoocom/305642"
+            ]
         },
         {
             "keyword": "당뇨 비만",
@@ -607,7 +612,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/297566",
                 "https://cafe.naver.com/zoozoocom/303074",
-                "https://cafe.naver.com/peopledisc/1119188"
+                "https://cafe.naver.com/peopledisc/1119188",
+                "https://cafe.naver.com/zoozoocom/305630"
             ]
         },
         {
@@ -730,7 +736,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/1089679",
                 "https://cafe.naver.com/zoozoocom/299750",
-                "https://cafe.naver.com/zoozoocom/304732"
+                "https://cafe.naver.com/zoozoocom/304732",
+                "https://cafe.naver.com/zoozoocom/305622"
             ]
         },
         {
@@ -1051,7 +1058,8 @@
             "keyword": "코로솔산 부작용",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272708",
-                "https://cafe.naver.com/zoozoocom/304464"
+                "https://cafe.naver.com/zoozoocom/304464",
+                "https://cafe.naver.com/zoozoocom/305633"
             ]
         },
         {
@@ -1124,6 +1132,10 @@
         {
             "keyword": "당뇨 견과류",
             "urls": ["https://cafe.naver.com/zoozoocom/273516"]
+        },
+        {
+            "keyword": "견과류 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/305628"]
         },
         {
             "keyword": "애사비 알약",
@@ -1281,7 +1293,8 @@
             "keyword": "당독소 다이어트",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/300060",
-                "https://cafe.naver.com/zoozoocom/304729"
+                "https://cafe.naver.com/zoozoocom/304729",
+                "https://cafe.naver.com/zoozoocom/305654"
             ]
         },
         {
