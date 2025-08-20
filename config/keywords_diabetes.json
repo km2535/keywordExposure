@@ -169,7 +169,10 @@
         },
         {
             "keyword": "공복혈당 높은이유",
-            "urls": ["https://cafe.naver.com/zoozoocom/292103"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/292103",
+                "https://cafe.naver.com/zoozoocom/305960"
+            ]
         },
         {
             "keyword": "공복혈당만높은이유",
@@ -391,7 +394,10 @@
         },
         {
             "keyword": "당뇨 소변 거품",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2662508"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2662508",
+                "https://cafe.naver.com/zoozoocom/305958"
+            ]
         },
         {
             "keyword": "당뇨 소변",
@@ -446,7 +452,7 @@
         },
         {
             "keyword": "당뇨 우유",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/305956"]
         },
         {
             "keyword": "당뇨 패치",
@@ -485,7 +491,10 @@
         },
         {
             "keyword": "공복혈당 수치 100",
-            "urls": ["https://cafe.naver.com/peopledisc/1108472"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1108472",
+                "https://cafe.naver.com/zoozoocom/305952"
+            ]
         },
         {
             "keyword": "공복혈당 150",
@@ -493,7 +502,10 @@
         },
         {
             "keyword": "공복혈당 200",
-            "urls": ["https://cafe.naver.com/zoozoocom/291504"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/291504",
+                "https://cafe.naver.com/zoozoocom/305961"
+            ]
         },
         {
             "keyword": "당뇨 상처",
@@ -605,7 +617,10 @@
         },
         {
             "keyword": "공복혈당 110",
-            "urls": ["https://cafe.naver.com/zoozoocom/299484"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/299484",
+                "https://cafe.naver.com/zoozoocom/305950"
+            ]
         },
         {
             "keyword": "공복혈당 120",
@@ -1186,7 +1201,8 @@
             "keyword": "오트밀혈당",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/273874",
-                "https://cafe.naver.com/zoozoocom/304725"
+                "https://cafe.naver.com/zoozoocom/304725",
+                "https://cafe.naver.com/zoozoocom/305957"
             ]
         },
         {
@@ -1308,6 +1324,10 @@
         {
             "keyword": "당뇨 공복혈당정상수치",
             "urls": ["https://cafe.naver.com/peopledisc/1111372"]
+        },
+        {
+            "keyword": "고혈압 당뇨",
+            "urls": ["https://cafe.naver.com/zoozoocom/305954"]
         }
     ]
 }

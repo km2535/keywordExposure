@@ -125,7 +125,8 @@
                 "https://cafe.naver.com/zoozoocom/251886",
                 "https://cafe.naver.com/zoozoocom/267857",
                 "https://cafe.naver.com/zoozoocom/286797",
-                "https://cafe.naver.com/zoozoocom/303822"
+                "https://cafe.naver.com/zoozoocom/303822",
+                "https://cafe.naver.com/peopledisc/1123066"
             ]
         },
         {
@@ -1008,7 +1009,8 @@
                 "https://cafe.naver.com/zoozoocom/281733",
                 "https://cafe.naver.com/zoozoocom/285790",
                 "https://cafe.naver.com/zoozoocom/299743",
-                "https://cafe.naver.com/peopledisc/1109522"
+                "https://cafe.naver.com/peopledisc/1109522",
+                "https://cafe.naver.com/peopledisc/1123069"
             ]
         },
         {
@@ -1311,7 +1313,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/944912",
                 "https://cafe.naver.com/rksghwhantk/1247290",
-                "https://cafe.naver.com/zoozoocom/284096"
+                "https://cafe.naver.com/zoozoocom/284096",
+                "https://cafe.naver.com/peopledisc/1123067"
             ]
         },
         {
@@ -1462,7 +1465,8 @@
                 "https://cafe.naver.com/zoozoocom/252145",
                 "https://cafe.naver.com/chobomamy/2606571",
                 "https://cafe.naver.com/zoozoocom/286610",
-                "https://cafe.naver.com/zoozoocom/289116"
+                "https://cafe.naver.com/zoozoocom/289116",
+                "https://cafe.naver.com/zoozoocom/305964"
             ]
         },
         {
@@ -2742,6 +2746,10 @@
         {
             "keyword": "비소세포폐암",
             "urls": ["https://cafe.naver.com/peopledisc/1122022"]
+        },
+        {
+            "keyword": "린파자",
+            "urls": ["https://cafe.naver.com/zoozoocom/305963"]
         }
     ]
 }
