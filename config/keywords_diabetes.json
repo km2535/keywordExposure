@@ -72,7 +72,11 @@
         },
         {
             "keyword": "혈당기",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/306155"]
+        },
+        {
+            "keyword": "연속 혈당기",
+            "urls": ["https://cafe.naver.com/zoozoocom/306155"]
         },
         {
             "keyword": "녹십자 혈당측정기",
@@ -321,7 +325,8 @@
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2662482",
                 "https://cafe.naver.com/zoozoocom/299477",
-                "https://cafe.naver.com/zoozoocom/304166"
+                "https://cafe.naver.com/zoozoocom/304166",
+                "https://cafe.naver.com/peopledisc/1123680"
             ]
         },
         {
@@ -516,7 +521,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/294475",
                 "https://cafe.naver.com/zoozoocom/304163",
-                "https://cafe.naver.com/zoozoocom/305621"
+                "https://cafe.naver.com/zoozoocom/305621",
+                "https://cafe.naver.com/zoozoocom/306123"
             ]
         },
         {
@@ -633,7 +639,10 @@
         },
         {
             "keyword": "듀럼밀 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/302585"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/302585",
+                "https://cafe.naver.com/peopledisc/1123679"
+            ]
         },
         {
             "keyword": "Hba1c 정상수치",
@@ -677,7 +686,7 @@
         },
         {
             "keyword": "당뇨 합병증 종류",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/306169"]
         },
         {
             "keyword": "식후 3시간 혈당수치",
@@ -752,7 +761,8 @@
                 "https://cafe.naver.com/peopledisc/1089679",
                 "https://cafe.naver.com/zoozoocom/299750",
                 "https://cafe.naver.com/zoozoocom/304732",
-                "https://cafe.naver.com/zoozoocom/305622"
+                "https://cafe.naver.com/zoozoocom/305622",
+                "https://cafe.naver.com/zoozoocom/306141"
             ]
         },
         {
@@ -927,7 +937,10 @@
         },
         {
             "keyword": "혈당측정패치",
-            "urls": ["https://cafe.naver.com/zoozoocom/304720"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/304720",
+                "https://cafe.naver.com/zoozoocom/306145"
+            ]
         },
         {
             "keyword": "혈당 약",
@@ -1016,7 +1029,10 @@
         },
         {
             "keyword": "당화혈색소 8",
-            "urls": ["https://cafe.naver.com/peopledisc/1090484"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1090484",
+                "https://cafe.naver.com/zoozoocom/306110"
+            ]
         },
         {
             "keyword": "당화혈색소 5.7",
@@ -1251,7 +1267,10 @@
         },
         {
             "keyword": "공복혈당장애 치료",
-            "urls": ["https://cafe.naver.com/zoozoocom/304170"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/304170",
+                "https://cafe.naver.com/zoozoocom/306162"
+            ]
         },
         {
             "keyword": "당뇨 저혈당",
