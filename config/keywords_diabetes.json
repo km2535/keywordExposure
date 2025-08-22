@@ -825,7 +825,10 @@
         },
         {
             "keyword": "당뇨전단계수치",
-            "urls": ["https://cafe.naver.com/zoozoocom/305003"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/305003",
+                "https://cafe.naver.com/peopledisc/1124910"
+            ]
         },
         {
             "keyword": "혈당쇼크",
@@ -1286,7 +1289,10 @@
         },
         {
             "keyword": "고혈당 쇼크",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2659815"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2659815",
+                "https://cafe.naver.com/peopledisc/1124909"
+            ]
         },
         {
             "keyword": "당뇨 눈 침침",
@@ -1347,6 +1353,10 @@
         {
             "keyword": "고혈압 당뇨",
             "urls": ["https://cafe.naver.com/zoozoocom/305954"]
+        },
+        {
+            "keyword": "고지혈증 간수치",
+            "urls": ["https://cafe.naver.com/zoozoocom/306517"]
         }
     ]
 }

@@ -483,7 +483,8 @@
                 "https://cafe.naver.com/zoozoocom/281246",
                 "https://cafe.naver.com/zoozoocom/284101",
                 "https://cafe.naver.com/zoozoocom/288439",
-                "https://cafe.naver.com/zoozoocom/304150"
+                "https://cafe.naver.com/zoozoocom/304150",
+                "https://cafe.naver.com/zoozoocom/306512"
             ]
         },
         {
@@ -782,7 +783,8 @@
                 "https://cafe.naver.com/zoozoocom/290811",
                 "https://cafe.naver.com/zoozoocom/300313",
                 "https://cafe.naver.com/peopledisc/1119187",
-                "https://cafe.naver.com/zoozoocom/305618"
+                "https://cafe.naver.com/zoozoocom/305618",
+                "https://cafe.naver.com/zoozoocom/306507"
             ]
         },
         {
@@ -931,7 +933,8 @@
                 "https://cafe.naver.com/zoozoocom/268852",
                 "https://cafe.naver.com/peopledisc/1007689",
                 "https://cafe.naver.com/zoozoocom/280278",
-                "https://cafe.naver.com/zoozoocom/304157"
+                "https://cafe.naver.com/zoozoocom/304157",
+                "https://cafe.naver.com/zoozoocom/306511"
             ]
         },
         {
@@ -1108,7 +1111,8 @@
                 "https://cafe.naver.com/zoozoocom/278358",
                 "https://cafe.naver.com/zoozoocom/302454",
                 "https://cafe.naver.com/peopledisc/1119186",
-                "https://cafe.naver.com/peopledisc/1122026"
+                "https://cafe.naver.com/peopledisc/1122026",
+                "https://cafe.naver.com/zoozoocom/306509"
             ]
         },
         {
@@ -1712,7 +1716,8 @@
                 "https://cafe.naver.com/peopledisc/962935",
                 "https://cafe.naver.com/zoozoocom/287793",
                 "https://cafe.naver.com/zoozoocom/293410",
-                "https://cafe.naver.com/zoozoocom/301789"
+                "https://cafe.naver.com/zoozoocom/301789",
+                "https://cafe.naver.com/zoozoocom/306528"
             ]
         },
         {
@@ -2298,7 +2303,8 @@
                 "https://cafe.naver.com/rksghwhantk/1240606",
                 "https://cafe.naver.com/peopledisc/966554",
                 "https://cafe.naver.com/zoozoocom/279383",
-                "https://cafe.naver.com/zoozoocom/297219"
+                "https://cafe.naver.com/zoozoocom/297219",
+                "https://cafe.naver.com/peopledisc/1124905"
             ]
         },
         {
@@ -2668,7 +2674,8 @@
             "keyword": "유방암 뼈전이 증상",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/290799",
-                "https://cafe.naver.com/zoozoocom/297898"
+                "https://cafe.naver.com/zoozoocom/297898",
+                "https://cafe.naver.com/zoozoocom/306516"
             ]
         },
         {
@@ -2758,6 +2765,10 @@
         {
             "keyword": "린파자",
             "urls": ["https://cafe.naver.com/zoozoocom/305963"]
+        },
+        {
+            "keyword": "암재발",
+            "urls": ["https://cafe.naver.com/zoozoocom/306515"]
         }
     ]
 }
