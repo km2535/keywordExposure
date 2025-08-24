@@ -582,7 +582,8 @@
                 "https://cafe.naver.com/peopledisc/943461",
                 "https://cafe.naver.com/gimhaezumma/2628670",
                 "https://cafe.naver.com/zoozoocom/301132",
-                "https://cafe.naver.com/zoozoocom/305306"
+                "https://cafe.naver.com/zoozoocom/305306",
+                "https://cafe.naver.com/peopledisc/1125787"
             ]
         },
         {
@@ -605,7 +606,8 @@
                 "https://cafe.naver.com/hotdealcommunity/3443389",
                 "https://cafe.naver.com/zoozoocom/275786",
                 "https://cafe.naver.com/zoozoocom/296042",
-                "https://cafe.naver.com/zoozoocom/297899"
+                "https://cafe.naver.com/zoozoocom/297899",
+                "https://cafe.naver.com/zoozoocom/306803"
             ]
         },
         {
@@ -1597,7 +1599,8 @@
                 "https://cafe.naver.com/zoozoocom/279392",
                 "https://cafe.naver.com/zoozoocom/285385",
                 "https://cafe.naver.com/zoozoocom/295390",
-                "https://cafe.naver.com/zoozoocom/297893"
+                "https://cafe.naver.com/zoozoocom/297893",
+                "https://cafe.naver.com/zoozoocom/306817"
             ]
         },
         {
@@ -2769,6 +2772,18 @@
         {
             "keyword": "암재발",
             "urls": ["https://cafe.naver.com/zoozoocom/306515"]
+        },
+        {
+            "keyword": "염증수치 20",
+            "urls": ["https://cafe.naver.com/peopledisc/1125788"]
+        },
+        {
+            "keyword": "nk수치",
+            "urls": ["https://cafe.naver.com/peopledisc/1125786"]
+        },
+        {
+            "keyword": "암수치",
+            "urls": ["https://cafe.naver.com/zoozoocom/306822"]
         }
     ]
 }

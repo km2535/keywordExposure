@@ -255,8 +255,8 @@
             "urls": ["https://cafe.naver.com/peopledisc/1091362"]
         },
         {
-            "keyword": "당뇨 합병증검사",
-            "urls": []
+            "keyword": "당뇨 합병증 증상",
+            "urls": ["https://cafe.naver.com/zoozoocom/306843"]
         },
         {
             "keyword": "단백뇨",
@@ -371,7 +371,10 @@
         },
         {
             "keyword": "당뇨 피검사",
-            "urls": ["https://cafe.naver.com/peopledisc/1109525"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1109525",
+                "https://cafe.naver.com/zoozoocom/306851"
+            ]
         },
         {
             "keyword": "식전혈당",
@@ -391,7 +394,7 @@
         },
         {
             "keyword": "혈당측정검사지",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/306859"]
         },
         {
             "keyword": "당뇨약 끊기",
@@ -1355,8 +1358,16 @@
             "urls": ["https://cafe.naver.com/zoozoocom/305954"]
         },
         {
+            "keyword": "당뇨 고혈압",
+            "urls": ["https://cafe.naver.com/zoozoocom/306865"]
+        },
+        {
             "keyword": "고지혈증 간수치",
             "urls": ["https://cafe.naver.com/zoozoocom/306517"]
+        },
+        {
+            "keyword": "스테비아 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/306869"]
         }
     ]
 }
