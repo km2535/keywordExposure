@@ -41,7 +41,10 @@
         },
         {
             "keyword": "케톤산증 증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/298819"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/298819",
+                "https://cafe.naver.com/zoozoocom/307154"
+            ]
         },
         {
             "keyword": "공복혈당",
@@ -346,6 +349,10 @@
             "urls": []
         },
         {
+            "keyword": "당뇨 발 통증",
+            "urls": ["https://cafe.naver.com/peopledisc/1126585"]
+        },
+        {
             "keyword": "시나몬물",
             "urls": ["https://cafe.naver.com/zoozoocom/302115"]
         },
@@ -355,7 +362,10 @@
         },
         {
             "keyword": "초기당뇨증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/300328"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/300328",
+                "https://cafe.naver.com/zoozoocom/307160"
+            ]
         },
         {
             "keyword": "당검사기",
@@ -622,7 +632,10 @@
         },
         {
             "keyword": "공복혈당 105",
-            "urls": ["https://cafe.naver.com/zoozoocom/302583"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/302583",
+                "https://cafe.naver.com/zoozoocom/307157"
+            ]
         },
         {
             "keyword": "공복혈당 110",
@@ -909,8 +922,8 @@
             "urls": ["https://cafe.naver.com/zoozoocom/299754"]
         },
         {
-            "keyword": "당뇨칡즙",
-            "urls": []
+            "keyword": "당뇨 통밀빵",
+            "urls": ["https://cafe.naver.com/zoozoocom/307163"]
         },
         {
             "keyword": "바나바잎 혈당",
@@ -931,7 +944,10 @@
         },
         {
             "keyword": "1형당뇨 2형당뇨",
-            "urls": ["https://cafe.naver.com/peopledisc/1121300"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1121300",
+                "https://cafe.naver.com/zoozoocom/307151"
+            ]
         },
         {
             "keyword": "양파즙 당뇨",

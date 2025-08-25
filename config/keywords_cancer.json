@@ -706,7 +706,8 @@
                 "https://cafe.naver.com/zoozoocom/267056",
                 "https://cafe.naver.com/zoozoocom/275787",
                 "https://cafe.naver.com/zoozoocom/296045",
-                "https://cafe.naver.com/zoozoocom/302458"
+                "https://cafe.naver.com/zoozoocom/302458",
+                "https://cafe.naver.com/peopledisc/1126587"
             ]
         },
         {
@@ -1391,6 +1392,10 @@
                 "https://cafe.naver.com/zoozoocom/280285",
                 "https://cafe.naver.com/peopledisc/1103492"
             ]
+        },
+        {
+            "keyword": "소세포폐암 완치",
+            "urls": ["https://cafe.naver.com/peopledisc/1126589"]
         },
         {
             "keyword": "췌장암 혈액검사",
@@ -2784,6 +2789,26 @@
         {
             "keyword": "암수치",
             "urls": ["https://cafe.naver.com/zoozoocom/306822"]
+        },
+        {
+            "keyword": "유방암초기증상",
+            "urls": ["https://cafe.naver.com/zoozoocom/307102"]
+        },
+        {
+            "keyword": "고환암 치료",
+            "urls": ["https://cafe.naver.com/zoozoocom/307115"]
+        },
+        {
+            "keyword": "암환자 흑염소",
+            "urls": ["https://cafe.naver.com/zoozoocom/307126"]
+        },
+        {
+            "keyword": "결장암",
+            "urls": ["https://cafe.naver.com/zoozoocom/307132"]
+        },
+        {
+            "keyword": "항염증 식단",
+            "urls": ["https://cafe.naver.com/zoozoocom/307138"]
         }
     ]
 }
