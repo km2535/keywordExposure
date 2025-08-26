@@ -899,7 +899,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/949811",
                 "https://cafe.naver.com/rksghwhantk/1242319",
-                "https://cafe.naver.com/zoozoocom/279880"
+                "https://cafe.naver.com/zoozoocom/279880",
+                "https://cafe.naver.com/peopledisc/1127577"
             ]
         },
         {
@@ -960,7 +961,8 @@
                 "https://cafe.naver.com/zoozoocom/270253",
                 "https://cafe.naver.com/zoozoocom/286608",
                 "https://cafe.naver.com/zoozoocom/288639",
-                "https://cafe.naver.com/zoozoocom/291480"
+                "https://cafe.naver.com/zoozoocom/291480",
+                "https://cafe.naver.com/peopledisc/1127576"
             ]
         },
         {
@@ -2033,7 +2035,8 @@
             "keyword": "소세포 폐암 증상",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/268858",
-                "https://cafe.naver.com/zoozoocom/280541"
+                "https://cafe.naver.com/zoozoocom/280541",
+                "https://cafe.naver.com/peopledisc/1127573"
             ]
         },
         {
@@ -2044,7 +2047,8 @@
                 "https://cafe.naver.com/zoozoocom/288186",
                 "https://cafe.naver.com/zoozoocom/288635",
                 "https://cafe.naver.com/zoozoocom/290791",
-                "https://cafe.naver.com/zoozoocom/296345"
+                "https://cafe.naver.com/zoozoocom/296345",
+                "https://cafe.naver.com/zoozoocom/307484"
             ]
         },
         {
@@ -2118,7 +2122,8 @@
                 "https://cafe.naver.com/zoozoocom/277947",
                 "https://cafe.naver.com/zoozoocom/280282",
                 "https://cafe.naver.com/zoozoocom/298448",
-                "https://cafe.naver.com/zoozoocom/304156"
+                "https://cafe.naver.com/zoozoocom/304156",
+                "https://cafe.naver.com/zoozoocom/307492"
             ]
         },
         {
@@ -2809,6 +2814,18 @@
         {
             "keyword": "항염증 식단",
             "urls": ["https://cafe.naver.com/zoozoocom/307138"]
+        },
+        {
+            "keyword": "인삼다당체 암환자",
+            "urls": ["https://cafe.naver.com/zoozoocom/307482"]
+        },
+        {
+            "keyword": "인삼다당체 100ml",
+            "urls": ["https://cafe.naver.com/zoozoocom/307483"]
+        },
+        {
+            "keyword": "대장암 유산균",
+            "urls": ["https://cafe.naver.com/zoozoocom/307485"]
         }
     ]
 }

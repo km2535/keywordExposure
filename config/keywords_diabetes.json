@@ -1188,7 +1188,10 @@
         },
         {
             "keyword": "견과류 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/305628"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/305628",
+                "https://cafe.naver.com/zoozoocom/307479"
+            ]
         },
         {
             "keyword": "애사비 알약",
@@ -1295,6 +1298,10 @@
             ]
         },
         {
+            "keyword": "공복혈당장애 증상",
+            "urls": ["https://cafe.naver.com/zoozoocom/304170"]
+        },
+        {
             "keyword": "당뇨 저혈당",
             "urls": ["https://cafe.naver.com/gimhaezumma/2659151"]
         },
@@ -1328,6 +1335,10 @@
         {
             "keyword": "당뇨병 예방법",
             "urls": ["https://cafe.naver.com/peopledisc/1090460"]
+        },
+        {
+            "keyword": "당뇨병 예방",
+            "urls": ["https://cafe.naver.com/zoozoocom/307477"]
         },
         {
             "keyword": "당뇨 갈증",
@@ -1384,6 +1395,14 @@
         {
             "keyword": "스테비아 혈당",
             "urls": ["https://cafe.naver.com/zoozoocom/306869"]
+        },
+        {
+            "keyword": "당뇨망막병증 증상",
+            "urls": ["https://cafe.naver.com/zoozoocom/307468"]
+        },
+        {
+            "keyword": "저혈당 쇼크 증상",
+            "urls": ["https://cafe.naver.com/zoozoocom/307472"]
         }
     ]
 }
