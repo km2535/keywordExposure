@@ -235,7 +235,10 @@
         },
         {
             "keyword": "혈당측정",
-            "urls": ["https://cafe.naver.com/peopledisc/1110285"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1110285",
+                "https://cafe.naver.com/zoozoocom/308374"
+            ]
         },
         {
             "keyword": "당뇨 가려움",
@@ -431,7 +434,10 @@
         },
         {
             "keyword": "식후 3시간 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/301483"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/301483",
+                "https://cafe.naver.com/zoozoocom/308387"
+            ]
         },
         {
             "keyword": "식후 4시간 혈당 정상수치",
@@ -771,7 +777,10 @@
         },
         {
             "keyword": "혈당스파이크 방지",
-            "urls": ["https://cafe.naver.com/peopledisc/1096693"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1096693",
+                "https://cafe.naver.com/zoozoocom/308384"
+            ]
         },
         {
             "keyword": "혈당스파이크 식곤증",
@@ -1112,7 +1121,10 @@
         },
         {
             "keyword": "락토핏 당케어",
-            "urls": ["https://cafe.naver.com/zoozoocom/272685"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/272685",
+                "https://cafe.naver.com/peopledisc/1130854"
+            ]
         },
         {
             "keyword": "코로솔산 부작용",
@@ -1211,7 +1223,10 @@
         },
         {
             "keyword": "애사비 알약",
-            "urls": ["https://cafe.naver.com/zoozoocom/273517"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273517",
+                "https://cafe.naver.com/peopledisc/1130856"
+            ]
         },
         {
             "keyword": "애플사이다비니거정",
