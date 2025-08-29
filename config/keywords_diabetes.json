@@ -544,7 +544,7 @@
         },
         {
             "keyword": "혈당 400",
-            "urls": []
+            "urls": ["https://cafe.naver.com/peopledisc/1128673"]
         },
         {
             "keyword": "식후혈당 400",
@@ -698,7 +698,10 @@
         },
         {
             "keyword": "당뇨 합병증 눈",
-            "urls": ["https://cafe.naver.com/zoozoocom/296672"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/296672",
+                "https://cafe.naver.com/zoozoocom/308077"
+            ]
         },
         {
             "keyword": "당뇨 합병증 종류",
@@ -761,7 +764,10 @@
         },
         {
             "keyword": "혈당스파이크 졸음",
-            "urls": ["https://cafe.naver.com/zoozoocom/298175"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/298175",
+                "https://cafe.naver.com/zoozoocom/308088"
+            ]
         },
         {
             "keyword": "혈당스파이크 방지",
@@ -843,7 +849,8 @@
             "keyword": "당뇨전단계수치",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/305003",
-                "https://cafe.naver.com/peopledisc/1124910"
+                "https://cafe.naver.com/peopledisc/1124910",
+                "https://cafe.naver.com/zoozoocom/308070"
             ]
         },
         {
@@ -1120,6 +1127,14 @@
             "urls": ["https://cafe.naver.com/zoozoocom/272710"]
         },
         {
+            "keyword": "혈당케어바나바잎",
+            "urls": ["https://cafe.naver.com/zoozoocom/307816"]
+        },
+        {
+            "keyword": "덴프스 혈당케어",
+            "urls": ["https://cafe.naver.com/zoozoocom/307820"]
+        },
+        {
             "keyword": "바나바 혈당케어",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272720",
@@ -1172,7 +1187,8 @@
             "keyword": "스테비아 방울토마토 혈당",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/273478",
-                "https://cafe.naver.com/zoozoocom/295730"
+                "https://cafe.naver.com/zoozoocom/295730",
+                "https://cafe.naver.com/zoozoocom/308093"
             ]
         },
         {
@@ -1228,7 +1244,8 @@
             "keyword": "당뇨두유",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/273867",
-                "https://cafe.naver.com/peopledisc/1113098"
+                "https://cafe.naver.com/peopledisc/1113098",
+                "https://cafe.naver.com/peopledisc/1128671"
             ]
         },
         {
@@ -1280,7 +1297,8 @@
             "keyword": "저당밥솥 효과",
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2658706",
-                "https://cafe.naver.com/zoozoocom/302449"
+                "https://cafe.naver.com/zoozoocom/302449",
+                "https://cafe.naver.com/zoozoocom/308084"
             ]
         },
         {
@@ -1299,7 +1317,10 @@
         },
         {
             "keyword": "공복혈당장애 증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/304170"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/304170",
+                "https://cafe.naver.com/zoozoocom/307814"
+            ]
         },
         {
             "keyword": "당뇨 저혈당",
