@@ -231,7 +231,10 @@
         },
         {
             "keyword": "식전혈당 정상수치",
-            "urls": ["https://cafe.naver.com/zoozoocom/295740"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/295740",
+                "https://cafe.naver.com/zoozoocom/309078"
+            ]
         },
         {
             "keyword": "혈당측정",
@@ -242,7 +245,10 @@
         },
         {
             "keyword": "당뇨 가려움",
-            "urls": ["https://cafe.naver.com/zoozoocom/294048"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/294048",
+                "https://cafe.naver.com/zoozoocom/309070"
+            ]
         },
         {
             "keyword": "20대당뇨증상",
@@ -495,6 +501,10 @@
             "urls": ["https://cafe.naver.com/zoozoocom/294487"]
         },
         {
+            "keyword": "제로음료 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1132770"]
+        },
+        {
             "keyword": "제로 아이스크림 혈당",
             "urls": ["https://cafe.naver.com/zoozoocom/302123"]
         },
@@ -523,6 +533,10 @@
         {
             "keyword": "공복혈당 150",
             "urls": ["https://cafe.naver.com/peopledisc/1096695"]
+        },
+        {
+            "keyword": "공복혈당 140",
+            "urls": ["https://cafe.naver.com/zoozoocom/309058"]
         },
         {
             "keyword": "공복혈당 200",
@@ -656,7 +670,8 @@
                 "https://cafe.naver.com/zoozoocom/297566",
                 "https://cafe.naver.com/zoozoocom/303074",
                 "https://cafe.naver.com/peopledisc/1119188",
-                "https://cafe.naver.com/zoozoocom/305630"
+                "https://cafe.naver.com/zoozoocom/305630",
+                "https://cafe.naver.com/zoozoocom/308682"
             ]
         },
         {
@@ -669,6 +684,14 @@
         {
             "keyword": "Hba1c 정상수치",
             "urls": ["https://cafe.naver.com/zoozoocom/298477"]
+        },
+        {
+            "keyword": "공복혈당 108",
+            "urls": ["https://cafe.naver.com/peopledisc/1132766"]
+        },
+        {
+            "keyword": "미숫가루 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1132768"]
         },
         {
             "keyword": "임당 증상",
@@ -1212,7 +1235,10 @@
         },
         {
             "keyword": "당뇨 견과류",
-            "urls": ["https://cafe.naver.com/zoozoocom/273516"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273516",
+                "https://cafe.naver.com/zoozoocom/308677"
+            ]
         },
         {
             "keyword": "견과류 혈당",
@@ -1339,7 +1365,10 @@
         },
         {
             "keyword": "당뇨 저혈당",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2659151"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2659151",
+                "https://cafe.naver.com/zoozoocom/309069"
+            ]
         },
         {
             "keyword": "저혈당 당뇨",
@@ -1353,7 +1382,8 @@
             "keyword": "고혈당 쇼크",
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2659815",
-                "https://cafe.naver.com/peopledisc/1124909"
+                "https://cafe.naver.com/peopledisc/1124909",
+                "https://cafe.naver.com/zoozoocom/308680"
             ]
         },
         {
@@ -1386,7 +1416,10 @@
         },
         {
             "keyword": "약국 식욕억제제",
-            "urls": ["https://cafe.naver.com/zoozoocom/295734"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/295734",
+                "https://cafe.naver.com/zoozoocom/309087"
+            ]
         },
         {
             "keyword": "빈뇨증",
@@ -1426,7 +1459,10 @@
         },
         {
             "keyword": "고지혈증 간수치",
-            "urls": ["https://cafe.naver.com/zoozoocom/306517"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/306517",
+                "https://cafe.naver.com/zoozoocom/308672"
+            ]
         },
         {
             "keyword": "스테비아 혈당",

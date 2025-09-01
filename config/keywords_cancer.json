@@ -92,7 +92,10 @@
         },
         {
             "keyword": "ca19-9",
-            "urls": ["https://cafe.naver.com/rksghwhantk/1246795"]
+            "urls": [
+                "https://cafe.naver.com/rksghwhantk/1246795",
+                "https://cafe.naver.com/zoozoocom/309047"
+            ]
         },
         {
             "keyword": "면역력주사",
@@ -233,7 +236,8 @@
                 "https://cafe.naver.com/zoozoocom/295742",
                 "https://cafe.naver.com/zoozoocom/298816",
                 "https://cafe.naver.com/zoozoocom/305278",
-                "https://cafe.naver.com/zoozoocom/308047"
+                "https://cafe.naver.com/zoozoocom/308047",
+                "https://cafe.naver.com/zoozoocom/308660"
             ]
         },
         {
@@ -859,7 +863,8 @@
                 "https://cafe.naver.com/peopledisc/954259",
                 "https://cafe.naver.com/rksghwhantk/1241874",
                 "https://cafe.naver.com/zoozoocom/280269",
-                "https://cafe.naver.com/zoozoocom/284337"
+                "https://cafe.naver.com/zoozoocom/284337",
+                "https://cafe.naver.com/zoozoocom/308667"
             ]
         },
         {
@@ -971,12 +976,17 @@
                 "https://cafe.naver.com/zoozoocom/288639",
                 "https://cafe.naver.com/zoozoocom/291480",
                 "https://cafe.naver.com/peopledisc/1127576",
-                "https://cafe.naver.com/zoozoocom/308059"
+                "https://cafe.naver.com/zoozoocom/308059",
+                "https://cafe.naver.com/zoozoocom/309113"
             ]
         },
         {
             "keyword": "난소암 3기 생존율",
             "urls": ["https://cafe.naver.com/zoozoocom/299197"]
+        },
+        {
+            "keyword": "암환자 추어탕",
+            "urls": ["https://cafe.naver.com/zoozoocom/309120"]
         },
         {
             "keyword": "전립선암 3기",
@@ -1851,7 +1861,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/270624",
                 "https://cafe.naver.com/zoozoocom/286611",
-                "https://cafe.naver.com/zoozoocom/292782"
+                "https://cafe.naver.com/zoozoocom/292782",
+                "https://cafe.naver.com/peopledisc/1131875"
             ]
         },
         {
@@ -2625,7 +2636,8 @@
             "keyword": "마늘주사효능",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/286434",
-                "https://cafe.naver.com/zoozoocom/287533"
+                "https://cafe.naver.com/zoozoocom/287533",
+                "https://cafe.naver.com/zoozoocom/309104"
             ]
         },
         {
@@ -2712,7 +2724,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/290799",
                 "https://cafe.naver.com/zoozoocom/297898",
-                "https://cafe.naver.com/zoozoocom/306516"
+                "https://cafe.naver.com/zoozoocom/306516",
+                "https://cafe.naver.com/peopledisc/1131876"
             ]
         },
         {
@@ -2789,7 +2802,10 @@
         },
         {
             "keyword": "식도암 수술",
-            "urls": ["https://cafe.naver.com/peopledisc/1113097"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1113097",
+                "https://cafe.naver.com/peopledisc/1131877"
+            ]
         },
         {
             "keyword": "식도암에 좋은 음식",
@@ -2804,8 +2820,15 @@
             "urls": ["https://cafe.naver.com/zoozoocom/305963"]
         },
         {
+            "keyword": "장상피화생 치료",
+            "urls": ["https://cafe.naver.com/zoozoocom/309136"]
+        },
+        {
             "keyword": "암재발",
-            "urls": ["https://cafe.naver.com/zoozoocom/306515"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/306515",
+                "https://cafe.naver.com/zoozoocom/308649"
+            ]
         },
         {
             "keyword": "염증수치 20",
@@ -2862,6 +2885,10 @@
         {
             "keyword": "염증 줄이는 음식",
             "urls": ["https://cafe.naver.com/zoozoocom/307790"]
+        },
+        {
+            "keyword": "몸속 염증 없애는 음식",
+            "urls": ["https://cafe.naver.com/zoozoocom/308640"]
         }
     ]
 }
