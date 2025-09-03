@@ -31,7 +31,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/253181",
                 "https://cafe.naver.com/gimhaezumma/2628264",
-                "https://cafe.naver.com/peopledisc/1095599"
+                "https://cafe.naver.com/peopledisc/1095599",
+                "https://cafe.naver.com/peopledisc/1134894"
             ]
         },
         {
@@ -108,7 +109,8 @@
                 "https://cafe.naver.com/gimhaezumma/2653397",
                 "https://cafe.naver.com/zoozoocom/289741",
                 "https://cafe.naver.com/zoozoocom/298812",
-                "https://cafe.naver.com/peopledisc/1129942"
+                "https://cafe.naver.com/peopledisc/1129942",
+                "https://cafe.naver.com/zoozoocom/309898"
             ]
         },
         {
@@ -739,7 +741,8 @@
                 "https://cafe.naver.com/zoozoocom/284093",
                 "https://cafe.naver.com/zoozoocom/296048",
                 "https://cafe.naver.com/zoozoocom/300054",
-                "https://cafe.naver.com/zoozoocom/304152"
+                "https://cafe.naver.com/zoozoocom/304152",
+                "https://cafe.naver.com/zoozoocom/309926"
             ]
         },
         {
@@ -1000,7 +1003,8 @@
                 "https://cafe.naver.com/zoozoocom/274888",
                 "https://cafe.naver.com/zoozoocom/277347",
                 "https://cafe.naver.com/zoozoocom/288189",
-                "https://cafe.naver.com/zoozoocom/290807"
+                "https://cafe.naver.com/zoozoocom/290807",
+                "https://cafe.naver.com/peopledisc/1134902"
             ]
         },
         {
@@ -1242,7 +1246,8 @@
                 "https://cafe.naver.com/zoozoocom/284343",
                 "https://cafe.naver.com/zoozoocom/292015",
                 "https://cafe.naver.com/peopledisc/1092088",
-                "https://cafe.naver.com/peopledisc/1101916"
+                "https://cafe.naver.com/peopledisc/1101916",
+                "https://cafe.naver.com/zoozoocom/303817"
             ]
         },
         {
@@ -2901,6 +2906,10 @@
         {
             "keyword": "몸속 염증 없애는 음식",
             "urls": ["https://cafe.naver.com/zoozoocom/308640"]
+        },
+        {
+            "keyword": "위암 전단계",
+            "urls": ["https://cafe.naver.com/zoozoocom/309911"]
         }
     ]
 }

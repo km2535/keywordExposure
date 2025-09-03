@@ -150,7 +150,10 @@
         },
         {
             "keyword": "공복혈당100",
-            "urls": ["https://cafe.naver.com/peopledisc/1108472"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1108472",
+                "https://cafe.naver.com/zoozoocom/309978"
+            ]
         },
         {
             "keyword": "당뇨전단계",
@@ -342,7 +345,8 @@
                 "https://cafe.naver.com/gimhaezumma/2662482",
                 "https://cafe.naver.com/zoozoocom/299477",
                 "https://cafe.naver.com/zoozoocom/304166",
-                "https://cafe.naver.com/peopledisc/1123680"
+                "https://cafe.naver.com/peopledisc/1123680",
+                "https://cafe.naver.com/zoozoocom/309971"
             ]
         },
         {
@@ -459,7 +463,10 @@
         },
         {
             "keyword": "마른당뇨",
-            "urls": ["https://cafe.naver.com/peopledisc/1096696"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1096696",
+                "https://cafe.naver.com/zoozoocom/309992"
+            ]
         },
         {
             "keyword": "마른 당뇨 관리법",
@@ -539,7 +546,10 @@
         },
         {
             "keyword": "공복혈당 150",
-            "urls": ["https://cafe.naver.com/peopledisc/1096695"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1096695",
+                "https://cafe.naver.com/zoozoocom/309967"
+            ]
         },
         {
             "keyword": "공복혈당 140",
@@ -951,7 +961,10 @@
         },
         {
             "keyword": "아침 바나나 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/298486"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/298486",
+                "https://cafe.naver.com/peopledisc/1134899"
+            ]
         },
         {
             "keyword": "바나나 혈당지수",
@@ -1099,7 +1112,10 @@
         },
         {
             "keyword": "당화혈색소 7",
-            "urls": ["https://cafe.naver.com/peopledisc/1090484"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1090484",
+                "https://cafe.naver.com/zoozoocom/309964"
+            ]
         },
         {
             "keyword": "당화혈색소 8",
@@ -1148,7 +1164,10 @@
         },
         {
             "keyword": "당화혈색소 6.5",
-            "urls": ["https://cafe.naver.com/peopledisc/1104387"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1104387",
+                "https://cafe.naver.com/zoozoocom/309983"
+            ]
         },
         {
             "keyword": "당화혈색소 6.4",
@@ -1475,7 +1494,10 @@
         },
         {
             "keyword": "고혈압 당뇨",
-            "urls": ["https://cafe.naver.com/zoozoocom/305954"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/305954",
+                "https://cafe.naver.com/zoozoocom/309974"
+            ]
         },
         {
             "keyword": "당뇨 고혈압",
