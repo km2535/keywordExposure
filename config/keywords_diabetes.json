@@ -114,6 +114,10 @@
             "urls": ["https://cafe.naver.com/zoozoocom/299202"]
         },
         {
+            "keyword": "옥수수 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/310787"]
+        },
+        {
             "keyword": "당뇨 투석",
             "urls": ["https://cafe.naver.com/zoozoocom/298487"]
         },
@@ -191,7 +195,10 @@
         },
         {
             "keyword": "당뇨환자 간식",
-            "urls": ["https://cafe.naver.com/peopledisc/1106111"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1106111",
+                "https://cafe.naver.com/peopledisc/1136757"
+            ]
         },
         {
             "keyword": "당뇨영양제",
@@ -230,7 +237,8 @@
                 "https://cafe.naver.com/zoozoocom/299211",
                 "https://cafe.naver.com/zoozoocom/302586",
                 "https://cafe.naver.com/zoozoocom/304175",
-                "https://cafe.naver.com/zoozoocom/305640"
+                "https://cafe.naver.com/zoozoocom/305640",
+                "https://cafe.naver.com/peopledisc/1136749"
             ]
         },
         {
@@ -251,7 +259,8 @@
             "keyword": "당뇨 가려움",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/294048",
-                "https://cafe.naver.com/zoozoocom/309070"
+                "https://cafe.naver.com/zoozoocom/309070",
+                "https://cafe.naver.com/zoozoocom/310794"
             ]
         },
         {
@@ -679,7 +688,8 @@
             "keyword": "공복혈당 110",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/299484",
-                "https://cafe.naver.com/zoozoocom/305950"
+                "https://cafe.naver.com/zoozoocom/305950",
+                "https://cafe.naver.com/peopledisc/1136755"
             ]
         },
         {
@@ -1054,7 +1064,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272684",
                 "https://cafe.naver.com/zoozoocom/288802",
-                "https://cafe.naver.com/zoozoocom/290258"
+                "https://cafe.naver.com/zoozoocom/290258",
+                "https://cafe.naver.com/zoozoocom/310805"
             ]
         },
         {
