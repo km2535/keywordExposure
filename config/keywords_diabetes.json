@@ -17,10 +17,15 @@
             "urls": []
         },
         {
+            "keyword": "고구마혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/311216"]
+        },
+        {
             "keyword": "당화혈색소 낮추기",
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2662466",
-                "https://cafe.naver.com/zoozoocom/299206"
+                "https://cafe.naver.com/zoozoocom/299206",
+                "https://cafe.naver.com/zoozoocom/311212"
             ]
         },
         {
@@ -150,7 +155,10 @@
         },
         {
             "keyword": "식후당뇨수치",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2662469"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2662469",
+                "https://cafe.naver.com/zoozoocom/311246"
+            ]
         },
         {
             "keyword": "공복혈당100",
@@ -179,7 +187,8 @@
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2659155",
                 "https://cafe.naver.com/zoozoocom/301140",
-                "https://cafe.naver.com/zoozoocom/309548"
+                "https://cafe.naver.com/zoozoocom/309548",
+                "https://cafe.naver.com/zoozoocom/311221"
             ]
         },
         {
@@ -426,7 +435,10 @@
         },
         {
             "keyword": "공복 혈당 당화혈색소",
-            "urls": ["https://cafe.naver.com/peopledisc/1089662"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1089662",
+                "https://cafe.naver.com/zoozoocom/311235"
+            ]
         },
         {
             "keyword": "혈당측정검사지",
@@ -881,7 +893,8 @@
             "keyword": "인슐린 저항성 개선",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/289727",
-                "https://cafe.naver.com/zoozoocom/305352"
+                "https://cafe.naver.com/zoozoocom/305352",
+                "https://cafe.naver.com/zoozoocom/311239"
             ]
         },
         {
@@ -905,7 +918,10 @@
         },
         {
             "keyword": "식후혈당 300",
-            "urls": ["https://cafe.naver.com/zoozoocom/301142"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/301142",
+                "https://cafe.naver.com/zoozoocom/311242"
+            ]
         },
         {
             "keyword": "혈당 300",
