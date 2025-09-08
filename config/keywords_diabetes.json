@@ -321,7 +321,10 @@
         },
         {
             "keyword": "당뇨 유전",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2662474"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2662474",
+                "https://cafe.naver.com/zoozoocom/311652"
+            ]
         },
         {
             "keyword": "당뇨 소변 냄새",
@@ -427,7 +430,10 @@
         },
         {
             "keyword": "인슐린수치",
-            "urls": ["https://cafe.naver.com/peopledisc/1091375"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1091375",
+                "https://cafe.naver.com/peopledisc/1138762"
+            ]
         },
         {
             "keyword": "당뇨 발가락",
@@ -983,15 +989,38 @@
         },
         {
             "keyword": "당뇨 체중감소",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2662512"]
+            "urls": [
+                "https://cafe.naver.com/gimhaezumma/2662512",
+                "https://cafe.naver.com/peopledisc/1138763"
+            ]
         },
         {
             "keyword": "당뇨 아침식사",
             "urls": ["https://cafe.naver.com/peopledisc/1099368"]
         },
         {
-            "keyword": "당뇨 손가락",
-            "urls": ["https://cafe.naver.com/peopledisc/1098404"]
+            "keyword": "대체당 설사",
+            "urls": ["https://cafe.naver.com/zoozoocom/311631"]
+        },
+        {
+            "keyword": "아메리카노 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/311625"]
+        },
+        {
+            "keyword": "아스파탐 발암물질",
+            "urls": ["https://cafe.naver.com/zoozoocom/311635"]
+        },
+        {
+            "keyword": "아스파탐 발암물질",
+            "urls": ["https://cafe.naver.com/zoozoocom/311635"]
+        },
+        {
+            "keyword": "홍시 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/311637"]
+        },
+        {
+            "keyword": "슬로우조깅 효과",
+            "urls": ["https://cafe.naver.com/zoozoocom/311644"]
         },
         {
             "keyword": "아침 바나나 혈당",
@@ -1198,7 +1227,10 @@
         },
         {
             "keyword": "당화혈색소 6.1",
-            "urls": ["https://cafe.naver.com/zoozoocom/292096"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/292096",
+                "https://cafe.naver.com/peopledisc/1138757"
+            ]
         },
         {
             "keyword": "당화혈색소 6.5",

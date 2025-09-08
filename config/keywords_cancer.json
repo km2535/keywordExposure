@@ -213,7 +213,8 @@
                 "https://cafe.naver.com/gimhaezumma/2614725",
                 "https://cafe.naver.com/zoozoocom/267855",
                 "https://cafe.naver.com/zoozoocom/276047",
-                "https://cafe.naver.com/zoozoocom/290247"
+                "https://cafe.naver.com/zoozoocom/290247",
+                "https://cafe.naver.com/zoozoocom/311549"
             ]
         },
         {
@@ -2924,6 +2925,18 @@
         {
             "keyword": "위암 전단계",
             "urls": ["https://cafe.naver.com/zoozoocom/309911"]
+        },
+        {
+            "keyword": "암환자 모자",
+            "urls": ["https://cafe.naver.com/zoozoocom/311560"]
+        },
+        {
+            "keyword": "미역귀후코이단",
+            "urls": ["https://cafe.naver.com/zoozoocom/311572"]
+        },
+        {
+            "keyword": "항암부작용 증상",
+            "urls": ["https://cafe.naver.com/zoozoocom/311590"]
         }
     ]
 }
