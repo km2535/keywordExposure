@@ -120,7 +120,10 @@
         },
         {
             "keyword": "옥수수 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/310787"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/310787",
+                "https://cafe.naver.com/zoozoocom/311992"
+            ]
         },
         {
             "keyword": "당뇨 투석",
@@ -477,7 +480,8 @@
             "keyword": "식후 3시간 혈당",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/301483",
-                "https://cafe.naver.com/zoozoocom/308387"
+                "https://cafe.naver.com/zoozoocom/308387",
+                "https://cafe.naver.com/zoozoocom/312093"
             ]
         },
         {
@@ -707,7 +711,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/299484",
                 "https://cafe.naver.com/zoozoocom/305950",
-                "https://cafe.naver.com/peopledisc/1136755"
+                "https://cafe.naver.com/peopledisc/1136755",
+                "https://cafe.naver.com/zoozoocom/311999"
             ]
         },
         {
@@ -740,7 +745,10 @@
         },
         {
             "keyword": "미숫가루 혈당",
-            "urls": ["https://cafe.naver.com/peopledisc/1132768"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1132768",
+                "https://cafe.naver.com/peopledisc/1140372"
+            ]
         },
         {
             "keyword": "임당 증상",
@@ -1110,7 +1118,8 @@
                 "https://cafe.naver.com/zoozoocom/272684",
                 "https://cafe.naver.com/zoozoocom/288802",
                 "https://cafe.naver.com/zoozoocom/290258",
-                "https://cafe.naver.com/zoozoocom/310805"
+                "https://cafe.naver.com/zoozoocom/310805",
+                "https://cafe.naver.com/zoozoocom/312099"
             ]
         },
         {
@@ -1192,7 +1201,8 @@
             "keyword": "당화혈색소 5.7",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1100046",
-                "https://cafe.naver.com/peopledisc/1102510"
+                "https://cafe.naver.com/peopledisc/1102510",
+                "https://cafe.naver.com/zoozoocom/312086"
             ]
         },
         {
@@ -1494,7 +1504,8 @@
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2659815",
                 "https://cafe.naver.com/peopledisc/1124909",
-                "https://cafe.naver.com/zoozoocom/308680"
+                "https://cafe.naver.com/zoozoocom/308680",
+                "https://cafe.naver.com/peopledisc/1140384"
             ]
         },
         {
@@ -1503,7 +1514,10 @@
         },
         {
             "keyword": "혈당컷",
-            "urls": ["https://cafe.naver.com/zoozoocom/292794"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/292794",
+                "https://cafe.naver.com/peopledisc/1140381"
+            ]
         },
         {
             "keyword": "당뇨병성 망막병증",
