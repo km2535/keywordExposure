@@ -112,11 +112,18 @@
         },
         {
             "keyword": "참외 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/301792"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/301792",
+                "https://cafe.naver.com/zoozoocom/312534"
+            ]
         },
         {
             "keyword": "당뇨 옥수수",
             "urls": ["https://cafe.naver.com/zoozoocom/299202"]
+        },
+        {
+            "keyword": "배 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/312540"]
         },
         {
             "keyword": "옥수수 혈당",
@@ -674,7 +681,8 @@
             "keyword": "비만 당뇨",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1089675",
-                "https://cafe.naver.com/zoozoocom/305642"
+                "https://cafe.naver.com/zoozoocom/305642",
+                "https://cafe.naver.com/peopledisc/1137306"
             ]
         },
         {
@@ -741,7 +749,10 @@
         },
         {
             "keyword": "공복혈당 108",
-            "urls": ["https://cafe.naver.com/peopledisc/1132766"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1132766",
+                "https://cafe.naver.com/zoozoocom/312547"
+            ]
         },
         {
             "keyword": "미숫가루 혈당",
@@ -981,7 +992,10 @@
         },
         {
             "keyword": "당뇨식이",
-            "urls": ["https://cafe.naver.com/zoozoocom/297565"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/297565",
+                "https://cafe.naver.com/zoozoocom/312501"
+            ]
         },
         {
             "keyword": "임당 식단표",
@@ -1039,7 +1053,10 @@
         },
         {
             "keyword": "바나나 혈당지수",
-            "urls": ["https://cafe.naver.com/zoozoocom/298486"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/298486",
+                "https://cafe.naver.com/zoozoocom/312496"
+            ]
         },
         {
             "keyword": "당뇨 실명",
@@ -1202,7 +1219,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/1100046",
                 "https://cafe.naver.com/peopledisc/1102510",
-                "https://cafe.naver.com/zoozoocom/312086"
+                "https://cafe.naver.com/zoozoocom/312086",
+                "https://cafe.naver.com/peopledisc/1141653"
             ]
         },
         {
@@ -1252,6 +1270,10 @@
         {
             "keyword": "당화혈색소 6.4",
             "urls": ["https://cafe.naver.com/zoozoocom/301797"]
+        },
+        {
+            "keyword": "당화혈색소 6",
+            "urls": ["https://cafe.naver.com/zoozoocom/312564"]
         },
         {
             "keyword": "당뇨 간헐적단식",
@@ -1413,7 +1435,8 @@
             "keyword": "땅콩버터혈당",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/273871",
-                "https://cafe.naver.com/peopledisc/1104386"
+                "https://cafe.naver.com/peopledisc/1104386",
+                "https://cafe.naver.com/zoozoocom/312552"
             ]
         },
         {
