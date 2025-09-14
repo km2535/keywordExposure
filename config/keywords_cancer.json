@@ -289,7 +289,8 @@
                 "https://cafe.naver.com/zoozoocom/286143",
                 "https://cafe.naver.com/zoozoocom/287805",
                 "https://cafe.naver.com/zoozoocom/291475",
-                "https://cafe.naver.com/peopledisc/1106114"
+                "https://cafe.naver.com/peopledisc/1106114",
+                "https://cafe.naver.com/peopledisc/1144698"
             ]
         },
         {
@@ -1379,7 +1380,8 @@
                 "https://cafe.naver.com/peopledisc/944912",
                 "https://cafe.naver.com/rksghwhantk/1247290",
                 "https://cafe.naver.com/zoozoocom/284096",
-                "https://cafe.naver.com/peopledisc/1123067"
+                "https://cafe.naver.com/peopledisc/1123067",
+                "https://cafe.naver.com/peopledisc/1144702"
             ]
         },
         {
@@ -1531,7 +1533,8 @@
                 "https://cafe.naver.com/peopledisc/982261",
                 "https://cafe.naver.com/zoozoocom/271650",
                 "https://cafe.naver.com/zoozoocom/284346",
-                "https://cafe.naver.com/zoozoocom/298814"
+                "https://cafe.naver.com/zoozoocom/298814",
+                "https://cafe.naver.com/zoozoocom/313755"
             ]
         },
         {
@@ -2964,6 +2967,14 @@
         {
             "keyword": "담낭암 생존율",
             "urls": ["https://cafe.naver.com/zoozoocom/312933"]
+        },
+        {
+            "keyword": "암에 좋은 차",
+            "urls": ["https://cafe.naver.com/zoozoocom/313759"]
+        },
+        {
+            "keyword": "아마씨유",
+            "urls": ["https://cafe.naver.com/peopledisc/1144699"]
         }
     ]
 }

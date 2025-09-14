@@ -101,8 +101,8 @@
             "urls": []
         },
         {
-            "keyword": "당뇨 장어",
-            "urls": []
+            "keyword": "장어 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/313817"]
         },
         {
             "keyword": "바나나 혈당",
@@ -217,7 +217,10 @@
         },
         {
             "keyword": "공복혈당만높은이유",
-            "urls": ["https://cafe.naver.com/zoozoocom/303461"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/303461",
+                "https://cafe.naver.com/zoozoocom/313789"
+            ]
         },
         {
             "keyword": "당뇨환자 간식",
@@ -593,14 +596,16 @@
             "keyword": "공복혈당 수치 100",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1108472",
-                "https://cafe.naver.com/zoozoocom/305952"
+                "https://cafe.naver.com/zoozoocom/305952",
+                "https://cafe.naver.com/zoozoocom/313798"
             ]
         },
         {
             "keyword": "공복혈당 150",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1096695",
-                "https://cafe.naver.com/zoozoocom/309967"
+                "https://cafe.naver.com/zoozoocom/309967",
+                "https://cafe.naver.com/zoozoocom/313806"
             ]
         },
         {
@@ -746,7 +751,8 @@
                 "https://cafe.naver.com/zoozoocom/303074",
                 "https://cafe.naver.com/peopledisc/1119188",
                 "https://cafe.naver.com/zoozoocom/305630",
-                "https://cafe.naver.com/zoozoocom/308682"
+                "https://cafe.naver.com/zoozoocom/308682",
+                "https://cafe.naver.com/zoozoocom/313814"
             ]
         },
         {
@@ -1096,7 +1102,10 @@
         },
         {
             "keyword": "당뇨 통밀빵",
-            "urls": ["https://cafe.naver.com/zoozoocom/307163"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/307163",
+                "https://cafe.naver.com/zoozoocom/313820"
+            ]
         },
         {
             "keyword": "바나바잎 혈당",
