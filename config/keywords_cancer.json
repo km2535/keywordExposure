@@ -1388,7 +1388,8 @@
             "keyword": "갑상선암 폐전이",
             "urls": [
                 "https://cafe.naver.com/peopledisc/996398",
-                "https://cafe.naver.com/rksghwhantk/1247755"
+                "https://cafe.naver.com/rksghwhantk/1247755",
+                "https://cafe.naver.com/zoozoocom/314303"
             ]
         },
         {
@@ -2009,7 +2010,8 @@
             "keyword": "난소암 전조증상",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/269986",
-                "https://cafe.naver.com/zoozoocom/280558"
+                "https://cafe.naver.com/zoozoocom/280558",
+                "https://cafe.naver.com/zoozoocom/314263"
             ]
         },
         {
@@ -2115,7 +2117,8 @@
                 "https://cafe.naver.com/zoozoocom/290791",
                 "https://cafe.naver.com/zoozoocom/296345",
                 "https://cafe.naver.com/zoozoocom/307484",
-                "https://cafe.naver.com/zoozoocom/310771"
+                "https://cafe.naver.com/zoozoocom/310771",
+                "https://cafe.naver.com/peopledisc/1141599"
             ]
         },
         {
@@ -2370,7 +2373,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271282",
                 "https://cafe.naver.com/zoozoocom/277567",
-                "https://cafe.naver.com/zoozoocom/279390"
+                "https://cafe.naver.com/zoozoocom/279390",
+                "https://cafe.naver.com/zoozoocom/314307"
             ]
         },
         {
@@ -2853,7 +2857,8 @@
             "keyword": "식도암 수술",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1113097",
-                "https://cafe.naver.com/peopledisc/1131877"
+                "https://cafe.naver.com/peopledisc/1131877",
+                "https://cafe.naver.com/zoozoocom/314260"
             ]
         },
         {
@@ -2930,7 +2935,10 @@
         },
         {
             "keyword": "후코이단",
-            "urls": ["https://cafe.naver.com/zoozoocom/307766"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/307766",
+                "https://cafe.naver.com/zoozoocom/314254"
+            ]
         },
         {
             "keyword": "항암치료중 음식",
@@ -2938,7 +2946,10 @@
         },
         {
             "keyword": "염증 줄이는 음식",
-            "urls": ["https://cafe.naver.com/zoozoocom/307790"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/307790",
+                "https://cafe.naver.com/zoozoocom/314258"
+            ]
         },
         {
             "keyword": "몸속 염증 없애는 음식",
@@ -2975,6 +2986,10 @@
         {
             "keyword": "아마씨유",
             "urls": ["https://cafe.naver.com/peopledisc/1144699"]
+        },
+        {
+            "keyword": "폐암에좋은버섯",
+            "urls": ["https://cafe.naver.com/zoozoocom/314296"]
         }
     ]
 }
