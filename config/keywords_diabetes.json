@@ -21,6 +21,10 @@
             "urls": ["https://cafe.naver.com/zoozoocom/311216"]
         },
         {
+            "keyword": "찐고구마 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1144694"]
+        },
+        {
             "keyword": "당화혈색소 낮추기",
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2662466",
@@ -75,7 +79,10 @@
         },
         {
             "keyword": "취침전 혈당",
-            "urls": ["https://cafe.naver.com/peopledisc/1091348"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1091348",
+                "https://cafe.naver.com/peopledisc/1112610"
+            ]
         },
         {
             "keyword": "취침전 혈당 수치",
@@ -512,6 +519,10 @@
             "urls": ["https://cafe.naver.com/peopledisc/1116585"]
         },
         {
+            "keyword": "식후 4시간 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/314704"]
+        },
+        {
             "keyword": "당뇨 기준",
             "urls": ["https://cafe.naver.com/peopledisc/1091369"]
         },
@@ -638,7 +649,10 @@
         },
         {
             "keyword": "당뇨 시력 저하",
-            "urls": ["https://cafe.naver.com/peopledisc/1092102"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1092102",
+                "https://cafe.naver.com/peopledisc/1146801"
+            ]
         },
         {
             "keyword": "혈당 400",
@@ -936,7 +950,10 @@
         },
         {
             "keyword": "식곤증 당뇨",
-            "urls": ["https://cafe.naver.com/zoozoocom/300324"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/300324",
+                "https://cafe.naver.com/peopledisc/1146798"
+            ]
         },
         {
             "keyword": "혈당 혈압",
@@ -1008,7 +1025,7 @@
         },
         {
             "keyword": "혈당쇼크 증상",
-            "urls": []
+            "urls": ["https://cafe.naver.com/zoozoocom/314699"]
         },
         {
             "keyword": "임당검사 금식",
@@ -1124,7 +1141,10 @@
         },
         {
             "keyword": "혈당스파크",
-            "urls": ["https://cafe.naver.com/zoozoocom/298824"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/298824",
+                "https://cafe.naver.com/peopledisc/1146807"
+            ]
         },
         {
             "keyword": "혈당스파크 증상",
@@ -1307,6 +1327,10 @@
                 "https://cafe.naver.com/peopledisc/1104387",
                 "https://cafe.naver.com/zoozoocom/309983"
             ]
+        },
+        {
+            "keyword": "당화혈색소 6.2",
+            "urls": ["https://cafe.naver.com/zoozoocom/314706"]
         },
         {
             "keyword": "당화혈색소 6.4",
@@ -1526,7 +1550,8 @@
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2658706",
                 "https://cafe.naver.com/zoozoocom/302449",
-                "https://cafe.naver.com/zoozoocom/308084"
+                "https://cafe.naver.com/zoozoocom/308084",
+                "https://cafe.naver.com/zoozoocom/314700"
             ]
         },
         {
