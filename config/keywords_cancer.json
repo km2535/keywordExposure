@@ -556,7 +556,7 @@
                 "https://cafe.naver.com/peopledisc/941285",
                 "https://cafe.naver.com/zoozoocom/281468",
                 "https://cafe.naver.com/peopledisc/1095600",
-                ":https://cafe.naver.com/zoozoocom/314729"
+                "https://cafe.naver.com/zoozoocom/314729"
             ]
         },
         {
@@ -1467,7 +1467,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/978552",
                 "https://cafe.naver.com/zoozoocom/282810",
-                "https://cafe.naver.com/zoozoocom/285797"
+                "https://cafe.naver.com/zoozoocom/285797",
+                "https://cafe.naver.com/zoozoocom/315033"
             ]
         },
         {
@@ -1529,7 +1530,8 @@
             "keyword": "유방암 림프전이",
             "urls": [
                 "https://cafe.naver.com/peopledisc/946434",
-                "https://cafe.naver.com/zoozoocom/282824"
+                "https://cafe.naver.com/zoozoocom/282824",
+                "https://cafe.naver.com/zoozoocom/315041"
             ]
         },
         {
@@ -2082,7 +2084,8 @@
                 "https://cafe.naver.com/zoozoocom/297224",
                 "https://cafe.naver.com/zoozoocom/303457",
                 "https://cafe.naver.com/zoozoocom/304715",
-                "https://cafe.naver.com/zoozoocom/310758"
+                "https://cafe.naver.com/zoozoocom/310758",
+                "https://cafe.naver.com/zoozoocom/315039"
             ]
         },
         {
@@ -2739,7 +2742,8 @@
             "keyword": "초기 위암 증상",
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2654879",
-                "https://cafe.naver.com/peopledisc/1095599"
+                "https://cafe.naver.com/peopledisc/1095599",
+                "https://cafe.naver.com/zoozoocom/315045"
             ]
         },
         {
@@ -2924,6 +2928,10 @@
             "urls": ["https://cafe.naver.com/zoozoocom/307132"]
         },
         {
+            "keyword": "전립선암에좋은식품",
+            "urls": ["https://cafe.naver.com/zoozoocom/315043"]
+        },
+        {
             "keyword": "항염증 식단",
             "urls": ["https://cafe.naver.com/zoozoocom/307138"]
         },
@@ -2994,7 +3002,7 @@
             "urls": ["https://cafe.naver.com/peopledisc/1144699"]
         },
         {
-            "keyword": "폐암에좋은버섯",
+            "keyword": "암에좋은버섯",
             "urls": ["https://cafe.naver.com/zoozoocom/314296"]
         }
     ]

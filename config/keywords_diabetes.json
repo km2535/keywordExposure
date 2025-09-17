@@ -132,11 +132,18 @@
         },
         {
             "keyword": "당뇨 옥수수",
-            "urls": ["https://cafe.naver.com/zoozoocom/299202"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/299202",
+                "https://cafe.naver.com/zoozoocom/315081"
+            ]
         },
         {
             "keyword": "배 혈당",
             "urls": ["https://cafe.naver.com/zoozoocom/312540"]
+        },
+        {
+            "keyword": "당뇨에 좋은 채소",
+            "urls": ["https://cafe.naver.com/zoozoocom/315085"]
         },
         {
             "keyword": "옥수수 혈당",
@@ -198,7 +205,8 @@
             "keyword": "식후혈당 200",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/297908",
-                "https://cafe.naver.com/zoozoocom/305360"
+                "https://cafe.naver.com/zoozoocom/305360",
+                "https://cafe.naver.com/peopledisc/1147763"
             ]
         },
         {
@@ -311,6 +319,10 @@
             "urls": ["https://cafe.naver.com/zoozoocom/298175"]
         },
         {
+            "keyword": "당뇨 초기증상",
+            "urls": ["https://cafe.naver.com/peopledisc/1144696"]
+        },
+        {
             "keyword": "당뇨에 좋은 운동",
             "urls": ["https://cafe.naver.com/peopledisc/1091356"]
         },
@@ -320,7 +332,10 @@
         },
         {
             "keyword": "당뇨 합병증 증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/306843"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/306843",
+                "https://cafe.naver.com/zoozoocom/315070"
+            ]
         },
         {
             "keyword": "단백뇨",
@@ -468,7 +483,10 @@
         },
         {
             "keyword": "당뇨 발가락",
-            "urls": ["https://cafe.naver.com/peopledisc/1099120"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1099120",
+                "https://cafe.naver.com/zoozoocom/315065"
+            ]
         },
         {
             "keyword": "공복 혈당 당화혈색소",
@@ -1263,7 +1281,8 @@
             "keyword": "당화혈색소 7",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1090484",
-                "https://cafe.naver.com/zoozoocom/309964"
+                "https://cafe.naver.com/zoozoocom/309964",
+                "https://cafe.naver.com/peopledisc/1147762"
             ]
         },
         {
@@ -1285,7 +1304,10 @@
         },
         {
             "keyword": "당화혈색소 5.4",
-            "urls": ["https://cafe.naver.com/zoozoocom/301507"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/301507",
+                "https://cafe.naver.com/peopledisc/1147761"
+            ]
         },
         {
             "keyword": "당화혈색소 5.2",
@@ -1589,6 +1611,10 @@
         {
             "keyword": "고혈당 쇼크 증상",
             "urls": ["https://cafe.naver.com/gimhaezumma/2659815"]
+        },
+        {
+            "keyword": "고혈당 어지러움",
+            "urls": ["https://cafe.naver.com/zoozoocom/315061"]
         },
         {
             "keyword": "고혈당 쇼크",
