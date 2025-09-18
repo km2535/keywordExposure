@@ -426,7 +426,10 @@
         },
         {
             "keyword": "저녁식후 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/302110"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/302110",
+                "https://cafe.naver.com/peopledisc/1149092"
+            ]
         },
         {
             "keyword": "당뇨 발저림",
@@ -642,7 +645,10 @@
         },
         {
             "keyword": "공복혈당 140",
-            "urls": ["https://cafe.naver.com/zoozoocom/309058"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/309058",
+                "https://cafe.naver.com/zoozoocom/315488"
+            ]
         },
         {
             "keyword": "공복혈당 200",
@@ -906,7 +912,10 @@
         },
         {
             "keyword": "당뇨전단계 관리방법",
-            "urls": ["https://cafe.naver.com/peopledisc/1119736"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1119736",
+                "https://cafe.naver.com/zoozoocom/315481"
+            ]
         },
         {
             "keyword": "1형당뇨 완치",
@@ -1550,7 +1559,8 @@
                 "https://cafe.naver.com/zoozoocom/273888",
                 "https://cafe.naver.com/zoozoocom/289505",
                 "https://cafe.naver.com/zoozoocom/304475",
-                "https://cafe.naver.com/zoozoocom/309540"
+                "https://cafe.naver.com/zoozoocom/309540",
+                "https://cafe.naver.com/peopledisc/1149088"
             ]
         },
         {
@@ -1731,6 +1741,22 @@
         {
             "keyword": "복숭아 혈당",
             "urls": ["https://cafe.naver.com/zoozoocom/310370"]
+        },
+        {
+            "keyword": "곶감 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1149089"]
+        },
+        {
+            "keyword": "돼지갈비 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/315476"]
+        },
+        {
+            "keyword": "바나나잎 효능",
+            "urls": ["https://cafe.naver.com/zoozoocom/315360"]
+        },
+        {
+            "keyword": "송편혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/315465"]
         }
     ]
 }

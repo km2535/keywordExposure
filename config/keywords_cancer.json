@@ -378,7 +378,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/916618",
                 "https://cafe.naver.com/move79/5527190",
-                "https://cafe.naver.com/zoozoocom/283648"
+                "https://cafe.naver.com/zoozoocom/283648",
+                "https://cafe.naver.com/zoozoocom/315402"
             ]
         },
         {
@@ -1056,7 +1057,8 @@
                 "https://cafe.naver.com/zoozoocom/268734",
                 "https://cafe.naver.com/zoozoocom/282810",
                 "https://cafe.naver.com/zoozoocom/290255",
-                "https://cafe.naver.com/peopledisc/1123677"
+                "https://cafe.naver.com/peopledisc/1123677",
+                "https://cafe.naver.com/zoozoocom/315393"
             ]
         },
         {
@@ -2400,7 +2402,8 @@
                 "https://cafe.naver.com/peopledisc/966554",
                 "https://cafe.naver.com/zoozoocom/279383",
                 "https://cafe.naver.com/zoozoocom/297219",
-                "https://cafe.naver.com/peopledisc/1124905"
+                "https://cafe.naver.com/peopledisc/1124905",
+                "https://cafe.naver.com/zoozoocom/315455"
             ]
         },
         {
@@ -2857,7 +2860,10 @@
         },
         {
             "keyword": "염증수치 낮추는 음식",
-            "urls": ["https://cafe.naver.com/zoozoocom/303475"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/303475",
+                "https://cafe.naver.com/zoozoocom/315412"
+            ]
         },
         {
             "keyword": "난소암 재발",
@@ -3004,6 +3010,10 @@
         {
             "keyword": "암에좋은버섯",
             "urls": ["https://cafe.naver.com/zoozoocom/314296"]
+        },
+        {
+            "keyword": "폐암3기a생존율",
+            "urls": ["https://cafe.naver.com/zoozoocom/315342"]
         }
     ]
 }
