@@ -67,6 +67,14 @@
             "urls": ["https://cafe.naver.com/peopledisc/1091340"]
         },
         {
+            "keyword": "단백뇨 식단",
+            "urls": ["https://cafe.naver.com/peopledisc/1150063"]
+        },
+        {
+            "keyword": "골드키위 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1150065"]
+        },
+        {
             "keyword": "당뇨 단호박",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/300059",
@@ -362,7 +370,10 @@
         },
         {
             "keyword": "당뇨 진단",
-            "urls": ["https://cafe.naver.com/peopledisc/1091369"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1091369",
+                "https://cafe.naver.com/zoozoocom/315725"
+            ]
         },
         {
             "keyword": "당뇨 유전",
@@ -520,7 +531,10 @@
         },
         {
             "keyword": "식후 2시간 혈당 정상수치",
-            "urls": ["https://cafe.naver.com/zoozoocom/291503"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/291503",
+                "https://cafe.naver.com/peopledisc/1150067"
+            ]
         },
         {
             "keyword": "식후2시간후혈당",
@@ -1021,7 +1035,8 @@
             "keyword": "식후혈당 300",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/301142",
-                "https://cafe.naver.com/zoozoocom/311242"
+                "https://cafe.naver.com/zoozoocom/311242",
+                "https://cafe.naver.com/zoozoocom/315718"
             ]
         },
         {
@@ -1369,7 +1384,7 @@
         },
         {
             "keyword": "당화혈색소 6",
-            "urls": ["https://cafe.naver.com/zoozoocom/312564"]
+            "urls": ["https://cafe.naver.com/zoozoocom/315707"]
         },
         {
             "keyword": "당뇨 간헐적단식",
