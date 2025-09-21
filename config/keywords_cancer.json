@@ -32,7 +32,8 @@
                 "https://cafe.naver.com/zoozoocom/253181",
                 "https://cafe.naver.com/gimhaezumma/2628264",
                 "https://cafe.naver.com/peopledisc/1095599",
-                "https://cafe.naver.com/peopledisc/1134894"
+                "https://cafe.naver.com/peopledisc/1134894",
+                "https://cafe.naver.com/zoozoocom/316175"
             ]
         },
         {
@@ -794,7 +795,8 @@
                 "https://cafe.naver.com/rksghwhantk/1246618",
                 "https://cafe.naver.com/zoozoocom/279880",
                 "https://cafe.naver.com/zoozoocom/294991",
-                "https://cafe.naver.com/peopledisc/1138019"
+                "https://cafe.naver.com/peopledisc/1138019",
+                "https://cafe.naver.com/zoozoocom/316172"
             ]
         },
         {
@@ -1237,7 +1239,8 @@
                 "https://cafe.naver.com/rksghwhantk/1242501",
                 "https://cafe.naver.com/peopledisc/973917",
                 "https://cafe.naver.com/zoozoocom/285041",
-                "https://cafe.naver.com/peopledisc/1118393"
+                "https://cafe.naver.com/peopledisc/1118393",
+                "https://cafe.naver.com/zoozoocom/316152"
             ]
         },
         {
@@ -2615,7 +2618,8 @@
             "keyword": "직장암 검사",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272405",
-                "https://cafe.naver.com/zoozoocom/280556"
+                "https://cafe.naver.com/zoozoocom/280556",
+                "https://cafe.naver.com/zoozoocom/316159"
             ]
         },
         {
@@ -2805,6 +2809,10 @@
             ]
         },
         {
+            "keyword": "대장암 3기 생존율",
+            "urls": ["https://cafe.naver.com/zoozoocom/316171"]
+        },
+        {
             "keyword": "전립선암 3기 생존율",
             "urls": ["https://cafe.naver.com/zoozoocom/290807"]
         },
@@ -2923,7 +2931,10 @@
         },
         {
             "keyword": "유방암초기증상",
-            "urls": ["https://cafe.naver.com/zoozoocom/307102"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/307102",
+                "https://cafe.naver.com/zoozoocom/316173"
+            ]
         },
         {
             "keyword": "고환암 치료",
