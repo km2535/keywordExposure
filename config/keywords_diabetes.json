@@ -423,7 +423,8 @@
             "keyword": "당뇨 유산균",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/289710",
-                "https://cafe.naver.com/zoozoocom/297568"
+                "https://cafe.naver.com/zoozoocom/297568",
+                "https://cafe.naver.com/zoozoocom/316555"
             ]
         },
         {
@@ -923,7 +924,8 @@
             "keyword": "당뇨전단계 식단",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1107039",
-                "https://cafe.naver.com/zoozoocom/310369"
+                "https://cafe.naver.com/zoozoocom/310369",
+                "https://cafe.naver.com/peopledisc/1152724"
             ]
         },
         {
@@ -1365,7 +1367,10 @@
         },
         {
             "keyword": "당화혈색소 5.5",
-            "urls": ["https://cafe.naver.com/zoozoocom/300694"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/300694",
+                "https://cafe.naver.com/zoozoocom/316553"
+            ]
         },
         {
             "keyword": "당화혈색소 5.1",
@@ -1375,7 +1380,8 @@
             "keyword": "당화혈색소 6.1",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/292096",
-                "https://cafe.naver.com/peopledisc/1138757"
+                "https://cafe.naver.com/peopledisc/1138757",
+                "https://cafe.naver.com/peopledisc/1150793"
             ]
         },
         {
@@ -1453,7 +1459,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272729",
                 "https://cafe.naver.com/gimhaezumma/2651669",
-                "https://cafe.naver.com/zoozoocom/303077"
+                "https://cafe.naver.com/zoozoocom/303077",
+                "https://cafe.naver.com/zoozoocom/316545"
             ]
         },
         {
@@ -1527,7 +1534,8 @@
             "keyword": "바나바잎 영양제",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/303078",
-                "https://cafe.naver.com/zoozoocom/304472"
+                "https://cafe.naver.com/zoozoocom/304472",
+                "https://cafe.naver.com/peopledisc/1152300"
             ]
         },
         {
@@ -1783,6 +1791,10 @@
         {
             "keyword": "송편혈당",
             "urls": ["https://cafe.naver.com/zoozoocom/315465"]
+        },
+        {
+            "keyword": "다크초콜릿 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1152296"]
         }
     ]
 }
