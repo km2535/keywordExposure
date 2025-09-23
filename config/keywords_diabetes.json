@@ -557,7 +557,8 @@
                 "https://cafe.naver.com/zoozoocom/301483",
                 "https://cafe.naver.com/zoozoocom/308387",
                 "https://cafe.naver.com/zoozoocom/312093",
-                "https://cafe.naver.com/peopledisc/1146032"
+                "https://cafe.naver.com/peopledisc/1146032",
+                "https://cafe.naver.com/peopledisc/1150794"
             ]
         },
         {
@@ -566,7 +567,7 @@
         },
         {
             "keyword": "식후 4시간 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/314704"]
+            "urls": ["https://cafe.naver.com/peopledisc/1153702"]
         },
         {
             "keyword": "당뇨 기준",
@@ -962,6 +963,10 @@
         {
             "keyword": "혈당스파이크 증상",
             "urls": ["https://cafe.naver.com/peopledisc/1104385"]
+        },
+        {
+            "keyword": "혈당스파이크 음식",
+            "urls": ["https://cafe.naver.com/zoozoocom/316955"]
         },
         {
             "keyword": "혈당스파이크 졸음",
@@ -1388,7 +1393,8 @@
             "keyword": "당화혈색소 6.5",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1104387",
-                "https://cafe.naver.com/zoozoocom/309983"
+                "https://cafe.naver.com/zoozoocom/309983",
+                "https://cafe.naver.com/peopledisc/1153700"
             ]
         },
         {
@@ -1728,7 +1734,10 @@
         },
         {
             "keyword": "당독소 제거",
-            "urls": ["https://cafe.naver.com/zoozoocom/300327"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/300327",
+                "https://cafe.naver.com/zoozoocom/316953"
+            ]
         },
         {
             "keyword": "당뇨식단배달",
@@ -1742,7 +1751,8 @@
             "keyword": "고혈압 당뇨",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/305954",
-                "https://cafe.naver.com/zoozoocom/309974"
+                "https://cafe.naver.com/zoozoocom/309974",
+                "https://cafe.naver.com/zoozoocom/316898"
             ]
         },
         {
@@ -1795,6 +1805,14 @@
         {
             "keyword": "다크초콜릿 혈당",
             "urls": ["https://cafe.naver.com/peopledisc/1152296"]
+        },
+        {
+            "keyword": "아보카도 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1153705"]
+        },
+        {
+            "keyword": "공복혈당 정상수치125",
+            "urls": ["https://cafe.naver.com/zoozoocom/316961"]
         }
     ]
 }
