@@ -83,8 +83,16 @@
             ]
         },
         {
-            "keyword": "소아당뇨",
-            "urls": []
+            "keyword": "단호박 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/317208"]
+        },
+        {
+            "keyword": "베이글 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/317215"]
+        },
+        {
+            "keyword": "혈당 조절제",
+            "urls": ["https://cafe.naver.com/zoozoocom/317231"]
         },
         {
             "keyword": "취침전 혈당",
@@ -465,6 +473,14 @@
             "urls": ["https://cafe.naver.com/peopledisc/1126585"]
         },
         {
+            "keyword": "당뇨병 발 초기증상",
+            "urls": ["https://cafe.naver.com/peopledisc/1150795"]
+        },
+        {
+            "keyword": "당뇨병 합병증",
+            "urls": ["https://cafe.naver.com/peopledisc/1154644"]
+        },
+        {
             "keyword": "시나몬물",
             "urls": ["https://cafe.naver.com/zoozoocom/302115"]
         },
@@ -602,6 +618,10 @@
         {
             "keyword": "당뇨 귤",
             "urls": ["https://cafe.naver.com/zoozoocom/305007"]
+        },
+        {
+            "keyword": "귤 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/317243"]
         },
         {
             "keyword": "당뇨 밤",
@@ -831,7 +851,8 @@
             "keyword": "듀럼밀 혈당",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/302585",
-                "https://cafe.naver.com/peopledisc/1123679"
+                "https://cafe.naver.com/peopledisc/1123679",
+                "https://cafe.naver.com/peopledisc/1154648"
             ]
         },
         {
@@ -1819,6 +1840,10 @@
         {
             "keyword": "공복혈당 정상수치125",
             "urls": ["https://cafe.naver.com/zoozoocom/316961"]
+        },
+        {
+            "keyword": "두유 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1154647"]
         }
     ]
 }

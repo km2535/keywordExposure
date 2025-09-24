@@ -775,7 +775,8 @@
                 "https://cafe.naver.com/zoozoocom/280955",
                 "https://cafe.naver.com/zoozoocom/302102",
                 "https://cafe.naver.com/peopledisc/1130853",
-                "https://cafe.naver.com/zoozoocom/310754"
+                "https://cafe.naver.com/zoozoocom/310754",
+                "https://cafe.naver.com/zoozoocom/317291"
             ]
         },
         {
@@ -1964,6 +1965,24 @@
             ]
         },
         {
+            "keyword": "자궁경부암 염증소견",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/317260"
+            ]
+        },
+        {
+            "keyword": "유방암1기방사선치료",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/317265"
+            ]
+        },
+        {
+            "keyword": "자궁경부암 염증소견",
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/317260"
+            ]
+        },
+        {
             "keyword": "유방암 수술비",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/270256",
@@ -2194,7 +2213,8 @@
             "keyword": "유방암환자 식단",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/270909",
-                "https://cafe.naver.com/zoozoocom/287797"
+                "https://cafe.naver.com/zoozoocom/287797",
+                "https://cafe.naver.com/zoozoocom/317305"
             ]
         },
         {
@@ -2913,7 +2933,10 @@
         },
         {
             "keyword": "린파자",
-            "urls": ["https://cafe.naver.com/zoozoocom/305963"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/305963",
+                "https://cafe.naver.com/zoozoocom/317256"
+            ]
         },
         {
             "keyword": "장상피화생 치료",
@@ -3046,6 +3069,10 @@
         {
             "keyword": "폐암3기a생존율",
             "urls": ["https://cafe.naver.com/zoozoocom/315342"]
+        },
+        {
+            "keyword": "후코이단가루",
+            "urls": ["https://cafe.naver.com/zoozoocom/317273"]
         }
     ]
 }
