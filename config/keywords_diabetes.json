@@ -19,7 +19,10 @@
         },
         {
             "keyword": "고구마혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/311216"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/311216",
+                "https://cafe.naver.com/peopledisc/1144694"
+            ]
         },
         {
             "keyword": "찐고구마 혈당",
@@ -244,7 +247,8 @@
             "keyword": "공복혈당 높은이유",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/292103",
-                "https://cafe.naver.com/zoozoocom/305960"
+                "https://cafe.naver.com/zoozoocom/305960",
+                "https://cafe.naver.com/zoozoocom/313789"
             ]
         },
         {
@@ -612,7 +616,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/291502",
                 "https://cafe.naver.com/zoozoocom/301794",
-                "https://cafe.naver.com/zoozoocom/310361"
+                "https://cafe.naver.com/zoozoocom/310361",
+                "https://cafe.naver.com/peopledisc/1151557"
             ]
         },
         {
@@ -1687,7 +1692,7 @@
         },
         {
             "keyword": "고혈당 쇼크 증상",
-            "urls": ["https://cafe.naver.com/gimhaezumma/2659815"]
+            "urls": ["https://cafe.naver.com/peopledisc/1140384"]
         },
         {
             "keyword": "고혈당 어지러움",
