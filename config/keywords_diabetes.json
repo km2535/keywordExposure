@@ -701,7 +701,8 @@
             "keyword": "공복혈당 140",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/309058",
-                "https://cafe.naver.com/zoozoocom/315488"
+                "https://cafe.naver.com/zoozoocom/315488",
+                "https://cafe.naver.com/zoozoocom/317671"
             ]
         },
         {
@@ -849,7 +850,8 @@
                 "https://cafe.naver.com/peopledisc/1119188",
                 "https://cafe.naver.com/zoozoocom/305630",
                 "https://cafe.naver.com/zoozoocom/308682",
-                "https://cafe.naver.com/zoozoocom/313814"
+                "https://cafe.naver.com/zoozoocom/313814",
+                "https://cafe.naver.com/peopledisc/1156172"
             ]
         },
         {
@@ -1341,7 +1343,10 @@
         },
         {
             "keyword": "당뇨 비타민",
-            "urls": ["https://cafe.naver.com/peopledisc/1090475"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1090475",
+                "https://cafe.naver.com/zoozoocom/317650"
+            ]
         },
         {
             "keyword": "당뇨환자 선물",
@@ -1432,6 +1437,10 @@
         {
             "keyword": "당화혈색소 6.2",
             "urls": ["https://cafe.naver.com/zoozoocom/314706"]
+        },
+        {
+            "keyword": "당화혈색소 6.3",
+            "urls": ["https://cafe.naver.com/zoozoocom/317668"]
         },
         {
             "keyword": "당화혈색소 6.4",
@@ -1669,14 +1678,16 @@
             "keyword": "공복혈당장애 치료",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/304170",
-                "https://cafe.naver.com/zoozoocom/306162"
+                "https://cafe.naver.com/zoozoocom/306162",
+                "https://cafe.naver.com/peopledisc/1156342"
             ]
         },
         {
             "keyword": "공복혈당장애 증상",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/304170",
-                "https://cafe.naver.com/zoozoocom/307814"
+                "https://cafe.naver.com/zoozoocom/307814",
+                "https://cafe.naver.com/peopledisc/1156339"
             ]
         },
         {
@@ -1732,7 +1743,10 @@
         },
         {
             "keyword": "당뇨 갈증",
-            "urls": ["https://cafe.naver.com/peopledisc/1090482"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1090482",
+                "https://cafe.naver.com/zoozoocom/317647"
+            ]
         },
         {
             "keyword": "당뇨에 나쁜 음식",
