@@ -652,7 +652,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/992495",
                 "https://cafe.naver.com/rksghwhantk/1248493",
-                "https://cafe.naver.com/zoozoocom/300050"
+                "https://cafe.naver.com/zoozoocom/300050",
+                "https://cafe.naver.com/zoozoocom/316152"
             ]
         },
         {
@@ -1138,7 +1139,8 @@
                 "https://cafe.naver.com/peopledisc/971458",
                 "https://cafe.naver.com/zoozoocom/276492",
                 "https://cafe.naver.com/zoozoocom/294986",
-                "https://cafe.naver.com/zoozoocom/299474"
+                "https://cafe.naver.com/zoozoocom/299474",
+                "https://cafe.naver.com/zoozoocom/318361"
             ]
         },
         {
@@ -1665,7 +1667,8 @@
                 "https://cafe.naver.com/gimhaezumma/2628260",
                 "https://cafe.naver.com/zoozoocom/300680",
                 "https://cafe.naver.com/zoozoocom/303081",
-                "https://cafe.naver.com/zoozoocom/304454"
+                "https://cafe.naver.com/zoozoocom/304454",
+                "https://cafe.naver.com/zoozoocom/318335"
             ]
         },
         {
@@ -2082,7 +2085,8 @@
                 "https://cafe.naver.com/zoozoocom/276451",
                 "https://cafe.naver.com/zoozoocom/277951",
                 "https://cafe.naver.com/zoozoocom/281956",
-                "https://cafe.naver.com/zoozoocom/286616"
+                "https://cafe.naver.com/zoozoocom/286616",
+                "https://cafe.naver.com/zoozoocom/318360"
             ]
         },
         {
@@ -2421,7 +2425,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271281",
                 "https://cafe.naver.com/zoozoocom/277205",
-                "https://cafe.naver.com/peopledisc/1098523"
+                "https://cafe.naver.com/peopledisc/1098523",
+                "https://cafe.naver.com/zoozoocom/318364"
             ]
         },
         {
@@ -3044,6 +3049,10 @@
         {
             "keyword": "미역귀후코이단",
             "urls": ["https://cafe.naver.com/zoozoocom/311572"]
+        },
+        {
+            "keyword": "일본후코이단",
+            "urls": ["https://cafe.naver.com/zoozoocom/318365"]
         },
         {
             "keyword": "항암부작용 증상",

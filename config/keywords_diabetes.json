@@ -133,7 +133,10 @@
         },
         {
             "keyword": "바나나 혈당",
-            "urls": ["https://cafe.naver.com/zoozoocom/298486"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/298486",
+                "https://cafe.naver.com/peopledisc/1158377"
+            ]
         },
         {
             "keyword": "수박 당뇨",
@@ -460,6 +463,10 @@
         {
             "keyword": "식후혈당 130",
             "urls": ["https://cafe.naver.com/peopledisc/1108468"]
+        },
+        {
+            "keyword": "식후혈당 180",
+            "urls": ["https://cafe.naver.com/zoozoocom/318359"]
         },
         {
             "keyword": "저녁식후 혈당",
@@ -1207,6 +1214,10 @@
             "urls": []
         },
         {
+            "keyword": "여주 분말 가루",
+            "urls": ["https://cafe.naver.com/peopledisc/1158378"]
+        },
+        {
             "keyword": "임산부 혈당관리",
             "urls": []
         },
@@ -1378,7 +1389,8 @@
                 "https://cafe.naver.com/peopledisc/1102510",
                 "https://cafe.naver.com/zoozoocom/312086",
                 "https://cafe.naver.com/peopledisc/1141653",
-                "https://cafe.naver.com/zoozoocom/313284"
+                "https://cafe.naver.com/zoozoocom/313284",
+                "https://cafe.naver.com/peopledisc/1158379"
             ]
         },
         {
@@ -1444,7 +1456,10 @@
         },
         {
             "keyword": "당화혈색소 6.4",
-            "urls": ["https://cafe.naver.com/zoozoocom/301797"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/301797",
+                "https://cafe.naver.com/zoozoocom/318353"
+            ]
         },
         {
             "keyword": "당화혈색소 6",
@@ -1484,7 +1499,7 @@
         },
         {
             "keyword": "덴프스 혈당케어",
-            "urls": ["https://cafe.naver.com/zoozoocom/307820"]
+            "urls": ["https://cafe.naver.com/zoozoocom/318355"]
         },
         {
             "keyword": "바나바 혈당케어",
