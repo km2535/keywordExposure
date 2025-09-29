@@ -1917,7 +1917,8 @@
                 "https://cafe.naver.com/peopledisc/950976",
                 "https://cafe.naver.com/yuasam/885296",
                 "https://cafe.naver.com/zoozoocom/267358",
-                "https://cafe.naver.com/zoozoocom/292022"
+                "https://cafe.naver.com/zoozoocom/292022",
+                "https://cafe.naver.com/zoozoocom/318740"
             ]
         },
         {
@@ -2117,7 +2118,8 @@
                 "https://cafe.naver.com/zoozoocom/266578",
                 "https://cafe.naver.com/zoozoocom/281472",
                 "https://cafe.naver.com/zoozoocom/277347",
-                "https://cafe.naver.com/zoozoocom/293434"
+                "https://cafe.naver.com/zoozoocom/293434",
+                "https://cafe.naver.com/zoozoocom/317646"
             ]
         },
         {
@@ -2661,7 +2663,8 @@
                 "https://cafe.naver.com/zoozoocom/272402",
                 "https://cafe.naver.com/zoozoocom/277573",
                 "https://cafe.naver.com/zoozoocom/280554",
-                "https://cafe.naver.com/zoozoocom/304158"
+                "https://cafe.naver.com/zoozoocom/304158",
+                "https://cafe.naver.com/zoozoocom/318738"
             ]
         },
         {
@@ -3093,6 +3096,30 @@
         {
             "keyword": "후코이단가루",
             "urls": ["https://cafe.naver.com/zoozoocom/317273"]
+        },
+        {
+            "keyword": "버섯베타글루칸",
+            "urls": ["https://cafe.naver.com/zoozoocom/318646"]
+        },
+        {
+            "keyword": "암환자에게좋은음식",
+            "urls": ["https://cafe.naver.com/zoozoocom/318747"]
+        },
+        {
+            "keyword": "아가리쿠스버섯",
+            "urls": ["https://cafe.naver.com/zoozoocom/318759"]
+        },
+        {
+            "keyword": "황칠뿌리진액 암환자",
+            "urls": ["https://cafe.naver.com/zoozoocom/318762"]
+        },
+        {
+            "keyword": "표적항암 부작용",
+            "urls": ["https://cafe.naver.com/zoozoocom/318761"]
+        },
+        {
+            "keyword": "30대 유방암",
+            "urls": ["https://cafe.naver.com/zoozoocom/318643"]
         }
     ]
 }
