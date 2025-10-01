@@ -1362,7 +1362,8 @@
             "keyword": "당뇨보조제",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/273891",
-                "https://cafe.naver.com/peopledisc/1117371"
+                "https://cafe.naver.com/peopledisc/1117371",
+                "https://cafe.naver.com/peopledisc/1161244"
             ]
         },
         {
@@ -1575,7 +1576,10 @@
         },
         {
             "keyword": "자디앙듀오정",
-            "urls": ["https://cafe.naver.com/zoozoocom/273473"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273473",
+                "https://cafe.naver.com/peopledisc/1161246"
+            ]
         },
         {
             "keyword": "스테비아 방울토마토 혈당",
@@ -1656,7 +1660,8 @@
                 "https://cafe.naver.com/zoozoocom/289503",
                 "https://cafe.naver.com/zoozoocom/302580",
                 "https://cafe.naver.com/zoozoocom/305015",
-                "https://cafe.naver.com/zoozoocom/312967"
+                "https://cafe.naver.com/zoozoocom/312967",
+                "https://cafe.naver.com/zoozoocom/319632"
             ]
         },
         {
@@ -1692,7 +1697,10 @@
         },
         {
             "keyword": "바나나잎추출물",
-            "urls": ["https://cafe.naver.com/zoozoocom/273877"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/273877",
+                "https://cafe.naver.com/zoozoocom/319612"
+            ]
         },
         {
             "keyword": "콤부차 혈당",
@@ -1790,7 +1798,8 @@
             "keyword": "혈당컷",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/292794",
-                "https://cafe.naver.com/peopledisc/1140381"
+                "https://cafe.naver.com/peopledisc/1140381",
+                ":https://cafe.naver.com/peopledisc/1157681"
             ]
         },
         {
@@ -1849,7 +1858,10 @@
         },
         {
             "keyword": "솔잎증류농축액",
-            "urls": ["https://cafe.naver.com/zoozoocom/317936"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/317936",
+                "https://cafe.naver.com/peopledisc/1161242"
+            ]
         },
         {
             "keyword": "당뇨증세",
@@ -1875,7 +1887,10 @@
         },
         {
             "keyword": "당뇨식단배달",
-            "urls": ["https://cafe.naver.com/zoozoocom/301503"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/301503",
+                "https://cafe.naver.com/peopledisc/1157680"
+            ]
         },
         {
             "keyword": "당뇨 공복혈당정상수치",
@@ -1923,6 +1938,14 @@
         {
             "keyword": "곶감 혈당",
             "urls": ["https://cafe.naver.com/peopledisc/1149089"]
+        },
+        {
+            "keyword": "다이소 바나나잎 추출물",
+            "urls": ["https://cafe.naver.com/zoozoocom/319627"]
+        },
+        {
+            "keyword": "식후 1시간뒤 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/319682"]
         },
         {
             "keyword": "돼지갈비 혈당",
