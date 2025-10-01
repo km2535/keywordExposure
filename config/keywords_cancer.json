@@ -2990,7 +2990,10 @@
         },
         {
             "keyword": "결장암",
-            "urls": ["https://cafe.naver.com/zoozoocom/307132"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/307132",
+                "https://cafe.naver.com/zoozoocom/319066"
+            ]
         },
         {
             "keyword": "전립선암에좋은식품",
@@ -3120,6 +3123,30 @@
         {
             "keyword": "30대 유방암",
             "urls": ["https://cafe.naver.com/zoozoocom/318643"]
+        },
+        {
+            "keyword": "췌장암 수술후 생존율",
+            "urls": ["https://cafe.naver.com/zoozoocom/319071"]
+        },
+        {
+            "keyword": "폐암에 좋은 과일",
+            "urls": ["https://cafe.naver.com/zoozoocom/319073"]
+        },
+        {
+            "keyword": "전립선암 psa 수치",
+            "urls": ["https://cafe.naver.com/zoozoocom/319074"]
+        },
+        {
+            "keyword": "구지뽕열매",
+            "urls": ["https://cafe.naver.com/zoozoocom/319080"]
+        },
+        {
+            "keyword": "베타글루칸 영양제",
+            "urls": ["https://cafe.naver.com/zoozoocom/319081"]
+        },
+        {
+            "keyword": "프로시칸",
+            "urls": ["https://cafe.naver.com/zoozoocom/319067"]
         }
     ]
 }

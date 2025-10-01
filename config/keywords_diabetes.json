@@ -1507,7 +1507,8 @@
                 "https://cafe.naver.com/zoozoocom/272708",
                 "https://cafe.naver.com/zoozoocom/304464",
                 "https://cafe.naver.com/zoozoocom/305633",
-                "https://cafe.naver.com/zoozoocom/310356"
+                "https://cafe.naver.com/zoozoocom/310356",
+                "https://cafe.naver.com/peopledisc/1160979"
             ]
         },
         {
@@ -1597,6 +1598,30 @@
                 "https://cafe.naver.com/zoozoocom/273516",
                 "https://cafe.naver.com/zoozoocom/308677"
             ]
+        },
+        {
+            "keyword": "당뇨 여주환",
+            "urls": ["https://cafe.naver.com/peopledisc/1160980"]
+        },
+        {
+            "keyword": "유한양행 당큐락",
+            "urls": ["https://cafe.naver.com/peopledisc/1160981"]
+        },
+        {
+            "keyword": "정관장 더블컷",
+            "urls": ["https://cafe.naver.com/zoozoocom/319060"]
+        },
+        {
+            "keyword": "헤밀레스위트",
+            "urls": ["https://cafe.naver.com/zoozoocom/319084"]
+        },
+        {
+            "keyword": "더파인프리미엄",
+            "urls": ["https://cafe.naver.com/zoozoocom/319085"]
+        },
+        {
+            "keyword": "혈당건강엔바나바",
+            "urls": ["https://cafe.naver.com/zoozoocom/319062"]
         },
         {
             "keyword": "견과류 혈당",
