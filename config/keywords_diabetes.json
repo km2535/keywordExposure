@@ -1162,7 +1162,8 @@
             "keyword": "혈당쇼크",
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2659818",
-                "https://cafe.naver.com/zoozoocom/302442"
+                "https://cafe.naver.com/zoozoocom/302442",
+                "https://cafe.naver.com/zoozoocom/321549"
             ]
         },
         {
@@ -1477,7 +1478,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/292096",
                 "https://cafe.naver.com/peopledisc/1138757",
-                "https://cafe.naver.com/peopledisc/1150793"
+                "https://cafe.naver.com/peopledisc/1150793",
+                "https://cafe.naver.com/zoozoocom/321516"
             ]
         },
         {
@@ -1987,6 +1989,30 @@
         {
             "keyword": "식사후 졸림",
             "urls": ["https://cafe.naver.com/zoozoocom/321171"]
+        },
+        {
+            "keyword": "당뇨 살빠짐",
+            "urls": ["https://cafe.naver.com/peopledisc/1164897"]
+        },
+        {
+            "keyword": "종근당베르베린",
+            "urls": ["https://cafe.naver.com/zoozoocom/321550"]
+        },
+        {
+            "keyword": "병아리콩 혈당",
+            "urls": ["https://cafe.naver.com/zoozoocom/321551"]
+        },
+        {
+            "keyword": "그릭요거트 혈당",
+            "urls": ["https://cafe.naver.com/peopledisc/1163711"]
+        },
+        {
+            "keyword": "비나듐쌀 효능",
+            "urls": ["https://cafe.naver.com/peopledisc/1164899"]
+        },
+        {
+            "keyword": "당뇨 비타민C",
+            "urls": ["https://cafe.naver.com/peopledisc/1164898"]
         },
         {
             "keyword": "혈당 강하제",

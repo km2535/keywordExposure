@@ -639,7 +639,10 @@
         },
         {
             "keyword": "허투양성",
-            "urls": ["https://cafe.naver.com/zoozoocom/252130"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/252130",
+                "https://cafe.naver.com/zoozoocom/321490"
+            ]
         },
         {
             "keyword": "종양표지자 수치",
@@ -3034,6 +3037,26 @@
         {
             "keyword": "항암통증",
             "urls": ["https://cafe.naver.com/zoozoocom/319669"]
+        },
+        {
+            "keyword": "췌장암 1기",
+            "urls": ["https://cafe.naver.com/zoozoocom/321500"]
+        },
+        {
+            "keyword": "nk세포 주사",
+            "urls": ["https://cafe.naver.com/zoozoocom/321476"]
+        },
+        {
+            "keyword": "파클리탁셀",
+            "urls": ["https://cafe.naver.com/zoozoocom/321481"]
+        },
+        {
+            "keyword": "호중구주사",
+            "urls": ["https://cafe.naver.com/zoozoocom/321498"]
+        },
+        {
+            "keyword": "휴닥신",
+            "urls": ["https://cafe.naver.com/zoozoocom/321484"]
         },
         {
             "keyword": "면역세포",
