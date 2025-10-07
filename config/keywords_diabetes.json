@@ -369,7 +369,10 @@
         },
         {
             "keyword": "당뇨 초기증상",
-            "urls": ["https://cafe.naver.com/peopledisc/1144696"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1144696",
+                "https://cafe.naver.com/zoozoocom/321920"
+            ]
         },
         {
             "keyword": "당뇨에 좋은 운동",
@@ -888,7 +891,8 @@
                 "https://cafe.naver.com/zoozoocom/299484",
                 "https://cafe.naver.com/zoozoocom/305950",
                 "https://cafe.naver.com/peopledisc/1136755",
-                "https://cafe.naver.com/zoozoocom/311999"
+                "https://cafe.naver.com/zoozoocom/311999",
+                "https://cafe.naver.com/peopledisc/1165440"
             ]
         },
         {
@@ -1015,7 +1019,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/300326",
                 "https://cafe.naver.com/peopledisc/1119736",
-                "https://cafe.naver.com/zoozoocom/310302"
+                "https://cafe.naver.com/zoozoocom/310302",
+                "https://cafe.naver.com/peopledisc/1163712"
             ]
         },
         {
@@ -1063,7 +1068,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/1096693",
                 "https://cafe.naver.com/zoozoocom/308384",
-                "https://cafe.naver.com/peopledisc/1146031"
+                "https://cafe.naver.com/peopledisc/1146031",
+                "https://cafe.naver.com/peopledisc/1165442"
             ]
         },
         {
@@ -1452,7 +1458,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/1096694",
                 "https://cafe.naver.com/peopledisc/1135707",
-                "https://cafe.naver.com/zoozoocom/312998"
+                "https://cafe.naver.com/zoozoocom/312998",
+                "https://cafe.naver.com/zoozoocom/321922"
             ]
         },
         {
@@ -1806,7 +1813,8 @@
                 "https://cafe.naver.com/gimhaezumma/2659815",
                 "https://cafe.naver.com/peopledisc/1124909",
                 "https://cafe.naver.com/zoozoocom/308680",
-                "https://cafe.naver.com/peopledisc/1140384"
+                "https://cafe.naver.com/peopledisc/1140384",
+                "https://cafe.naver.com/zoozoocom/321918"
             ]
         },
         {
@@ -1925,7 +1933,10 @@
         },
         {
             "keyword": "당뇨 고혈압",
-            "urls": ["https://cafe.naver.com/zoozoocom/306865"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/306865",
+                "https://cafe.naver.com/zoozoocom/321924"
+            ]
         },
         {
             "keyword": "고지혈증 간수치",
@@ -1933,6 +1944,10 @@
                 "https://cafe.naver.com/zoozoocom/306517",
                 "https://cafe.naver.com/zoozoocom/308672"
             ]
+        },
+        {
+            "keyword": "고지혈증 당뇨",
+            "urls": ["https://cafe.naver.com/peopledisc/1165441"]
         },
         {
             "keyword": "스테비아 혈당",

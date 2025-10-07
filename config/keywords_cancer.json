@@ -533,7 +533,8 @@
                 "https://cafe.naver.com/zoozoocom/281741",
                 "https://cafe.naver.com/zoozoocom/286799",
                 "https://cafe.naver.com/zoozoocom/301784",
-                "https://cafe.naver.com/zoozoocom/321142"
+                "https://cafe.naver.com/zoozoocom/321142",
+                "https://cafe.naver.com/zoozoocom/321842"
             ]
         },
         {
@@ -1606,7 +1607,8 @@
                 "https://cafe.naver.com/zoozoocom/288183",
                 "https://cafe.naver.com/zoozoocom/296344",
                 "https://cafe.naver.com/peopledisc/1105257",
-                "https://cafe.naver.com/zoozoocom/306192"
+                "https://cafe.naver.com/zoozoocom/306192",
+                "https://cafe.naver.com/zoozoocom/321820"
             ]
         },
         {
@@ -1736,7 +1738,8 @@
                 "https://cafe.naver.com/zoozoocom/276031",
                 "https://cafe.naver.com/zoozoocom/277947",
                 "https://cafe.naver.com/zoozoocom/280282",
-                "https://cafe.naver.com/zoozoocom/304156"
+                "https://cafe.naver.com/zoozoocom/304156",
+                "https://cafe.naver.com/zoozoocom/318360"
             ]
         },
         {
@@ -2957,7 +2960,8 @@
             "keyword": "린파자",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/305963",
-                "https://cafe.naver.com/zoozoocom/317256"
+                "https://cafe.naver.com/zoozoocom/317256",
+                "https://cafe.naver.com/zoozoocom/321862"
             ]
         },
         {
@@ -3197,12 +3201,24 @@
             "urls": ["https://cafe.naver.com/zoozoocom/320501"]
         },
         {
-            "keyword": "아뮤산 유산균",
-            "urls": ["https://cafe.naver.com/zoozoocom/320504"]
-        },
-        {
             "keyword": "간암 치료",
             "urls": ["https://cafe.naver.com/zoozoocom/321143"]
+        },
+        {
+            "keyword": "상피내암",
+            "urls": ["https://cafe.naver.com/zoozoocom/321865"]
+        },
+        {
+            "keyword": "티모신",
+            "urls": ["https://cafe.naver.com/zoozoocom/321860"]
+        },
+        {
+            "keyword": "폐암 선암",
+            "urls": ["https://cafe.naver.com/zoozoocom/321844"]
+        },
+        {
+            "keyword": "젬시타빈",
+            "urls": ["https://cafe.naver.com/zoozoocom/321832"]
         },
         {
             "keyword": "미슬토 알부민",
