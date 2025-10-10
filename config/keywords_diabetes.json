@@ -45,7 +45,8 @@
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2662466",
                 "https://cafe.naver.com/zoozoocom/299206",
-                "https://cafe.naver.com/zoozoocom/311212"
+                "https://cafe.naver.com/zoozoocom/311212",
+                "https://cafe.naver.com/zoozoocom/322209"
             ]
         },
         {
@@ -290,7 +291,8 @@
             "keyword": "혈당영양제",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/300061",
-                "https://cafe.naver.com/zoozoocom/304459"
+                "https://cafe.naver.com/zoozoocom/304459",
+                "https://cafe.naver.com/zoozoocom/322650"
             ]
         },
         {
@@ -638,7 +640,10 @@
         },
         {
             "keyword": "식후 4시간 혈당",
-            "urls": ["https://cafe.naver.com/peopledisc/1153702"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1153702",
+                "https://cafe.naver.com/zoozoocom/322669"
+            ]
         },
         {
             "keyword": "당뇨 기준",
@@ -1261,6 +1266,42 @@
             "urls": []
         },
         {
+            "keyword": "여주 추출물",
+            "urls": ["https://cafe.naver.com/zoozoocom/322167"]
+        },
+        {
+            "keyword": "여주환",
+            "urls": ["https://cafe.naver.com/zoozoocom/322200"]
+        },
+        {
+            "keyword": "당뇨 보조제",
+            "urls": ["https://cafe.naver.com/zoozoocom/322172"]
+        },
+        {
+            "keyword": "혈당케어 영양제",
+            "urls": ["https://cafe.naver.com/zoozoocom/322174"]
+        },
+        {
+            "keyword": "혈당관리 식단",
+            "urls": ["https://cafe.naver.com/zoozoocom/322192"]
+        },
+        {
+            "keyword": "혈당관리 영양제",
+            "urls": ["https://cafe.naver.com/zoozoocom/322176"]
+        },
+        {
+            "keyword": "공복혈당 낮추는법",
+            "urls": ["https://cafe.naver.com/zoozoocom/322204"]
+        },
+        {
+            "keyword": "glpro 코어",
+            "urls": ["https://cafe.naver.com/zoozoocom/322629"]
+        },
+        {
+            "keyword": "뉴케어 당플랜",
+            "urls": ["https://cafe.naver.com/zoozoocom/322647"]
+        },
+        {
             "keyword": "여주 분말 가루",
             "urls": ["https://cafe.naver.com/peopledisc/1158378"]
         },
@@ -1494,7 +1535,8 @@
             "urls": [
                 "https://cafe.naver.com/peopledisc/1104387",
                 "https://cafe.naver.com/zoozoocom/309983",
-                "https://cafe.naver.com/peopledisc/1153700"
+                "https://cafe.naver.com/peopledisc/1153700",
+                "https://cafe.naver.com/zoozoocom/322657"
             ]
         },
         {
@@ -1525,7 +1567,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/272685",
                 "https://cafe.naver.com/peopledisc/1130854",
-                "https://cafe.naver.com/peopledisc/1143755"
+                "https://cafe.naver.com/peopledisc/1143755",
+                "https://cafe.naver.com/zoozoocom/322634"
             ]
         },
         {
@@ -1635,7 +1678,10 @@
         },
         {
             "keyword": "유한양행 당큐락",
-            "urls": ["https://cafe.naver.com/peopledisc/1160981"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1160981",
+                "https://cafe.naver.com/zoozoocom/322642"
+            ]
         },
         {
             "keyword": "정관장 더블컷",
@@ -1676,7 +1722,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/303078",
                 "https://cafe.naver.com/zoozoocom/304472",
-                "https://cafe.naver.com/peopledisc/1152300"
+                "https://cafe.naver.com/peopledisc/1152300",
+                "https://cafe.naver.com/zoozoocom/322665"
             ]
         },
         {
