@@ -1594,7 +1594,10 @@
         },
         {
             "keyword": "덴프스 혈당케어",
-            "urls": ["https://cafe.naver.com/zoozoocom/318355"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/318355",
+                "https://cafe.naver.com/zoozoocom/323142"
+            ]
         },
         {
             "keyword": "바나바 혈당케어",
@@ -2083,6 +2086,70 @@
         {
             "keyword": "공복혈당 99",
             "urls": ["https://cafe.naver.com/peopledisc/1164430"]
+        },
+        {
+            "keyword": "국산여주분말",
+            "urls": ["https://cafe.naver.com/zoozoocom/324613"]
+        },
+        {
+            "keyword": "당뇨 돼지감자",
+            "urls": ["https://cafe.naver.com/zoozoocom/324618"]
+        },
+        {
+            "keyword": "아가베이눌린",
+            "urls": ["https://cafe.naver.com/peopledisc/1170368"]
+        },
+        {
+            "keyword": "퀘르세틴 600mg",
+            "urls": ["https://cafe.naver.com/peopledisc/1170371"]
+        },
+        {
+            "keyword": "난소화성덱스트린",
+            "urls": ["https://cafe.naver.com/peopledisc/1170376"]
+        },
+        {
+            "keyword": "애사비 당뇨",
+            "urls": ["https://cafe.naver.com/zoozoocom/324081"]
+        },
+        {
+            "keyword": "이눌린 효능",
+            "urls": ["https://cafe.naver.com/zoozoocom/324084"]
+        },
+        {
+            "keyword": "구아검 효능",
+            "urls": ["https://cafe.naver.com/zoozoocom/324082"]
+        },
+        {
+            "keyword": "트루리시티",
+            "urls": ["https://cafe.naver.com/peopledisc/1163713"]
+        },
+        {
+            "keyword": "다파엔정",
+            "urls": ["https://cafe.naver.com/peopledisc/1148929"]
+        },
+        {
+            "keyword": "파이토좀베르베린",
+            "urls": ["https://cafe.naver.com/peopledisc/1167792"]
+        },
+        {
+            "keyword": "퀘르세틴",
+            "urls": ["https://cafe.naver.com/peopledisc/1167791"]
+        },
+        {
+            "keyword": "블러드케어",
+            "urls": ["https://cafe.naver.com/zoozoocom/323155"]
+        },
+        {
+            "keyword": "메트포르민서방정",
+            "urls": ["https://cafe.naver.com/zoozoocom/323161"]
+        },
+        {
+            "keyword": "혈당컷",
+            "urls": ["https://cafe.naver.com/zoozoocom/323173"]
+        },
+        {
+            "keyword": "바로잰 혈당측정기",
+            "urls": ["https://cafe.naver.com/zoozoocom/323243"]
         },
         {
             "keyword": "공복혈당 정상수치125",
