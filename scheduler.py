@@ -65,9 +65,9 @@ def run_monitoring():
         logging.info(result.stdout)
         logging.info("모니터링 작업 완료")
         
-        # 아침 7시일 경우 이메일 보고서 전송
-        if current_hour == 7 and current_minute == 0:
-            logging.info("예약된 시간(7시 정각)입니다. 이메일 보고서를 전송합니다.")
+        # 아침 9시일 경우 이메일 보고서 전송
+        if current_hour == 9 and current_minute == 0:
+            logging.info("예약된 시간(9시 정각)입니다. 이메일 보고서를 전송합니다.")
             run_email_report()
         else:
             logging.info(f"예약된 시간이 아닙니다(현재 {current_hour}시 {current_minute}분). 이메일 보고서를 전송하지 않습니다.")
@@ -122,8 +122,8 @@ if __name__ == "__main__":
     # 설정된 시간 간격마다 실행하도록 스케줄 설정
     schedule.every(SCHEDULER_INTERVAL).hours.do(run_monitoring)
     
-    # 아침 7시에 이메일 보고서 전송 (독립적으로 실행)
-    schedule.every().day.at("07:00").do(run_email_report)
+    # 아침 9시에 이메일 보고서 전송 (독립적으로 실행)
+    schedule.every().day.at("09:00").do(run_email_report)
     
     # 시작할 때 한 번 즉시 실행 (선택 사항)
     logging.info("초기 모니터링 실행 중...")
