@@ -65,8 +65,8 @@ def run_monitoring():
         logging.info(result.stdout)
         logging.info("모니터링 작업 완료")
         
-        # 아침 9시일 경우 이메일 보고서 전송
-        if current_hour == 10 and current_minute == 0:
+        # 아침 10시일 경우 이메일 보고서 전송
+        if current_hour == 10 and current_minute == 10:
             logging.info("예약된 시간(10시 정각)입니다. 이메일 보고서를 전송합니다.")
             run_email_report()
         else:
@@ -122,15 +122,15 @@ if __name__ == "__main__":
     # 설정된 시간 간격마다 실행하도록 스케줄 설정
     schedule.every(SCHEDULER_INTERVAL).hours.do(run_monitoring)
     
-    # 오전 10시에 이메일 보고서 전송 (독립적으로 실행)
-    schedule.every().day.at("10:00").do(run_email_report)
+    # 오전 10시 10분에 이메일 보고서 전송 (독립적으로 실행)
+    schedule.every().day.at("10:10").do(run_email_report)
     
     # 시작할 때 한 번 즉시 실행 (선택 사항)
     logging.info("초기 모니터링 실행 중...")
     run_monitoring()
     
     logging.info(f"스케줄러가 {SCHEDULER_INTERVAL}시간마다 모니터링을 실행하도록 설정되었습니다.")
-    logging.info("매일 아침 10시에 이메일 보고서를 전송하도록 설정되었습니다.")
+    logging.info("매일 아침 10시 10분에 이메일 보고서를 전송하도록 설정되었습니다.")
     
     # 무한 루프로 스케줄러 실행
     try:
