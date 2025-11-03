@@ -1081,7 +1081,14 @@
         },
         {
             "keyword": "혈당스파이크 증상",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1104385"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1104385",
+                "https://m.cafe.naver.com/zoozoocom/332508"
+            ]
+        },
+        {
+            "keyword": "혈당스파이크 수치",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/332510"]
         },
         {
             "keyword": "혈당스파이크 음식",
@@ -1093,7 +1100,8 @@
                 "https://m.cafe.naver.com/zoozoocom/298175",
                 "https://m.cafe.naver.com/zoozoocom/308088",
                 "https://m.cafe.naver.com/zoozoocom/313279",
-                "https://m.cafe.naver.com/zoozoocom/320558"
+                "https://m.cafe.naver.com/zoozoocom/320558",
+                "https://m.cafe.naver.com/zoozoocom/332506"
             ]
         },
         {
@@ -1102,7 +1110,8 @@
                 "https://m.cafe.naver.com/peopledisc/1096693",
                 "https://m.cafe.naver.com/zoozoocom/308384",
                 "https://m.cafe.naver.com/peopledisc/1146031",
-                "https://m.cafe.naver.com/peopledisc/1165442"
+                "https://m.cafe.naver.com/peopledisc/1165442",
+                "https://m.cafe.naver.com/zoozoocom/332505"
             ]
         },
         {
@@ -1588,7 +1597,8 @@
                 "https://m.cafe.naver.com/zoozoocom/292096",
                 "https://m.cafe.naver.com/peopledisc/1138757",
                 "https://m.cafe.naver.com/peopledisc/1150793",
-                "https://m.cafe.naver.com/zoozoocom/321516"
+                "https://m.cafe.naver.com/zoozoocom/321516",
+                "https://m.cafe.naver.com/peopledisc/1183842"
             ]
         },
         {
@@ -1597,7 +1607,8 @@
                 "https://m.cafe.naver.com/peopledisc/1104387",
                 "https://m.cafe.naver.com/zoozoocom/309983",
                 "https://m.cafe.naver.com/peopledisc/1153700",
-                "https://m.cafe.naver.com/zoozoocom/322657"
+                "https://m.cafe.naver.com/zoozoocom/322657",
+                "https://m.cafe.naver.com/zoozoocom/332504"
             ]
         },
         {
@@ -1612,12 +1623,21 @@
             "keyword": "당화혈색소 6.4",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/301797",
-                "https://m.cafe.naver.com/zoozoocom/318353"
+                "https://m.cafe.naver.com/zoozoocom/318353",
+                "https://m.cafe.naver.com/zoozoocom/332503"
             ]
         },
         {
             "keyword": "당화혈색소 6",
             "urls": ["https://m.cafe.naver.com/zoozoocom/315707"]
+        },
+        {
+            "keyword": "당화혈색소 6.0",
+            "urls": ["https://m.cafe.naver.com/peopledisc/1167793"]
+        },
+        {
+            "keyword": "당화혈색소수치 6.5",
+            "urls": ["https://m.cafe.naver.com/peopledisc/1168814"]
         },
         {
             "keyword": "당뇨 간헐적단식",
@@ -1967,6 +1987,10 @@
         {
             "keyword": "저혈당 당뇨",
             "urls": ["https://m.cafe.naver.com/peopledisc/1116619"]
+        },
+        {
+            "keyword": "고혈당 증상",
+            "urls": ["https://m.cafe.naver.com/peopledisc/1183083"]
         },
         {
             "keyword": "고혈당 쇼크 증상",
