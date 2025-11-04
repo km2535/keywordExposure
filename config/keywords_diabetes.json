@@ -267,7 +267,8 @@
                 "https://m.cafe.naver.com/zoozoocom/301140",
                 "https://m.cafe.naver.com/zoozoocom/309548",
                 "https://m.cafe.naver.com/zoozoocom/311221",
-                "https://m.cafe.naver.com/peopledisc/1137307"
+                "https://m.cafe.naver.com/peopledisc/1137307",
+                "https://m.cafe.naver.com/zoozoocom/332719"
             ]
         },
         {
@@ -498,6 +499,10 @@
             "urls": ["https://m.cafe.naver.com/peopledisc/1092892"]
         },
         {
+            "keyword": "식후혈당시간",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/332722"]
+        },
+        {
             "keyword": "식후혈당 130",
             "urls": ["https://m.cafe.naver.com/peopledisc/1108468"]
         },
@@ -639,6 +644,20 @@
             ]
         },
         {
+            "keyword": "식후 2시간 후 혈당 정상수치",
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/332716"
+            ]
+        },
+        {
+            "keyword": "식후2시간뒤 혈당",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/332707"]
+        },
+        {
+            "keyword": "식후3시간혈당 정상수치",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/332709"]
+        },
+        {
             "keyword": "식후2시간후혈당",
             "urls": []
         },
@@ -655,7 +674,10 @@
         },
         {
             "keyword": "식후 4시간 혈당 정상수치",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1116585"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1116585",
+                "https://m.cafe.naver.com/zoozoocom/332710"
+            ]
         },
         {
             "keyword": "식후 4시간 혈당",
@@ -1092,7 +1114,10 @@
         },
         {
             "keyword": "혈당스파이크 음식",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/316955"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/316955",
+                "https://m.cafe.naver.com/zoozoocom/332740"
+            ]
         },
         {
             "keyword": "혈당스파이크 졸음",
@@ -1211,7 +1236,8 @@
             "urls": [
                 "https://m.cafe.naver.com/gimhaezumma/2659818",
                 "https://m.cafe.naver.com/zoozoocom/302442",
-                "https://m.cafe.naver.com/zoozoocom/321549"
+                "https://m.cafe.naver.com/zoozoocom/321549",
+                "https://m.cafe.naver.com/zoozoocom/329581"
             ]
         },
         {
@@ -1624,7 +1650,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/301797",
                 "https://m.cafe.naver.com/zoozoocom/318353",
-                "https://m.cafe.naver.com/zoozoocom/332503"
+                "https://m.cafe.naver.com/zoozoocom/332503",
+                "https://m.cafe.naver.com/zoozoocom/329577"
             ]
         },
         {
