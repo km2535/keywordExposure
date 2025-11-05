@@ -305,7 +305,8 @@
                 "https://m.cafe.naver.com/zoozoocom/300061",
                 "https://m.cafe.naver.com/zoozoocom/304459",
                 "https://m.cafe.naver.com/zoozoocom/322650",
-                "https://m.cafe.naver.com/peopledisc/1188273"
+                "https://m.cafe.naver.com/peopledisc/1188273",
+                "https://m.cafe.naver.com/zoozoocom/332905"
             ]
         },
         {
@@ -656,6 +657,14 @@
         {
             "keyword": "식후3시간혈당 정상수치",
             "urls": ["https://m.cafe.naver.com/zoozoocom/332709"]
+        },
+        {
+            "keyword": "식후2시간혈당 정상수치",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/332888"]
+        },
+        {
+            "keyword": "식후4시간혈당",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/332894"]
         },
         {
             "keyword": "식후2시간후혈당",
@@ -1509,6 +1518,10 @@
                 "https://m.cafe.naver.com/peopledisc/1100043",
                 "https://m.cafe.naver.com/peopledisc/1102512"
             ]
+        },
+        {
+            "keyword": "당뇨환자 식단",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/332900"]
         },
         {
             "keyword": "여주차 부작용",
