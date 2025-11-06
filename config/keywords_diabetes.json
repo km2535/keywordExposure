@@ -1277,6 +1277,18 @@
             "urls": []
         },
         {
+            "keyword": "당화혈색소 수치",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/333105"]
+        },
+        {
+            "keyword": "당화혈색소정상수치",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/333105"]
+        },
+        {
+            "keyword": "당뇨 정상수치 당화혈색소",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/333106"]
+        },
+        {
             "keyword": "당화혈색소 9",
             "urls": ["https://m.cafe.naver.com/zoozoocom/300673"]
         },
@@ -1596,7 +1608,8 @@
             "keyword": "당화혈색소 5.4",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/301507",
-                "https://m.cafe.naver.com/peopledisc/1147761"
+                "https://m.cafe.naver.com/peopledisc/1147761",
+                "https://m.cafe.naver.com/zoozoocom/333103"
             ]
         },
         {
@@ -1678,6 +1691,10 @@
         {
             "keyword": "당화혈색소수치 6.5",
             "urls": ["https://m.cafe.naver.com/peopledisc/1168814"]
+        },
+        {
+            "keyword": "당화혈색소",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/333103"]
         },
         {
             "keyword": "당뇨 간헐적단식",
@@ -2380,6 +2397,10 @@
         {
             "keyword": "당뇨공복혈당",
             "urls": ["https://m.cafe.naver.com/zoozoocom/332237"]
+        },
+        {
+            "keyword": "당 정상수치",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/333097"]
         },
         {
             "keyword": "공복혈당 정상수치125",
