@@ -597,6 +597,10 @@
             "urls": ["https://m.cafe.naver.com/zoozoocom/298173"]
         },
         {
+            "keyword": "인슐린저항성검사",
+            "urls": ["https://cafe.naver.com/zoozoocom/333217"]
+        },
+        {
             "keyword": "인슐린수치",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1091375",
@@ -1191,7 +1195,8 @@
                 "https://m.cafe.naver.com/zoozoocom/289727",
                 "https://m.cafe.naver.com/zoozoocom/305352",
                 "https://m.cafe.naver.com/zoozoocom/311239",
-                "https://m.cafe.naver.com/zoozoocom/316182"
+                "https://m.cafe.naver.com/zoozoocom/316182",
+                "https://m.cafe.naver.com/zoozoocom/333221"
             ]
         },
         {
@@ -1640,6 +1645,14 @@
             ]
         },
         {
+            "keyword": "당화혈색소 검사 공복",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/333212"]
+        },
+        {
+            "keyword": "당화혈색소 수치표",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/333209"]
+        },
+        {
             "keyword": "당화혈색소 5.1",
             "urls": ["https://m.cafe.naver.com/zoozoocom/303463"]
         },
@@ -1650,7 +1663,8 @@
                 "https://m.cafe.naver.com/peopledisc/1138757",
                 "https://m.cafe.naver.com/peopledisc/1150793",
                 "https://m.cafe.naver.com/zoozoocom/321516",
-                "https://m.cafe.naver.com/peopledisc/1183842"
+                "https://m.cafe.naver.com/peopledisc/1183842",
+                "https://cafe.naver.com/zoozoocom/333206"
             ]
         },
         {
