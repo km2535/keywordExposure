@@ -354,7 +354,8 @@
                 "https://m.cafe.naver.com/zoozoocom/303819",
                 "https://m.cafe.naver.com/zoozoocom/314709",
                 "https://m.cafe.naver.com/zoozoocom/321137",
-                "https://m.cafe.naver.com/peopledisc/1183840"
+                "https://m.cafe.naver.com/peopledisc/1183840",
+                "https://m.cafe.naver.com/zoozoocom/333458"
             ]
         },
         {
@@ -691,7 +692,8 @@
                 "https://m.cafe.naver.com/gimhaezumma/2628670",
                 "https://m.cafe.naver.com/zoozoocom/301132",
                 "https://m.cafe.naver.com/zoozoocom/305306",
-                "https://m.cafe.naver.com/peopledisc/1125787"
+                "https://m.cafe.naver.com/peopledisc/1125787",
+                "https://m.cafe.naver.com/zoozoocom/333451"
             ]
         },
         {
@@ -883,7 +885,8 @@
                 "https://m.cafe.naver.com/rksghwhantk/1241538",
                 "https://m.cafe.naver.com/zoozoocom/285037",
                 "https://m.cafe.naver.com/zoozoocom/285048",
-                "https://m.cafe.naver.com/zoozoocom/331018"
+                "https://m.cafe.naver.com/zoozoocom/331018",
+                "https://m.cafe.naver.com/zoozoocom/333472"
             ]
         },
         {
@@ -1571,7 +1574,8 @@
                 "https://m.cafe.naver.com/rksghwhantk/1248117",
                 "https://m.cafe.naver.com/zoozoocom/279904",
                 "https://m.cafe.naver.com/zoozoocom/280952",
-                "https://m.cafe.naver.com/zoozoocom/301785"
+                "https://m.cafe.naver.com/zoozoocom/301785",
+                "https://m.cafe.naver.com/zoozoocom/333462"
             ]
         },
         {
@@ -1612,12 +1616,16 @@
                 "https://m.cafe.naver.com/peopledisc/974980",
                 "https://m.cafe.naver.com/rksghwhantk/1241233",
                 "https://m.cafe.naver.com/zoozoocom/280285",
-                "https://m.cafe.naver.com/peopledisc/1103492"
+                "https://m.cafe.naver.com/peopledisc/1103492",
+                "https://m.cafe.naver.com/zoozoocom/333464"
             ]
         },
         {
             "keyword": "소세포폐암 완치",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1126589"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1126589",
+                "https://m.cafe.naver.com/zoozoocom/333467"
+            ]
         },
         {
             "keyword": "암 완치판정",
@@ -1968,7 +1976,8 @@
             "urls": [
                 "https://m.cafe.naver.com/rksghwhantk/1241538",
                 "https://m.cafe.naver.com/peopledisc/933886",
-                "https://m.cafe.naver.com/zoozoocom/285048"
+                "https://m.cafe.naver.com/zoozoocom/285048",
+                "https://m.cafe.naver.com/zoozoocom/333472"
             ]
         },
         {
@@ -2180,7 +2189,8 @@
                 "https://m.cafe.naver.com/gimhaezumma/2657074",
                 "https://m.cafe.naver.com/peopledisc/1090488",
                 "https://m.cafe.naver.com/zoozoocom/313285",
-                "https://m.cafe.naver.com/zoozoocom/316938"
+                "https://m.cafe.naver.com/zoozoocom/316938",
+                "https://m.cafe.naver.com/zoozoocom/333453"
             ]
         },
         {
@@ -2801,7 +2811,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/271659",
                 "https://m.cafe.naver.com/gimhaezumma/2658194",
-                "https://m.cafe.naver.com/peopledisc/1113090"
+                "https://m.cafe.naver.com/peopledisc/1113090",
+                "https://m.cafe.naver.com/zoozoocom/333469"
             ]
         },
         {
@@ -3755,6 +3766,10 @@
         {
             "keyword": "휴닥신주",
             "urls": ["https://m.cafe.naver.com/peopledisc/1147749"]
+        },
+        {
+            "keyword": "방사선치료 후유증",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/333469"]
         },
         {
             "keyword": "프로시칸",
