@@ -2,9 +2,12 @@ import os
 import json
 import smtplib
 import requests
+import csv
 from urllib.parse import quote
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 from datetime import datetime, timedelta
 from src.config import (
     OUTPUT_DIR, 
@@ -14,11 +17,11 @@ from src.config import (
     EMAIL_PASSWORD, 
     EMAIL_RECIPIENTS
 )
+from src.reporter import Reporter # Reporter 클래스 임포트
 
 # ----------------------------------------------------
-# A. 키워드 검색량 조회 및 동적 비교 로직 (Period 계산 로직 수정)
+# A. 키워드 검색량 조회 및 동적 비교 로직 (변함 없음)
 # ----------------------------------------------------
-
 # 트렌드를 조회할 키워드 목록
 KEYWORDS = [
     "발효황칠뿌리진액",
@@ -40,8 +43,6 @@ def format_api_date_str(dt: datetime) -> str:
 def calculate_comparison_periods():
     """
     오늘의 요일에 따라 비교 기준을 동적으로 설정합니다.
-    - 월요일: 지지난주(7일) vs 지난주(7일)
-    - 화~일: 지난주(7일 전체) vs 이번주(시작일~어제)
     """
     now = datetime.now()
     today_weekday = now.weekday() # 월=0, 화=1, ..., 일=6
@@ -94,7 +95,7 @@ def calculate_comparison_periods():
         
         # Period 1: 지난주 (월요일 ~ 일요일)
         period_1_start = this_week_start - timedelta(days=7) # 지난주 월요일
-        period_1_end = period_1_start + timedelta(days=6) # 지난주 일요일 <--- **수정: 7일 전체로 고정**
+        period_1_end = period_1_start + timedelta(days=6) # 지난주 일요일 
 
         period_1_name = "지난주"
         period_2_name = "이번주"
@@ -102,7 +103,6 @@ def calculate_comparison_periods():
         # API 호출 기간은 Period 1 시작일(지지난주 월요일)부터 Period 2 종료일(어제)까지 (최대 14일)
         api_start_date = period_1_start
         api_end_date = report_end_date 
-        # (API는 이 기간의 모든 데이터를 가져와야 Period 1의 7일 전체를 확보할 수 있음)
 
     return {
         'api_start_date': api_start_date,
@@ -120,6 +120,7 @@ def calculate_comparison_periods():
 def get_keyword_search_summary():
     """
     2주간의 검색량 데이터를 가져와 각 주차별로 일별 데이터를 분리하여 반환합니다.
+    (기존 로직 유지)
     """
     periods = calculate_comparison_periods()
     
@@ -200,38 +201,45 @@ def get_keyword_search_summary():
 
 
 # ----------------------------------------------------
-# B. 기존 함수 (노출 결과 로드)
+# B. 노출 결과 로드 및 요약
 # ----------------------------------------------------
 
-def load_latest_results():
-    """모든 카테고리의 최신 노출 결과를 로드"""
-    all_results = {}
+def get_all_reports():
+    """모든 카테고리에 대해 Reporter를 실행하고 결과와 요약을 반환"""
+    all_summaries = {}
+    all_attachments = []
     
     for category in CATEGORIES:
-        json_path = os.path.join(OUTPUT_DIR, f'latest_results_{category}.json') 
-        
-        if os.path.exists(json_path):
-            try:
-                with open(json_path, 'r', encoding='utf-8') as f:
-                    all_results[category] = json.load(f)
-            except Exception as e:
-                print(f"{category} 결과 로드 중 오류: {str(e)}")
-                all_results[category] = None
-        else:
-            print(f"경고: {json_path} 파일이 없습니다.")
-            all_results[category] = None
+        results_path = os.path.join(OUTPUT_DIR, f'latest_results_{category}.json')
+        try:
+            reporter = Reporter(results_path, category)
+            all_results, summary = reporter.generate_summary() # 수정된 Reporter 사용
+            all_summaries[category] = summary
             
-    return all_results
+            # 노출되지 않은 키워드가 있을 경우 CSV 생성 및 첨부 목록에 추가
+            if summary["not_exposed"]:
+                # CSV 파일 생성 및 첨부 목록에 추가 (요약 정보만 담기도록 수정됨)
+                csv_path, csv_filename = reporter.export_csv_for_unexposed(all_results, summary)
+                all_attachments.append((csv_path, csv_filename))
+                
+        except FileNotFoundError:
+            print(f"경고: {category} 결과 파일을 찾을 수 없습니다. 보고서를 건너뜁니다.")
+            all_summaries[category] = None
+        except Exception as e:
+            print(f"경고: {category} 보고서 생성 중 오류 발생: {str(e)}")
+            all_summaries[category] = None
+            
+    return all_summaries, all_attachments
 
 # ----------------------------------------------------
-# C. HTML 보고서 생성 함수 (변함 없음: 유연성 유지)
+# C. HTML 보고서 생성 함수 (개선)
 # ----------------------------------------------------
 
-def generate_html_report(all_results, comparison_data, periods):
+def generate_html_report(all_summaries, comparison_data, periods):
     """요약된 HTML 형식의 이메일 보고서 생성"""
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # HTML 헤더 및 스타일 (생략 - 기존과 동일)
+    # HTML 스타일 (기존과 동일)
     html = f"""
     <html>
     <head>
@@ -276,7 +284,7 @@ def generate_html_report(all_results, comparison_data, periods):
             .warning {{ color: orange; }}
             .danger {{ color: red; }}
             .footer {{ margin-top: 30px; font-size: 12px; color: #666; border-top: 1px solid #eee; padding-top: 10px; }}
-            .comparison-table {{ /* 새 비교 테이블 스타일 */
+            .comparison-table {{ 
                 width: 100%;
                 border-collapse: collapse;
                 margin-top: 15px;
@@ -295,19 +303,26 @@ def generate_html_report(all_results, comparison_data, periods):
             .comparison-table .week-header {{ 
                 background-color: #f8f8f8; 
                 font-weight: bold; 
-                width: 15%; /* 주차 헤더 너비 고정 */
+                width: 15%; 
             }}
             .trend-value {{ font-weight: bold; font-size: 16px; }}
+            .detail-table th, .detail-table td {{ text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; }}
+            .detail-table th {{ width: 30%; background-color: #fafafa; }}
+            .critical {{ color: #CC0000; font-weight: bold; }}
         </style>
     </head>
     <body>
         <div class="container">
             <h1>네이버 검색 트렌드 및 노출 일일 요약 리포트</h1>
+            <p style="font-style: italic; color: #777;">
+                키워드 노출 상태는 마케팅 성과의 핵심 지표입니다.<br>
+                **모든 URL이 미노출된 키워드**에 대한 집중적인 분석이 필요합니다.
+            </p>
             <p>생성 시간: {now}</p>
     """
     
     # ----------------------------------------------------
-    # 1. 키워드 검색량 트렌드 비교 섹션 (최상단)
+    # 1. 키워드 검색량 트렌드 비교 섹션 (최상단) - 생략 없음
     # ----------------------------------------------------
     
     if comparison_data:
@@ -316,18 +331,14 @@ def generate_html_report(all_results, comparison_data, periods):
             <h2>📈 주간 키워드 검색량 변화 비교 ({periods['today_kr']}요일 기준)</h2>
         """
         
-        # 키워드별 테이블 생성
         for keyword, data in comparison_data.items():
             period_1_data = data['period_1']
             period_2_data = data['period_2']
-            
-            # 요일은 '월'부터 시작하여 7개
             days_kr = ['월', '화', '수', '목', '금', '토', '일']
             
             html += f"""
             <div class="summary-card" style="margin-top: 20px;">
                 <div class="card-header">키워드: {keyword}</div>
-                
                 <table class="comparison-table">
                     <thead>
                         <tr>
@@ -345,54 +356,37 @@ def generate_html_report(all_results, comparison_data, periods):
                     """
             
             # --- 기간 1 (이전 주차) ---
-            # 1. 기간 1 날짜 Row
             date_row = f'<td class="week-header">{periods["period_1_name"]}<br>({periods["period_1_start"].split("-")[1]}.{periods["period_1_start"].split("-")[2]}~{periods["period_1_end"].split("-")[1]}.{periods["period_1_end"].split("-")[2]})</td>'
-            # 2. 기간 1 검색량 Row
             value_row = '<td class="week-header">검색량</td>'
-            
-            # Period 1은 7일치 전체를 보여줍니다.
             for i in range(7):
                 if i < len(period_1_data):
                     period_1_day_data = period_1_data[i]
                     date_row += f'<td>{period_1_day_data["date"].split("-")[1]}.{period_1_day_data["date"].split("-")[2]}({period_1_day_data["day"]})</td>'
                     value_row += f'<td><span class="trend-value">{period_1_day_data["value"]}</span></td>'
                 else:
-                    # 데이터가 7일 미만일 경우 (예외 상황 대비)
                     date_row += '<td>---</td>'
                     value_row += '<td>---</td>'
-            
             html += f'<tr>{date_row}</tr>'
             html += f'<tr>{value_row}</tr>'
 
             # --- 기간 2 (현재 주차) ---
-            # 1. 기간 2 날짜 Row
             date_row_last = f'<td class="week-header">{periods["period_2_name"]}<br>({periods["period_2_start"].split("-")[1]}.{periods["period_2_start"].split("-")[2]}~{periods["period_2_end"].split("-")[1]}.{periods["period_2_end"].split("-")[2]})</td>'
-            # 2. 기간 2 검색량 Row
             value_row_last = '<td class="week-header">검색량</td>'
-            
-            # Period 2는 현재 진행 중인 데이터(어제까지)만 표시하고 나머지는 하이픈 처리
             for i in range(7): 
                 style = ""
-                
-                if i < len(period_2_data): # <--- 데이터가 존재하는 경우 (과거)
+                if i < len(period_2_data): 
                     period_2_day_data = period_2_data[i]
                     date_row_last += f'<td>{period_2_day_data["date"].split("-")[1]}.{period_2_day_data["date"].split("-")[2]}({period_2_day_data["day"]})</td>'
-                    
-                    # 값 비교를 통해 스타일 적용 (Period 1의 해당 요일 데이터가 있을 때만 비교)
                     if i < len(period_1_data):
                         period_1_value = period_1_data[i]["value"]
                         period_2_value = period_2_day_data["value"]
-                        
                         if period_2_value > period_1_value:
-                            style = 'style="background-color: #e6ffe6;"' # 성장
+                            style = 'style="background-color: #e6ffe6;"' 
                         elif period_2_value < period_1_value:
-                            style = 'style="background-color: #ffe6e6;"' # 하락
-
+                            style = 'style="background-color: #ffe6e6;"' 
                     value_row_last += f'<td {style}><span class="trend-value">{period_2_day_data["value"]}</span></td>'
-                else: # <--- 데이터가 존재하지 않는 경우 (미래)
-                    date_row_last += '<td>-</td>' 
+                else: 
                     value_row_last += '<td><span class="trend-value">-</span></td>' 
-                    
             html += f'<tr>{date_row_last}</tr>'
             html += f'<tr>{value_row_last}</tr>'
             
@@ -405,110 +399,169 @@ def generate_html_report(all_results, comparison_data, periods):
         html += "</div>"
         
     # ----------------------------------------------------
-    # 2. 네이버 검색 노출 모니터링 섹션 (이하 기존 로직 유지)
+    # 2. 네이버 검색 노출 모니터링 섹션 (개선된 요약 및 상세 이탈 목록)
     # ----------------------------------------------------
     
     html += f"""
         <hr style="margin-top: 40px; border: 0; border-top: 1px solid #eee;">
         <div style="margin-top: 40px;">
-            <h2>🔍 네이버 검색 노출 모니터링 결과</h2>
+            <h2>🔍 네이버 검색 노출 모니터링 결과 요약</h2>
         </div>
     """
     
-    # ... (기존 노출 통계 계산 및 HTML 생성 로직 유지) ...
-    total_exposed = 0
+    total_exposed_and_partial = 0 
     total_not_exposed = 0
-    total_no_url = 0
+    total_skipped = 0 
     
-    for category, results in all_results.items():
-        if results is None:
+    # 노출 이탈 키워드 상세 리스트를 한 곳에 모으기
+    all_unexposed_keywords = []
+    # 발행하지 않은 키워드 상세 리스트
+    all_skipped_keywords = []
+
+
+    for category, summary in all_summaries.items():
+        if summary is None:
             continue
             
         category_display = CATEGORY_NAMES.get(category, category.upper())
-        exposed_keywords = []
-        not_exposed_keywords = []
-        no_url_keywords = []
         
-        for keyword_result in results.get("results", []):
-            keyword = keyword_result.get("keyword", "")
-            urls = keyword_result.get("urls", [])
+        # 합계 계산
+        exposed_count = len(summary.get("exposed", [])) + len(summary.get("partially_exposed", []))
+        not_exposed_count = len(summary.get("not_exposed", []))
+        skipped_count = len(summary.get("skipped_keywords", []))
+        
+        total_exposed_and_partial += exposed_count
+        total_not_exposed += not_exposed_count
+        total_skipped += skipped_count
+
+
+        # 노출되지 않은 키워드 목록 수집
+        all_unexposed_keywords.extend([
+            {
+                "category": category_display,
+                "keyword": item["keyword"],
+                "last_exposed": item["latest_exposed_str"],
+                "sort_key": item["latest_exposed_at"] # datetime 객체를 정렬 기준으로 사용
+            } 
+            for item in summary.get("not_exposed", [])
+        ])
+        
+        
+        # 각 카테고리별 요약 카드
+        total_monitored = exposed_count + not_exposed_count
+        
+        exposure_rate = 0
+        if total_monitored > 0:
+            exposure_rate = round(exposed_count / total_monitored * 100)
             
-            if not urls:
-                no_url_keywords.append(keyword)
-                continue
-            exposed_count = sum(1 for url in urls if url.get("is_exposed", False))
-            
-            if exposed_count > 0:
-                exposed_keywords.append(keyword)
-            else:
-                not_exposed_keywords.append(keyword)
-        
-        total_with_url = total_exposed + total_not_exposed
-        exposure_rate = 0 if total_with_url == 0 else round(len(exposed_keywords) / total_with_url * 100)
-        
-        total_exposed += len(exposed_keywords)
-        total_not_exposed += len(not_exposed_keywords)
-        total_no_url += len(no_url_keywords)
         
         html += f"""
         <div class="summary-card">
             <div class="card-header">{category_display} ({category.upper()})</div>
-            <p>최종 업데이트: {results.get('timestamp', '알 수 없음')}</p>
+            <p>최종 업데이트: {summary.get('timestamp', '알 수 없음')}</p>
             
             <div class="stat-container">
                 <div class="stat-box success-box">
-                    <div class="number success">{len(exposed_keywords)}</div>
-                    <div class="label">노출된 키워드</div>
+                    <div class="number success">{exposed_count}</div>
+                    <div class="label">노출된 키워드 (전체/일부)</div>
                 </div>
                 <div class="stat-box danger-box">
-                    <div class="number danger">{len(not_exposed_keywords)}</div>
-                    <div class="label">노출되지 않은 키워드</div>
+                    <div class="number danger">{not_exposed_count}</div>
+                    <div class="label">🚨 노출 이탈 키워드 (미노출)</div>
                 </div>
                 <div class="stat-box warning-box">
-                    <div class="number warning">{len(no_url_keywords)}</div>
-                    <div class="label">발행하지 않은 키워드</div>
+                    <div class="number warning">{skipped_count}</div>
+                    <div class="label">📝 발행하지 않은 키워드 (URL 없음)</div>
                 </div>
             </div>
             
-            <p><strong>노출률:</strong> <span class="{'success' if exposure_rate >= 70 else 'warning' if exposure_rate >= 30 else 'danger'}">{exposure_rate}%</span> (발행한 키워드 중)</p>
+            <p><strong>노출률:</strong> <span class="{'success' if exposure_rate >= 70 else 'warning' if exposure_rate >= 30 else 'critical'}">{exposure_rate}%</span> (총 모니터링 키워드 {total_monitored}개 중)</p>
             
         </div>
         """
+        
     
-    # 전체 요약 카드 (기존 로직 유지)
-    total_with_url = total_exposed + total_not_exposed
-    total_keywords = total_with_url + total_no_url
-    total_exposure_rate = 0 if total_with_url == 0 else round(total_exposed / total_with_url * 100)
-    url_creation_rate = 0 if total_keywords == 0 else round(total_with_url / total_keywords * 100, 2)
+    # ----------------------------------------------------
+    # 3. 노출 이탈 키워드 상세 리스트 (핵심 요청 사항: 미노출)
+    # ----------------------------------------------------
     
     html += f"""
-        <div class="summary-card">
-            <div class="card-header">전체 요약</div>
-            
-            <div class="stat-container">
-                <div class="stat-box success-box">
-                    <div class="number success">{total_exposed}</div>
-                    <div class="label">노출된 키워드</div>
-                </div>
-                <div class="stat-box danger-box">
-                    <div class="number danger">{total_not_exposed}</div>
-                    <div class="label">노출되지 않은 키워드</div>
-                </div>
-                <div class="stat-box warning-box">
-                    <div class="number warning">{total_no_url}</div>
-                    <div class="label">발행하지 않은 키워드</div>
-                </div>
-            </div>
-            
-            <p><strong>전체 노출률:</strong> <span class="{'success' if total_exposure_rate >= 70 else 'warning' if total_exposure_rate >= 30 else 'danger'}">{total_exposure_rate}%</span> (발행한 키워드 중)</p>
-            <p><strong>발행률:</strong> <span class="{'success' if url_creation_rate >= 70 else 'warning' if url_creation_rate >= 30 else 'danger'}">{url_creation_rate}%</span> (전체 키워드 중)</p>
-        </div>
+        <div style="margin-top: 40px;">
+            <h2>🚫 노출 이탈 키워드 상세 목록 (총 {len(all_unexposed_keywords)}개)</h2>
+            <p>
+                **마지막 노출 확인 일시가 최근인 순서**로 정렬되어 있습니다.
+                <br>
+                **현재 이메일 본문에는 가장 최근까지 노출된 상위 200개 키워드가 표시됩니다.**
+                전체 요약 정보는 첨부된 CSV 파일({len(CATEGORIES)}개)을 참고하세요.
+            </p>
     """
     
-    # 푸터 (기존 로직 유지)
+    if all_unexposed_keywords:
+        # 정렬 순서 변경: 마지막 노출 일시가 최근인 순서 (내림차순, reverse=True)
+        # sort_key가 None인 경우 (기록 없음) 가장 나중에 오도록 처리 (가장 오래된 것으로 간주)
+        all_unexposed_keywords.sort(key=lambda x: x['sort_key'] if x['sort_key'] is not None else datetime.min, reverse=True) 
+        
+        # 상위 200개만 HTML에 표시 
+        display_limit = 500 
+        display_list = all_unexposed_keywords[:display_limit]
+        
+        html += """
+            <table class="detail-table" style="width: 100%; border: 1px solid #ddd; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: #f0e6e6;">
+                        <th style="width: 20%; padding: 8px;">카테고리</th>
+                        <th style="width: 40%; padding: 8px;">키워드</th>
+                        <th style="width: 40%; padding: 8px;">마지막 노출 확인 일시</th>
+                    </tr>
+                </thead>
+                <tbody>
+        """
+        for item in display_list:
+            # D+ 카운트가 7일 이상이거나 '기록 없음'이면 빨간색 강조 (시각적인 조치 시급도는 유지)
+            style_class = ""
+            is_critical = False
+            if item['last_exposed'] == "기록 없음":
+                is_critical = True
+            elif "D+" in item['last_exposed']:
+                days_str = item['last_exposed'].split('D+')[1].split(')')[0]
+                if days_str.isdigit() and int(days_str) >= 7:
+                    style_class = 'class="critical"'
+            
+            html += f"""
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;">{item["category"]}</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">{item["keyword"]}</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;"><span {style_class}>{item["last_exposed"]}</span></td>
+                    </tr>
+            """
+        
+        html += """
+                </tbody>
+            </table>
+        """
+        # 200개 이상일 경우, 나머지 키워드 개수를 안내
+        if len(all_unexposed_keywords) > display_limit:
+             html += f"<p style='margin-top: 10px; font-size: 14px;'>... 외 **{len(all_unexposed_keywords) - display_limit}**개 키워드. **전체 상세 정보는 첨부된 CSV 파일**을 확인해 주세요.</p>"
+        elif len(all_unexposed_keywords) > 0:
+             html += f"<p style='margin-top: 10px; font-size: 14px;'>총 **{len(all_unexposed_keywords)}**개의 이탈 키워드가 이메일 본문에 표시되었습니다.</p>"
+
+
+    else:
+        html += "<p style='color: green; font-weight: bold;'>축하합니다! 현재 노출 이탈 키워드가 감지되지 않았습니다.</p>"
+        
+    html += "</div>"
+    
+    # ----------------------------------------------------
+    # 5. 푸터 및 첨부 파일 안내
+    # ----------------------------------------------------
+
     html += """
             <div class="footer">
-                <p>이 이메일은 자동으로 생성되었습니다. 문의사항이 있으시면 관리자에게 연락하세요.</p>
+                <p>
+                    이 이메일은 자동으로 생성되었습니다.
+                    <br>
+                    **첨부 파일:** 노출 이탈 키워드(`unexposed_keywords_summary_*.csv`) 파일에 **키워드별 요약 정보**가 담겨 있습니다.
+                </p>
                 <p>※ 상세 정보는 <a href='https://minsweb.shop'>minsweb.shop</a>에서 확인하실 수 있습니다.</p>
             </div>
         </div>
@@ -519,7 +572,7 @@ def generate_html_report(all_results, comparison_data, periods):
     return html
 
 # ----------------------------------------------------
-# D. 이메일 전송 함수
+# D. 이메일 전송 함수 (첨부 파일 처리 추가) - 변함 없음
 # ----------------------------------------------------
 
 def send_email_report():
@@ -527,18 +580,18 @@ def send_email_report():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서 생성 중...")
     
     try:
-        # 현재 날짜를 이메일 제목에 추가
+        # 현재 날짜를 이메일 제목에 추가 (🚨 이모지로 시급성 강조)
         today_date = datetime.now().strftime("%Y-%m-%d")
-        email_subject = f"네이버 검색 트렌드 및 노출 일일 리포트 ({today_date})"
+        email_subject = f"🚨 [노출 이탈 리포트] 네이버 검색 트렌드 및 노출 일일 리포트 ({today_date})"
         
-        # 1. 키워드 검색량 2주 비교 데이터 생성 (동적 비교 로직 적용)
+        # 1. 키워드 검색량 2주 비교 데이터 생성
         comparison_data, periods = get_keyword_search_summary()
         
-        # 2. 최신 노출 결과 로드
-        all_results = load_latest_results()
+        # 2. 최신 노출 결과 로드, 요약 및 CSV 파일 생성
+        all_summaries, all_attachments = get_all_reports()
         
         # 3. HTML 보고서 생성
-        html_content = generate_html_report(all_results, comparison_data, periods)
+        html_content = generate_html_report(all_summaries, comparison_data, periods)
         
         # 이메일 구성
         msg = MIMEMultipart()
@@ -549,6 +602,26 @@ def send_email_report():
         # HTML 콘텐츠 추가
         msg.attach(MIMEText(html_content, 'html'))
         
+        # 4. 첨부 파일 추가
+        for file_path, file_name in all_attachments:
+            try:
+                with open(file_path, "rb") as attachment:
+                    part = MIMEBase("application", "octet-stream")
+                    part.set_payload(attachment.read())
+                
+                encoders.encode_base64(part)
+                part.add_header(
+                    "Content-Disposition",
+                    f"attachment; filename= {file_name}",
+                )
+                msg.attach(part)
+                print(f"첨부 파일 추가됨: {file_name}")
+            except FileNotFoundError:
+                print(f"경고: 첨부 파일 {file_name}을 찾을 수 없습니다. 건너뜜니다.")
+            except Exception as e:
+                print(f"경고: 첨부 파일 {file_name} 추가 중 오류 발생: {str(e)}")
+
+
         # SMTP 서버 연결 및 이메일 전송
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
             server.login(EMAIL_SENDER, EMAIL_PASSWORD)

@@ -18,7 +18,7 @@ CATEGORIES = ['cancer', 'diabetes', 'cream']
 # 검색할 기본 페이지 수
 DEFAULT_PAGES = 1
 
-SCHEDULER_INTERVAL = 2
+SCHEDULER_INTERVAL = 4
 
 # 이메일 설정
 EMAIL_SENDER = "fmonecompany@gmail.com"  # 발신자 이메일

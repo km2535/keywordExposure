@@ -6,7 +6,7 @@ import subprocess
 import logging
 import traceback
 from datetime import datetime
-from src.config import DEFAULT_PAGES, SCHEDULER_INTERVAL, OUTPUT_DIR
+from src.config import DEFAULT_PAGES, SCHEDULER_INTERVAL, OUTPUT_DIR, DATA_DIR # DATA_DIR 추가
 
 # 현재 스크립트 디렉토리의 절대 경로
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -44,7 +44,7 @@ def run_monitoring():
     
     logging.info(f"실행 시간: {current_time}")
     
-    # 모니터링 디렉토리 확인
+    # 모니터링 디렉토리 확인 (OUTPUT_DIR 및 DATA_DIR 모두 확인)
     if not os.path.exists(OUTPUT_DIR):
         try:
             os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -52,8 +52,17 @@ def run_monitoring():
         except Exception as e:
             logging.error(f"출력 디렉토리 생성 실패: {str(e)}")
     
+    if not os.path.exists(DATA_DIR):
+        try:
+            os.makedirs(DATA_DIR, exist_ok=True)
+            logging.info(f"데이터 디렉토리 생성됨: {DATA_DIR}")
+        except Exception as e:
+            logging.error(f"데이터 디렉토리 생성 실패: {str(e)}")
+            
+    
     # 모든 카테고리 실행
     try:
+        # main.py 실행 (노출 모니터링 및 JSON 결과 파일 생성)
         result = subprocess.run(['python3', os.path.join(SCRIPT_DIR, 'main.py'), 
                                  '--pages', str(DEFAULT_PAGES), 
                                  '--all-categories'], 
@@ -65,17 +74,22 @@ def run_monitoring():
         logging.info(result.stdout)
         logging.info("모니터링 작업 완료")
         
-        # 아침 10시일 경우 이메일 보고서 전송
-        if current_hour == 10 and current_minute == 10:
-            logging.info("예약된 시간(10시 정각)입니다. 이메일 보고서를 전송합니다.")
-            run_email_report()
-        else:
-            logging.info(f"예약된 시간이 아닙니다(현재 {current_hour}시 {current_minute}분). 이메일 보고서를 전송하지 않습니다.")
-            # 시간이 맞지 않으면 실행하지 않음
+        # 아침 10시 10분일 경우 이메일 보고서 전송
+        # Note: 스케줄러가 3시간마다 실행되므로, 10시 10분 이외의 시간에 run_email_report를 호출하지 않도록 주의합니다.
+        # 아래는 스케줄링된 작업 외에 main.py가 실행된 후의 추가적인 로직이 필요하다면 넣을 수 있지만,
+        # 이미 스케줄러에 별도로 run_email_report가 설정되어 있으므로 주석 처리합니다.
+        # if current_hour == 10 and current_minute == 10:
+        #     logging.info("예약된 시간(10시 10분)입니다. 이메일 보고서를 전송합니다.")
+        #     run_email_report()
+        # else:
+        #     logging.info(f"예약된 시간이 아닙니다(현재 {current_hour}시 {current_minute}분). 이메일 보고서는 별도 스케줄로 처리됩니다.")
                 
     except subprocess.CalledProcessError as e:
-        logging.error(f"모니터링 실행 중 오류 발생: {e}")
+        logging.error(f"모니터링 실행 중 오류 발생: {e.cmd}")
         logging.error(f"오류 출력: {e.stderr}")
+    except Exception as e:
+        logging.error(f"모니터링 실행 중 일반 예외 발생: {str(e)}")
+        logging.error(traceback.format_exc())
 
 def run_email_report():
     """이메일 보고서만 전송하는 함수"""
@@ -83,14 +97,14 @@ def run_email_report():
     
     try:
         # 출력 디렉토리 존재 확인
-        if not os.path.exists(OUTPUT_DIR):
-            logging.error(f"출력 디렉토리가 없습니다: {OUTPUT_DIR}")
+        if not os.path.exists(DATA_DIR):
+            logging.error(f"데이터 디렉토리가 없습니다: {DATA_DIR}")
             return False
             
-        # 결과 파일 존재 확인
+        # 결과 파일 존재 확인 (적어도 하나는 있어야 함)
         result_files_exist = False
         for category in ['cancer', 'diabetes', 'cream']:
-            file_path = os.path.join(OUTPUT_DIR, f'latest_results_{category}.json')
+            file_path = os.path.join(DATA_DIR, f'latest_results_{category}.json')
             if os.path.exists(file_path):
                 result_files_exist = True
                 logging.info(f"결과 파일 확인됨: {file_path}")
@@ -124,6 +138,7 @@ if __name__ == "__main__":
     
     # 오전 10시 10분에 이메일 보고서 전송 (독립적으로 실행)
     schedule.every().day.at("10:10").do(run_email_report)
+    schedule.every().day.at("12:30").do(run_email_report)
     
     # 시작할 때 한 번 즉시 실행 (선택 사항)
     logging.info("초기 모니터링 실행 중...")
@@ -141,4 +156,4 @@ if __name__ == "__main__":
         logging.info("사용자에 의해 스케줄러가 중지되었습니다.")
     except Exception as e:
         logging.error(f"스케줄러 실행 중 오류 발생: {str(e)}")
-        logging.error(traceback.format_exc())  # 스택 트레이스 로깅
+        logging.error(traceback.format_exc())
