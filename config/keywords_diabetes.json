@@ -624,10 +624,6 @@
             ]
         },
         {
-            "keyword": "당화혈색소 수치",
-            "urls": ["https://m.cafe.naver.com/masanmam/7309079"]
-        },
-        {
             "keyword": "혈당측정검사지",
             "urls": ["https://m.cafe.naver.com/zoozoocom/306859"]
         },
@@ -970,7 +966,8 @@
                 "https://m.cafe.naver.com/peopledisc/1136755",
                 "https://m.cafe.naver.com/zoozoocom/311999",
                 "https://m.cafe.naver.com/peopledisc/1165440",
-                "https://m.cafe.naver.com/peopledisc/1189502"
+                "https://m.cafe.naver.com/peopledisc/1189502",
+                "https://m.cafe.naver.com/zoozoocom/333932"
             ]
         },
         {
@@ -984,7 +981,8 @@
                 "https://m.cafe.naver.com/zoozoocom/313814",
                 "https://m.cafe.naver.com/peopledisc/1156172",
                 "https://m.cafe.naver.com/zoozoocom/320544",
-                "https://m.cafe.naver.com/peopledisc/1189707"
+                "https://m.cafe.naver.com/peopledisc/1189707",
+                "https://m.cafe.naver.com/zoozoocom/333930"
             ]
         },
         {
@@ -1294,15 +1292,21 @@
         },
         {
             "keyword": "당화혈색소 수치",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/333105"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/333105",
+                "https://m.cafe.naver.com/masanmam/7309079"
+            ]
         },
         {
             "keyword": "당화혈색소정상수치",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/333105"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/333105",
+                "https://m.cafe.naver.com/zoozoocom/333928"
+            ]
         },
         {
             "keyword": "당뇨 정상수치 당화혈색소",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/333106"]
+            "urls": ["https://m.cafe.naver.com/zoozoocom/333200"]
         },
         {
             "keyword": "당화혈색소 9",
@@ -1617,7 +1621,8 @@
                 "https://m.cafe.naver.com/zoozoocom/312086",
                 "https://m.cafe.naver.com/peopledisc/1141653",
                 "https://m.cafe.naver.com/zoozoocom/313284",
-                "https://m.cafe.naver.com/peopledisc/1158379"
+                "https://m.cafe.naver.com/peopledisc/1158379",
+                "https://m.cafe.naver.com/zoozoocom/333936"
             ]
         },
         {
@@ -1722,7 +1727,10 @@
         },
         {
             "keyword": "당화혈색소수치 6.5",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1168814"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1168814",
+                "https://m.cafe.naver.com/zoozoocom/332504"
+            ]
         },
         {
             "keyword": "당화혈색소검사",
@@ -2423,11 +2431,17 @@
         },
         {
             "keyword": "당뇨공복혈당정상수치",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/332247"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/332247",
+                "https://m.cafe.naver.com/zoozoocom/333924"
+            ]
         },
         {
             "keyword": "공복혈당 정상수치",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/332242"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/332242",
+                "https://m.cafe.naver.com/masanmam/7309097"
+            ]
         },
         {
             "keyword": "공복혈당 정상수치 110",
