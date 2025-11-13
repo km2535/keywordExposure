@@ -348,7 +348,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/295740",
                 "https://m.cafe.naver.com/zoozoocom/309078",
-                "https://m.cafe.naver.com/zoozoocom/316183"
+                "https://m.cafe.naver.com/zoozoocom/316183",
+                "https://m.cafe.naver.com/zoozoocom/334271"
             ]
         },
         {
@@ -429,7 +430,10 @@
         },
         {
             "keyword": "아침 공복 혈당 정상수치",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1189485"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1189485",
+                "https://m.cafe.naver.com/zoozoocom/334237"
+            ]
         },
         {
             "keyword": "공복혈당장애 의심",
@@ -1320,6 +1324,10 @@
             "urls": ["https://m.cafe.naver.com/zoozoocom/300673"]
         },
         {
+            "keyword": "공복혈당 90",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/334266"]
+        },
+        {
             "keyword": "공복혈당 95",
             "urls": ["https://m.cafe.naver.com/zoozoocom/301795"]
         },
@@ -1434,7 +1442,8 @@
             "keyword": "공복혈당 낮추는법",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/322204",
-                "https://m.cafe.naver.com/peopledisc/1188277"
+                "https://m.cafe.naver.com/peopledisc/1188277",
+                "https://m.cafe.naver.com/zoozoocom/334268"
             ]
         },
         {
@@ -2458,7 +2467,8 @@
             "keyword": "공복혈당 정상수치 110",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1189506",
-                "https://m.cafe.naver.com/zoozoocom/333773"
+                "https://m.cafe.naver.com/zoozoocom/333773",
+                "https://m.cafe.naver.com/zoozoocom/334264"
             ]
         },
         {
