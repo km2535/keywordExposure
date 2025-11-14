@@ -27,7 +27,11 @@
         },
         {
             "keyword": "식후 2시간뒤 혈당",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/319902"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/319902",
+                "https://m.cafe.naver.com/zoozoocom/332716",
+                "https://m.cafe.naver.com/zoozoocom/332716"
+            ]
         },
         {
             "keyword": "고구마혈당",
@@ -259,6 +263,18 @@
             ]
         },
         {
+            "keyword": "식후 1시간 혈당 정상수치",
+            "urls": ["https://m.cafe.naver.com/masanmam/7313335"]
+        },
+        {
+            "keyword": "식후 2시간 혈당 정상수치",
+            "urls": ["https://m.cafe.naver.com/masanmam/7313341"]
+        },
+        {
+            "keyword": "식후 3시간 혈당 정상수치",
+            "urls": ["https://m.cafe.naver.com/masanmam/7313339"]
+        },
+        {
             "keyword": "당뇨약 부작용",
             "urls": []
         },
@@ -340,7 +356,9 @@
                 "https://m.cafe.naver.com/zoozoocom/302586",
                 "https://m.cafe.naver.com/zoozoocom/304175",
                 "https://m.cafe.naver.com/zoozoocom/305640",
-                "https://m.cafe.naver.com/peopledisc/1136749"
+                "https://m.cafe.naver.com/peopledisc/1136749",
+                "https://m.cafe.naver.com/zoozoocom/334271",
+                "https://m.cafe.naver.com/zoozoocom/334271"
             ]
         },
         {
@@ -432,8 +450,13 @@
             "keyword": "아침 공복 혈당 정상수치",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1189485",
-                "https://m.cafe.naver.com/zoozoocom/334237"
+                "https://m.cafe.naver.com/zoozoocom/334237",
+                "https://m.cafe.naver.com/zoozoocom/334261"
             ]
+        },
+        {
+            "keyword": "공복혈당장애의심",
+            "urls": ["https://m.cafe.naver.com/masanmam/7313330"]
         },
         {
             "keyword": "공복혈당장애 의심",
@@ -500,7 +523,8 @@
                 "https://m.cafe.naver.com/zoozoocom/304166",
                 "https://m.cafe.naver.com/peopledisc/1123680",
                 "https://m.cafe.naver.com/zoozoocom/309971",
-                "https://m.cafe.naver.com/peopledisc/1137308"
+                "https://m.cafe.naver.com/peopledisc/1137308",
+                "https://m.cafe.naver.com/zoozoocom/334440"
             ]
         },
         {
@@ -602,7 +626,10 @@
         },
         {
             "keyword": "식전혈당",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/298173"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/298173",
+                "https://m.cafe.naver.com/zoozoocom/334271"
+            ]
         },
         {
             "keyword": "인슐린저항성검사",
@@ -623,11 +650,12 @@
             ]
         },
         {
-            "keyword": "공복 혈당 당화혈색소",
+            "keyword": "공복혈당 당화혈색소",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1089662",
                 "https://m.cafe.naver.com/zoozoocom/311235",
-                "https://m.cafe.naver.com/zoozoocom/314327"
+                "https://m.cafe.naver.com/zoozoocom/314327",
+                "https://m.cafe.naver.com/zoozoocom/334453"
             ]
         },
         {
@@ -800,13 +828,15 @@
             ]
         },
         {
-            "keyword": "혈당시험지",
-            "urls": []
+            "keyword": "공복혈당 수치 정상",
+            "urls": ["https://m.cafe.naver.com/masanmam/7313333"]
         },
         {
             "keyword": "공복혈당 수치 110",
             "urls": [
-                "https://m.cafe.naver.com/zoozoocom/333776"
+                "https://m.cafe.naver.com/zoozoocom/333776",
+                "https://m.cafe.naver.com/zoozoocom/334264"
+
             ]
         },
         {
@@ -822,7 +852,8 @@
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1096695",
                 "https://m.cafe.naver.com/zoozoocom/309967",
-                "https://m.cafe.naver.com/zoozoocom/313806"
+                "https://m.cafe.naver.com/zoozoocom/313806",
+                "https://m.cafe.naver.com/zoozoocom/334437"
             ]
         },
         {
@@ -830,7 +861,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/309058",
                 "https://m.cafe.naver.com/zoozoocom/315488",
-                "https://m.cafe.naver.com/zoozoocom/317671"
+                "https://m.cafe.naver.com/zoozoocom/317671",
+                "https://m.cafe.naver.com/zoozoocom/334434"
             ]
         },
         {
@@ -966,7 +998,8 @@
                 "https://m.cafe.naver.com/zoozoocom/302583",
                 "https://m.cafe.naver.com/zoozoocom/307157",
                 "https://m.cafe.naver.com/zoozoocom/314329",
-                "https://m.cafe.naver.com/zoozoocom/321157"
+                "https://m.cafe.naver.com/zoozoocom/321157",
+                "https://m.cafe.naver.com/zoozoocom/334447"
             ]
         },
         {
@@ -1138,7 +1171,8 @@
             "keyword": "혈당스파이크 증상",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1104385",
-                "https://m.cafe.naver.com/zoozoocom/332508"
+                "https://m.cafe.naver.com/zoozoocom/332508",
+                "https://m.cafe.naver.com/zoozoocom/334462"
             ]
         },
         {
@@ -1159,7 +1193,8 @@
                 "https://m.cafe.naver.com/zoozoocom/308088",
                 "https://m.cafe.naver.com/zoozoocom/313279",
                 "https://m.cafe.naver.com/zoozoocom/320558",
-                "https://m.cafe.naver.com/zoozoocom/332506"
+                "https://m.cafe.naver.com/zoozoocom/332506",
+                "https://m.cafe.naver.com/zoozoocom/334458"
             ]
         },
         {
@@ -1169,7 +1204,8 @@
                 "https://m.cafe.naver.com/zoozoocom/308384",
                 "https://m.cafe.naver.com/peopledisc/1146031",
                 "https://m.cafe.naver.com/peopledisc/1165442",
-                "https://m.cafe.naver.com/zoozoocom/332505"
+                "https://m.cafe.naver.com/zoozoocom/332505",
+                "https://m.cafe.naver.com/zoozoocom/334454"
             ]
         },
         {
@@ -1526,7 +1562,10 @@
         },
         {
             "keyword": "혈당스파이크 기준",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/300692"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/300692",
+                "https://m.cafe.naver.com/zoozoocom/334464"
+            ]
         },
         {
             "keyword": "여주 당뇨",
@@ -2250,7 +2289,10 @@
         },
         {
             "keyword": "당뇨 공복혈당정상수치",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1111372"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1111372",
+                "https://m.cafe.naver.com/zoozoocom/333924"
+            ]
         },
         {
             "keyword": "고혈압 당뇨",
