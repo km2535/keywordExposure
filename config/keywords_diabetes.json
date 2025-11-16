@@ -246,7 +246,8 @@
             "keyword": "공복혈당100",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1108472",
-                "https://m.cafe.naver.com/zoozoocom/309978"
+                "https://m.cafe.naver.com/zoozoocom/309978",
+                "https://m.cafe.naver.com/masanmam/7313333"
             ]
         },
         {
@@ -268,7 +269,12 @@
         },
         {
             "keyword": "식후 2시간 혈당 정상수치",
-            "urls": ["https://m.cafe.naver.com/masanmam/7313341"]
+            "urls": [
+                
+                "https://m.cafe.naver.com/zoozoocom/291503",
+                "https://m.cafe.naver.com/peopledisc/1150067",
+                "https://m.cafe.naver.com/masanmam/7313341"
+            ]
         },
         {
             "keyword": "식후 3시간 혈당 정상수치",
@@ -457,10 +463,6 @@
         {
             "keyword": "공복혈당장애의심",
             "urls": ["https://m.cafe.naver.com/masanmam/7313330"]
-        },
-        {
-            "keyword": "공복혈당장애 의심",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1189490"]
         },
         {
             "keyword": "아침혈당",
@@ -678,13 +680,6 @@
             "urls": ["https://m.cafe.naver.com/peopledisc/1098405"]
         },
         {
-            "keyword": "식후 2시간 혈당 정상수치",
-            "urls": [
-                "https://m.cafe.naver.com/zoozoocom/291503",
-                "https://m.cafe.naver.com/peopledisc/1150067"
-            ]
-        },
-        {
             "keyword": "식후 2시간 후 혈당 정상수치",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/332716"
@@ -696,7 +691,10 @@
         },
         {
             "keyword": "식후3시간혈당 정상수치",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/332709"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/332709",
+                "https://m.cafe.naver.com/masanmam/7313339"
+            ]
         },
         {
             "keyword": "식후2시간혈당",
@@ -704,7 +702,10 @@
         },
         {
             "keyword": "식후2시간혈당 정상수치",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/332888"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/332888",
+                "https://m.cafe.naver.com/masanmam/7313341"
+            ]
         },
         {
             "keyword": "식후4시간혈당",
@@ -844,7 +845,8 @@
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1108472",
                 "https://m.cafe.naver.com/zoozoocom/305952",
-                "https://m.cafe.naver.com/zoozoocom/313798"
+                "https://m.cafe.naver.com/zoozoocom/313798",
+                "https://m.cafe.naver.com/masanmam/7313333"
             ]
         },
         {
@@ -1103,7 +1105,7 @@
         },
         {
             "keyword": "식후 3시간 혈당수치",
-            "urls": []
+            "urls": ["https://m.cafe.naver.com/masanmam/7313339"]
         },
         {
             "keyword": "당뇨검사키트",
@@ -1658,7 +1660,8 @@
                 "https://m.cafe.naver.com/peopledisc/1090484",
                 "https://m.cafe.naver.com/zoozoocom/309964",
                 "https://m.cafe.naver.com/peopledisc/1147762",
-                "https://m.cafe.naver.com/peopledisc/1163236"
+                "https://m.cafe.naver.com/peopledisc/1163236",
+                "https://m.cafe.naver.com/zoozoocom/334570"
             ]
         },
         {
@@ -1677,7 +1680,8 @@
                 "https://m.cafe.naver.com/peopledisc/1141653",
                 "https://m.cafe.naver.com/zoozoocom/313284",
                 "https://m.cafe.naver.com/peopledisc/1158379",
-                "https://m.cafe.naver.com/zoozoocom/333936"
+                "https://m.cafe.naver.com/zoozoocom/333936",
+                "https://m.cafe.naver.com/peopledisc/1197022"
             ]
         },
         {
@@ -1712,14 +1716,16 @@
             "keyword": "당화혈색소 5.6",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/298820",
-                "https://m.cafe.naver.com/zoozoocom/302447"
+                "https://m.cafe.naver.com/zoozoocom/302447",
+                "https://m.cafe.naver.com/zoozoocom/334566"
             ]
         },
         {
             "keyword": "당화혈색소 5.5",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/300694",
-                "https://m.cafe.naver.com/zoozoocom/316553"
+                "https://m.cafe.naver.com/zoozoocom/316553",
+                "https://m.cafe.naver.com/zoozoocom/334564"
             ]
         },
         {
@@ -1729,6 +1735,10 @@
         {
             "keyword": "당화혈색소 수치표",
             "urls": ["https://m.cafe.naver.com/zoozoocom/333209"]
+        },
+        {
+            "keyword": "당화혈색소 5.3",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/334563"]
         },
         {
             "keyword": "당화혈색소 5.1",
@@ -1742,7 +1752,8 @@
                 "https://m.cafe.naver.com/peopledisc/1150793",
                 "https://m.cafe.naver.com/zoozoocom/321516",
                 "https://m.cafe.naver.com/peopledisc/1183842",
-                "https://m.cafe.naver.com/zoozoocom/333206"
+                "https://m.cafe.naver.com/zoozoocom/333206",
+                "https://m.cafe.naver.com/zoozoocom/334569"
             ]
         },
         {
@@ -2134,7 +2145,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/304170",
                 "https://m.cafe.naver.com/zoozoocom/307814",
-                "https://m.cafe.naver.com/peopledisc/1156339"
+                "https://m.cafe.naver.com/peopledisc/1156339",
+                "https://m.cafe.naver.com/masanmam/7313330"
             ]
         },
         {
