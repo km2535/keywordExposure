@@ -1912,7 +1912,8 @@
         {
             "keyword": "당뇨에 좋은 차",
             "urls": [
-                "https://m.cafe.naver.com/zoozoocom/331771"
+                "https://m.cafe.naver.com/zoozoocom/331771",
+                "https://m.cafe.naver.com/zoozoocom/334828"
             ]
         },
         {
@@ -1950,6 +1951,12 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/273111",
                 "https://m.cafe.naver.com/zoozoocom/289507"
+            ]
+        },
+        {
+            "keyword": "혈당에 좋은 차",
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/334830"
             ]
         },
         {
@@ -2521,7 +2528,8 @@
             "keyword": "당뇨공복혈당정상수치",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/332247",
-                "https://m.cafe.naver.com/zoozoocom/333924"
+                "https://m.cafe.naver.com/zoozoocom/333924",
+                "https://m.cafe.naver.com/peopledisc/1197346"
             ]
         },
         {
@@ -2593,6 +2601,18 @@
         {
             "keyword": "당뇨 설탕",
             "urls": ["https://m.cafe.naver.com/peopledisc/1157071"]
+        },
+        {
+            "keyword": "당뇨에 안좋은 음식",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/334840"]
+        },
+        {
+            "keyword": "당뇨간식",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/334837"]
+        },
+        {
+            "keyword": "당뇨환자 식단표",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/334833"]
         },
         {
             "keyword": "당뇨환자 꿀",
