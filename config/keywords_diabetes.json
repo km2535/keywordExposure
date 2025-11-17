@@ -134,7 +134,10 @@
         },
         {
             "keyword": "취침전 혈당 수치",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1112610"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1112610",
+                "https://m.cafe.naver.com/zoozoocom/334717"
+            ]
         },
         {
             "keyword": "혈당기",
@@ -221,7 +224,10 @@
         },
         {
             "keyword": "당뇨전단계증상",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/301501"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/301501",
+                "https://m.cafe.naver.com/zoozoocom/334713"
+            ]
         },
         {
             "keyword": "당독소",
@@ -1300,7 +1306,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/305003",
                 "https://m.cafe.naver.com/peopledisc/1124910",
-                "https://m.cafe.naver.com/zoozoocom/308070"
+                "https://m.cafe.naver.com/zoozoocom/308070",
+                "https://m.cafe.naver.com/zoozoocom/334708"
             ]
         },
         {
@@ -1768,7 +1775,10 @@
         },
         {
             "keyword": "당화혈색소 6.2",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1164432"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1164432",
+                "https://m.cafe.naver.com/zoozoocom/334695"
+            ]
         },
         {
             "keyword": "당화혈색소 6.3",
