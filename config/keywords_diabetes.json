@@ -279,7 +279,8 @@
                 
                 "https://m.cafe.naver.com/zoozoocom/291503",
                 "https://m.cafe.naver.com/peopledisc/1150067",
-                "https://m.cafe.naver.com/masanmam/7313341"
+                "https://m.cafe.naver.com/masanmam/7313341",
+                "https://m.cafe.naver.com/peopledisc/1197748"
             ]
         },
         {
@@ -718,8 +719,8 @@
             "urls": ["https://m.cafe.naver.com/zoozoocom/332894"]
         },
         {
-            "keyword": "식후2시간후혈당",
-            "urls": []
+            "keyword": "식후2시간후혈당수치",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/335038"]
         },
         {
             "keyword": "식후 3시간 혈당",
@@ -1153,7 +1154,8 @@
                 "https://m.cafe.naver.com/zoozoocom/300326",
                 "https://m.cafe.naver.com/peopledisc/1119736",
                 "https://m.cafe.naver.com/zoozoocom/310302",
-                "https://m.cafe.naver.com/peopledisc/1163712"
+                "https://m.cafe.naver.com/peopledisc/1163712",
+                "https://m.cafe.naver.com/peopledisc/1197740"
             ]
         },
         {
@@ -1361,7 +1363,8 @@
             "keyword": "당화혈색소정상수치",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/333105",
-                "https://m.cafe.naver.com/zoozoocom/333928"
+                "https://m.cafe.naver.com/zoozoocom/333928",
+                "https://m.cafe.naver.com/peopledisc/1197727"
             ]
         },
         {
@@ -1485,6 +1488,12 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/322176",
                 "https://m.cafe.naver.com/peopledisc/1188283"
+            ]
+        },
+        {
+            "keyword": "공복혈당 낮추는 방법",
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/335037"
             ]
         },
         {
@@ -1707,7 +1716,8 @@
             "keyword": "당화혈색소 5.9",
             "urls": [
                 "https://m.cafe.naver.com/masanmam/7309089",
-                "https://m.cafe.naver.com/zoozoocom/333858"
+                "https://m.cafe.naver.com/zoozoocom/333858",
+                "https://m.cafe.naver.com/peopledisc/1197731"
             ]
         },
         {
@@ -1720,7 +1730,8 @@
                 "https://m.cafe.naver.com/peopledisc/1096694",
                 "https://m.cafe.naver.com/peopledisc/1135707",
                 "https://m.cafe.naver.com/zoozoocom/312998",
-                "https://m.cafe.naver.com/zoozoocom/321922"
+                "https://m.cafe.naver.com/zoozoocom/321922",
+                "https://m.cafe.naver.com/zoozoocom/335032"
             ]
         },
         {
@@ -1794,7 +1805,8 @@
                 "https://m.cafe.naver.com/zoozoocom/301797",
                 "https://m.cafe.naver.com/zoozoocom/318353",
                 "https://m.cafe.naver.com/zoozoocom/332503",
-                "https://m.cafe.naver.com/zoozoocom/329577"
+                "https://m.cafe.naver.com/zoozoocom/329577",
+                "https://m.cafe.naver.com/zoozoocom/334987"
             ]
         },
         {
@@ -2024,7 +2036,8 @@
             "keyword": "더파인프리미엄",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/319085",
-                "https://m.cafe.naver.com/peopledisc/1188279"
+                "https://m.cafe.naver.com/peopledisc/1188279",
+                "https://m.cafe.naver.com/peopledisc/1197732"
             ]
         },
         {
@@ -2317,14 +2330,17 @@
             "keyword": "공복혈당정상수치",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1189478",
-                "https://m.cafe.naver.com/masanmam/7309097"
+                "https://m.cafe.naver.com/masanmam/7309097",
+                "https://m.cafe.naver.com/peopledisc/1197346",
+                "https://m.cafe.naver.com/peopledisc/1197726"
             ]
         },
         {
             "keyword": "당뇨 공복혈당정상수치",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1111372",
-                "https://m.cafe.naver.com/zoozoocom/333924"
+                "https://m.cafe.naver.com/zoozoocom/333924",
+                "https://m.cafe.naver.com/peopledisc/1197346"
             ]
         },
         {
@@ -2536,7 +2552,8 @@
             "keyword": "공복혈당 정상수치",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/332242",
-                "https://m.cafe.naver.com/masanmam/7309097"
+                "https://m.cafe.naver.com/masanmam/7309097",
+                "https://m.cafe.naver.com/peopledisc/1197346"
             ]
         },
         {
