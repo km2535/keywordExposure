@@ -49,6 +49,12 @@
             ]
         },
         {
+            "keyword": "삶은고구마 혈당",
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/335188"
+            ]
+        },
+        {
             "keyword": "당뇨 고구마",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/331825"
@@ -238,7 +244,8 @@
             "keyword": "식후30분혈당",
             "urls": [
                 "https://m.cafe.naver.com/gimhaezumma/2662469",
-                "https://m.cafe.naver.com/peopledisc/1096692"
+                "https://m.cafe.naver.com/peopledisc/1096692",
+                "https://m.cafe.naver.com/zoozoocom/335187"
             ]
         },
         {
@@ -272,7 +279,10 @@
         },
         {
             "keyword": "식후 1시간 혈당 정상수치",
-            "urls": ["https://m.cafe.naver.com/masanmam/7313335"]
+            "urls": [
+                "https://m.cafe.naver.com/masanmam/7313335",
+                "https://m.cafe.naver.com/peopledisc/1198906"
+            ]
         },
         {
             "keyword": "식후 2시간 혈당 정상수치",
@@ -1029,7 +1039,8 @@
                 "https://m.cafe.naver.com/zoozoocom/311999",
                 "https://m.cafe.naver.com/peopledisc/1165440",
                 "https://m.cafe.naver.com/peopledisc/1189502",
-                "https://m.cafe.naver.com/zoozoocom/333932"
+                "https://m.cafe.naver.com/zoozoocom/333932",
+                "https://m.cafe.naver.com/peopledisc/1198913"
             ]
         },
         {
@@ -1044,7 +1055,8 @@
                 "https://m.cafe.naver.com/peopledisc/1156172",
                 "https://m.cafe.naver.com/zoozoocom/320544",
                 "https://m.cafe.naver.com/peopledisc/1189707",
-                "https://m.cafe.naver.com/zoozoocom/333930"
+                "https://m.cafe.naver.com/zoozoocom/333930",
+                "https://m.cafe.naver.com/peopledisc/1198900"
             ]
         },
         {
@@ -1118,6 +1130,10 @@
         {
             "keyword": "당뇨 합병증 종류",
             "urls": ["https://m.cafe.naver.com/zoozoocom/306169"]
+        },
+        {
+            "keyword": "식후1시간혈당",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/335185"]
         },
         {
             "keyword": "식후 3시간 혈당수치",
@@ -2536,6 +2552,14 @@
         {
             "keyword": "제미글로정 50mg",
             "urls": ["https://m.cafe.naver.com/zoozoocom/326242"]
+        },
+        {
+            "keyword": "씨커트 부작용",
+            "urls": ["https://m.cafe.naver.com/peopledisc/1198902"]
+        },
+        {
+            "keyword": "다이아벡스정 500mg",
+            "urls": ["https://m.cafe.naver.com/peopledisc/1198886"]
         },
         {
             "keyword": "다이아벡스",
