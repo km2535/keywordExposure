@@ -807,7 +807,8 @@
             "keyword": "당뇨 우유",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/305956",
-                "https://m.cafe.naver.com/peopledisc/1142457"
+                "https://m.cafe.naver.com/peopledisc/1142457",
+                "https://m.cafe.naver.com/zoozoocom/335204"
             ]
         },
         {
@@ -924,7 +925,7 @@
         },
         {
             "keyword": "식후혈당 400",
-            "urls": []
+            "urls": ["https://m.cafe.naver.com/zoozoocom/335199"]
         },
         {
             "keyword": "당뇨 치료제",
@@ -1089,8 +1090,8 @@
             ]
         },
         {
-            "keyword": "임당 증상",
-            "urls": []
+            "keyword": "단감 혈당",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/335207"]
         },
         {
             "keyword": "임산부임당식단",
@@ -1314,7 +1315,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/301142",
                 "https://m.cafe.naver.com/zoozoocom/311242",
-                "https://m.cafe.naver.com/zoozoocom/315718"
+                "https://m.cafe.naver.com/zoozoocom/315718",
+                "https://m.cafe.naver.com/zoozoocom/335198"
             ]
         },
         {
@@ -2309,7 +2311,10 @@
         },
         {
             "keyword": "솔잎증류농축액",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/329572"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/329572",
+                "https://m.cafe.naver.com/zoozoocom/335197"
+            ]
         },
         {
             "keyword": "송침유",
