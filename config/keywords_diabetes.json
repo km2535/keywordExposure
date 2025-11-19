@@ -30,7 +30,7 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/319902",
                 "https://m.cafe.naver.com/zoozoocom/332716",
-                "https://m.cafe.naver.com/zoozoocom/332716"
+                "https://m.cafe.naver.com/zoozoocom/332707"
             ]
         },
         {
@@ -129,7 +129,8 @@
             "keyword": "취침전 혈당",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1091348",
-                "https://m.cafe.naver.com/peopledisc/1112610"
+                "https://m.cafe.naver.com/peopledisc/1112610",
+                "https://m.cafe.naver.com/zoozoocom/334717"
             ]
         },
         {
@@ -689,7 +690,8 @@
         {
             "keyword": "식후 2시간 후 혈당 정상수치",
             "urls": [
-                "https://m.cafe.naver.com/zoozoocom/332716"
+                "https://m.cafe.naver.com/zoozoocom/332716",
+                "https://m.cafe.naver.com/peopledisc/1197748"
             ]
         },
         {
@@ -705,7 +707,10 @@
         },
         {
             "keyword": "식후2시간혈당",
-            "urls": ["https://m.cafe.naver.com/masanmam/7311885"]
+            "urls": [
+                "https://m.cafe.naver.com/masanmam/7311885",
+                "https://m.cafe.naver.com/peopledisc/1197748"
+            ]
         },
         {
             "keyword": "식후2시간혈당 정상수치",
@@ -1356,7 +1361,8 @@
             "keyword": "당화혈색소 수치",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/333105",
-                "https://m.cafe.naver.com/masanmam/7309079"
+                "https://m.cafe.naver.com/masanmam/7309079",
+                "https://m.cafe.naver.com/peopledisc/1197727"
             ]
         },
         {
@@ -1811,7 +1817,10 @@
         },
         {
             "keyword": "당화혈색소 6",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/315707"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/315707",
+                "https://m.cafe.naver.com/zoozoocom/334453"
+            ]
         },
         {
             "keyword": "당화혈색소 6.0",
@@ -2553,7 +2562,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/332242",
                 "https://m.cafe.naver.com/masanmam/7309097",
-                "https://m.cafe.naver.com/peopledisc/1197346"
+                "https://m.cafe.naver.com/peopledisc/1197346",
+                "https://m.cafe.naver.com/peopledisc/1197726"
             ]
         },
         {
