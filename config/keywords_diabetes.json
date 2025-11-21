@@ -297,7 +297,10 @@
         },
         {
             "keyword": "식후 3시간 혈당 정상수치",
-            "urls": ["https://m.cafe.naver.com/masanmam/7313339"]
+            "urls": [
+                "https://m.cafe.naver.com/masanmam/7313339",
+                "https://m.cafe.naver.com/masanmam/7321066"
+            ]
         },
         {
             "keyword": "바나바잎추출물 부작용",
