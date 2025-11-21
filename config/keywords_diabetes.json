@@ -57,7 +57,8 @@
         {
             "keyword": "당뇨 고구마",
             "urls": [
-                "https://m.cafe.naver.com/zoozoocom/331825"
+                "https://m.cafe.naver.com/zoozoocom/331825",
+                "https://m.cafe.naver.com/zoozoocom/335595"
             ]
         },
         {
@@ -499,6 +500,12 @@
             "urls": ["https://m.cafe.naver.com/peopledisc/1112609"]
         },
         {
+            "keyword": "당뇨진단 기준",
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/335604"
+            ]
+        },
+        {
             "keyword": "당뇨 진단",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1091369",
@@ -730,7 +737,8 @@
             "keyword": "식후3시간혈당 정상수치",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/332709",
-                "https://m.cafe.naver.com/masanmam/7313339"
+                "https://m.cafe.naver.com/masanmam/7313339",
+                "https://m.cafe.naver.com/masanmam/7321066"
             ]
         },
         {
@@ -764,14 +772,16 @@
                 "https://m.cafe.naver.com/peopledisc/1146032",
                 "https://m.cafe.naver.com/peopledisc/1150794",
                 "https://m.cafe.naver.com/peopledisc/1163238",
-                "https://m.cafe.naver.com/masanmam/7313339"
+                "https://m.cafe.naver.com/masanmam/7313339",
+                "https://m.cafe.naver.com/masanmam/7321066"
             ]
         },
         {
             "keyword": "식후 4시간 혈당 정상수치",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1116585",
-                "https://m.cafe.naver.com/zoozoocom/332710"
+                "https://m.cafe.naver.com/zoozoocom/332710",
+                "https://m.cafe.naver.com/zoozoocom/335593"
             ]
         },
         {
@@ -940,7 +950,10 @@
         },
         {
             "keyword": "혈당 400",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1128673"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1128673",
+                "https://m.cafe.naver.com/zoozoocom/335199"
+            ]
         },
         {
             "keyword": "식후혈당 400",
@@ -1164,7 +1177,10 @@
         },
         {
             "keyword": "식후 3시간 혈당수치",
-            "urls": ["https://m.cafe.naver.com/masanmam/7313339"]
+            "urls": [
+                "https://m.cafe.naver.com/masanmam/7313339",
+                "https://m.cafe.naver.com/masanmam/7321066"
+            ]
         },
         {
             "keyword": "당뇨검사키트",
@@ -1185,7 +1201,8 @@
             "keyword": "당뇨 커피",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1099121",
-                "https://m.cafe.naver.com/zoozoocom/312962"
+                "https://m.cafe.naver.com/zoozoocom/312962",
+                "https://m.cafe.naver.com/zoozoocom/335599"
             ]
         },
         {
@@ -1268,7 +1285,8 @@
                 "https://m.cafe.naver.com/peopledisc/1146031",
                 "https://m.cafe.naver.com/peopledisc/1165442",
                 "https://m.cafe.naver.com/zoozoocom/332505",
-                "https://m.cafe.naver.com/zoozoocom/334454"
+                "https://m.cafe.naver.com/zoozoocom/334454",
+                "https://m.cafe.naver.com/zoozoocom/335588"
             ]
         },
         {
@@ -1476,7 +1494,8 @@
             "keyword": "바나나 혈당지수",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/298486",
-                "https://m.cafe.naver.com/zoozoocom/312496"
+                "https://m.cafe.naver.com/zoozoocom/312496",
+                "https://m.cafe.naver.com/peopledisc/1196611"
             ]
         },
         {
@@ -1812,6 +1831,10 @@
         {
             "keyword": "당화혈색소 5.3",
             "urls": ["https://m.cafe.naver.com/zoozoocom/334563"]
+        },
+        {
+            "keyword": "당화혈색소 7.5",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/335596"]
         },
         {
             "keyword": "당화혈색소 5.1",
@@ -2202,7 +2225,8 @@
             "keyword": "당뇨수치 기준",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/289704",
-                "https://m.cafe.naver.com/zoozoocom/303838"
+                "https://m.cafe.naver.com/zoozoocom/303838",
+                "https://m.cafe.naver.com/zoozoocom/335598"
             ]
         },
         {
@@ -2568,6 +2592,10 @@
             "urls": ["https://m.cafe.naver.com/peopledisc/1167792"]
         },
         {
+            "keyword": "인슐린 주사",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/335592"]
+        },
+        {
             "keyword": "퀘르세틴",
             "urls": ["https://m.cafe.naver.com/peopledisc/1167791"]
         },
@@ -2602,6 +2630,10 @@
         {
             "keyword": "혈당컷",
             "urls": ["https://m.cafe.naver.com/zoozoocom/323173"]
+        },
+        {
+            "keyword": "당뇨 토마토",
+            "urls": ["https://m.cafe.naver.com/peopledisc/1196114"]
         },
         {
             "keyword": "바로잰 혈당측정기",
