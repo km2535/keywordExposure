@@ -38,7 +38,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/311216",
                 "https://m.cafe.naver.com/peopledisc/1144694",
-                "https://m.cafe.naver.com/zoozoocom/331822"
+                "https://m.cafe.naver.com/zoozoocom/331822",
+                "https://m.cafe.naver.com/zoozoocom/335188"
             ]
         },
         {
@@ -68,7 +69,8 @@
                 "https://m.cafe.naver.com/zoozoocom/299206",
                 "https://m.cafe.naver.com/zoozoocom/311212",
                 "https://m.cafe.naver.com/zoozoocom/322209",
-                "https://m.cafe.naver.com/masanmam/7311891"
+                "https://m.cafe.naver.com/masanmam/7311891",
+                "https://m.cafe.naver.com/peopledisc/1203079"
             ]
         },
         {
@@ -175,7 +177,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/298486",
                 "https://m.cafe.naver.com/peopledisc/1158377",
-                "https://m.cafe.naver.com/zoozoocom/335390"
+                "https://m.cafe.naver.com/zoozoocom/335390",
+                "https://m.cafe.naver.com/peopledisc/1196611"
             ]
         },
         {
@@ -263,7 +266,8 @@
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1108472",
                 "https://m.cafe.naver.com/zoozoocom/309978",
-                "https://m.cafe.naver.com/masanmam/7313333"
+                "https://m.cafe.naver.com/masanmam/7313333",
+                "https://m.cafe.naver.com/peopledisc/1202605"
             ]
         },
         {
@@ -447,6 +451,12 @@
             ]
         },
         {
+            "keyword": "당뇨 초기증상 의심",
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1202621"
+            ]
+        },
+        {
             "keyword": "당뇨 초기증상",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1144696",
@@ -488,12 +498,16 @@
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1189485",
                 "https://m.cafe.naver.com/zoozoocom/334237",
-                "https://m.cafe.naver.com/zoozoocom/334261"
+                "https://m.cafe.naver.com/zoozoocom/334261",
+                "https://m.cafe.naver.com/peopledisc/1202630"
             ]
         },
         {
-            "keyword": "공복혈당장애의심",
-            "urls": ["https://m.cafe.naver.com/masanmam/7313330"]
+            "keyword": "공복혈당장애 의심",
+            "urls": [
+                "https://m.cafe.naver.com/masanmam/7313330",
+                "https://m.cafe.naver.com/peopledisc/1203072"
+            ]
         },
         {
             "keyword": "아침혈당",
@@ -745,7 +759,8 @@
             "keyword": "식후2시간혈당",
             "urls": [
                 "https://m.cafe.naver.com/masanmam/7311885",
-                "https://m.cafe.naver.com/peopledisc/1197748"
+                "https://m.cafe.naver.com/peopledisc/1197748",
+                "https://m.cafe.naver.com/peopledisc/1203915"
             ]
         },
         {
@@ -898,7 +913,8 @@
                 "https://m.cafe.naver.com/peopledisc/1108472",
                 "https://m.cafe.naver.com/zoozoocom/305952",
                 "https://m.cafe.naver.com/zoozoocom/313798",
-                "https://m.cafe.naver.com/masanmam/7313333"
+                "https://m.cafe.naver.com/masanmam/7313333",
+                "https://m.cafe.naver.com/peopledisc/1202605"
             ]
         },
         {
@@ -967,7 +983,8 @@
             "keyword": "사과 혈당",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1116587",
-                "https://m.cafe.naver.com/peopledisc/1169726"
+                "https://m.cafe.naver.com/peopledisc/1169726",
+                "https://m.cafe.naver.com/peopledisc/1203896"
             ]
         },
         {
@@ -1050,7 +1067,8 @@
             "keyword": "공복혈당 100",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1189496",
-                "https://m.cafe.naver.com/masanmam/7313333"
+                "https://m.cafe.naver.com/masanmam/7313333",
+                "https://m.cafe.naver.com/peopledisc/1202605"
             ]
         },
         {
@@ -1183,6 +1201,10 @@
             ]
         },
         {
+            "keyword": "당뇨검사 비용",
+            "urls": ["https://m.cafe.naver.com/peopledisc/1203960"]
+        },
+        {
             "keyword": "당뇨검사키트",
             "urls": ["https://m.cafe.naver.com/peopledisc/1115417"]
         },
@@ -1252,7 +1274,8 @@
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1104385",
                 "https://m.cafe.naver.com/zoozoocom/332508",
-                "https://m.cafe.naver.com/zoozoocom/334462"
+                "https://m.cafe.naver.com/zoozoocom/334462",
+                "https://m.cafe.naver.com/peopledisc/1202640"
             ]
         },
         {
@@ -1274,7 +1297,8 @@
                 "https://m.cafe.naver.com/zoozoocom/313279",
                 "https://m.cafe.naver.com/zoozoocom/320558",
                 "https://m.cafe.naver.com/zoozoocom/332506",
-                "https://m.cafe.naver.com/zoozoocom/334458"
+                "https://m.cafe.naver.com/zoozoocom/334458",
+                "https://m.cafe.naver.com/peopledisc/1202610"
             ]
         },
         {
@@ -1903,7 +1927,10 @@
         },
         {
             "keyword": "당화혈색소검사비용",
-            "urls": ["https://m.cafe.naver.com/masanmam/7311895"]
+            "urls": [
+                "https://m.cafe.naver.com/masanmam/7311895",
+                "https://m.cafe.naver.com/peopledisc/1203940"
+            ]
         },
         {
             "keyword": "당화혈색소검사",
@@ -2415,7 +2442,8 @@
                 "https://m.cafe.naver.com/peopledisc/1189478",
                 "https://m.cafe.naver.com/masanmam/7309097",
                 "https://m.cafe.naver.com/peopledisc/1197346",
-                "https://m.cafe.naver.com/peopledisc/1197726"
+                "https://m.cafe.naver.com/peopledisc/1197726",
+                "https://m.cafe.naver.com/peopledisc/1202630"
             ]
         },
         {
@@ -2653,7 +2681,8 @@
                 "https://m.cafe.naver.com/zoozoocom/332242",
                 "https://m.cafe.naver.com/masanmam/7309097",
                 "https://m.cafe.naver.com/peopledisc/1197346",
-                "https://m.cafe.naver.com/peopledisc/1197726"
+                "https://m.cafe.naver.com/peopledisc/1197726",
+                "https://m.cafe.naver.com/peopledisc/1202630"
             ]
         },
         {
@@ -2676,7 +2705,8 @@
             "keyword": "공복혈당 정상수치 125",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/316961",
-                "https://m.cafe.naver.com/zoozoocom/333768"
+                "https://m.cafe.naver.com/zoozoocom/333768",
+                "https://m.cafe.naver.com/peopledisc/1203906"
             ]
         },
         {
