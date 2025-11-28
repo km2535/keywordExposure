@@ -1362,7 +1362,8 @@
                 "https://m.cafe.naver.com/zoozoocom/286800",
                 "https://m.cafe.naver.com/zoozoocom/288633",
                 "https://m.cafe.naver.com/zoozoocom/301130",
-                "https://m.cafe.naver.com/zoozoocom/330603"
+                "https://m.cafe.naver.com/zoozoocom/330603",
+                "https://m.cafe.naver.com/zoozoocom/336523"
             ]
         },
         {
@@ -2286,7 +2287,8 @@
             "keyword": "유방암 수술비",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/270256",
-                "https://m.cafe.naver.com/zoozoocom/292040"
+                "https://m.cafe.naver.com/zoozoocom/292040",
+                "https://m.cafe.naver.com/zoozoocom/336518"
             ]
         },
         {
@@ -2302,7 +2304,8 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/269596",
                 "https://m.cafe.naver.com/zoozoocom/279392",
-                "https://m.cafe.naver.com/masanmam/7325254"
+                "https://m.cafe.naver.com/masanmam/7325254",
+                "https://m.cafe.naver.com/zoozoocom/336515"
             ]
         },
         {
@@ -2321,7 +2324,8 @@
             "keyword": "자궁경부암 수술비용",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/270628",
-                "https://m.cafe.naver.com/zoozoocom/287515"
+                "https://m.cafe.naver.com/zoozoocom/287515",
+                "https://m.cafe.naver.com/zoozoocom/336520"
             ]
         },
         {
@@ -3923,6 +3927,10 @@
         {
             "keyword": "프로시칸",
             "urls": ["https://m.cafe.naver.com/zoozoocom/319067"]
+        },
+        {
+            "keyword": "유방 상피내암",
+            "urls": ["https://m.cafe.naver.com/zoozoocom/336512"]
         }
     ]
 }
