@@ -428,7 +428,8 @@
                 "https://m.cafe.naver.com/zoozoocom/294048",
                 "https://m.cafe.naver.com/zoozoocom/309070",
                 "https://m.cafe.naver.com/zoozoocom/310794",
-                "https://m.cafe.naver.com/zoozoocom/312988"
+                "https://m.cafe.naver.com/zoozoocom/312988",
+                "https://m.cafe.naver.com/zoozoocom/336421"
             ]
         },
         {
@@ -447,11 +448,17 @@
             "urls": ["https://m.cafe.naver.com/peopledisc/1151559"]
         },
         {
+            "keyword": "샤인머스캣 혈당",
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/336245"
+            ]
+        },
+        {
             "keyword": "샤인머스켓 혈당",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1151560",
                 "https://m.cafe.naver.com/peopledisc/1169725",
-                "https://m.cafe.naver.com/zoozoocom/336245"
+                "https://m.cafe.naver.com/zoozoocom/336409"
             ]
         },
         {
@@ -556,7 +563,8 @@
             "keyword": "당뇨 술",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/299489",
-                "https://m.cafe.naver.com/zoozoocom/335363"
+                "https://m.cafe.naver.com/zoozoocom/335363",
+                "https://m.cafe.naver.com/zoozoocom/336407"
             ]
         },
         {
@@ -755,7 +763,10 @@
         },
         {
             "keyword": "식후2시간뒤 혈당",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/332707"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/332707",
+                "https://m.cafe.naver.com/zoozoocom/335038"
+            ]
         },
         {
             "keyword": "식후3시간혈당 정상수치",
@@ -824,7 +835,8 @@
             "keyword": "마른당뇨",
             "urls": [
                 "https://m.cafe.naver.com/peopledisc/1096696",
-                "https://m.cafe.naver.com/zoozoocom/309992"
+                "https://m.cafe.naver.com/zoozoocom/309992",
+                "https://m.cafe.naver.com/zoozoocom/336390"
             ]
         },
         {
@@ -881,7 +893,8 @@
             "keyword": "당뇨 제로음료",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/294487",
-                "https://m.cafe.naver.com/peopledisc/1132770"
+                "https://m.cafe.naver.com/peopledisc/1132770",
+                "https://m.cafe.naver.com/peopledisc/1207987"
             ]
         },
         {
@@ -896,7 +909,8 @@
             "keyword": "제로콜라 혈당",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/302124",
-                "https://m.cafe.naver.com/peopledisc/1163234"
+                "https://m.cafe.naver.com/peopledisc/1163234",
+                "https://m.cafe.naver.com/zoozoocom/336423"
             ]
         },
         {
@@ -1136,6 +1150,12 @@
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/298477",
                 "https://m.cafe.naver.com/zoozoocom/309525"
+            ]
+        },
+        {
+            "keyword": "공복혈당 104",
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/336413"
             ]
         },
         {
@@ -1399,7 +1419,8 @@
                 "https://m.cafe.naver.com/zoozoocom/301142",
                 "https://m.cafe.naver.com/zoozoocom/311242",
                 "https://m.cafe.naver.com/zoozoocom/315718",
-                "https://m.cafe.naver.com/zoozoocom/335198"
+                "https://m.cafe.naver.com/zoozoocom/335198",
+                "https://m.cafe.naver.com/peopledisc/1207981"
             ]
         },
         {
@@ -1840,7 +1861,8 @@
                 "https://m.cafe.naver.com/peopledisc/1135707",
                 "https://m.cafe.naver.com/zoozoocom/312998",
                 "https://m.cafe.naver.com/zoozoocom/321922",
-                "https://m.cafe.naver.com/zoozoocom/335032"
+                "https://m.cafe.naver.com/zoozoocom/335032",
+                "https://m.cafe.naver.com/peopledisc/1207990"
             ]
         },
         {
@@ -2281,7 +2303,8 @@
                 "https://m.cafe.naver.com/gimhaezumma/2658706",
                 "https://m.cafe.naver.com/zoozoocom/302449",
                 "https://m.cafe.naver.com/zoozoocom/308084",
-                "https://m.cafe.naver.com/zoozoocom/314700"
+                "https://m.cafe.naver.com/zoozoocom/314700",
+                "https://m.cafe.naver.com/zoozoocom/336393"
             ]
         },
         {
@@ -2327,7 +2350,10 @@
         },
         {
             "keyword": "고혈당 쇼크 증상",
-            "urls": ["https://m.cafe.naver.com/peopledisc/1140384"]
+            "urls": [
+                "https://m.cafe.naver.com/peopledisc/1140384",
+                "https://m.cafe.naver.com/zoozoocom/336414"
+            ]
         },
         {
             "keyword": "고혈당 어지러움",
