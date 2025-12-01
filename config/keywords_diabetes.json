@@ -239,7 +239,8 @@
             "keyword": "당뇨전단계증상",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/301501",
-                "https://m.cafe.naver.com/zoozoocom/334713"
+                "https://m.cafe.naver.com/zoozoocom/334713",
+                "https://m.cafe.naver.com/peopledisc/1211600"
             ]
         },
         {
@@ -274,7 +275,10 @@
         },
         {
             "keyword": "당뇨전단계",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/296668"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/296668",
+                "https://m.cafe.naver.com/peopledisc/1211600"
+            ]
         },
         {
             "keyword": "식후혈당 200",
@@ -1103,7 +1107,8 @@
             "keyword": "당뇨 입마름",
             "urls": [
                 "https://m.cafe.naver.com/zoozoocom/300321",
-                "https://m.cafe.naver.com/peopledisc/1120413"
+                "https://m.cafe.naver.com/peopledisc/1120413",
+                "https://m.cafe.naver.com/peopledisc/1211599"
             ]
         },
         {
@@ -1185,7 +1190,8 @@
         {
             "keyword": "공복혈당 104",
             "urls": [
-                "https://m.cafe.naver.com/zoozoocom/336413"
+                "https://m.cafe.naver.com/zoozoocom/336413",
+                "https://m.cafe.naver.com/peopledisc/1211602"
             ]
         },
         {
@@ -2890,7 +2896,10 @@
         },
         {
             "keyword": "당뇨간식",
-            "urls": ["https://m.cafe.naver.com/zoozoocom/334837"]
+            "urls": [
+                "https://m.cafe.naver.com/zoozoocom/334837",
+                "https://m.cafe.naver.com/zoozoocom/336247"
+            ]
         },
         {
             "keyword": "당뇨환자 식단표",
