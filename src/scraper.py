@@ -14,7 +14,7 @@ class NaverScraper:
             'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_5_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15',
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36 Edg/91.0.864.71'
         ]
-        self.base_url = "https://m.search.naver.com/search.naver"
+        self.base_url = "https://search.naver.com/search.naver"
         
     def get_random_user_agent(self):
         """무작위 User-Agent 반환"""
