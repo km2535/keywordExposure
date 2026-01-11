@@ -1514,7 +1514,8 @@
                 "https://cafe.naver.com/zoozoocom/312015",
                 "https://cafe.naver.com/zoozoocom/333576",
                 "https://cafe.naver.com/culturebloom/3014913",
-                "https://cafe.naver.com/culturebloom/3038062"
+                "https://cafe.naver.com/culturebloom/3038062",
+                "https://cafe.naver.com/culturebloom/3048010"
             ]
         },
         {
@@ -1721,7 +1722,8 @@
                 "https://cafe.naver.com/zoozoocom/274878",
                 "https://cafe.naver.com/gimhaezumma/2628260",
                 "https://cafe.naver.com/zoozoocom/285796",
-                "https://cafe.naver.com/zoozoocom/333783"
+                "https://cafe.naver.com/zoozoocom/333783",
+                "https://cafe.naver.com/peopledisc/1092089"
             ]
         },
         {
@@ -3050,22 +3052,6 @@
             ]
         },
         {
-            "keyword": "유방암 수술 후 관리법",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/271651",
-                "https://cafe.naver.com/zoozoocom/287518",
-                "https://cafe.naver.com/zoozoocom/333571"
-            ]
-        },
-        {
-            "keyword": "유방암 수술 후 관리",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/280567",
-                "https://cafe.naver.com/zoozoocom/313289",
-                "https://cafe.naver.com/zoozoocom/333571"
-            ]
-        },
-        {
             "keyword": "면역주사효과",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271653",
@@ -3242,7 +3228,10 @@
         },
         {
             "keyword": "전립선암 3기 생존율",
-            "urls": ["https://cafe.naver.com/zoozoocom/316972"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/316972",
+                "https://cafe.naver.com/peopledisc/1134902"
+            ]
         },
         {
             "keyword": "혜민원후코이단",
@@ -3588,7 +3577,10 @@
         },
         {
             "keyword": "갑상선암에좋은음식",
-            "urls": ["https://cafe.naver.com/zoozoocom/330986"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/330986",
+                "https://cafe.naver.com/culturebloom/3038288"
+            ]
         },
         {
             "keyword": "갑상선암 좋은 음식",
@@ -3608,7 +3600,10 @@
         },
         {
             "keyword": "항암치료에좋은음식",
-            "urls": ["https://cafe.naver.com/zoozoocom/330545"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/330545",
+                "https://cafe.naver.com/culturebloom/3048078"
+            ]
         },
         {
             "keyword": "유방암 간전이",

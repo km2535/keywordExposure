@@ -26,7 +26,8 @@ from src.reporter import Reporter # Reporter 클래스 임포트
 KEYWORDS = [
     "명인황근",
     "발효황칠뿌리진액",
-    "근당대사 식품"
+    "근당대사 식품",
+    "호르모닉스 크림"
 ]
 
 def format_api_date_str(dt: datetime) -> str:
