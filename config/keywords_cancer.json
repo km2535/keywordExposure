@@ -919,7 +919,8 @@
                 "https://cafe.naver.com/zoozoocom/304995",
                 "https://cafe.naver.com/zoozoocom/331035",
                 "https://cafe.naver.com/culturebloom/3035072",
-                "https://cafe.naver.com/peopledisc/1101915"
+                "https://cafe.naver.com/peopledisc/1101915",
+                "https://cafe.naver.com/culturebloom/3056035"
             ]
         },
         {
@@ -2675,6 +2676,12 @@
             ]
         },
         {
+            "keyword": "유방암환자에게좋은음식",
+            "urls": [
+                "https://cafe.naver.com/culturebloom/3055999"
+            ]
+        },
+        {
             "keyword": "유방암 영양제",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/270902",
@@ -3019,6 +3026,12 @@
             ]
         },
         {
+            "keyword": "대장암에 좋은 음식",
+            "urls": [
+                "https://cafe.naver.com/culturebloom/3056005"
+            ]
+        },
+        {
             "keyword": "위 장상피화생",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271474",
@@ -3086,7 +3099,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/271654",
                 "https://cafe.naver.com/zoozoocom/276493",
-                "https://cafe.naver.com/zoozoocom/296348"
+                "https://cafe.naver.com/zoozoocom/296348",
+                "https://cafe.naver.com/peopledisc/1134902"
             ]
         },
         {
@@ -3098,7 +3112,8 @@
                 "https://cafe.naver.com/zoozoocom/333371",
                 "https://cafe.naver.com/zoozoocom/334790",
                 "https://cafe.naver.com/zoozoocom/335776",
-                "https://cafe.naver.com/culturebloom/3051410"
+                "https://cafe.naver.com/culturebloom/3051410",
+                "https://cafe.naver.com/culturebloom/3055994"
             ]
         },
         {
@@ -3230,7 +3245,8 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/290805",
                 "https://cafe.naver.com/peopledsc/1101914",
-                "https://cafe.naver.com/zoozoocom/316921"
+                "https://cafe.naver.com/zoozoocom/316921",
+                "https://cafe.naver.com/culturebloom/3036782"
             ]
         },
         {
@@ -3258,7 +3274,10 @@
         },
         {
             "keyword": "이리노테칸 부작용",
-            "urls": ["https://cafe.naver.com/zoozoocom/291496"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/291496",
+                "https://cafe.naver.com/gimhaezumma/2613951"
+            ]
         },
         {
             "keyword": "유방암 치료비용",
@@ -3280,7 +3299,8 @@
             "keyword": "위암 림프절 전이",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/292032",
-                "https://cafe.naver.com/zoozoocom/294040"
+                "https://cafe.naver.com/zoozoocom/294040",
+                "https://cafe.naver.com/gimhaezumma/2628672"
             ]
         },
         {
@@ -3295,7 +3315,8 @@
             "keyword": "난소암 재발",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/301790",
-                "https://cafe.naver.com/zoozoocom/335784"
+                "https://cafe.naver.com/zoozoocom/335784",
+                "https://cafe.naver.com/culturebloom/3056050"
             ]
         },
         {
@@ -3427,7 +3448,10 @@
         },
         {
             "keyword": "위암 전단계",
-            "urls": ["https://cafe.naver.com/zoozoocom/309911"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/309911",
+                "https://cafe.naver.com/culturebloom/3056015"
+            ]
         },
         {
             "keyword": "암환자 모자",
@@ -3447,31 +3471,22 @@
         },
         {
             "keyword": "담낭암 생존율",
-            "urls": ["https://cafe.naver.com/zoozoocom/312933"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/312933",
+                "https://cafe.naver.com/culturebloom/3056007"
+            ]
         },
         {
             "keyword": "암에 좋은 차",
             "urls": ["https://cafe.naver.com/zoozoocom/313759"]
         },
         {
-            "keyword": "아마씨유",
-            "urls": ["https://cafe.naver.com/peopledisc/1144699"]
-        },
-        {
             "keyword": "암에좋은버섯",
             "urls": ["https://cafe.naver.com/zoozoocom/314296"]
         },
         {
-            "keyword": "폐암3기a생존율",
-            "urls": ["https://cafe.naver.com/zoozoocom/315342"]
-        },
-        {
             "keyword": "키노코 ahcc",
             "urls": ["https://cafe.naver.com/zoozoocom/317902"]
-        },
-        {
-            "keyword": "30대 대장암",
-            "urls": ["https://cafe.naver.com/zoozoocom/317930"]
         },
         {
             "keyword": "췌장암 가족력",
@@ -3502,10 +3517,6 @@
             "urls": ["https://cafe.naver.com/zoozoocom/318761"]
         },
         {
-            "keyword": "30대 유방암",
-            "urls": ["https://cafe.naver.com/zoozoocom/318643"]
-        },
-        {
             "keyword": "췌장암 수술후 생존율",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/319071",
@@ -3514,7 +3525,10 @@
         },
         {
             "keyword": "폐암에 좋은 과일",
-            "urls": ["https://cafe.naver.com/zoozoocom/319073"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/319073",
+                "https://cafe.naver.com/masanmam/7311876"
+            ]
         },
         {
             "keyword": "전립선암 psa 수치",
@@ -3576,7 +3590,10 @@
         },
         {
             "keyword": "싸이모신알파1 가격",
-            "urls": ["https://cafe.naver.com/peopledisc/1144100"]
+            "urls": [
+                "https://cafe.naver.com/peopledisc/1144100",
+                "https://cafe.naver.com/culturebloom/3035078"
+            ]
         },
         {
             "keyword": "싸이모신알파원",
@@ -3588,7 +3605,11 @@
         },
         {
             "keyword": "유방암 수술후 좋은 음식",
-            "urls": ["https://cafe.naver.com/zoozoocom/328089"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/328089",
+                "https://cafe.naver.com/culturebloom/3049836"
+            ]
+                
         },
         {
             "keyword": "갑상선암에좋은음식",
@@ -3611,7 +3632,10 @@
         },
         {
             "keyword": "대장암 4기",
-            "urls": ["https://cafe.naver.com/zoozoocom/330200"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/330200",
+                "https://cafe.naver.com/masanmam/7352663"
+            ]
         },
         {
             "keyword": "항암치료에좋은음식",
@@ -3622,7 +3646,10 @@
         },
         {
             "keyword": "유방암 간전이",
-            "urls": ["https://cafe.naver.com/zoozoocom/331433"]
+            "urls": [
+                "https://cafe.naver.com/zoozoocom/331433",
+                "https://cafe.naver.com/culturebloom/3055990"
+            ]
         },
         {
             "keyword": "휴닥신주",
