@@ -62,14 +62,6 @@
             "urls": ["https://cafe.naver.com/zoozoocom/296962"]
         },
         {
-            "keyword": "뽕나무상황버섯",
-            "urls": ["https://cafe.naver.com/zoozoocom/296969"]
-        },
-        {
-            "keyword": "국내산상황버섯",
-            "urls": ["https://cafe.naver.com/zoozoocom/317536"]
-        },
-        {
             "keyword": "미슬토추출물",
             "urls": ["https://cafe.naver.com/zoozoocom/296989"]
         },
@@ -275,10 +267,6 @@
             ]
         },
         {
-            "keyword": "CEA 수치 증가",
-            "urls": ["https://cafe.naver.com/zoozoocom/332875"]
-        },
-        {
             "keyword": "CEA 수치",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/332875",
@@ -371,16 +359,6 @@
                 "https://cafe.naver.com/zoozoocom/291475",
                 "https://cafe.naver.com/zoozoocom/305273",
                 "https://cafe.naver.com/masanmam/7354910"
-            ]
-        },
-        {
-            "keyword": "nk 세포치료",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/284355",
-                "https://cafe.naver.com/zoozoocom/288431",
-                "https://cafe.naver.com/peopledisc/1119547",
-                "https://cafe.naver.com/peopledisc/1123069",
-                "https://cafe.naver.com/zoozoocom/332683"
             ]
         },
         {
@@ -601,20 +579,6 @@
                 "https://cafe.naver.com/zoozoocom/283362",
                 "https://cafe.naver.com/zoozoocom/311943",
                 "https://cafe.naver.com/peopledisc/1144687"
-            ]
-        },
-        {
-            "keyword": "면역력 검사",
-            "urls": [
-                "https://cafe.naver.com/peopledisc/1013719",
-                "https://cafe.naver.com/zoozoocom/268856",
-                "https://cafe.naver.com/zoozoocom/268547",
-                "https://cafe.naver.com/zoozoocom/273213",
-                "https://cafe.naver.com/zoozoocom/284100",
-                "https://cafe.naver.com/zoozoocom/288794",
-                "https://cafe.naver.com/zoozoocom/293416",
-                "https://cafe.naver.com/zoozoocom/299452",
-                "https://cafe.naver.com/zoozoocom/317582"
             ]
         },
         {
@@ -1023,14 +987,6 @@
             ]
         },
         {
-            "keyword": "CA 19-9",
-            "urls": [
-                "https://cafe.naver.com/peopledisc/909401",
-                "https://cafe.naver.com/rksghwhantk/1246795",
-                "https://cafe.naver.com/zoozoocom/310721"
-            ]
-        },
-        {
             "keyword": "유방암4기",
             "urls": [
                 "https://cafe.naver.com/peopledisc/933886",
@@ -1074,21 +1030,6 @@
                 "https://cafe.naver.com/zoozoocom/282316",
                 "https://cafe.naver.com/zoozoocom/285414",
                 "https://cafe.naver.com/zoozoocom/328502"
-            ]
-        },
-        {
-            "keyword": "호중구 수치감소",
-            "urls": [
-                "https://cafe.naver.com/peopledisc/992493",
-                "https://cafe.naver.com/zoozoocom/267034",
-                "https://cafe.naver.com/zoozoocom/275400",
-                "https://cafe.naver.com/zoozoocom/276877",
-                "https://cafe.naver.com/zoozoocom/285391",
-                "https://cafe.naver.com/zoozoocom/290811",
-                "https://cafe.naver.com/zoozoocom/300313",
-                "https://cafe.naver.com/peopledisc/1119187",
-                "https://cafe.naver.com/zoozoocom/305618",
-                "https://cafe.naver.com/zoozoocom/306507"
             ]
         },
         {
@@ -1324,10 +1265,7 @@
                 "https://cafe.naver.com/culturebloom/3014896"
             ]
         },
-        {
-            "keyword": "암환자 추어탕",
-            "urls": ["https://cafe.naver.com/zoozoocom/309120"]
-        },
+
         {
             "keyword": "전립선암 3기",
             "urls": [
@@ -1576,19 +1514,6 @@
                 "https://cafe.naver.com/zoozoocom/288634",
                 "https://cafe.naver.com/zoozoocom/291273",
                 "https://cafe.naver.com/zoozoocom/330939"
-            ]
-        },
-        {
-            "keyword": "CA125",
-            "urls": [
-                "https://cafe.naver.com/rksghwhantk/1240140",
-                "https://cafe.naver.com/peopledisc/935192",
-                "https://cafe.naver.com/zoozoocom/276869",
-                "https://cafe.naver.com/zoozoocom/277944",
-                "https://cafe.naver.com/zoozoocom/279023",
-                "https://cafe.naver.com/zoozoocom/283351",
-                "https://cafe.naver.com/peopledisc/1101916",
-                "https://cafe.naver.com/zoozoocom/315766"
             ]
         },
         {
@@ -2037,7 +1962,8 @@
                 "https://cafe.naver.com/zoozoocom/274875",
                 "https://cafe.naver.com/zoozoocom/277170",
                 "https://cafe.naver.com/zoozoocom/299482",
-                "https://cafe.naver.com/zoozoocom/335888"
+                "https://cafe.naver.com/zoozoocom/335888",
+                "https://cafe.naver.com/culturebloom/3064418"
             ]
         },
         {
@@ -2201,22 +2127,6 @@
             ]
         },
         {
-            "keyword": "NK 면역세포",
-            "urls": [
-                "https://cafe.naver.com/peopledisc/930847",
-                "https://cafe.naver.com/rksghwhantk/1248118",
-                "https://cafe.naver.com/zoozoocom/285765",
-                "https://cafe.naver.com/peopledisc/1094143",
-                "https://cafe.naver.com/zoozoocom/329110"
-            ]
-        },
-        {
-            "keyword": "nk면역세포검사",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/329110"
-            ]
-        },
-        {
             "keyword": "위암 4기 완치",
             "urls": [
                 "https://cafe.naver.com/peopledisc/946672",
@@ -2320,7 +2230,8 @@
                 "https://cafe.naver.com/zoozoocom/276880",
                 "https://cafe.naver.com/zoozoocom/281252",
                 "https://cafe.naver.com/zoozoocom/288800",
-                "https://cafe.naver.com/peopledisc/1105258"
+                "https://cafe.naver.com/peopledisc/1105258",
+                "https://cafe.naver.com/peopledisc/1094906"
             ]
         },
         {
@@ -2563,14 +2474,6 @@
             ]
         },
         {
-            "keyword": "신장암 예후",
-            "urls": [
-                "https://cafe.naver.com/peopledisc/954257",
-                "https://cafe.naver.com/zoozoocom/289115",
-                "https://cafe.naver.com/zoozoocom/330633"
-            ]
-        },
-        {
             "keyword": "신장암 재발",
             "urls": [
                 "https://cafe.naver.com/gimhaezumma/2629071",
@@ -2620,18 +2523,7 @@
                 "https://cafe.naver.com/culturebloom/3072713"
             ]
         },
-        {
-            "keyword": "호중구 수치 올리기",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/268857",
-                "https://cafe.naver.com/zoozoocom/274563",
-                "https://cafe.naver.com/zoozoocom/275371",
-                "https://cafe.naver.com/zoozoocom/276874",
-                "https://cafe.naver.com/zoozoocom/278353",
-                "https://cafe.naver.com/zoozoocom/283349",
-                "https://cafe.naver.com/zoozoocom/297901"
-            ]
-        },
+        
         {
             "keyword": "소세포 폐암 증상",
             "urls": [
@@ -2843,13 +2735,6 @@
             ]
         },
         {
-            "keyword": "신장암 3기 폐전이",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/271193",
-                "https://cafe.naver.com/zoozoocom/289125"
-            ]
-        },
-        {
             "keyword": "유방암 검사",
             "urls": [
                 "https://cafe.naver.com/culturebloom/3053780"
@@ -3053,15 +2938,6 @@
             ]
         },
         {
-            "keyword": "대장암에 좋은 과일",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/271471",
-                "https://cafe.naver.com/zoozoocom/273102",
-                "https://cafe.naver.com/zoozoocom/275404",
-                "https://cafe.naver.com/zoozoocom/277163"
-            ]
-        },
-        {
             "keyword": "대장암에 좋은 음식",
             "urls": [
                 "https://cafe.naver.com/culturebloom/3056005",
@@ -3106,18 +2982,7 @@
                 "https://cafe.naver.com/culturebloom/3074746"
             ]
         },
-        {
-            "keyword": "CA125정상수치",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/271648",
-                "https://cafe.naver.com/zoozoocom/275769",
-                "https://cafe.naver.com/zoozoocom/276869",
-                "https://cafe.naver.com/zoozoocom/277944",
-                "https://cafe.naver.com/zoozoocom/279023",
-                "https://cafe.naver.com/zoozoocom/283351",
-                "https://cafe.naver.com/zoozoocom/303817"
-            ]
-        },
+        
         {
             "keyword": "면역주사효과",
             "urls": [
@@ -3260,12 +3125,9 @@
                 "https://cafe.naver.com/zoozoocom/296338",
                 "https://cafe.naver.com/zoozoocom/302104",
                 "https://cafe.naver.com/zoozoocom/312909",
-                "https://cafe.naver.com/zoozoocom/315759"
+                "https://cafe.naver.com/zoozoocom/315759",
+                "https://cafe.naver.com/masanmam/7356568"
             ]
-        },
-        {
-            "keyword": "갑상선암 재발 확률",
-            "urls": ["https://cafe.naver.com/zoozoocom/289113"]
         },
         {
             "keyword": "췌장암 말기증상",
@@ -3401,14 +3263,6 @@
             ]
         },
         {
-            "keyword": "염증수치 20",
-            "urls": ["https://cafe.naver.com/peopledisc/1125788"]
-        },
-        {
-            "keyword": "염증수치 10",
-            "urls": ["https://cafe.naver.com/peopledisc/1133696"]
-        },
-        {
             "keyword": "nk수치",
             "urls": ["https://cafe.naver.com/peopledisc/1125786"]
         },
@@ -3427,10 +3281,7 @@
                 "https://cafe.naver.com/culturebloom/3048355"
             ]
         },
-        {
-            "keyword": "고환암 치료",
-            "urls": ["https://cafe.naver.com/zoozoocom/307115"]
-        },
+
         {
             "keyword": "결장암",
             "urls": [
@@ -3546,14 +3397,7 @@
             "keyword": "암환자에게좋은음식",
             "urls": ["https://cafe.naver.com/zoozoocom/318747"]
         },
-        {
-            "keyword": "아가리쿠스버섯",
-            "urls": ["https://cafe.naver.com/zoozoocom/318759"]
-        },
-        {
-            "keyword": "황칠뿌리진액 암환자",
-            "urls": ["https://cafe.naver.com/zoozoocom/318762"]
-        },
+        
         {
             "keyword": "표적항암 부작용",
             "urls": ["https://cafe.naver.com/zoozoocom/318761"]

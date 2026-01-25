@@ -18,10 +18,6 @@
             "urls": []
         },
         {
-            "keyword": "구지뽕열매효능",
-            "urls": ["https://cafe.naver.com/zoozoocom/319907"]
-        },
-        {
             "keyword": "대웅제약 밀크씨슬",
             "urls": ["https://cafe.naver.com/zoozoocom/319908"]
         },
@@ -1358,34 +1354,6 @@
             "urls": ["https://cafe.naver.com/zoozoocom/335207"]
         },
         {
-            "keyword": "임산부임당식단",
-            "urls": []
-        },
-        {
-            "keyword": "임당 식단",
-            "urls": []
-        },
-        {
-            "keyword": "임당 확정",
-            "urls": []
-        },
-        {
-            "keyword": "임신성당뇨 증상",
-            "urls": []
-        },
-        {
-            "keyword": "임당 원인",
-            "urls": []
-        },
-        {
-            "keyword": "임신당뇨 수치",
-            "urls": []
-        },
-        {
-            "keyword": "임신성당뇨 수치",
-            "urls": []
-        },
-        {
             "keyword": "당뇨 합병증 눈",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/296672",
@@ -2105,7 +2073,8 @@
                 "https://cafe.naver.com/zoozoocom/321922",
                 "https://cafe.naver.com/zoozoocom/335032",
                 "https://cafe.naver.com/peopledisc/1207990",
-                "https://cafe.naver.com/peopledisc/1219918"
+                "https://cafe.naver.com/peopledisc/1219918",
+                "https://cafe.naver.com/peopledisc/1250130"
             ]
         },
         {
@@ -2584,15 +2553,7 @@
                 "https://cafe.naver.com/fox5282/4581797"
             ]
         },
-        {
-            "keyword": "공복혈당장애 진단",
-            "urls": [
-                "https://cafe.naver.com/peopledisc/1209352",
-                "https://cafe.naver.com/zoozoocom/337113",
-                "https://cafe.naver.com/peopledisc/1213086",
-                "https://cafe.naver.com/culturebloom/3015088"
-            ]
-        },
+       
         {
             "keyword": "공복혈당장애",
             "urls": [
@@ -2785,18 +2746,6 @@
             ]
         },
         {
-            "keyword": "공복혈당정상수치",
-            "urls": [
-                "https://cafe.naver.com/peopledisc/1189478",
-                "https://cafe.naver.com/masanmam/7309097",
-                "https://cafe.naver.com/peopledisc/1197346",
-                "https://cafe.naver.com/peopledisc/1197726",
-                "https://cafe.naver.com/peopledisc/1202630",
-                "https://cafe.naver.com/peopledisc/1205111",
-                "https://cafe.naver.com/culturebloom/3057724"
-            ]
-        },
-        {
             "keyword": "당뇨 공복혈당정상수치",
             "urls": [
                 "https://cafe.naver.com/peopledisc/1111372",
@@ -2820,13 +2769,6 @@
             "urls": [
                 "https://cafe.naver.com/zoozoocom/306865",
                 "https://cafe.naver.com/zoozoocom/321924"
-            ]
-        },
-        {
-            "keyword": "고지혈증 간수치",
-            "urls": [
-                "https://cafe.naver.com/zoozoocom/306517",
-                "https://cafe.naver.com/zoozoocom/308672"
             ]
         },
         {
@@ -3069,7 +3011,8 @@
             "keyword": "당뇨공복혈당",
             "urls": [
                 "https://cafe.naver.com/zoozoocom/332237",
-                "https://cafe.naver.com/zoozoocom/336093"
+                "https://cafe.naver.com/zoozoocom/336093",
+                "https://cafe.naver.com/culturebloom/3074305"
             ]
         },
         {
