@@ -2,9 +2,17 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import random
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import UnexpectedAlertPresentException, NoAlertPresentException
+from webdriver_manager.chrome import ChromeDriverManager
 
 class NaverScraper:
     def __init__(self):
+        # Selenium WebDriver (삭제 확인용, 필요시 초기화)
+        self._driver = None
+
         # 다양한 User-Agent 목록 정의
         self.user_agents = [
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
@@ -147,5 +155,175 @@ class NaverScraper:
         # 디버깅: 모든 URL 출력
         if unique_urls:
             print("추출된 URL 목록:")
-        
+
         return unique_urls
+
+    def get_cafe_post_views(self, url):
+        """
+        네이버 카페 글의 조회수를 가져오는 함수
+
+        Args:
+            url: 카페 글 URL (예: https://cafe.naver.com/fox5282/4668750)
+
+        Returns:
+            조회수 (int) 또는 None (실패 시)
+        """
+        if not url or 'cafe.naver.com' not in url:
+            return None
+
+        try:
+            # 랜덤 지연
+            time.sleep(random.uniform(0.3, 0.8))
+
+            headers = {
+                "User-Agent": self.get_random_user_agent(),
+                "Accept": "text/html,application/xhtml+xml,application/xml",
+                "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7"
+            }
+
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()
+
+            soup = BeautifulSoup(response.text, 'html.parser')
+
+            # 방법 1: 조회수 텍스트 찾기 (일반적인 패턴)
+            # "조회 123" 또는 "조회수 123" 형태
+            view_patterns = [
+                soup.find('span', class_='count'),  # 일반적인 클래스
+                soup.find('span', string=lambda t: t and '조회' in t),
+                soup.find('em', class_='u_cnt'),
+            ]
+
+            for element in view_patterns:
+                if element:
+                    text = element.get_text(strip=True)
+                    # 숫자만 추출
+                    import re
+                    numbers = re.findall(r'[\d,]+', text)
+                    if numbers:
+                        views = int(numbers[0].replace(',', ''))
+                        return views
+
+            # 방법 2: 특정 구조 찾기
+            # 네이버 카페 조회수는 보통 특정 div 안에 있음
+            article_info = soup.find('div', class_='article_info')
+            if article_info:
+                view_elem = article_info.find('span', class_='count')
+                if view_elem:
+                    text = view_elem.get_text(strip=True)
+                    import re
+                    numbers = re.findall(r'[\d,]+', text)
+                    if numbers:
+                        return int(numbers[0].replace(',', ''))
+
+            # 방법 3: 전체 텍스트에서 "조회" 패턴 찾기
+            page_text = soup.get_text()
+            import re
+            view_match = re.search(r'조회[수]?\s*[:\s]*(\d[\d,]*)', page_text)
+            if view_match:
+                return int(view_match.group(1).replace(',', ''))
+
+            return None
+
+        except Exception as e:
+            print(f"조회수 가져오기 실패 ({url}): {str(e)}")
+            return None
+
+    def _init_driver(self):
+        """Selenium WebDriver 초기화 (삭제 확인용)"""
+        if self._driver is None:
+            chrome_options = Options()
+            chrome_options.add_argument('--headless')
+            chrome_options.add_argument('--no-sandbox')
+            chrome_options.add_argument('--disable-dev-shm-usage')
+            chrome_options.add_argument('--disable-gpu')
+            chrome_options.add_argument('--log-level=3')  # 로그 최소화
+            chrome_options.add_argument(f'user-agent={self.get_random_user_agent()}')
+
+            self._driver = webdriver.Chrome(
+                service=Service(ChromeDriverManager().install()),
+                options=chrome_options
+            )
+            print("Selenium WebDriver 초기화 완료")
+
+        return self._driver
+
+    def close_driver(self):
+        """WebDriver 종료"""
+        if self._driver:
+            self._driver.quit()
+            self._driver = None
+            print("Selenium WebDriver 종료")
+
+    def check_post_deleted(self, url):
+        """
+        네이버 카페 게시글 삭제 여부 확인
+
+        Args:
+            url: 카페 글 URL (예: https://cafe.naver.com/fox5282/4668750)
+
+        Returns:
+            tuple: (is_deleted: bool, message: str or None)
+                - is_deleted: True면 삭제됨, False면 존재함, None이면 확인 실패
+                - message: 삭제 메시지 또는 에러 메시지
+        """
+        if not url or 'cafe.naver.com' not in url:
+            return None, "유효하지 않은 URL"
+
+        try:
+            driver = self._init_driver()
+
+            driver.get(url)
+            time.sleep(1.5)  # alert 대기
+
+            try:
+                # JavaScript alert 확인
+                alert = driver.switch_to.alert
+                alert_text = alert.text
+                alert.accept()  # alert 닫기
+
+                if '삭제' in alert_text or '존재하지 않' in alert_text:
+                    return True, alert_text
+                return False, None
+
+            except NoAlertPresentException:
+                # alert이 없으면 글이 존재함
+                return False, None
+
+        except UnexpectedAlertPresentException as e:
+            # alert이 있으면 삭제된 글
+            return True, "삭제되었거나 존재하지 않는 게시글"
+        except Exception as e:
+            print(f"삭제 확인 실패 ({url}): {str(e)}")
+            return None, str(e)
+
+    def batch_check_posts_deleted(self, urls):
+        """
+        여러 게시글의 삭제 여부를 일괄 확인
+
+        Args:
+            urls: URL 목록 [(url, row_id), ...]
+
+        Returns:
+            list: [{'url': url, 'row': row_id, 'is_deleted': bool, 'message': str}, ...]
+        """
+        results = []
+
+        try:
+            for url, row_id in urls:
+                is_deleted, message = self.check_post_deleted(url)
+                results.append({
+                    'url': url,
+                    'row': row_id,
+                    'is_deleted': is_deleted,
+                    'message': message
+                })
+
+                # API 레이트 리밋 방지
+                time.sleep(random.uniform(0.5, 1.0))
+
+        finally:
+            # 작업 완료 후 드라이버 종료
+            self.close_driver()
+
+        return results

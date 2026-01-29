@@ -1,174 +1,257 @@
-import json
-import os
+"""
+키워드 모니터링 모듈 - Google Sheets 기반
+"""
+
 from datetime import datetime
 from tqdm import tqdm
-from src.config import DATA_DIR
 from urllib.parse import urlparse
+from typing import List, Dict, Optional
+
 
 class KeywordMonitor:
-    def __init__(self, scraper, config_path, results_path):
+    """Google Sheets 기반 키워드 모니터링 클래스"""
+
+    def __init__(self, scraper, sheets_client):
+        """
+        초기화
+
+        Args:
+            scraper: NaverScraper 인스턴스
+            sheets_client: GoogleSheetsClient 인스턴스
+        """
         self.scraper = scraper
-        self.config_path = config_path
-        self.results_path = results_path
-        
-    def load_keywords(self):
-        """키워드 및 URL 설정 로드"""
-        if os.path.exists(self.config_path):
-            with open(self.config_path, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        else:
-            print(f"경고: 설정 파일을 찾을 수 없습니다: {self.config_path}")
-            # 빈 키워드 목록 반환
-            return {"keywords": []}
-            
-    def load_previous_results_map(self):
-        previous_map = {}
-        if os.path.exists(self.results_path):
-            try:
-                with open(self.results_path, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    
-                    for keyword_result in data.get("results", []):
-                        keyword = keyword_result["keyword"]
-                        
-                        url_map = {}
-                        for url_entry in keyword_result["urls"]:
-                            # 1. URL 정규화 적용 (이전 데이터 로드 시점)
-                            url = self.normalize_url(url_entry["url"])
-                            
-                            url_map[url] = {
-                                'is_exposed': url_entry.get('is_exposed', False),
-                                'last_exposed_at': url_entry.get('last_exposed_at')
-                            }
-                        
-                        previous_map[keyword] = url_map
-                    return previous_map
-            except Exception as e:
-                print(f"경고: 이전 결과 로드 중 오류 발생 - {e}. 새 파일로 시작합니다.")
-                return {}
-        return {} 
-        
-    def save_results(self, results):
-        """결과 저장"""
-        # 디렉토리가 없으면 생성
-        os.makedirs(os.path.dirname(self.results_path), exist_ok=True)
-        
-        with open(self.results_path, 'w', encoding='utf-8') as f:
-            json.dump(results, f, ensure_ascii=False, indent=2)
-            
-    
-    def normalize_url(self, url):
+        self.sheets_client = sheets_client
+
+    def normalize_url(self, url: str) -> str:
         """
-        URL 정규화: 네이버 URL의 모바일 'm.'을 제거하고 쿼리 파라미터를 제외합니다.
+        URL 정규화: 네이버 URL의 모바일 'm.'을 제거하고 쿼리 파라미터를 제외
         """
+        if not url:
+            return ''
         parsed = urlparse(url)
         # 네이버 모바일 카페/블로그 URL은 netloc에서 'm.'을 제거하여 정규화
         normalized_netloc = parsed.netloc.replace('m.', '')
-        
+
         # 쿼리 파라미터는 비교에서 제외
         return normalized_netloc + parsed.path
 
-    def check_url_in_results(self, url, search_urls):
+    def check_url_in_results(self, url: str, search_urls: List[str]) -> bool:
         """
-        타겟 URL이 검색 결과에 포함되어 있는지 확인합니다.
-        (정규화된 URL 기준으로 비교)
+        타겟 URL이 검색 결과에 포함되어 있는지 확인
         """
         target = self.normalize_url(url)
         for search_url in search_urls:
-            # 검색 결과의 URL도 정규화하여 비교
             if self.normalize_url(search_url) == target:
                 return True
         return False
-        
-    def monitor_keywords(self, pages_to_check=1):
-        """모든 키워드 모니터링 - 1페이지만 검색"""
-        config = self.load_keywords()
-        
-        # 1. 이전 결과 로드
-        previous_results_map = self.load_previous_results_map()
 
-        results = {
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "results": []
-        }
-        
-        # 현재 시간 문자열 (is_exposed=True일 때 기록할 시간)
-        current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    def find_url_position(self, url: str, search_urls: List[str]) -> Optional[int]:
+        """
+        타겟 URL의 검색 결과 내 순위 찾기 (1-based)
+        찾지 못하면 None 반환
+        """
+        target = self.normalize_url(url)
+        for idx, search_url in enumerate(search_urls, start=1):
+            if self.normalize_url(search_url) == target:
+                return idx
+        return None
 
-        # URL이 있는 키워드만 필터링
-        valid_keywords = [item for item in config['keywords'] if item["urls"]]
-        skipped_keywords = [item for item in config['keywords'] if not item["urls"]]
-        
-        print(f"총 {len(valid_keywords)} 개의 키워드를 모니터링합니다...")
-        if skipped_keywords:
-            print(f"{len(skipped_keywords)} 개의 키워드는 URL이 없어 건너뜁니다.")
-        
-        for item in tqdm(valid_keywords, desc="키워드 검색 중"):
-            keyword = item["keyword"]
-            target_urls_raw = item["urls"]
-            
-            print(f"\n키워드 '{keyword}' 검색 중...")
-            all_search_urls = []
-            
-            # 1페이지만 검색
-            page = 1
-            print(f"  페이지 {page} 검색 중...")
-            soup = self.scraper.get_search_results(keyword, page=page)
-            if soup:
-                page_urls = self.scraper.extract_urls(soup)
-                all_search_urls.extend(page_urls)
-                print(f"  페이지 {page}에서 {len(page_urls)}개의 URL을 찾았습니다.")
-            
-            # 각 URL 노출 여부 확인
-            url_results = []
-            for url_raw in target_urls_raw:
-                is_exposed = self.check_url_in_results(url_raw, all_search_urls)
-                status = "노출" if is_exposed else "미노출"
-                
-                # 타겟 URL을 정규화된 키로 사용
-                url_normalized = self.normalize_url(url_raw)
+    def get_cafe_id_from_url(self, url: str) -> Optional[str]:
+        """URL에서 카페 ID 추출"""
+        if not url or 'cafe.naver.com' not in url:
+            return None
 
-                # 이전 데이터 가져오기 (정규화된 URL 키 사용)
-                previous_data = previous_results_map.get(keyword, {}).get(url_normalized, {})
-                old_last_exposed_at = previous_data.get('last_exposed_at')
-                
-                # 마지막 노출 시간 업데이트 로직
-                # 1. 이번에 노출된 경우: 현재 시간으로 갱신
-                if is_exposed:
-                    last_exposed_at_to_save = current_time_str
-                # 2. 이번에 미노출된 경우: 이전의 마지막 노출 시간 유지 (상실 시점 추적)
-                else:
-                    last_exposed_at_to_save = old_last_exposed_at
-                
-                print(f"  URL '{url_raw}' - {status}")
-                
-                url_entry = {
-                    # 결과 파일에는 원본 URL을 저장
-                    "url": url_raw,
-                    "is_exposed": is_exposed
+        parsed = urlparse(url)
+        path_parts = parsed.path.strip('/').split('/')
+        if path_parts:
+            return path_parts[0]
+        return None
+
+    def find_top_cafe_info(self, search_urls: List[str], cafe_list: List[Dict]) -> Dict:
+        """
+        검색 결과에서 우리 카페 중 최상단 정보 찾기
+
+        Args:
+            search_urls: 검색 결과 URL 목록
+            cafe_list: 카페 목록 [{'cafe_name': '...', 'cafe_id': '...'}, ...]
+
+        Returns:
+            {
+                'position': 3,  # 순위 (1-based)
+                'url': 'https://...',
+                'cafe_name': '천아베베',
+                'cafe_id': 'camsbaby'
+            }
+            또는 찾지 못하면 None
+        """
+        # 카페 ID 집합 생성
+        our_cafe_ids = {cafe['cafe_id'].lower() for cafe in cafe_list}
+        cafe_id_to_name = {cafe['cafe_id'].lower(): cafe['cafe_name'] for cafe in cafe_list}
+
+        for idx, search_url in enumerate(search_urls, start=1):
+            cafe_id = self.get_cafe_id_from_url(search_url)
+            if cafe_id and cafe_id.lower() in our_cafe_ids:
+                return {
+                    'position': idx,
+                    'url': search_url,
+                    'cafe_name': cafe_id_to_name.get(cafe_id.lower(), ''),
+                    'cafe_id': cafe_id
                 }
-                
-                # last_exposed_at 값이 있으면 추가
-                if last_exposed_at_to_save:
-                    url_entry["last_exposed_at"] = last_exposed_at_to_save
-                
-                url_results.append(url_entry)
-                
-            keyword_result = {
-                "keyword": keyword,
-                "urls": url_results
-            }
+        return None
+
+    def monitor_keywords(self):
+        """
+        Google Sheets 기반 키워드 모니터링
+        같은 키워드는 한 번만 검색하되, 각 URL의 삭제 여부는 개별적으로 확인합니다.
+        """
+        keywords_data = self.sheets_client.get_keywords_for_monitoring()
+        if not keywords_data:
+            return []
+
+        # 1. 키워드별로 데이터 그룹화 (검색 횟수 최소화 목적)
+        keyword_groups = {}
+        for item in keywords_data:
+            if item.get('is_deleted') == 'O': # 이미 삭제된 행은 제외
+                continue
             
-            results["results"].append(keyword_result)
-        
-        # URL이 없는 키워드도 결과에 포함 (하지만 검색은 하지 않음)
-        for item in skipped_keywords:
-            keyword_result = {
-                "keyword": item["keyword"],
-                "urls": []
-            }
-            results["results"].append(keyword_result)
+            kw = item['keyword']
+            if kw not in keyword_groups:
+                keyword_groups[kw] = []
+            keyword_groups[kw].append(item)
+
+        batch_updates = []
+
+        # 2. 키워드별 루프
+        for keyword, items in tqdm(keyword_groups.items(), desc="키워드별 모니터링 진행 중"):
             
-        self.save_results(results)
-        print(f"\n모니터링 결과가 {self.results_path}에 저장되었습니다.")
+            # 해당 키워드의 네이버 검색 결과는 한 번만 가져옴
+            soup = self.scraper.get_search_results(keyword, page=1)
+            search_urls = self.scraper.extract_urls(soup) if soup else []
+
+            # 3. 같은 키워드 내의 각 URL(행)들을 개별 검사
+            for item in items:
+                target_url = item['target_url']
+                row = item['row']
+
+                # [개별 확인] 게시글 삭제 여부를 URL마다 각각 확인
+                is_deleted, _ = self.scraper.check_post_deleted(target_url)
+
+                if is_deleted:
+                    # 삭제된 경우: 노출 X, 삭제 O
+                    exposure_status = "X"
+                    deletion_status = "O"
+                else:
+                    # 살아있는 경우: 검색 결과(search_urls)에 포함되었는지 확인
+                    deletion_status = "X"
+                    is_exposed = self.check_url_in_results(target_url, search_urls)
+                    exposure_status = "O" if is_exposed else "X"
+
+                # 결과 데이터 구성
+                batch_updates.append({
+                    'row': row,
+                    'exposure_status': exposure_status,
+                    'deletion_status': deletion_status 
+                })
+
+        # 4. Google Sheets 일괄 업데이트
+        if batch_updates:
+            self.sheets_client.batch_update_monitoring_results(batch_updates)
+
+        return batch_updates
+
+    def monitor_single_keyword(self, keyword: str, target_url: str, row: int) -> Dict:
+        """
+        단일 키워드 모니터링 (테스트/디버깅용)
+        """
+        cafe_list = self.sheets_client.get_cafe_list()
+
+        soup = self.scraper.get_search_results(keyword, page=1)
+        if not soup:
+            return {'error': '검색 실패'}
+
+        search_urls = self.scraper.extract_urls(soup)
+        is_exposed = self.check_url_in_results(target_url, search_urls)
+        position = self.find_url_position(target_url, search_urls) if is_exposed else None
+        top_cafe_info = self.find_top_cafe_info(search_urls, cafe_list) if cafe_list else None
+
+        exposure_status = "O" if is_exposed else "X"
+
+        return {
+            'keyword': keyword,
+            'target_url': target_url,
+            'is_exposed': is_exposed,
+            'exposure_status': exposure_status,
+            'search_urls_count': len(search_urls)
+        }
+
+    def check_deleted_posts(self):
+        """
+        Google Sheets의 모든 게시글 삭제 여부 확인
+        삭제된 글은 '삭제' 컬럼에 'O' 표시
+        """
+        # 모니터링할 키워드 목록 가져오기
+        keywords = self.sheets_client.get_keywords_for_monitoring()
+
+        if not keywords:
+            print("확인할 게시글이 없습니다.")
+            return []
+
+        # URL이 있는 항목만 필터링
+        urls_to_check = [
+            (item['target_url'], item['row'])
+            for item in keywords
+            if item.get('target_url')
+        ]
+
+        if not urls_to_check:
+            print("확인할 URL이 없습니다.")
+            return []
+
+        print(f"\n총 {len(urls_to_check)}개의 게시글 삭제 여부를 확인합니다...")
+
+        # 일괄 삭제 확인
+        results = self.scraper.batch_check_posts_deleted(urls_to_check)
+
+        # 삭제된 글 업데이트
+        batch_updates = []
+        deleted_count = 0
+
+        for result in tqdm(results, desc="삭제 여부 확인 결과 처리"):
+            if result['is_deleted']:
+                deleted_count += 1
+                batch_updates.append({
+                    'row': result['row'],
+                    'column': '삭제',
+                    'value': 'O'
+                })
+                print(f"  🗑️ 삭제된 글 발견 (행 {result['row']}): {result['url']}")
+
+        # 결과를 Google Sheets에 업데이트
+        if batch_updates:
+            print(f"\n{len(batch_updates)}개의 삭제된 글을 Google Sheets에 업데이트 중...")
+            self.sheets_client.batch_update_cells(batch_updates)
+            print("업데이트 완료!")
+
+        print(f"\n삭제 확인 결과: 전체 {len(results)}개 중 {deleted_count}개 삭제됨")
+
         return results
+
+    def monitor_and_check_deleted(self):
+        """
+        키워드 모니터링 + 삭제 확인을 함께 수행
+        """
+        print("=" * 60)
+        print(" 1단계: 키워드 노출 모니터링")
+        print("=" * 60)
+        monitoring_results = self.monitor_keywords()
+
+        print("\n")
+        print("=" * 60)
+        print(" 2단계: 게시글 삭제 여부 확인")
+        print("=" * 60)
+        deletion_results = self.check_deleted_posts()
+
+        return {
+            'monitoring': monitoring_results,
+            'deletion': deletion_results
+        }

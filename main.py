@@ -1,68 +1,102 @@
+"""
+네이버 키워드 노출 모니터링 도구 - Google Sheets 기반
+"""
+
 import os
 import argparse
-import time
 from src.scraper import NaverScraper
 from src.monitor import KeywordMonitor
 from src.reporter import Reporter
-from src.config import CONFIG_DIR, DATA_DIR, CATEGORIES, DEFAULT_PAGES, OUTPUT_DIR
+from src.google_sheets import GoogleSheetsClient
+from src.config import (
+    CONFIG_DIR, DATA_DIR, OUTPUT_DIR,
+    GOOGLE_SHEETS_ID, GOOGLE_SHEETS_GID, GOOGLE_CREDENTIALS_PATH
+)
+
 
 def main():
-    print("실행")
-    parser = argparse.ArgumentParser(description='네이버 검색 노출 모니터링 도구')
-    parser.add_argument('--pages', type=int, default=DEFAULT_PAGES, help='검색할 페이지 수')
-    parser.add_argument('--report', action='store_true', help='최신 결과 보고서 생성')
-    parser.add_argument('--category', type=str, default='cancer', 
-                      help=f'키워드 카테고리 ({", ".join(CATEGORIES)})')
-    parser.add_argument('--all-categories', action='store_true',
-                      help='모든 카테고리 실행')
-    
+    print("=" * 60)
+    print(" 네이버 키워드 노출 모니터링 (Google Sheets 버전)")
+    print("=" * 60)
+
+    parser = argparse.ArgumentParser(description='네이버 검색 노출 모니터링 도구 (Google Sheets)')
+    parser.add_argument('--report', action='store_true',
+                        help='현재 시트 상태 기준 보고서만 생성 (검색 안함)')
+    parser.add_argument('--stats', action='store_true',
+                        help='통계 정보만 출력')
+    parser.add_argument('--export-csv', action='store_true',
+                        help='미노출 키워드 CSV 내보내기')
+
     args = parser.parse_args()
-    
+
     # 필요한 디렉토리 생성
     os.makedirs(CONFIG_DIR, exist_ok=True)
     os.makedirs(DATA_DIR, exist_ok=True)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    
-    # 실행할 카테고리 목록
-    categories_to_run = CATEGORIES if args.all_categories else [args.category]
-    for category in categories_to_run:
-        print(f"\n===== 카테고리: {category} =====")
-        
-        # 경로 설정
-        config_path = os.path.join(CONFIG_DIR, f'keywords_{category}.json')
-        results_path = os.path.join(DATA_DIR, f'latest_results_{category}.json')
-        
-        # 설정 파일이 없는 경우 건너뛰기
-        if not os.path.exists(config_path):
-            print(f"경고: 설정 파일이 없습니다: {config_path}")
-            print(f"{category} 카테고리를 건너뜁니다.")
-            continue
-        
-        # 객체 초기화
-        scraper = NaverScraper()
-        monitor = KeywordMonitor(scraper, config_path, results_path)
-        reporter = Reporter(results_path, category)
-        
-        # 보고서 생성 모드
-        if args.report:
-            try:
-                reporter.print_report()
-                # JSON 내보내기
-                reporter.export_json()
-            except FileNotFoundError as e:
-                print(f"오류: {e}")
-                print("먼저 모니터링을 실행해주세요.")
-            continue
-        
-        # 모니터링 실행
-        print(f"{category} 카테고리에 대한 네이버 검색 노출 모니터링을 시작합니다...")
-        results = monitor.monitor_keywords(pages_to_check=args.pages)
-        
-        # 결과 보고서 출력
+
+    # Google Sheets 인증 파일 확인
+    if not os.path.exists(GOOGLE_CREDENTIALS_PATH):
+        print(f"\n❌ 오류: Google 서비스 계정 인증 파일을 찾을 수 없습니다.")
+        print(f"   경로: {GOOGLE_CREDENTIALS_PATH}")
+        print("\n📋 설정 방법:")
+        print("   1. Google Cloud Console에서 서비스 계정 생성")
+        print("   2. JSON 키 파일 다운로드")
+        print(f"   3. {GOOGLE_CREDENTIALS_PATH} 경로에 저장")
+        print("   4. Google Sheets에서 해당 서비스 계정 이메일에 편집 권한 부여")
+        return
+
+    # Google Sheets 클라이언트 초기화
+    print("\n📊 Google Sheets 연결 중...")
+    sheets_client = GoogleSheetsClient(
+        credentials_path=GOOGLE_CREDENTIALS_PATH,
+        spreadsheet_id=GOOGLE_SHEETS_ID,
+        sheet_gid=GOOGLE_SHEETS_GID
+    )
+
+    if not sheets_client.connect():
+        print("❌ Google Sheets 연결 실패. 프로그램을 종료합니다.")
+        return
+
+    # Reporter 초기화
+    reporter = Reporter(sheets_client)
+
+    # 보고서만 생성 모드
+    if args.report:
+        print("\n📄 보고서 생성 모드...")
         reporter.print_report()
-        
-        # JSON 내보내기
-        reporter.export_json()
+        return
+
+    # 통계만 출력 모드
+    if args.stats:
+        reporter.print_statistics()
+        return
+
+    # CSV 내보내기 모드
+    if args.export_csv:
+        reporter.export_csv_for_unexposed()
+        return
+
+    # 모니터링 실행
+    print("\n🔍 키워드 모니터링 시작...")
+
+    # Scraper 초기화
+    scraper = NaverScraper()
+
+    # Monitor 초기화
+    monitor = KeywordMonitor(scraper, sheets_client)
+
+    # 모니터링 실행
+    results = monitor.monitor_keywords()
+
+    # 결과 보고서 출력
+    print("\n" + "=" * 60)
+    reporter.print_report()
+
+    # 통계 출력
+    reporter.print_statistics()
+
+    print("\n✅ 모니터링 완료!")
+
 
 if __name__ == "__main__":
     main()
