@@ -18,7 +18,7 @@ CATEGORIES = ['cancer', 'diabetes', 'cream']
 DEFAULT_PAGES = 1
 
 # 스케줄러 실행 간격 (시간)
-SCHEDULER_INTERVAL = 3
+SCHEDULER_INTERVAL = 5
 
 # ===========================================
 # Google Sheets 설정
