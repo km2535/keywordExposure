@@ -62,7 +62,7 @@ def run_monitoring():
         result = subprocess.run(
             ['python3', os.path.join(SCRIPT_DIR, 'main.py')],
             cwd=SCRIPT_DIR,
-            capture_output=True,
+            capture_output=False,
             text=True,
             check=True
         )

@@ -18,7 +18,7 @@ CATEGORIES = ['cancer', 'diabetes', 'cream']
 DEFAULT_PAGES = 1
 
 # 스케줄러 실행 간격 (시간)
-SCHEDULER_INTERVAL = 4
+SCHEDULER_INTERVAL = 3
 
 # ===========================================
 # Google Sheets 설정
@@ -39,8 +39,8 @@ GOOGLE_CREDENTIALS_PATH = 'config/credentials.json'
 
 EMAIL_SENDER = "fmonecompany@gmail.com"  # 발신자 이메일
 EMAIL_PASSWORD = "ugbq mgvv wtat sdbn"  # Gmail의 경우 앱 비밀번호 필요
-# EMAIL_RECIPIENTS = ["lkm1416@gmail.com", "nnf2913@gmail.com"]  # 수신자 이메일 목록
-EMAIL_RECIPIENTS = ["lkm1416@gmail.com"]  # 수신자 이메일 목록
+EMAIL_RECIPIENTS = ["lkm1416@gmail.com", "nnf2913@gmail.com"]  # 수신자 이메일 목록
+# EMAIL_RECIPIENTS = ["lkm1416@gmail.com"]  # 수신자 이메일 목록
 
 # 카테고리별 한글 이름 매핑
 CATEGORY_NAMES = {
