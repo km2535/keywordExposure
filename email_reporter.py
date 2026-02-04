@@ -19,7 +19,7 @@ from src.config import (
 )
 from src.reporter import Reporter # Reporter 클래스 임포트
 from src.google_sheets import GoogleSheetsClient
-
+import logging
 # ----------------------------------------------------
 # A. 키워드 검색량 조회 및 동적 비교 로직 (변함 없음)
 # ----------------------------------------------------
@@ -129,7 +129,7 @@ def get_keyword_search_summary():
     
     all_keyword_comparison_data = {}
     
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] 📊 키워드 트렌드 조회 시작 ({periods['api_start_date']} ~ {periods['api_end_date']})")
+    logging.info(f"[{datetime.now().strftime('%H:%M:%S')}] 📊 키워드 트렌드 조회 시작 ({periods['api_start_date']} ~ {periods['api_end_date']})")
 
     api_start_str = format_api_date_str(datetime.combine(periods['api_start_date'], datetime.min.time()))
     api_end_str = format_api_date_str(datetime.combine(periods['api_end_date'], datetime.min.time()))
@@ -160,7 +160,7 @@ def get_keyword_search_summary():
                     values = items[0]['values'] # 트렌드 값
                     
                     if not values:
-                         print(f"  ⚠️ 키워드: {keyword} - 데이터는 있으나 값이 비어있음.")
+                         logging.info(f"  ⚠️ 키워드: {keyword} - 데이터는 있으나 값이 비어있음.")
                          continue
                         
                     # 2주 데이터를 분리하여 저장
@@ -188,15 +188,15 @@ def get_keyword_search_summary():
                         'period_1': period_1_data,
                         'period_2': period_2_data,
                     }
-                    print(f"  ✅ 키워드: {keyword} - 2주 데이터({len(period_1_data)}일/{len(period_2_data)}일) 분리 완료.")
+                    logging.info(f"  ✅ 키워드: {keyword} - 2주 데이터({len(period_1_data)}일/{len(period_2_data)}일) 분리 완료.")
 
                 else:
-                    print(f"  ⚠️ 키워드: {keyword} - 데이터 구조 오류.")
+                    logging.info(f"  ⚠️ 키워드: {keyword} - 데이터 구조 오류.")
             else:
-                print(f"  ❌ 키워드: {keyword} - API 응답 실패: Code {data.get('status', {}).get('code', 'N/A')}")
+                logging.info(f"  ❌ 키워드: {keyword} - API 응답 실패: Code {data.get('status', {}).get('code', 'N/A')}")
 
         except requests.exceptions.RequestException as e:
-            print(f"  ❌ 키워드: {keyword} - 네트워크/API 오류 발생: {e}")
+            logging.info(f"  ❌ 키워드: {keyword} - 네트워크/API 오류 발생: {e}")
             continue
 
     # 기간 정보와 비교 데이터를 함께 반환
@@ -275,9 +275,9 @@ def get_all_reports(sheets_client):
         return filtered_summary, csv_path
 
     except Exception as e:
-        print(f"경고: 보고서 생성 중 오류 발생: {str(e)}")
+        logging.info(f"경고: 보고서 생성 중 오류 발생: {str(e)}")
         import traceback
-        traceback.print_exc()
+        traceback.logging.info_exc()
         return None, None
 
 
@@ -310,7 +310,7 @@ def export_filtered_csv(not_exposed_list):
         writer.writerow(header)
         writer.writerows(data_rows)
 
-    print(f"최근 일주일 미노출 키워드 CSV가 {csv_path}에 저장되었습니다.")
+    logging.info(f"최근 일주일 미노출 키워드 CSV가 {csv_path}에 저장되었습니다.")
     return csv_path
 
 # ----------------------------------------------------
@@ -554,11 +554,11 @@ def generate_html_report(summary, comparison_data, periods):
 
 def send_email_report():
     """이메일 보고서 전송"""
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서 생성 중...")
+    logging.info(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서 생성 중...")
 
     try:
         # Google Sheets 클라이언트 초기화
-        print("📊 Google Sheets 연결 중...")
+        logging.info("📊 Google Sheets 연결 중...")
         sheets_client = GoogleSheetsClient(
             credentials_path=GOOGLE_CREDENTIALS_PATH,
             spreadsheet_id=GOOGLE_SHEETS_ID,
@@ -566,7 +566,7 @@ def send_email_report():
         )
 
         if not sheets_client.connect():
-            print("❌ Google Sheets 연결 실패")
+            logging.info("❌ Google Sheets 연결 실패")
             return False
 
         # 현재 날짜를 이메일 제목에 추가
@@ -602,19 +602,19 @@ def send_email_report():
                     f'attachment; filename={os.path.basename(csv_path)}'
                 )
                 msg.attach(part)
-            print(f"📎 CSV 파일 첨부: {os.path.basename(csv_path)}")
+            logging.info(f"📎 CSV 파일 첨부: {os.path.basename(csv_path)}")
 
         # SMTP 서버 연결 및 이메일 전송
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
             server.login(EMAIL_SENDER, EMAIL_PASSWORD)
             server.send_message(msg)
 
-        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서가 성공적으로 전송되었습니다.")
+        logging.info(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서가 성공적으로 전송되었습니다.")
         return True
     except Exception as e:
-        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 전송 중 오류 발생: {str(e)}")
+        logging.info(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 전송 중 오류 발생: {str(e)}")
         import traceback
-        traceback.print_exc()
+        traceback.logging.info_exc()
         return False
 
 

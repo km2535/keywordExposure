@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import UnexpectedAlertPresentException, NoAlertPresentException
 from webdriver_manager.chrome import ChromeDriverManager
+import logging
 
 class NaverScraper:
     def __init__(self):
@@ -46,14 +47,14 @@ class NaverScraper:
         }
         
         try:
-            print(f"'{keyword}' 검색 중 (페이지 {page})...")
+            logging.info(f"'{keyword}' 검색 중 (페이지 {page})...")
             response = requests.get(self.base_url, params=params, headers=headers)
             response.raise_for_status()
             
             soup = BeautifulSoup(response.text, 'html.parser')
             return soup
         except Exception as e:
-            print(f"검색 결과 가져오기 실패: {str(e)}")
+            logging.info(f"검색 결과 가져오기 실패: {str(e)}")
             return None
             
     def extract_urls(self, soup):
@@ -61,7 +62,7 @@ class NaverScraper:
         urls = []
         
         # 1. 가장 효과적인 방법: 모든 a 태그를 검색하고 모든 속성 확인
-        print("모든 a 태그에서 URL 추출 시도...")
+        logging.info("모든 a 태그에서 URL 추출 시도...")
         try:
             for a_tag in soup.find_all('a'):
                 # 모든 속성 확인
@@ -71,15 +72,15 @@ class NaverScraper:
                         # 네이버 URL에 초점
                         if 'naver.com' in attr_value:
                             urls.append(attr_value)
-                            #print(f"네이버 URL 발견 (속성: {attr_name}): {attr_value[:100]}..." if len(attr_value) > 100 else f"네이버 URL 발견: {attr_value}")
+                            #logging.info(f"네이버 URL 발견 (속성: {attr_name}): {attr_value[:100]}..." if len(attr_value) > 100 else f"네이버 URL 발견: {attr_value}")
         except Exception as e:
-            print(f"a 태그 처리 중 오류: {str(e)}")
+            logging.info(f"a 태그 처리 중 오류: {str(e)}")
         
         # 2. 구조적 접근: 네이버 검색 결과에서 자주 사용되는 패턴 찾기
         try:
             # nocr 속성이 있는 요소 찾기 (네이버 검색 결과에 자주 사용됨)
             nocr_elements = soup.find_all(attrs={'nocr': True})
-            print(f"{len(nocr_elements)}개의 nocr 속성 요소 발견")
+            logging.info(f"{len(nocr_elements)}개의 nocr 속성 요소 발견")
             
             for elem in nocr_elements:
                 # 링크 요소이거나 내부에 링크를 포함하는지 확인
@@ -90,7 +91,7 @@ class NaverScraper:
                     for inner_a in elem.find_all('a', href=True):
                         urls.append(inner_a['href'])
         except Exception as e:
-            print(f"nocr 요소 처리 중 오류: {str(e)}")
+            logging.info(f"nocr 요소 처리 중 오류: {str(e)}")
         
         # 3. 일반적인 컨테이너 클래스 접근
         # 클래스 이름은 동적으로 변경되지만, 일부 공통 패턴이 있음
@@ -103,7 +104,7 @@ class NaverScraper:
                 if div.has_attr('class') and len(div['class']) >= 2:
                     containers.append(div)
             
-            print(f"{len(containers)}개의 잠재적 컨테이너 발견")
+            logging.info(f"{len(containers)}개의 잠재적 컨테이너 발견")
             
             # 각 컨테이너 내의 링크 찾기
             for container in containers:
@@ -111,7 +112,7 @@ class NaverScraper:
                     if 'naver.com' in a['href']:
                         urls.append(a['href'])
         except Exception as e:
-            print(f"컨테이너 처리 중 오류: {str(e)}")
+            logging.info(f"컨테이너 처리 중 오류: {str(e)}")
         
         # 4. 텍스트 기반 접근
         # 특정 키워드와 함께 출현할 가능성이 높은 링크 찾기
@@ -132,7 +133,7 @@ class NaverScraper:
                             if 'naver.com' in a['href']:
                                 urls.append(a['href'])
         except Exception as e:
-            print(f"키워드 기반 검색 중 오류: {str(e)}")
+            logging.info(f"키워드 기반 검색 중 오류: {str(e)}")
         
         # 네이버 카페/블로그 URL 정규화 (JWT 토큰 제거)
         normalized_urls = []
@@ -150,11 +151,11 @@ class NaverScraper:
         
         # 중복 URL 제거
         unique_urls = list(dict.fromkeys(normalized_urls))
-        print(f"총 {len(unique_urls)}개의 고유 URL을 추출했습니다.")
+        logging.info(f"총 {len(unique_urls)}개의 고유 URL을 추출했습니다.")
         
         # 디버깅: 모든 URL 출력
         if unique_urls:
-            print("추출된 URL 목록:")
+            logging.info("추출된 URL 목록:")
 
         return unique_urls
 
@@ -226,7 +227,7 @@ class NaverScraper:
             return None
 
         except Exception as e:
-            print(f"조회수 가져오기 실패 ({url}): {str(e)}")
+            logging.info(f"조회수 가져오기 실패 ({url}): {str(e)}")
             return None
 
     def _init_driver(self):
@@ -244,7 +245,7 @@ class NaverScraper:
                 service=Service(ChromeDriverManager().install()),
                 options=chrome_options
             )
-            print("Selenium WebDriver 초기화 완료")
+            logging.info("Selenium WebDriver 초기화 완료")
 
         return self._driver
 
@@ -253,7 +254,7 @@ class NaverScraper:
         if self._driver:
             self._driver.quit()
             self._driver = None
-            print("Selenium WebDriver 종료")
+            logging.info("Selenium WebDriver 종료")
 
     def check_post_deleted(self, url):
         """
@@ -294,7 +295,7 @@ class NaverScraper:
             # alert이 있으면 삭제된 글
             return True, "삭제되었거나 존재하지 않는 게시글"
         except Exception as e:
-            print(f"삭제 확인 실패 ({url}): {str(e)}")
+            logging.info(f"삭제 확인 실패 ({url}): {str(e)}")
             return None, str(e)
 
     def batch_check_posts_deleted(self, urls):

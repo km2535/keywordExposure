@@ -9,6 +9,7 @@ from google.oauth2.service_account import Credentials
 from datetime import datetime
 from typing import List, Dict, Optional
 import time
+import logging
 
 # Google Sheets API 스코프
 SCOPES = [
@@ -53,10 +54,10 @@ class GoogleSheetsClient:
             # 헤더 캐시
             self._headers_cache = None
 
-            print(f"Google Sheets 연결 성공: {self.spreadsheet.title}")
+            logging.info(f"Google Sheets 연결 성공: {self.spreadsheet.title}")
             return True
         except Exception as e:
-            print(f"Google Sheets 연결 실패: {e}")
+            logging.info(f"Google Sheets 연결 실패: {e}")
             return False
 
     def _get_worksheet_by_gid(self, gid: int):
@@ -65,7 +66,7 @@ class GoogleSheetsClient:
             if ws.id == gid:
                 return ws
         # GID를 찾지 못하면 첫 번째 시트 반환
-        print(f"경고: GID {gid}를 찾을 수 없어 첫 번째 시트를 사용합니다.")
+        logging.info(f"경고: GID {gid}를 찾을 수 없어 첫 번째 시트를 사용합니다.")
         return self.spreadsheet.sheet1
 
     def get_all_data(self) -> List[Dict]:
@@ -203,14 +204,14 @@ class GoogleSheetsClient:
         """
         col_idx = self.find_column_index(column_name)
         if col_idx is None:
-            print(f"경고: 컬럼 '{column_name}'을 찾을 수 없습니다.")
+            logging.info(f"경고: 컬럼 '{column_name}'을 찾을 수 없습니다.")
             return False
 
         try:
             self.worksheet.update_cell(row, col_idx, value)
             return True
         except Exception as e:
-            print(f"셀 업데이트 실패 (행:{row}, 컬럼:{column_name}): {e}")
+            logging.info(f"셀 업데이트 실패 (행:{row}, 컬럼:{column_name}): {e}")
             return False
 
     def update_row(self, row: int, updates: Dict[str, any]):
@@ -250,9 +251,9 @@ class GoogleSheetsClient:
         if cell_updates:
             try:
                 self.worksheet.batch_update(cell_updates)
-                print(f"{len(cell_updates)}개 셀 일괄 업데이트 완료")
+                logging.info(f"{len(cell_updates)}개 셀 일괄 업데이트 완료")
             except Exception as e:
-                print(f"일괄 업데이트 실패: {e}")
+                logging.info(f"일괄 업데이트 실패: {e}")
 
     def update_monitoring_result(self, row: int, exposure_status: str = None,
                                   top_cafe_url: str = None,
