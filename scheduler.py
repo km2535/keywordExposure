@@ -9,8 +9,9 @@ import sys
 import subprocess
 import logging
 import traceback
+import threading
 from datetime import datetime
-from src.config import SCHEDULER_INTERVAL, OUTPUT_DIR, DATA_DIR
+from src.config import OUTPUT_DIR, DATA_DIR
 
 # 현재 스크립트 디렉토리의 절대 경로
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -59,24 +60,30 @@ def run_monitoring():
 
     # 모니터링 실행 (Google Sheets 기반 - 카테고리 옵션 없음)
     try:
-        result = subprocess.run(
-            ['python3', os.path.join(SCRIPT_DIR, 'main.py')],
+        process = subprocess.Popen(
+            ['python', '-u', os.path.join(SCRIPT_DIR, 'main.py')],
             cwd=SCRIPT_DIR,
-            capture_output=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
             text=True,
-            check=True
+            bufsize=1
         )
-        logging.info("명령어 출력:")
-        for line in result.stdout.split('\n'):
-            if line.strip():
-                logging.info(f"  {line}")
-        logging.info("모니터링 작업 완료")
 
-    except subprocess.CalledProcessError as e:
-        logging.error(f"모니터링 실행 중 오류 발생: {e.cmd}")
-        logging.error(f"오류 출력: {e.stderr}")
+        # 실시간으로 출력 읽기
+        for line in process.stdout:
+            line = line.rstrip()
+            if line:
+                logging.info(f"  {line}")
+
+        process.wait()
+
+        if process.returncode == 0:
+            logging.info("모니터링 작업 완료")
+        else:
+            logging.error(f"모니터링 실행 종료 코드: {process.returncode}")
+
     except Exception as e:
-        logging.error(f"모니터링 실행 중 일반 예외 발생: {str(e)}")
+        logging.error(f"모니터링 실행 중 예외 발생: {str(e)}")
         logging.error(traceback.format_exc())
 
 
@@ -104,30 +111,34 @@ def run_email_report():
         return False
 
 
+def email_scheduler_thread():
+    """이메일 스케줄러를 별도 스레드에서 실행"""
+    while True:
+        schedule.run_pending()
+        time.sleep(30)  # 30초마다 스케줄 확인
+
+
 if __name__ == "__main__":
     logging.info("=" * 60)
     logging.info(" 네이버 검색 노출 모니터링 스케줄러 (Google Sheets 버전)")
     logging.info("=" * 60)
 
-    # 설정된 시간 간격마다 실행하도록 스케줄 설정
-    schedule.every(SCHEDULER_INTERVAL).hours.do(run_monitoring)
-
-    # 이메일 보고서 전송 스케줄
+    # 이메일 보고서 전송 스케줄 (매일 특정 시간에 전송)
     schedule.every().day.at("10:10").do(run_email_report)
     schedule.every().day.at("12:30").do(run_email_report)
 
-    # 시작할 때 한 번 즉시 실행
-    logging.info("초기 모니터링 실행 중...")
-    run_monitoring()
+    # 이메일 스케줄러를 별도 스레드에서 실행
+    email_thread = threading.Thread(target=email_scheduler_thread, daemon=True)
+    email_thread.start()
 
-    logging.info(f"스케줄러가 {SCHEDULER_INTERVAL}시간마다 모니터링을 실행하도록 설정되었습니다.")
+    logging.info("모니터링이 연속 실행 모드로 설정되었습니다. (검사 완료 후 즉시 재검사)")
     logging.info("매일 10:10, 12:30에 이메일 보고서를 전송하도록 설정되었습니다.")
 
-    # 무한 루프로 스케줄러 실행
+    # 무한 루프로 연속 모니터링 실행
     try:
         while True:
-            schedule.run_pending()
-            time.sleep(60)  # 1분마다 스케줄 확인
+            run_monitoring()
+            logging.info("다음 모니터링 검사를 시작합니다...")
     except KeyboardInterrupt:
         logging.info("사용자에 의해 스케줄러가 중지되었습니다.")
     except Exception as e:
