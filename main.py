@@ -63,12 +63,12 @@ def main():
     # 보고서만 생성 모드
     if args.report:
         logging.info("\n📄 보고서 생성 모드...")
-        reporter.logging.info_report()
+        reporter.print_report()
         return
 
     # 통계만 출력 모드
     if args.stats:
-        reporter.logging.info_statistics()
+        reporter.print_statistics()
         return
 
     # CSV 내보내기 모드
@@ -90,10 +90,10 @@ def main():
 
     # 결과 보고서 출력
     logging.info("\n" + "=" * 60)
-    reporter.logging.info_report()
+    reporter.print_report()
 
     # 통계 출력
-    reporter.logging.info_statistics()
+    reporter.print_statistics()
 
     logging.info("\n✅ 모니터링 완료!")
 
