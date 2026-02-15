@@ -8,6 +8,7 @@ import argparse
 import sys
 from datetime import datetime
 from email_reporter import send_email_report
+import logging
 
 def main():
     """메인 실행 함수"""
@@ -16,16 +17,16 @@ def main():
     
     args = parser.parse_args()
     
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서 테스트 시작")
+    logging.info(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서 테스트 시작")
     
     # 테스트 이메일 전송
     result = send_email_report()
     
     if result:
-        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서 전송 성공!")
+        logging.info(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서 전송 성공!")
         sys.exit(0)
     else:
-        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서 전송 실패.")
+        logging.info(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 이메일 보고서 전송 실패.")
         sys.exit(1)
 
 if __name__ == "__main__":

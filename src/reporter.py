@@ -8,7 +8,7 @@ from datetime import datetime
 from tabulate import tabulate
 from typing import List, Dict
 from src.config import OUTPUT_DIR
-
+import logging
 
 class Reporter:
     """Google Sheets 기반 보고서 생성 클래스"""
@@ -87,54 +87,54 @@ class Reporter:
         """콘솔에 보고서 출력"""
         summary = self.generate_summary()
 
-        print("\n" + "=" * 60)
-        print(" 네이버 검색 노출 모니터링 보고서 (Google Sheets)")
-        print("=" * 60)
-        print(f"생성 시간: {summary['timestamp']}")
-        print(f"총 키워드 수: {summary['total']}")
+        logging.info("\n" + "=" * 60)
+        logging.info(" 네이버 검색 노출 모니터링 보고서 (Google Sheets)")
+        logging.info("=" * 60)
+        logging.info(f"생성 시간: {summary['timestamp']}")
+        logging.info(f"총 키워드 수: {summary['total']}")
 
         # 1. 노출된 키워드 (O)
-        print(f"\n[✅ 노출 (O)] ({len(summary['exposed'])}개)")
+        logging.info(f"\n[✅ 노출 (O)] ({len(summary['exposed'])}개)")
         if summary['exposed']:
             exposed_data = [
                 (item['keyword'], item['status'], item.get('patrol_time', ''))
                 for item in summary['exposed']
             ]
-            print(tabulate(exposed_data,
+            logging.info(tabulate(exposed_data,
                            headers=["키워드", "노출", "순찰시간"],
                            tablefmt="grid"))
         else:
-            print("노출된 키워드가 없습니다.")
+            logging.info("노출된 키워드가 없습니다.")
 
         # 2. 미노출 키워드 (X)
-        print(f"\n[❌ 미노출 (X)] ({len(summary['not_exposed'])}개)")
+        logging.info(f"\n[❌ 미노출 (X)] ({len(summary['not_exposed'])}개)")
         if summary['not_exposed']:
             not_exposed_data = [
                 (item['keyword'], item['status'], item.get('patrol_time', ''))
                 for item in summary['not_exposed']
             ]
-            print(tabulate(not_exposed_data,
+            logging.info(tabulate(not_exposed_data,
                            headers=["키워드", "노출", "순찰시간"],
                            tablefmt="grid"))
         else:
-            print("미노출 키워드가 없습니다.")
+            logging.info("미노출 키워드가 없습니다.")
 
         # 3. URL 없는 키워드
-        print(f"\n[📝 URL 미설정 키워드] ({len(summary['no_url'])}개)")
+        logging.info(f"\n[📝 URL 미설정 키워드] ({len(summary['no_url'])}개)")
         if summary['no_url']:
             no_url_data = [(item['keyword'], item['status']) for item in summary['no_url']]
-            print(tabulate(no_url_data,
+            logging.info(tabulate(no_url_data,
                            headers=["키워드", "상태"],
                            tablefmt="grid"))
         else:
-            print("URL 미설정 키워드가 없습니다.")
+            logging.info("URL 미설정 키워드가 없습니다.")
 
         # 요약 통계
-        print("\n" + "-" * 60)
-        print(f"✅ 노출: {len(summary['exposed'])}개")
-        print(f"🚨 미노출: {len(summary['not_exposed'])}개")
-        print(f"📝 URL 미설정: {len(summary['no_url'])}개")
-        print("-" * 60)
+        logging.info("\n" + "-" * 60)
+        logging.info(f"✅ 노출: {len(summary['exposed'])}개")
+        logging.info(f"🚨 미노출: {len(summary['not_exposed'])}개")
+        logging.info(f"📝 URL 미설정: {len(summary['no_url'])}개")
+        logging.info("-" * 60)
 
     def export_csv_for_unexposed(self) -> str:
         """
@@ -166,7 +166,7 @@ class Reporter:
             writer.writerow(header)
             writer.writerows(data_rows)
 
-        print(f"미노출 키워드 CSV가 {csv_path}에 저장되었습니다.")
+        logging.info(f"미노출 키워드 CSV가 {csv_path}에 저장되었습니다.")
         return csv_path
 
     def get_statistics(self) -> Dict:
@@ -199,12 +199,12 @@ class Reporter:
         """통계 정보 출력"""
         stats = self.get_statistics()
 
-        print("\n" + "=" * 40)
-        print(" 키워드 노출 통계")
-        print("=" * 40)
-        print(f"총 키워드: {stats['total']}개")
-        print(f"노출: {stats['exposed_count']}개")
-        print(f"미노출: {stats['not_exposed_count']}개")
-        print(f"URL 미설정: {stats['no_url_count']}개")
-        print(f"노출률: {stats['exposure_rate']}%")
-        print("=" * 40)
+        logging.info("\n" + "=" * 40)
+        logging.info(" 키워드 노출 통계")
+        logging.info("=" * 40)
+        logging.info(f"총 키워드: {stats['total']}개")
+        logging.info(f"노출: {stats['exposed_count']}개")
+        logging.info(f"미노출: {stats['not_exposed_count']}개")
+        logging.info(f"URL 미설정: {stats['no_url_count']}개")
+        logging.info(f"노출률: {stats['exposure_rate']}%")
+        logging.info("=" * 40)

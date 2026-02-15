@@ -15,6 +15,7 @@ from src.config import (
     EMAIL_PASSWORD,
     EMAIL_RECIPIENTS
 )
+import logging
 
 
 def get_unexposed_keywords_last_week(sheets_client):
@@ -167,21 +168,21 @@ def send_email(subject, html_content, recipients):
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
             server.login(EMAIL_SENDER, EMAIL_PASSWORD)
             server.sendmail(EMAIL_SENDER, recipients, msg.as_string())
-        print(f"✅ 이메일이 성공적으로 발송되었습니다: {recipients}")
+        logging.info(f"✅ 이메일이 성공적으로 발송되었습니다: {recipients}")
         return True
     except Exception as e:
-        print(f"❌ 이메일 발송 실패: {e}")
+        logging.info(f"❌ 이메일 발송 실패: {e}")
         return False
 
 
 def main():
     """메인 실행 함수"""
-    print("=" * 60)
-    print(" 최근 일주일 미노출 키워드 리포트 생성")
-    print("=" * 60)
+    logging.info("=" * 60)
+    logging.info(" 최근 일주일 미노출 키워드 리포트 생성")
+    logging.info("=" * 60)
 
     # 1. Google Sheets 연결
-    print("\n1. Google Sheets 연결 중...")
+    logging.info("\n1. Google Sheets 연결 중...")
     sheets_client = GoogleSheetsClient(
         credentials_path=GOOGLE_CREDENTIALS_PATH,
         spreadsheet_id=GOOGLE_SHEETS_ID,
@@ -189,28 +190,28 @@ def main():
     )
 
     if not sheets_client.connect():
-        print("Google Sheets 연결 실패!")
+        logging.info("Google Sheets 연결 실패!")
         return
 
     # 2. 미노출 키워드 조회 (최근 일주일 발행분)
-    print("\n2. 최근 일주일 발행 중 미노출 키워드 조회 중...")
+    logging.info("\n2. 최근 일주일 발행 중 미노출 키워드 조회 중...")
     unexposed_keywords = get_unexposed_keywords_last_week(sheets_client)
-    print(f"   미노출 키워드: {len(unexposed_keywords)}개")
+    logging.info(f"   미노출 키워드: {len(unexposed_keywords)}개")
 
     # 3. 이메일 내용 생성
-    print("\n3. 이메일 내용 생성 중...")
+    logging.info("\n3. 이메일 내용 생성 중...")
     html_content = create_email_html(unexposed_keywords)
 
     # 4. 이메일 발송
     today = datetime.now().strftime('%Y-%m-%d')
     subject = f"[키워드 모니터링] 미노출 현황 리포트 ({today})"
 
-    print(f"\n4. 이메일 발송 중... (수신자: {EMAIL_RECIPIENTS})")
+    logging.info(f"\n4. 이메일 발송 중... (수신자: {EMAIL_RECIPIENTS})")
     send_email(subject, html_content, EMAIL_RECIPIENTS)
 
-    print("\n" + "=" * 60)
-    print(" 완료!")
-    print("=" * 60)
+    logging.info("\n" + "=" * 60)
+    logging.info(" 완료!")
+    logging.info("=" * 60)
 
 
 if __name__ == "__main__":

@@ -12,12 +12,12 @@ from src.config import (
     CONFIG_DIR, DATA_DIR, OUTPUT_DIR,
     GOOGLE_SHEETS_ID, GOOGLE_SHEETS_GID, GOOGLE_CREDENTIALS_PATH
 )
-
+import logging
 
 def main():
-    print("=" * 60)
-    print(" 네이버 키워드 노출 모니터링 (Google Sheets 버전)")
-    print("=" * 60)
+    logging.info("=" * 60)
+    logging.info(" 네이버 키워드 노출 모니터링 (Google Sheets 버전)")
+    logging.info("=" * 60)
 
     parser = argparse.ArgumentParser(description='네이버 검색 노출 모니터링 도구 (Google Sheets)')
     parser.add_argument('--report', action='store_true',
@@ -36,17 +36,17 @@ def main():
 
     # Google Sheets 인증 파일 확인
     if not os.path.exists(GOOGLE_CREDENTIALS_PATH):
-        print(f"\n❌ 오류: Google 서비스 계정 인증 파일을 찾을 수 없습니다.")
-        print(f"   경로: {GOOGLE_CREDENTIALS_PATH}")
-        print("\n📋 설정 방법:")
-        print("   1. Google Cloud Console에서 서비스 계정 생성")
-        print("   2. JSON 키 파일 다운로드")
-        print(f"   3. {GOOGLE_CREDENTIALS_PATH} 경로에 저장")
-        print("   4. Google Sheets에서 해당 서비스 계정 이메일에 편집 권한 부여")
+        logging.info(f"\n❌ 오류: Google 서비스 계정 인증 파일을 찾을 수 없습니다.")
+        logging.info(f"   경로: {GOOGLE_CREDENTIALS_PATH}")
+        logging.info("\n📋 설정 방법:")
+        logging.info("   1. Google Cloud Console에서 서비스 계정 생성")
+        logging.info("   2. JSON 키 파일 다운로드")
+        logging.info(f"   3. {GOOGLE_CREDENTIALS_PATH} 경로에 저장")
+        logging.info("   4. Google Sheets에서 해당 서비스 계정 이메일에 편집 권한 부여")
         return
 
     # Google Sheets 클라이언트 초기화
-    print("\n📊 Google Sheets 연결 중...")
+    logging.info("\n📊 Google Sheets 연결 중...")
     sheets_client = GoogleSheetsClient(
         credentials_path=GOOGLE_CREDENTIALS_PATH,
         spreadsheet_id=GOOGLE_SHEETS_ID,
@@ -54,7 +54,7 @@ def main():
     )
 
     if not sheets_client.connect():
-        print("❌ Google Sheets 연결 실패. 프로그램을 종료합니다.")
+        logging.info("❌ Google Sheets 연결 실패. 프로그램을 종료합니다.")
         return
 
     # Reporter 초기화
@@ -62,13 +62,13 @@ def main():
 
     # 보고서만 생성 모드
     if args.report:
-        print("\n📄 보고서 생성 모드...")
-        reporter.print_report()
+        logging.info("\n📄 보고서 생성 모드...")
+        reporter.logging.info_report()
         return
 
     # 통계만 출력 모드
     if args.stats:
-        reporter.print_statistics()
+        reporter.logging.info_statistics()
         return
 
     # CSV 내보내기 모드
@@ -77,7 +77,7 @@ def main():
         return
 
     # 모니터링 실행
-    print("\n🔍 키워드 모니터링 시작...")
+    logging.info("\n🔍 키워드 모니터링 시작...")
 
     # Scraper 초기화
     scraper = NaverScraper()
@@ -89,13 +89,13 @@ def main():
     results = monitor.monitor_keywords()
 
     # 결과 보고서 출력
-    print("\n" + "=" * 60)
-    reporter.print_report()
+    logging.info("\n" + "=" * 60)
+    reporter.logging.info_report()
 
     # 통계 출력
-    reporter.print_statistics()
+    reporter.logging.info_statistics()
 
-    print("\n✅ 모니터링 완료!")
+    logging.info("\n✅ 모니터링 완료!")
 
 
 if __name__ == "__main__":

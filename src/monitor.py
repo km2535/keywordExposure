@@ -6,7 +6,7 @@ from datetime import datetime
 from tqdm import tqdm
 from urllib.parse import urlparse
 from typing import List, Dict, Optional
-
+import logging
 
 class KeywordMonitor:
     """Google Sheets 기반 키워드 모니터링 클래스"""
@@ -201,7 +201,7 @@ class KeywordMonitor:
         keywords = self.sheets_client.get_keywords_for_monitoring()
 
         if not keywords:
-            print("확인할 게시글이 없습니다.")
+            logging.info("확인할 게시글이 없습니다.")
             return []
 
         # URL이 있는 항목만 필터링
@@ -212,10 +212,10 @@ class KeywordMonitor:
         ]
 
         if not urls_to_check:
-            print("확인할 URL이 없습니다.")
+            logging.info("확인할 URL이 없습니다.")
             return []
 
-        print(f"\n총 {len(urls_to_check)}개의 게시글 삭제 여부를 확인합니다...")
+        logging.info(f"\n총 {len(urls_to_check)}개의 게시글 삭제 여부를 확인합니다...")
 
         # 일괄 삭제 확인
         results = self.scraper.batch_check_posts_deleted(urls_to_check)
@@ -232,15 +232,15 @@ class KeywordMonitor:
                     'column': '삭제',
                     'value': 'O'
                 })
-                print(f"  🗑️ 삭제된 글 발견 (행 {result['row']}): {result['url']}")
+                logging.info(f"  🗑️ 삭제된 글 발견 (행 {result['row']}): {result['url']}")
 
         # 결과를 Google Sheets에 업데이트
         if batch_updates:
-            print(f"\n{len(batch_updates)}개의 삭제된 글을 Google Sheets에 업데이트 중...")
+            logging.info(f"\n{len(batch_updates)}개의 삭제된 글을 Google Sheets에 업데이트 중...")
             self.sheets_client.batch_update_cells(batch_updates)
-            print("업데이트 완료!")
+            logging.info("업데이트 완료!")
 
-        print(f"\n삭제 확인 결과: 전체 {len(results)}개 중 {deleted_count}개 삭제됨")
+        logging.info(f"\n삭제 확인 결과: 전체 {len(results)}개 중 {deleted_count}개 삭제됨")
 
         return results
 
@@ -248,15 +248,15 @@ class KeywordMonitor:
         """
         키워드 모니터링 + 삭제 확인을 함께 수행
         """
-        print("=" * 60)
-        print(" 1단계: 키워드 노출 모니터링")
-        print("=" * 60)
+        logging.info("=" * 60)
+        logging.info(" 1단계: 키워드 노출 모니터링")
+        logging.info("=" * 60)
         monitoring_results = self.monitor_keywords()
 
-        print("\n")
-        print("=" * 60)
-        print(" 2단계: 게시글 삭제 여부 확인")
-        print("=" * 60)
+        logging.info("\n")
+        logging.info("=" * 60)
+        logging.info(" 2단계: 게시글 삭제 여부 확인")
+        logging.info("=" * 60)
         deletion_results = self.check_deleted_posts()
 
         return {
