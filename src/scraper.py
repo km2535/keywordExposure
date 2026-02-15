@@ -238,6 +238,9 @@ class NaverScraper:
             chrome_options.add_argument('--disable-dev-shm-usage')
             chrome_options.add_argument('--disable-gpu')
             chrome_options.add_argument('--log-level=3')  # 로그 최소화
+            chrome_options.add_argument('--incognito')  # 시크릿 모드
+            chrome_options.add_argument('--disable-application-cache')  # 앱 캐시 비활성화
+            chrome_options.add_argument('--disable-cache')  # 디스크 캐시 비활성화
             chrome_options.add_argument(f'user-agent={self.get_random_user_agent()}')
 
             self._driver = webdriver.Chrome(
@@ -247,6 +250,23 @@ class NaverScraper:
             print("Selenium WebDriver 초기화 완료")
 
         return self._driver
+
+    def clear_cache_and_cookies(self):
+        """WebDriver의 캐시와 쿠키를 모두 초기화"""
+        if self._driver:
+            try:
+                self._driver.delete_all_cookies()
+                # Chrome DevTools Protocol로 브라우저 캐시 완전 삭제
+                self._driver.execute_cdp_cmd('Network.clearBrowserCache', {})
+                self._driver.execute_cdp_cmd('Network.clearBrowserCookies', {})
+                print("브라우저 캐시 및 쿠키 초기화 완료")
+            except Exception as e:
+                print(f"캐시/쿠키 초기화 중 오류 (무시): {str(e)}")
+
+    def reset_driver(self):
+        """WebDriver를 완전히 종료하고 새로 시작 (캐시/쿠키 완전 초기화)"""
+        self.close_driver()
+        print("WebDriver 리셋 완료 - 다음 사용 시 새로 초기화됩니다.")
 
     def close_driver(self):
         """WebDriver 종료"""

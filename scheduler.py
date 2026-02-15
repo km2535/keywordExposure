@@ -138,7 +138,7 @@ if __name__ == "__main__":
     try:
         while True:
             run_monitoring()
-            logging.info("다음 모니터링 검사를 시작합니다...")
+            logging.info("모니터링 작업 완료. 캐시/쿠키 초기화 후 다음 검사를 시작합니다...")
     except KeyboardInterrupt:
         logging.info("사용자에 의해 스케줄러가 중지되었습니다.")
     except Exception as e:

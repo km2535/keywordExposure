@@ -25,8 +25,10 @@ DEFAULT_PAGES = 1
 # ===========================================
 
 # Google Sheets 문서 ID
-GOOGLE_SHEETS_ID = '1NUubPvhkifd_v7c6ZJ7ST0QCZkP0b3nsquFRuarMHCk'
-# GOOGLE_SHEETS_ID = '1iOzKHKTBD9tcqUUqNE3iqiWbTHDRh3lT2vyPxDq4-9U'
+# GOOGLE_SHEETS_ID = '1NUubPvhkifd_v7c6ZJ7ST0QCZkP0b3nsquFRuarMHCk'
+
+#테스트
+GOOGLE_SHEETS_ID = '1iOzKHKTBD9tcqUUqNE3iqiWbTHDRh3lT2vyPxDq4-9U'
 
 # 시트 GID (URL의 gid= 파라미터)
 GOOGLE_SHEETS_GID = 1011348622
