@@ -159,6 +159,36 @@ class NaverScraper:
 
         return unique_urls
 
+    def extract_main_urls(self, soup):
+        """
+        메인 노출 URL만 추출.
+        data-heatmap-target=".link" 인 a 태그만 메인 노출로 판단.
+        data-heatmap-target=".series" 는 서브 노출이므로 제외.
+        """
+        urls = []
+        try:
+            for a_tag in soup.find_all('a', attrs={'data-heatmap-target': '.link'}):
+                href = a_tag.get('href', '')
+                if href and ('http://' in href or 'https://' in href):
+                    urls.append(href)
+        except Exception as e:
+            logging.info(f"메인 URL 추출 중 오류: {str(e)}")
+
+        # URL 정규화 (쿼리 파라미터 제거)
+        normalized_urls = []
+        for url in urls:
+            if 'cafe.naver.com' in url or 'blog.naver.com' in url:
+                base_url = url.split('?')[0]
+                if '=' in base_url:
+                    base_url = base_url.split('=')[0]
+                normalized_urls.append(base_url)
+            else:
+                normalized_urls.append(url)
+
+        unique_urls = list(dict.fromkeys(normalized_urls))
+        logging.info(f"메인 노출(data-heatmap-target='.link') URL {len(unique_urls)}개 추출 완료")
+        return unique_urls
+
     def get_cafe_post_views(self, url):
         """
         네이버 카페 글의 조회수를 가져오는 함수

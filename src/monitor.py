@@ -130,8 +130,9 @@ class KeywordMonitor:
         for keyword, items in tqdm(keyword_groups.items(), desc="키워드별 모니터링 진행 중"):
             
             # 해당 키워드의 네이버 검색 결과는 한 번만 가져옴
+            # data-heatmap-target=".link" 인 메인 노출 URL만 사용
             soup = self.scraper.get_search_results(keyword, page=1)
-            search_urls = self.scraper.extract_urls(soup) if soup else []
+            search_urls = self.scraper.extract_main_urls(soup) if soup else []
 
             # 3. 같은 키워드 내의 각 URL(행)들을 개별 검사
             for item in items:
@@ -177,7 +178,8 @@ class KeywordMonitor:
         if not soup:
             return {'error': '검색 실패'}
 
-        search_urls = self.scraper.extract_urls(soup)
+        # data-heatmap-target=".link" 인 메인 노출 URL만 사용
+        search_urls = self.scraper.extract_main_urls(soup)
         is_exposed = self.check_url_in_results(target_url, search_urls)
         position = self.find_url_position(target_url, search_urls) if is_exposed else None
         top_cafe_info = self.find_top_cafe_info(search_urls, cafe_list) if cafe_list else None
