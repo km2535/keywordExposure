@@ -11,17 +11,43 @@ import logging
 import traceback
 import threading
 from datetime import datetime
+from logging.handlers import TimedRotatingFileHandler
 from src.config import OUTPUT_DIR, DATA_DIR
 
 # 현재 스크립트 디렉토리의 절대 경로
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# 로깅 설정
+# 날짜별 로그 디렉토리
+LOG_DIR = os.path.join(SCRIPT_DIR, 'logs')
+os.makedirs(LOG_DIR, exist_ok=True)
+
+def _log_namer(default_name):
+    """
+    로테이션된 파일명을 날짜 포함 형식으로 변환
+    monitoring_scheduler.log.2026-02-23 → monitoring_2026-02-23.log
+    """
+    dir_part = os.path.dirname(default_name)
+    base = os.path.basename(default_name)
+    parts = base.split('.log.')
+    if len(parts) == 2:
+        return os.path.join(dir_part, f'monitoring_{parts[1]}.log')
+    return default_name
+
+# 로깅 설정 (자정마다 날짜별 파일로 로테이션, 30일 보관)
+_file_handler = TimedRotatingFileHandler(
+    os.path.join(LOG_DIR, 'monitoring_scheduler.log'),
+    when='midnight',
+    backupCount=30,
+    encoding='utf-8'
+)
+_file_handler.suffix = '%Y-%m-%d'
+_file_handler.namer = _log_namer
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(os.path.join(SCRIPT_DIR, 'monitoring_scheduler.log')),
+        _file_handler,
         logging.StreamHandler()
     ]
 )
