@@ -142,12 +142,15 @@ class KeywordMonitor:
                 continue
 
             # 교차노출 감지: 이 키워드의 검색 결과에 다른 키워드의 URL이 있는지 확인
+            # 교차키워드는 "키워드(순위)" 형식으로 저장
             cross_keywords = []
-            for search_url in search_urls:
+            seen_kws = set()
+            for idx, search_url in enumerate(search_urls, start=1):
                 norm = self.normalize_url(search_url)
                 mapped_kw = url_to_keyword.get(norm)
-                if mapped_kw and mapped_kw != keyword and mapped_kw not in cross_keywords:
-                    cross_keywords.append(mapped_kw)
+                if mapped_kw and mapped_kw != keyword and mapped_kw not in seen_kws:
+                    seen_kws.add(mapped_kw)
+                    cross_keywords.append(f"{mapped_kw}({idx})")
             if cross_keywords:
                 logging.info(f"교차노출 감지 - 키워드 '{keyword}': {cross_keywords}")
 
@@ -169,10 +172,12 @@ class KeywordMonitor:
                         # 삭제된 경우: 노출 X, 삭제 O
                         exposure_status = "X"
                         deletion_status = "O"
+                        rank = None
                     else:
-                        # 살아있는 경우: 검색 결과(search_urls)에 포함되었는지 확인
+                        # 살아있는 경우: 검색 결과에서 순위(위치) 확인
                         deletion_status = "X"
-                        is_exposed = self.check_url_in_results(target_url, search_urls)
+                        rank = self.find_url_position(target_url, search_urls)
+                        is_exposed = rank is not None
                         exposure_status = "O" if is_exposed else "X"
 
                     # 결과 데이터 구성
@@ -180,7 +185,8 @@ class KeywordMonitor:
                         'row': row,
                         'exposure_status': exposure_status,
                         'deletion_status': deletion_status,
-                        'cross_keywords': cross_keywords
+                        'cross_keywords': cross_keywords,
+                        'rank': rank
                     })
                 except Exception as e:
                     logging.error(f"행 {row} 처리 중 오류 발생, 건너뜀: {e}")

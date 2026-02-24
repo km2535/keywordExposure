@@ -355,6 +355,9 @@ class GoogleSheetsClient:
             # 노출 상태 업데이트
             if 'exposure_status' in result:
                 updates.append({'row': row, 'column': '노출', 'value': result['exposure_status']})
+            # 순위 업데이트
+            if 'rank' in result:
+                updates.append({'row': row, 'column': '순위', 'value': result['rank'] if result['rank'] is not None else ''})
             # 삭제 여부 업데이트
             if 'deletion_status' in result:
                 updates.append({'row': row, 'column': '삭제', 'value': result['deletion_status']})

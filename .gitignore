@@ -1,3 +1,5 @@
 .DS_Store
 credentails.json
 config/credentials.json
+src/__pycache__/
+__pycache__/
