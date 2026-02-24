@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import random
+from urllib.parse import urlparse
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -28,7 +29,24 @@ class NaverScraper:
     def get_random_user_agent(self):
         """무작위 User-Agent 반환"""
         return random.choice(self.user_agents)
-        
+
+    @staticmethod
+    def normalize_url(url: str) -> str:
+        """
+        URL 정규화 (단일 공통 로직):
+          1. 쿼리 파라미터(?...) 제거
+          2. 카페/블로그 URL의 JWT 토큰(=token) 제거
+          3. 모바일 도메인(m.) 제거
+        """
+        if not url:
+            return ''
+        base_url = url.split('?')[0]
+        if ('cafe.naver.com' in base_url or 'blog.naver.com' in base_url) and '=' in base_url:
+            base_url = base_url.split('=')[0]
+        parsed = urlparse(base_url)
+        normalized_netloc = parsed.netloc.replace('m.', '', 1)
+        return normalized_netloc + parsed.path
+
     def get_search_results(self, keyword, page=1, delay=True):
         """네이버 검색 결과를 가져오는 함수"""
         if delay:
@@ -174,17 +192,7 @@ class NaverScraper:
         except Exception as e:
             logging.info(f"메인 URL 추출 중 오류: {str(e)}")
 
-        # URL 정규화 (쿼리 파라미터 제거)
-        normalized_urls = []
-        for url in urls:
-            if 'cafe.naver.com' in url or 'blog.naver.com' in url:
-                base_url = url.split('?')[0]
-                if '=' in base_url:
-                    base_url = base_url.split('=')[0]
-                normalized_urls.append(base_url)
-            else:
-                normalized_urls.append(url)
-
+        normalized_urls = [self.normalize_url(url) for url in urls]
         unique_urls = list(dict.fromkeys(normalized_urls))
         logging.info(f"메인 노출(data-heatmap-target='.link') URL {len(unique_urls)}개 추출 완료")
         return unique_urls

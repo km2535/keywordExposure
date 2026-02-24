@@ -236,15 +236,17 @@ class GoogleSheetsClient:
         if not updates:
             return
 
+        # 고유 컬럼 인덱스를 한 번만 계산 (중복 조회 방지)
+        needed_columns = {u['column'] for u in updates}
+        col_indices = {col: self.find_column_index(col) for col in needed_columns}
+
         # gspread batch_update 형식으로 변환
         cell_updates = []
-
         for update in updates:
-            row = update['row']
-            col_idx = self.find_column_index(update['column'])
+            col_idx = col_indices.get(update['column'])
             if col_idx:
                 cell_updates.append({
-                    'range': gspread.utils.rowcol_to_a1(row, col_idx),
+                    'range': gspread.utils.rowcol_to_a1(update['row'], col_idx),
                     'values': [[update['value']]]
                 })
 

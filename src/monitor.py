@@ -23,17 +23,8 @@ class KeywordMonitor:
         self.sheets_client = sheets_client
 
     def normalize_url(self, url: str) -> str:
-        """
-        URL 정규화: 네이버 URL의 모바일 'm.'을 제거하고 쿼리 파라미터를 제외
-        """
-        if not url:
-            return ''
-        parsed = urlparse(url)
-        # 네이버 모바일 카페/블로그 URL은 netloc에서 'm.'을 제거하여 정규화
-        normalized_netloc = parsed.netloc.replace('m.', '')
-
-        # 쿼리 파라미터는 비교에서 제외
-        return normalized_netloc + parsed.path
+        """URL 정규화 — NaverScraper.normalize_url 위임 (단일 공통 로직)"""
+        return self.scraper.normalize_url(url)
 
     def check_url_in_results(self, url: str, search_urls: List[str]) -> bool:
         """
@@ -128,36 +119,51 @@ class KeywordMonitor:
 
         # 2. 키워드별 루프
         for keyword, items in tqdm(keyword_groups.items(), desc="키워드별 모니터링 진행 중"):
-            
-            # 해당 키워드의 네이버 검색 결과는 한 번만 가져옴
-            # data-heatmap-target=".link" 인 메인 노출 URL만 사용
-            soup = self.scraper.get_search_results(keyword, page=1)
-            search_urls = self.scraper.extract_main_urls(soup) if soup else []
+            try:
+                # 해당 키워드의 네이버 검색 결과는 한 번만 가져옴
+                # data-heatmap-target=".link" 인 메인 노출 URL만 사용
+                soup = self.scraper.get_search_results(keyword, page=1)
+                if not soup:
+                    logging.warning(f"키워드 '{keyword}' 검색 결과 가져오기 실패, 건너뜀")
+                    continue
+                search_urls = self.scraper.extract_main_urls(soup)
+            except Exception as e:
+                logging.error(f"키워드 '{keyword}' 검색 중 오류 발생, 건너뜀: {e}")
+                continue
 
             # 3. 같은 키워드 내의 각 URL(행)들을 개별 검사
             for item in items:
                 target_url = item['target_url']
                 row = item['row']
 
-                # [개별 확인] 게시글 삭제 여부를 URL마다 각각 확인
-                is_deleted, _ = self.scraper.check_post_deleted(target_url)
+                try:
+                    # [개별 확인] 게시글 삭제 여부를 URL마다 각각 확인
+                    is_deleted, err_msg = self.scraper.check_post_deleted(target_url)
 
-                if is_deleted:
-                    # 삭제된 경우: 노출 X, 삭제 O
-                    exposure_status = "X"
-                    deletion_status = "O"
-                else:
-                    # 살아있는 경우: 검색 결과(search_urls)에 포함되었는지 확인
-                    deletion_status = "X"
-                    is_exposed = self.check_url_in_results(target_url, search_urls)
-                    exposure_status = "O" if is_exposed else "X"
+                    if is_deleted is None:
+                        # 삭제 확인 자체가 실패한 경우 — 이 행은 건너뜀
+                        logging.warning(f"삭제 확인 실패, 건너뜀 (행 {row}): {target_url} / {err_msg}")
+                        continue
 
-                # 결과 데이터 구성
-                batch_updates.append({
-                    'row': row,
-                    'exposure_status': exposure_status,
-                    'deletion_status': deletion_status 
-                })
+                    if is_deleted:
+                        # 삭제된 경우: 노출 X, 삭제 O
+                        exposure_status = "X"
+                        deletion_status = "O"
+                    else:
+                        # 살아있는 경우: 검색 결과(search_urls)에 포함되었는지 확인
+                        deletion_status = "X"
+                        is_exposed = self.check_url_in_results(target_url, search_urls)
+                        exposure_status = "O" if is_exposed else "X"
+
+                    # 결과 데이터 구성
+                    batch_updates.append({
+                        'row': row,
+                        'exposure_status': exposure_status,
+                        'deletion_status': deletion_status
+                    })
+                except Exception as e:
+                    logging.error(f"행 {row} 처리 중 오류 발생, 건너뜀: {e}")
+                    continue
 
         # 4. Google Sheets 일괄 업데이트
         if batch_updates:
