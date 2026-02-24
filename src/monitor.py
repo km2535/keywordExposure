@@ -109,11 +109,21 @@ class KeywordMonitor:
         for item in keywords_data:
             if item.get('is_deleted') == 'O': # 이미 삭제된 행은 제외
                 continue
-            
+
             kw = item['keyword']
             if kw not in keyword_groups:
                 keyword_groups[kw] = []
             keyword_groups[kw].append(item)
+
+        # 교차노출 감지용: 정규화된 URL → 키워드 역매핑
+        # 삭제되지 않은 모든 행의 URL을 수집
+        url_to_keyword = {}
+        for item in keywords_data:
+            if item.get('is_deleted') == 'O':
+                continue
+            norm = self.normalize_url(item.get('target_url', ''))
+            if norm:
+                url_to_keyword[norm] = item['keyword']
 
         batch_updates = []
 
@@ -130,6 +140,16 @@ class KeywordMonitor:
             except Exception as e:
                 logging.error(f"키워드 '{keyword}' 검색 중 오류 발생, 건너뜀: {e}")
                 continue
+
+            # 교차노출 감지: 이 키워드의 검색 결과에 다른 키워드의 URL이 있는지 확인
+            cross_keywords = []
+            for search_url in search_urls:
+                norm = self.normalize_url(search_url)
+                mapped_kw = url_to_keyword.get(norm)
+                if mapped_kw and mapped_kw != keyword and mapped_kw not in cross_keywords:
+                    cross_keywords.append(mapped_kw)
+            if cross_keywords:
+                logging.info(f"교차노출 감지 - 키워드 '{keyword}': {cross_keywords}")
 
             # 3. 같은 키워드 내의 각 URL(행)들을 개별 검사
             for item in items:
@@ -159,7 +179,8 @@ class KeywordMonitor:
                     batch_updates.append({
                         'row': row,
                         'exposure_status': exposure_status,
-                        'deletion_status': deletion_status
+                        'deletion_status': deletion_status,
+                        'cross_keywords': cross_keywords
                     })
                 except Exception as e:
                     logging.error(f"행 {row} 처리 중 오류 발생, 건너뜀: {e}")

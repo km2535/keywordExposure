@@ -359,4 +359,12 @@ class GoogleSheetsClient:
             if 'deletion_status' in result:
                 updates.append({'row': row, 'column': '삭제', 'value': result['deletion_status']})
 
+            # 교차노출 업데이트
+            if 'cross_keywords' in result:
+                cross_kws = result['cross_keywords']
+                updates.append({'row': row, 'column': '교차노출', 'value': 'O' if cross_kws else 'X'})
+                for i in range(1, 6):
+                    value = cross_kws[i - 1] if i <= len(cross_kws) else ''
+                    updates.append({'row': row, 'column': f'교차키워드{i}', 'value': value})
+
         self.batch_update_cells(updates)

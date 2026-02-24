@@ -11,7 +11,6 @@ import logging
 import traceback
 import threading
 from datetime import datetime
-from logging.handlers import TimedRotatingFileHandler
 from src.config import OUTPUT_DIR, DATA_DIR
 
 # 현재 스크립트 디렉토리의 절대 경로
@@ -21,27 +20,28 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_DIR = os.path.join(SCRIPT_DIR, 'logs')
 os.makedirs(LOG_DIR, exist_ok=True)
 
-def _log_namer(default_name):
-    """
-    로테이션된 파일명을 날짜 포함 형식으로 변환
-    monitoring_scheduler.log.2026-02-23 → monitoring_2026-02-23.log
-    """
-    dir_part = os.path.dirname(default_name)
-    base = os.path.basename(default_name)
-    parts = base.split('.log.')
-    if len(parts) == 2:
-        return os.path.join(dir_part, f'monitoring_{parts[1]}.log')
-    return default_name
 
-# 로깅 설정 (자정마다 날짜별 파일로 로테이션, 30일 보관)
-_file_handler = TimedRotatingFileHandler(
-    os.path.join(LOG_DIR, 'monitoring_scheduler.log'),
-    when='midnight',
-    backupCount=30,
-    encoding='utf-8'
-)
-_file_handler.suffix = '%Y-%m-%d'
-_file_handler.namer = _log_namer
+class DailyFileHandler(logging.FileHandler):
+    """자정마다 monitoring_yyyyMMdd.log 새 파일로 전환하는 핸들러"""
+
+    def __init__(self, log_dir):
+        self.log_dir = log_dir
+        self._current_date = datetime.now().strftime('%Y%m%d')
+        log_path = os.path.join(log_dir, f'monitoring_{self._current_date}.log')
+        super().__init__(log_path, encoding='utf-8')
+
+    def emit(self, record):
+        today = datetime.now().strftime('%Y%m%d')
+        if today != self._current_date:
+            self.close()
+            self._current_date = today
+            self.baseFilename = os.path.join(self.log_dir, f'monitoring_{today}.log')
+            self.stream = self._open()
+        super().emit(record)
+
+
+# 로깅 설정 (자정마다 monitoring_yyyyMMdd.log 파일로 자동 전환)
+_file_handler = DailyFileHandler(LOG_DIR)
 
 logging.basicConfig(
     level=logging.INFO,
