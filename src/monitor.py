@@ -105,22 +105,19 @@ class KeywordMonitor:
             return []
 
         # 1. 키워드별로 데이터 그룹화 (검색 횟수 최소화 목적)
+        # 교차노출 검사를 위해 삭제된 키워드도 검색 대상에 포함
         keyword_groups = {}
         for item in keywords_data:
-            if item.get('is_deleted') == 'O': # 이미 삭제된 행은 제외
-                continue
-
             kw = item['keyword']
             if kw not in keyword_groups:
                 keyword_groups[kw] = []
+            # 모든 항목을 개별 처리 목록에 추가 (삭제·URL없음 여부 무관, 교차노출 기록 대상)
             keyword_groups[kw].append(item)
 
         # 교차노출 감지용: 정규화된 URL → 키워드 역매핑
-        # 삭제되지 않은 모든 행의 URL을 수집
+        # 삭제된 항목도 포함하여 모든 키워드의 URL을 수집
         url_to_keyword = {}
         for item in keywords_data:
-            if item.get('is_deleted') == 'O':
-                continue
             norm = self.normalize_url(item.get('target_url', ''))
             if norm:
                 url_to_keyword[norm] = item['keyword']
@@ -158,6 +155,14 @@ class KeywordMonitor:
             for item in items:
                 target_url = item['target_url']
                 row = item['row']
+
+                if not target_url or item.get('is_deleted') == 'O':
+                    # URL 없는 항목 또는 이미 삭제된 항목: 교차노출 결과만 기록
+                    batch_updates.append({
+                        'row': row,
+                        'cross_keywords': cross_keywords,
+                    })
+                    continue
 
                 try:
                     # [개별 확인] 게시글 삭제 여부를 URL마다 각각 확인

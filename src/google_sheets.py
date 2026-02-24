@@ -315,13 +315,11 @@ class GoogleSheetsClient:
             post_url = data.get('post_url', '')
             if isinstance(post_url, str):
                 post_url = post_url.strip()
-            if not post_url:
-                continue
 
             monitoring_list.append({
                 'row': data['row'],
                 'keyword': data['keyword'],
-                'target_url': post_url,
+                'target_url': post_url,  # 빈 문자열 허용 (교차노출 검사 대상)
                 'priority': data.get('priority', ''),
                 'current_status': data.get('exposure_status', ''),
                 'author_id': data.get('author_id', ''),
