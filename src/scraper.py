@@ -197,6 +197,38 @@ class NaverScraper:
         logging.info(f"메인 노출(data-heatmap-target='.link') URL {len(unique_urls)}개 추출 완료")
         return unique_urls
 
+    def extract_popular_post_urls(self, soup):
+        """
+        검색 결과에서 인기글 섹션에 속한 URL 집합 반환.
+        h2 텍스트에 '인기글'이 포함된 sds-comps-header-title 섹션을 찾아
+        해당 섹션 내 data-heatmap-target=".link" URL을 추출.
+        인기글 섹션이 없으면 빈 집합 반환.
+        """
+        popular_urls = set()
+        try:
+            all_header_titles = soup.find_all('div', class_=lambda c: c and 'sds-comps-header-title' in c)
+            logging.info(f"[인기글] sds-comps-header-title 개수: {len(all_header_titles)}")
+            for i, header_title in enumerate(all_header_titles):
+                h2 = header_title.find('h2')
+                h2_text = h2.get_text(strip=True) if h2 else None
+                logging.info(f"[인기글] header_title[{i}] h2={h2_text!r}")
+                if not h2 or '인기글' not in h2.get_text():
+                    continue
+                section = header_title.parent.parent  # sds-comps-header의 부모 (header + 글목록 모두 포함)
+                if section is None:
+                    logging.info(f"[인기글] section is None, 스킵")
+                    continue
+                links = section.find_all('a', attrs={'data-heatmap-target': '.link'})
+                logging.info(f"[인기글] section 내 .link 개수: {len(links)}")
+                for a_tag in links:
+                    href = a_tag.get('href', '')
+                    if href and ('http://' in href or 'https://' in href):
+                        popular_urls.add(self.normalize_url(href))
+        except Exception as e:
+            logging.info(f"인기글 URL 추출 중 오류: {str(e)}")
+        logging.info(f"인기글 섹션 URL {len(popular_urls)}개 추출 완료")
+        return popular_urls
+
     def get_cafe_post_views(self, url):
         """
         네이버 카페 글의 조회수를 가져오는 함수

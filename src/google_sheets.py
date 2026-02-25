@@ -360,6 +360,10 @@ class GoogleSheetsClient:
             if 'deletion_status' in result:
                 updates.append({'row': row, 'column': '삭제', 'value': result['deletion_status']})
 
+            # 인기글 여부 업데이트
+            if 'popular_status' in result:
+                updates.append({'row': row, 'column': '인기글여부', 'value': result['popular_status']})
+
             # 교차노출 업데이트
             if 'cross_keywords' in result:
                 cross_kws = result['cross_keywords']

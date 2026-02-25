@@ -134,6 +134,7 @@ class KeywordMonitor:
                     logging.warning(f"키워드 '{keyword}' 검색 결과 가져오기 실패, 건너뜀")
                     continue
                 search_urls = self.scraper.extract_main_urls(soup)
+                popular_urls = self.scraper.extract_popular_post_urls(soup)
             except Exception as e:
                 logging.error(f"키워드 '{keyword}' 검색 중 오류 발생, 건너뜀: {e}")
                 continue
@@ -156,11 +157,22 @@ class KeywordMonitor:
                 target_url = item['target_url']
                 row = item['row']
 
-                if not target_url or item.get('is_deleted') == 'O':
-                    # URL 없는 항목 또는 이미 삭제된 항목: 교차노출 결과만 기록
+                if not target_url:
+                    # URL 없는 항목: 인기글 섹션 존재 여부만 기록
                     batch_updates.append({
                         'row': row,
                         'cross_keywords': cross_keywords,
+                        'popular_status': 'O' if popular_urls else 'X',
+                    })
+                    continue
+
+                if item.get('is_deleted') == 'O':
+                    # 이미 삭제된 항목: 인기글은 검색 결과 기준으로 업데이트
+                    popular_status = "O" if popular_urls else "X"
+                    batch_updates.append({
+                        'row': row,
+                        'cross_keywords': cross_keywords,
+                        'popular_status': popular_status,
                     })
                     continue
 
@@ -172,7 +184,8 @@ class KeywordMonitor:
                         # 삭제 확인 자체가 실패한 경우 — 이 행은 건너뜀
                         logging.warning(f"삭제 확인 실패, 건너뜀 (행 {row}): {target_url} / {err_msg}")
                         continue
-
+                    
+                    popular_status = "O" if popular_urls else "X"
                     if is_deleted:
                         # 삭제된 경우: 노출 X, 삭제 O
                         exposure_status = "X"
@@ -191,7 +204,8 @@ class KeywordMonitor:
                         'exposure_status': exposure_status,
                         'deletion_status': deletion_status,
                         'cross_keywords': cross_keywords,
-                        'rank': rank
+                        'rank': rank,
+                        'popular_status': popular_status,
                     })
                 except Exception as e:
                     logging.error(f"행 {row} 처리 중 오류 발생, 건너뜀: {e}")
