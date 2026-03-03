@@ -2,6 +2,11 @@
 시스템 설정 변수 관리 모듈
 """
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # 출력 디렉토리 경로
 OUTPUT_DIR = '/var/www/keywordE/build/data'
 # OUTPUT_DIR = 'data'
@@ -33,6 +38,17 @@ GOOGLE_SHEETS_GID = 1011348622
 
 # 서비스 계정 인증 JSON 파일 경로
 GOOGLE_CREDENTIALS_PATH = 'config/credentials.json'
+
+# ===========================================
+# DB 설정
+# ===========================================
+
+DB_HOST = os.getenv('DB_HOST', 'localhost')
+DB_PORT = int(os.getenv('DB_PORT', 3306))
+DB_USER = os.getenv('DB_USER', 'root')
+DB_PASSWORD = os.getenv('DB_PASSWORD', '')
+DB_NAME = os.getenv('DB_NAME', 'cafe_auto')
+DB_TABLE = os.getenv('DB_TABLE', 'keyword_patrol_logs')
 
 # ===========================================
 # 이메일 설정

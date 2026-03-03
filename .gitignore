@@ -3,3 +3,7 @@ credentails.json
 config/credentials.json
 src/__pycache__/
 __pycache__/
+/logs
+logs/monitoring_20260224.log
+logs/*.log
+.env

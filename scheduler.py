@@ -66,9 +66,9 @@ except ImportError as e:
 
 
 def run_monitoring():
-    """모니터링 스크립트 실행 (Google Sheets 기반)"""
+    """모니터링 스크립트 실행 (DB 기반)"""
     logging.info("=" * 60)
-    logging.info("모니터링 작업 시작 (Google Sheets 버전)")
+    logging.info("모니터링 작업 시작 (DB 기반)")
     logging.info("=" * 60)
 
     # 현재 시간 기록
