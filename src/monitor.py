@@ -154,9 +154,13 @@ class KeywordMonitor:
                     is_deleted, err_msg = self.scraper.check_post_deleted(target_url)
 
                     if is_deleted is None:
-                        # 삭제 확인 자체가 실패한 경우 — 이 행은 건너뜀
-                        logging.warning(f"삭제 확인 실패, 건너뜀 (행 {row}): {target_url} / {err_msg}")
-                        continue
+                        if 'cafe.naver.com' not in (target_url or ''):
+                            # 카페가 아닌 URL(블로그 등)은 삭제 확인 불가 → 살아있는 것으로 간주하고 노출만 확인
+                            is_deleted = False
+                        else:
+                            # 카페 URL인데 확인 실패 — 이 행은 건너뜀
+                            logging.warning(f"삭제 확인 실패, 건너뜀 (행 {row}): {target_url} / {err_msg}")
+                            continue
 
                     popular_status = "O" if popular_urls else "X"
                     if is_deleted:

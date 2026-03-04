@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:search.naver.com)"
+      "WebFetch(domain:search.naver.com)",
+      "Bash(python test_keyword.py)",
+      "Bash(python -c \":*)"
     ]
   }
 }

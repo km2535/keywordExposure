@@ -175,7 +175,8 @@ class DatabaseClient:
             with self.connection.cursor() as cursor:
                 for result in results:
                     url = result.get('url', '').strip()
-                    if not url:
+                    row_id = result.get('row')
+                    if not url and not row_id:
                         continue
 
                     set_clauses = ['checked_at = %s', 'updated_at = %s']
@@ -212,13 +213,20 @@ class DatabaseClient:
                             set_clauses.append(f'cross_keyword{i} = %s')
                             params.append(cross_kws[i - 1] if i <= len(cross_kws) else None)
 
-                    params.append(url)  # WHERE 절
-
-                    sql = f"""
-                        UPDATE {self.table}
-                        SET {', '.join(set_clauses)}
-                        WHERE result_url = %s
-                    """
+                    if url:
+                        params.append(url)
+                        sql = f"""
+                            UPDATE {self.table}
+                            SET {', '.join(set_clauses)}
+                            WHERE result_url = %s
+                        """
+                    else:
+                        params.append(row_id)
+                        sql = f"""
+                            UPDATE {self.table}
+                            SET {', '.join(set_clauses)}
+                            WHERE id = %s
+                        """
                     cursor.execute(sql, params)
                     updated_count += cursor.rowcount
 
