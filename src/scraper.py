@@ -49,25 +49,47 @@ class NaverScraper:
         return normalized_netloc + parsed.path
 
     def get_search_results(self, keyword, page=1, delay=True):
-        """네이버 검색 결과를 Selenium으로 가져오는 함수"""
+        """네이버 검색 결과를 가져오는 함수 (requests 우선, 403 시 Selenium 폴백)"""
         if delay:
-            time.sleep(random.uniform(1.0, 2.0))
+            time.sleep(random.uniform(0.5, 1.0))
 
         from urllib.parse import urlencode
         params = urlencode({"query": keyword, "start": (page - 1) * 10 + 1})
         url = f"{self.base_url}?{params}"
 
+        logging.info(f"'{keyword}' 검색 중 (페이지 {page})...")
+
+        # 1단계: requests 시도 (빠름)
+        try:
+            headers = {
+                "User-Agent": self.get_random_user_agent(),
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+                "Accept-Encoding": "identity",
+                "Referer": "https://www.naver.com/",
+                "Connection": "keep-alive",
+                "Upgrade-Insecure-Requests": "1",
+            }
+            response = self._session.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
+            # 실제 검색 결과가 있는지 확인 (봇 차단 페이지는 결과 없음)
+            if soup.find('a', attrs={'data-heatmap-target': '.link'}):
+                return soup
+            logging.info(f"requests 결과 없음 (봇 차단 추정), Selenium으로 전환")
+        except Exception as e:
+            logging.info(f"requests 실패 ({e}), Selenium으로 전환")
+
+        # 2단계: Selenium 폴백 (느리지만 확실)
         for attempt in range(2):
             try:
-                logging.info(f"'{keyword}' 검색 중 (페이지 {page})...")
                 driver = self._init_driver()
                 driver.get(url)
-                time.sleep(random.uniform(1.5, 2.5))
+                time.sleep(random.uniform(1.5, 2.0))
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
                 return soup
             except Exception as e:
-                logging.info(f"검색 결과 가져오기 실패 (시도 {attempt+1}): {str(e)}")
-                # 드라이버가 죽었을 수 있으므로 리셋 후 재시도
+                logging.info(f"Selenium 실패 (시도 {attempt+1}): {str(e)}")
                 self.close_driver()
                 if attempt == 0:
                     time.sleep(2)
@@ -82,7 +104,7 @@ class NaverScraper:
         try:
             for a_tag in soup.find_all('a'):
                 # 모든 속성 확인
-                for attr_name, attr_value in a_tag.attrs.items():
+                for _, attr_value in a_tag.attrs.items():
                     # URL 형태인 모든 속성 값 추출
                     if isinstance(attr_value, str) and ('http://' in attr_value or 'https://' in attr_value):
                         # 네이버 URL에 초점
