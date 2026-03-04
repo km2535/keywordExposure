@@ -49,40 +49,29 @@ class NaverScraper:
         return normalized_netloc + parsed.path
 
     def get_search_results(self, keyword, page=1, delay=True):
-        """네이버 검색 결과를 가져오는 함수"""
+        """네이버 검색 결과를 Selenium으로 가져오는 함수"""
         if delay:
-            # 차단 방지를 위한 랜덤 지연
-            time.sleep(random.uniform(0.5, 1.5))
-            
-        headers = {
-            "User-Agent": self.get_random_user_agent(),
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-            "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
-            "Accept-Encoding": "identity",
-            "Referer": "https://www.naver.com/",
-            "Connection": "keep-alive",
-            "Upgrade-Insecure-Requests": "1",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "same-origin",
-            "Sec-Fetch-User": "?1",
-        }
+            time.sleep(random.uniform(1.0, 2.0))
 
-        params = {
-            "query": keyword,
-            "start": (page - 1) * 10 + 1
-        }
+        from urllib.parse import urlencode
+        params = urlencode({"query": keyword, "start": (page - 1) * 10 + 1})
+        url = f"{self.base_url}?{params}"
 
-        try:
-            logging.info(f"'{keyword}' 검색 중 (페이지 {page})...")
-            response = self._session.get(self.base_url, params=params, headers=headers)
-            response.raise_for_status()
-            
-            soup = BeautifulSoup(response.text, 'html.parser')
-            return soup
-        except Exception as e:
-            logging.info(f"검색 결과 가져오기 실패: {str(e)}")
-            return None
+        for attempt in range(2):
+            try:
+                logging.info(f"'{keyword}' 검색 중 (페이지 {page})...")
+                driver = self._init_driver()
+                driver.get(url)
+                time.sleep(random.uniform(1.5, 2.5))
+                soup = BeautifulSoup(driver.page_source, 'html.parser')
+                return soup
+            except Exception as e:
+                logging.info(f"검색 결과 가져오기 실패 (시도 {attempt+1}): {str(e)}")
+                # 드라이버가 죽었을 수 있으므로 리셋 후 재시도
+                self.close_driver()
+                if attempt == 0:
+                    time.sleep(2)
+        return None
             
     def extract_urls(self, soup):
         """검색 결과에서 URL을 추출하는 함수"""
@@ -309,18 +298,36 @@ class NaverScraper:
             logging.info(f"조회수 가져오기 실패 ({url}): {str(e)}")
             return None
 
-    def _init_driver(self):
-        """Selenium WebDriver 초기화 (삭제 확인용)"""
+    def _is_driver_alive(self):
+        """드라이버 세션이 살아있는지 확인"""
         if self._driver is None:
+            return False
+        try:
+            _ = self._driver.current_url
+            return True
+        except Exception:
+            return False
+
+    def _init_driver(self):
+        """Selenium WebDriver 초기화 (죽은 세션이면 재생성)"""
+        if not self._is_driver_alive():
+            # 죽은 드라이버 정리
+            if self._driver is not None:
+                try:
+                    self._driver.quit()
+                except Exception:
+                    pass
+                self._driver = None
+
             chrome_options = Options()
             chrome_options.add_argument('--headless')
             chrome_options.add_argument('--no-sandbox')
             chrome_options.add_argument('--disable-dev-shm-usage')
             chrome_options.add_argument('--disable-gpu')
-            chrome_options.add_argument('--log-level=3')  # 로그 최소화
-            chrome_options.add_argument('--incognito')  # 시크릿 모드
-            chrome_options.add_argument('--disable-application-cache')  # 앱 캐시 비활성화
-            chrome_options.add_argument('--disable-cache')  # 디스크 캐시 비활성화
+            chrome_options.add_argument('--log-level=3')
+            chrome_options.add_argument('--incognito')
+            chrome_options.add_argument('--disable-application-cache')
+            chrome_options.add_argument('--disable-cache')
             chrome_options.add_argument(f'user-agent={self.get_random_user_agent()}')
 
             self._driver = webdriver.Chrome(

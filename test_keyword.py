@@ -19,7 +19,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-TARGET_KEYWORD = '당화혈색소 검사기'
+TARGET_KEYWORD = '암요양병원실비'
 
 def main():
     db_client = DatabaseClient(
