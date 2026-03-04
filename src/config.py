@@ -39,6 +39,10 @@ GOOGLE_SHEETS_GID = 1011348622
 # 서비스 계정 인증 JSON 파일 경로
 GOOGLE_CREDENTIALS_PATH = 'config/credentials.json'
 
+# 키워드목록 시트 설정
+KEYWORD_LIST_SHEETS_ID = '1XGzfO6SL6-WtlBVG5hEg_WFBUC_dgkqdknf5_-fgFZQ'
+KEYWORD_LIST_SHEETS_GID = 1499466916
+
 # ===========================================
 # DB 설정
 # ===========================================

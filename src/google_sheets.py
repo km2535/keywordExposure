@@ -374,16 +374,15 @@ class GoogleSheetsClient:
 
         self.batch_update_cells(updates)
 
-    def sync_patrol_logs(self, headers: list, rows: list):
+    def sync_patrol_logs(self, headers: list, rows: list, keep_header: bool = False):
         """
-        키워드순찰 시트 전체를 DB 데이터로 교체
-        1. 헤더 행 이후 모든 데이터를 삭제
-        2. DB에서 읽어온 전체 rows를 일괄 입력
-        헤더가 없으면 헤더도 함께 씁니다.
+        시트를 DB 데이터로 교체
 
         Args:
-            headers: 시트 헤더 목록 (List[str])
-            rows:    데이터 행 목록 (List[List])
+            headers:     시트 헤더 목록
+            rows:        데이터 행 목록
+            keep_header: True이면 1행(헤더)을 유지하고 2행부터 덮어씀
+                         False이면 시트 전체를 지우고 헤더+데이터 모두 씀
         """
         if not self.worksheet:
             logging.error("sync_patrol_logs: 워크시트가 연결되지 않았습니다.")
@@ -394,34 +393,20 @@ class GoogleSheetsClient:
             return
 
         try:
-            # 현재 시트 행 수 확인
-            existing_values = self.worksheet.get_all_values()
-            total_rows = len(existing_values)
-
-            # 헤더가 없으면 시트 전체가 비어있는 것으로 간주
-            if total_rows == 0:
-                # 헤더 + 데이터 모두 쓰기
-                self.worksheet.append_rows([headers] + rows, value_input_option='USER_ENTERED')
-                logging.info(f"sync_patrol_logs: 헤더 포함 {len(rows)}개 행 신규 입력 완료")
-                return
-
-            # 헤더가 없으면 1행에 헤더 씌우기
-            current_headers = existing_values[0] if existing_values else []
-            if not current_headers or current_headers != headers:
-                self.worksheet.update('A1', [headers], value_input_option='USER_ENTERED')
-                logging.info("sync_patrol_logs: 헤더 갱신 완료")
-
-            # 데이터 행 전체 삭제 (2행 ~ 끝)
-            if total_rows > 1:
-                # 2행부터 끝까지 범위를 clear
-                last_col_letter = chr(ord('A') + len(headers) - 1) if len(headers) <= 26 else 'Z'
-                clear_range = f'A2:{last_col_letter}{total_rows}'
-                self.worksheet.batch_clear([clear_range])
-                logging.info(f"sync_patrol_logs: 기존 데이터 {total_rows - 1}행 삭제 완료")
-
-            # 새 데이터 일괄 입력 (2행부터)
-            self.worksheet.append_rows(rows, value_input_option='USER_ENTERED')
-            logging.info(f"sync_patrol_logs: {len(rows)}개 행 동기화 완료")
+            if keep_header:
+                # 헤더 유지: 2행부터 모든 내용 삭제
+                self.worksheet.clear()
+                # 헤더는 다시 1행에 씀 (기존 헤더 유지 의도이므로 덮어쓰지 않고 보존)
+                # 전체 데이터를 A1부터 한 번에 씀
+                all_data = [headers] + rows
+                self.worksheet.update('A1', all_data, value_input_option='USER_ENTERED')
+                logging.info(f"sync_patrol_logs(keep_header): {len(rows)}개 행 동기화 완료")
+            else:
+                # 전체 초기화 후 헤더+데이터 일괄 입력
+                self.worksheet.clear()
+                all_data = [headers] + rows
+                self.worksheet.update('A1', all_data, value_input_option='USER_ENTERED')
+                logging.info(f"sync_patrol_logs: 헤더 포함 {len(rows)}개 행 동기화 완료")
 
         except Exception as e:
             logging.error(f"sync_patrol_logs 실패: {e}")
