@@ -30,7 +30,7 @@ DEFAULT_PAGES = 1
 # ===========================================
 
 # Google Sheets 문서 ID
-GOOGLE_SHEETS_ID = '1aaFJtLXDaIK_iKd4Y8ZEnNxw2xoS9rfkZKggQ0ncbdw'
+GOOGLE_SHEETS_ID = '1v_NIETEm_NMTx2nnn1de77uDKVzfCGE0CLEfy5dxvBU'
 # GOOGLE_SHEETS_ID = '1wssRTS1SS4AZrjlSR_joU8I7zFWeKwMvS6Cdaoxnnm4'  #테스트용
 
 # 시트 GID (URL의 gid= 파라미터)

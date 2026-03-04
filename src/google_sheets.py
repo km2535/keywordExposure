@@ -373,3 +373,55 @@ class GoogleSheetsClient:
                     updates.append({'row': row, 'column': f'교차키워드{i}', 'value': value})
 
         self.batch_update_cells(updates)
+
+    def sync_patrol_logs(self, headers: list, rows: list):
+        """
+        키워드순찰 시트 전체를 DB 데이터로 교체
+        1. 헤더 행 이후 모든 데이터를 삭제
+        2. DB에서 읽어온 전체 rows를 일괄 입력
+        헤더가 없으면 헤더도 함께 씁니다.
+
+        Args:
+            headers: 시트 헤더 목록 (List[str])
+            rows:    데이터 행 목록 (List[List])
+        """
+        if not self.worksheet:
+            logging.error("sync_patrol_logs: 워크시트가 연결되지 않았습니다.")
+            return
+
+        if not rows:
+            logging.warning("sync_patrol_logs: 동기화할 데이터가 없습니다.")
+            return
+
+        try:
+            # 현재 시트 행 수 확인
+            existing_values = self.worksheet.get_all_values()
+            total_rows = len(existing_values)
+
+            # 헤더가 없으면 시트 전체가 비어있는 것으로 간주
+            if total_rows == 0:
+                # 헤더 + 데이터 모두 쓰기
+                self.worksheet.append_rows([headers] + rows, value_input_option='USER_ENTERED')
+                logging.info(f"sync_patrol_logs: 헤더 포함 {len(rows)}개 행 신규 입력 완료")
+                return
+
+            # 헤더가 없으면 1행에 헤더 씌우기
+            current_headers = existing_values[0] if existing_values else []
+            if not current_headers or current_headers != headers:
+                self.worksheet.update('A1', [headers], value_input_option='USER_ENTERED')
+                logging.info("sync_patrol_logs: 헤더 갱신 완료")
+
+            # 데이터 행 전체 삭제 (2행 ~ 끝)
+            if total_rows > 1:
+                # 2행부터 끝까지 범위를 clear
+                last_col_letter = chr(ord('A') + len(headers) - 1) if len(headers) <= 26 else 'Z'
+                clear_range = f'A2:{last_col_letter}{total_rows}'
+                self.worksheet.batch_clear([clear_range])
+                logging.info(f"sync_patrol_logs: 기존 데이터 {total_rows - 1}행 삭제 완료")
+
+            # 새 데이터 일괄 입력 (2행부터)
+            self.worksheet.append_rows(rows, value_input_option='USER_ENTERED')
+            logging.info(f"sync_patrol_logs: {len(rows)}개 행 동기화 완료")
+
+        except Exception as e:
+            logging.error(f"sync_patrol_logs 실패: {e}")

@@ -11,16 +11,18 @@ import logging
 class KeywordMonitor:
     """DB 기반 키워드 모니터링 클래스"""
 
-    def __init__(self, scraper, db_client):
+    def __init__(self, scraper, db_client, sheets_client=None):
         """
         초기화
 
         Args:
             scraper: NaverScraper 인스턴스
             db_client: DatabaseClient 인스턴스
+            sheets_client: GoogleSheetsClient 인스턴스 (키워드순찰 시트 동기화용, 선택)
         """
         self.scraper = scraper
         self.db_client = db_client
+        self.sheets_client = sheets_client
 
     def normalize_url(self, url: str) -> str:
         """URL 정규화 — NaverScraper.normalize_url 위임 (단일 공통 로직)"""
@@ -184,6 +186,16 @@ class KeywordMonitor:
         # 4. DB 일괄 업데이트
         if batch_updates:
             self.db_client.batch_update_monitoring_results(batch_updates)
+
+        # 5. Google Sheets 동기화 (키워드순찰 시트 전체 갱신)
+        if self.sheets_client:
+            logging.info("Google Sheets 동기화 시작 (키워드순찰 시트)...")
+            headers, rows = self.db_client.get_all_patrol_logs()
+            if rows:
+                self.sheets_client.sync_patrol_logs(headers, rows)
+                logging.info("Google Sheets 동기화 완료")
+            else:
+                logging.warning("Google Sheets 동기화 대상 데이터 없음")
 
         # 작업 완료 후 드라이버 종료 (다음 실행 시 깨끗하게 시작)
         self.scraper.close_driver()

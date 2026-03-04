@@ -228,3 +228,82 @@ class DatabaseClient:
         except Exception as e:
             self.connection.rollback()
             logging.error(f"DB 배치 업데이트 실패: {e}")
+
+    def get_all_patrol_logs(self):
+        """
+        keyword_patrol_logs 전체 데이터를 Google Sheets에 쓸 수 있는 2D 배열로 반환
+
+        Returns:
+            (headers, rows) 튜플
+            headers: 시트 헤더 행 (List[str])
+            rows: 데이터 행 목록 (List[List])
+        """
+        if not self._ensure_connection():
+            logging.error("DB 연결 실패로 patrol_logs를 가져올 수 없습니다.")
+            return [], []
+
+        sql = f"""
+            SELECT
+                k.keyword,
+                kr.result_url,
+                kr.is_exposed,
+                kr.is_deleted,
+                kr.rank,
+                kr.account_id,
+                kr.is_popular,
+                kr.is_cross_exposed,
+                kr.cross_keyword1,
+                kr.cross_keyword2,
+                kr.cross_keyword3,
+                kr.cross_keyword4,
+                kr.cross_keyword5,
+                kr.checked_at,
+                kr.updated_at
+            FROM {self.table} kr
+            JOIN keywords k ON kr.keyword_id = k.keyword_id
+            ORDER BY kr.id
+        """
+
+        headers = [
+            '키워드', 'url', '노출', '삭제', '순위',
+            '발행아이디', '인기글여부', '교차노출',
+            '교차키워드1', '교차키워드2', '교차키워드3', '교차키워드4', '교차키워드5',
+            '순찰시간', '업데이트시간'
+        ]
+
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql)
+                raw_rows = cursor.fetchall()
+
+            rows = []
+            for raw in raw_rows:
+                (keyword, result_url, is_exposed, is_deleted, rank,
+                 account_id, is_popular, is_cross_exposed,
+                 cross_kw1, cross_kw2, cross_kw3, cross_kw4, cross_kw5,
+                 checked_at, updated_at) = raw
+
+                rows.append([
+                    keyword or '',
+                    result_url or '',
+                    'O' if is_exposed else 'X',
+                    'O' if is_deleted else 'X',
+                    rank if rank is not None else '',
+                    account_id or '',
+                    'O' if is_popular else 'X',
+                    'O' if is_cross_exposed else 'X',
+                    cross_kw1 or '',
+                    cross_kw2 or '',
+                    cross_kw3 or '',
+                    cross_kw4 or '',
+                    cross_kw5 or '',
+                    str(checked_at) if checked_at else '',
+                    str(updated_at) if updated_at else '',
+                ])
+
+            logging.info(f"patrol_logs {len(rows)}개 행 로드 완료")
+            return headers, rows
+
+        except Exception as e:
+            logging.error(f"patrol_logs 로드 실패: {e}")
+            return [], []
