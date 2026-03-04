@@ -62,17 +62,20 @@ class KeywordMonitor:
             return path_parts[0]
         return None
 
-    def monitor_keywords(self):
+    def monitor_keywords(self, products=None):
         """
         DB 기반 키워드 모니터링
         같은 키워드는 한 번만 검색하되, 각 URL의 삭제 여부는 개별적으로 확인합니다.
         매 실행 시 캐시와 쿠키를 초기화하여 깨끗한 상태에서 시작합니다.
+
+        Args:
+            products: 필터링할 제품 목록 (예: ['cancer', 'diabetes']). None이면 전체.
         """
         # 캐시/쿠키 초기화: 이전 드라이버가 남아있으면 완전히 리셋
         self.scraper.reset_driver()
         print("캐시/쿠키 초기화 완료 - 깨끗한 상태에서 모니터링을 시작합니다.")
 
-        keywords_data = self.db_client.get_keywords_for_monitoring()
+        keywords_data = self.db_client.get_keywords_for_monitoring(products=products)
         if not keywords_data:
             return []
 

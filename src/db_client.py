@@ -57,10 +57,13 @@ class DatabaseClient:
         except Exception:
             return self.connect()
 
-    def get_keywords_for_monitoring(self) -> List[Dict]:
+    def get_keywords_for_monitoring(self, products: Optional[List[str]] = None) -> List[Dict]:
         """
         모니터링할 키워드 목록을 DB에서 가져오기
         keywords 테이블과 JOIN하여 키워드 텍스트 포함
+
+        Args:
+            products: 필터링할 제품 목록 (예: ['cancer', 'diabetes']). None이면 전체.
 
         Returns:
             [
@@ -79,6 +82,13 @@ class DatabaseClient:
             logging.error("DB 연결 실패로 키워드를 가져올 수 없습니다.")
             return []
 
+        where_clause = ""
+        params = []
+        if products:
+            placeholders = ', '.join(['%s'] * len(products))
+            where_clause = f"WHERE kr.product IN ({placeholders})"
+            params = list(products)
+
         sql = f"""
             SELECT
                 kr.id,
@@ -89,12 +99,13 @@ class DatabaseClient:
                 kr.account_id
             FROM {self.table} kr
             JOIN keywords k ON kr.keyword_id = k.keyword_id
+            {where_clause}
             ORDER BY kr.id
         """
 
         try:
             with self.connection.cursor() as cursor:
-                cursor.execute(sql)
+                cursor.execute(sql, params)
                 rows = cursor.fetchall()
 
             result = []
@@ -114,6 +125,19 @@ class DatabaseClient:
 
         except Exception as e:
             logging.error(f"키워드 로드 실패: {e}")
+            return []
+
+    def get_distinct_products(self) -> List[str]:
+        """keyword_patrol_logs 테이블에서 product 고유값 목록 반환"""
+        if not self._ensure_connection():
+            return []
+        sql = f"SELECT DISTINCT product FROM {self.table} WHERE product IS NOT NULL AND product != '' ORDER BY product"
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql)
+                return [row[0] for row in cursor.fetchall()]
+        except Exception as e:
+            logging.error(f"제품 목록 조회 실패: {e}")
             return []
 
     def mark_rows_deleted(self, db_ids: List[int]):
