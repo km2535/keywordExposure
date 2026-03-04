@@ -3,6 +3,7 @@
 제품별 선택 후 모니터링 실행 (완료 후 즉시 재실행)
 """
 
+import sys
 import tkinter as tk
 from tkinter import ttk, scrolledtext
 import threading
@@ -45,6 +46,7 @@ class MonitoringApp:
         self.root.resizable(False, False)
 
         self._loop_active = False  # 반복 실행 중 여부
+        self._stopping = False     # 종료 중 여부
 
         self._build_ui()
         self._setup_logging()
@@ -70,6 +72,14 @@ class MonitoringApp:
             state='readonly', font=("맑은 고딕", 10), width=20
         )
         self.product_combo.pack(side='left')
+
+        # 시트 동기화 체크박스
+        self.sync_var = tk.BooleanVar(value=True)
+        self.sync_check = tk.Checkbutton(
+            self.root, text="시트 동기화", variable=self.sync_var,
+            font=("맑은 고딕", 10)
+        )
+        self.sync_check.pack(pady=(0, 4))
 
         # 시작/중지 버튼
         self.run_btn = tk.Button(
@@ -127,18 +137,20 @@ class MonitoringApp:
 
     def _on_toggle(self):
         if self._loop_active:
-            # 중지 요청 — 현재 실행 중인 회차가 끝난 후 멈춤
+            # 중지 요청 — 현재 실행 중인 회차가 끝난 후 프로그램 종료
             self._loop_active = False
+            self._stopping = True
             self.run_btn.config(
-                text="중지 중...", state='disabled',
+                text="종료 중...", state='disabled',
                 bg="#FF9800", activebackground="#E65100"
             )
-            logging.info("중지 요청됨 — 현재 회차 완료 후 정지합니다.")
+            logging.info("종료 요청됨 — 현재 회차 완료 후 프로그램을 종료합니다.")
         else:
             # 시작
             label = self.product_var.get()
             self._products = None if label == "전체" else [label]
             self._loop_active = True
+            self._stopping = False
             self.product_combo.config(state='disabled')
             self.run_btn.config(
                 text="모니터링 중지", bg="#F44336",
@@ -174,36 +186,49 @@ class MonitoringApp:
                 self._loop_active = False
                 return
 
-            logging.info("[1/2] 키워드순찰 시트 연결 중...")
-            patrol_sheets_client = GoogleSheetsClient(
-                credentials_path=GOOGLE_CREDENTIALS_PATH,
-                spreadsheet_id=GOOGLE_SHEETS_ID,
-                sheet_gid=GOOGLE_SHEETS_GID
-            )
-            if not patrol_sheets_client.connect():
-                logging.warning("키워드순찰 시트 연결 실패 — 동기화 건너뜀")
-                patrol_sheets_client = None
-
-            logging.info("[2/2] 키워드목록 시트 연결 중...")
-            keyword_list_sheets_client = GoogleSheetsClient(
-                credentials_path=GOOGLE_CREDENTIALS_PATH,
-                spreadsheet_id=KEYWORD_LIST_SHEETS_ID,
-                sheet_gid=KEYWORD_LIST_SHEETS_GID
-            )
-            if not keyword_list_sheets_client.connect():
-                logging.warning("키워드목록 시트 연결 실패 — 동기화 건너뜀")
-                keyword_list_sheets_client = None
-
+            # 시트 클라이언트는 넘기지 않고, 모니터링 완료 후 sync_var를 확인해 직접 동기화
             scraper = NaverScraper()
-            monitor = KeywordMonitor(
-                scraper, db_client,
-                sheets_client=patrol_sheets_client,
-                keyword_list_sheets_client=keyword_list_sheets_client
-            )
+            monitor = KeywordMonitor(scraper, db_client)
 
             logging.info("키워드 모니터링 시작...")
             results = monitor.monitor_keywords(products=products)
             logging.info(f"회차 완료 (처리 {len(results)}건)")
+
+            # 키워드 처리 완료 후 체크박스 상태를 읽어 동기화 여부 결정
+            if self.sync_var.get():
+                logging.info("[1/2] 키워드순찰 시트 동기화 중...")
+                patrol_client = GoogleSheetsClient(
+                    credentials_path=GOOGLE_CREDENTIALS_PATH,
+                    spreadsheet_id=GOOGLE_SHEETS_ID,
+                    sheet_gid=GOOGLE_SHEETS_GID
+                )
+                if patrol_client.connect():
+                    headers, rows = db_client.get_all_patrol_logs()
+                    if rows:
+                        patrol_client.sync_patrol_logs(headers, rows)
+                        logging.info("키워드순찰 시트 동기화 완료 ✓")
+                    else:
+                        logging.warning("동기화할 데이터 없음")
+                else:
+                    logging.warning("키워드순찰 시트 연결 실패 — 동기화 건너뜀")
+
+                logging.info("[2/2] 키워드목록 시트 동기화 중...")
+                kl_client = GoogleSheetsClient(
+                    credentials_path=GOOGLE_CREDENTIALS_PATH,
+                    spreadsheet_id=KEYWORD_LIST_SHEETS_ID,
+                    sheet_gid=KEYWORD_LIST_SHEETS_GID
+                )
+                if kl_client.connect():
+                    kl_headers, kl_rows = db_client.get_keyword_list_from_view()
+                    if kl_rows:
+                        kl_client.sync_patrol_logs(kl_headers, kl_rows)
+                        logging.info("키워드목록 시트 동기화 완료 ✓")
+                    else:
+                        logging.warning("동기화할 데이터 없음")
+                else:
+                    logging.warning("키워드목록 시트 연결 실패 — 동기화 건너뜀")
+            else:
+                logging.info("시트 동기화 비활성화 — 건너뜀")
 
             db_client.disconnect()
 
@@ -218,14 +243,14 @@ class MonitoringApp:
             logging.info("다음 회차 즉시 시작...")
             self._start_one_cycle()
         else:
-            # 중지 완료
+            # 종료 완료 — 프로그램 종료
             self.progress.stop()
-            self.product_combo.config(state='readonly')
-            self.run_btn.config(
-                text="모니터링 시작", state='normal',
-                bg="#2196F3", activebackground="#1565C0"
-            )
-            logging.info("모니터링 정지 완료.")
+            logging.info("프로그램을 종료합니다.")
+            self.root.after(500, self._exit_app)
+
+    def _exit_app(self):
+        self.root.destroy()
+        sys.exit(0)
 
 
 def main():
