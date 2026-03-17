@@ -203,8 +203,8 @@ class DatabaseClient:
                     if not url and not row_id:
                         continue
 
-                    set_clauses = ['checked_at = %s', 'updated_at = %s']
-                    params = [current_time, current_time]
+                    set_clauses = ['updated_at = %s']
+                    params = [current_time]
 
                     # 노출 여부 (O→1, X→0)
                     if 'exposure_status' in result:
@@ -218,6 +218,8 @@ class DatabaseClient:
 
                     # 삭제 여부 (O→1, X→0)
                     if 'deletion_status' in result:
+                        set_clauses.append('checked_at = %s')
+                        params.append(current_time)
                         set_clauses.append('is_deleted = %s')
                         params.append(1 if result['deletion_status'] == 'O' else 0)
 
