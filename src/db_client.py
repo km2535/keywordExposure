@@ -300,6 +300,7 @@ class DatabaseClient:
                 kr.updated_at
             FROM {self.table} kr
             JOIN keywords k ON kr.keyword_id = k.keyword_id
+            WHERE kr.result_url IS NOT NULL AND kr.result_url != ''
             ORDER BY kr.id
         """
 
