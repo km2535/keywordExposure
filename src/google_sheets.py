@@ -399,13 +399,13 @@ class GoogleSheetsClient:
                 # 헤더는 다시 1행에 씀 (기존 헤더 유지 의도이므로 덮어쓰지 않고 보존)
                 # 전체 데이터를 A1부터 한 번에 씀
                 all_data = [headers] + rows
-                self.worksheet.update('A1', all_data, value_input_option='USER_ENTERED')
+                self.worksheet.update('A1', all_data, value_input_option='RAW')
                 logging.info(f"sync_patrol_logs(keep_header): {len(rows)}개 행 동기화 완료")
             else:
                 # 전체 초기화 후 헤더+데이터 일괄 입력
                 self.worksheet.clear()
                 all_data = [headers] + rows
-                self.worksheet.update('A1', all_data, value_input_option='USER_ENTERED')
+                self.worksheet.update('A1', all_data, value_input_option='RAW')
                 logging.info(f"sync_patrol_logs: 헤더 포함 {len(rows)}개 행 동기화 완료")
 
         except Exception as e:
