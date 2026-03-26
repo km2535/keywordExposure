@@ -396,7 +396,7 @@ class NaverScraper:
                 - is_deleted: True면 삭제됨, False면 존재함, None이면 확인 실패
                 - message: 삭제 메시지 또는 에러 메시지
         """
-        if not url or 'cafe.naver.com' not in url:
+        if not url or ('cafe.naver.com' not in url and 'blog.naver.com' not in url):
             return None, "유효하지 않은 URL"
 
         try:
@@ -411,7 +411,7 @@ class NaverScraper:
                 alert_text = alert.text
                 alert.accept()  # alert 닫기
 
-                if '삭제' in alert_text or '존재하지 않' in alert_text:
+                if '삭제' in alert_text or '변경' in alert_text or '존재하지 않' in alert_text:
                     return True, alert_text
                 return False, None
 
@@ -419,8 +419,7 @@ class NaverScraper:
                 # alert이 없으면 글이 존재함
                 return False, None
 
-        except UnexpectedAlertPresentException as e:
-            # alert이 있으면 삭제된 글
+        except UnexpectedAlertPresentException:
             return True, "삭제되었거나 존재하지 않는 게시글"
         except Exception as e:
             logging.info(f"삭제 확인 실패 ({url}): {str(e)}")

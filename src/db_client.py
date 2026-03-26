@@ -441,3 +441,343 @@ class DatabaseClient:
         except Exception as e:
             logging.error(f"keyword_list_view 로드 실패: {e}")
             return [], []
+
+    # ===================================== 블로그 순찰 메서드 =====================================
+
+    def get_blog_posts_for_monitoring(self, products: Optional[List[str]] = None) -> List[Dict]:
+        """
+        블로그 순찰 대상 blog_post 목록을 DB에서 가져오기
+        blog_post 테이블과 keywords 테이블을 JOIN하여 키워드 텍스트 포함
+
+        Args:
+            products: 필터링할 제품 목록 (예: ['cancer', 'diabetes']). None이면 전체.
+
+        Returns:
+            [
+                {
+                    'row': 1,
+                    'keyword': '탈모 샴푸 추천',
+                    'target_url': 'https://blog.naver.com/xxx/123',
+                    'current_status': 'O' or 'X',
+                    'author_id': 'blogger_id',
+                },
+                ...
+            ]
+        """
+        if not self._ensure_connection():
+            logging.error("DB 연결 실패로 블로그 포스트를 가져올 수 없습니다.")
+            return []
+
+        where_clause = ""
+        params = []
+        if products:
+            placeholders = ', '.join(['%s'] * len(products))
+            where_clause = f"WHERE bp.product IN ({placeholders})"
+            params = list(products)
+
+        sql = f"""
+            SELECT
+                bp.id,
+                k.keyword,
+                bp.result_url,
+                bp.is_exposed,
+                bp.account_id,
+                bp.is_deleted
+            FROM blog_post bp
+            JOIN keywords k ON bp.keyword_id = k.keyword_id
+            {where_clause}
+            ORDER BY bp.id
+        """
+
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql, params)
+                rows = cursor.fetchall()
+
+            result = []
+            for row in rows:
+                db_id, keyword, result_url, is_exposed, account_id, is_deleted = row
+                result.append({
+                    'row': db_id,
+                    'keyword': keyword or '',
+                    'target_url': result_url or '',
+                    'current_status': 'O' if is_exposed else 'X',
+                    'author_id': account_id or '',
+                    'is_deleted': bool(is_deleted),
+                })
+
+            logging.info(f"DB에서 블로그 포스트 {len(result)}개 로드 완료")
+            return result
+
+        except Exception as e:
+            logging.error(f"블로그 포스트 로드 실패: {e}")
+            return []
+
+    def batch_update_blog_results(self, results: List[Dict]):
+        """
+        블로그 순찰 결과를 blog_post 테이블에 일괄 업데이트
+        batch_update_monitoring_results()와 동일한 결과 구조 사용
+        단, is_deleted / deletion_status 관련 처리는 제외
+
+        Args:
+            results: [
+                {
+                    'url': 'https://blog.naver.com/...',   # result_url (WHERE 조건)
+                    'exposure_status': 'O' or 'X',         # is_exposed
+                    'rank': 3 or None,                     # rank
+                    'popular_status': 'O' or 'X',          # is_popular
+                    'cross_keywords': ['키워드1(1)', ...],  # is_cross_exposed + cross_keyword1~5
+                },
+                ...
+            ]
+        """
+        if not results:
+            return
+
+        if not self._ensure_connection():
+            logging.error("DB 연결 실패로 블로그 업데이트를 건너뜁니다.")
+            return
+
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        updated_count = 0
+
+        try:
+            with self.connection.cursor() as cursor:
+                for result in results:
+                    url = result.get('url', '').strip()
+                    row_id = result.get('row')
+                    if not url and not row_id:
+                        continue
+
+                    set_clauses = ['updated_at = %s', 'checked_at = %s']
+                    params = [current_time, current_time]
+
+                    # 노출 여부 (O→1, X→0)
+                    if 'exposure_status' in result:
+                        set_clauses.append('is_exposed = %s')
+                        params.append(1 if result['exposure_status'] == 'O' else 0)
+
+                    # 순위 (None이면 NULL)
+                    if 'rank' in result:
+                        set_clauses.append('rank = %s')
+                        params.append(result['rank'])
+
+                    # 삭제 여부 (O→1, X→0)
+                    if 'deletion_status' in result:
+                        set_clauses.append('is_deleted = %s')
+                        params.append(1 if result['deletion_status'] == 'O' else 0)
+
+                    # 교차노출 (cross_keywords 리스트 기반)
+                    if 'cross_keywords' in result:
+                        cross_kws = result['cross_keywords']
+                        set_clauses.append('is_cross_exposed = %s')
+                        params.append(1 if cross_kws else 0)
+
+                        # 교차키워드1~5
+                        for i in range(1, 6):
+                            set_clauses.append(f'cross_keyword{i} = %s')
+                            params.append(cross_kws[i - 1] if i <= len(cross_kws) else None)
+
+                    if url:
+                        params.append(url)
+                        sql = f"""
+                            UPDATE blog_post
+                            SET {', '.join(set_clauses)}
+                            WHERE result_url = %s
+                        """
+                    else:
+                        params.append(row_id)
+                        sql = f"""
+                            UPDATE blog_post
+                            SET {', '.join(set_clauses)}
+                            WHERE id = %s
+                        """
+                    cursor.execute(sql, params)
+                    updated_count += cursor.rowcount
+
+            self.connection.commit()
+            logging.info(f"블로그 DB {updated_count}개 행 업데이트 완료 (처리 대상: {len(results)}개)")
+
+        except Exception as e:
+            self.connection.rollback()
+            logging.error(f"블로그 DB 배치 업데이트 실패: {e}")
+
+    def get_all_blog_patrol_logs(self):
+        """
+        blog_post 전체 데이터를 Google Sheets(블로그순찰 시트)에 쓸 수 있는 2D 배열로 반환
+
+        시트 헤더 순서:
+        블로그 / 키워드 / 조회수 / url / 노출 / 순위 / 교차노출 /
+        교차키워드1~5 / 발행시간 / 순찰시간 / 발행아이디 / 제품 / 인기글여부 / 업데이트시간
+
+        Returns:
+            (headers, rows) 튜플
+        """
+        if not self._ensure_connection():
+            logging.error("DB 연결 실패로 블로그 patrol_logs를 가져올 수 없습니다.")
+            return [], []
+
+        sql = """
+            SELECT
+                k.keyword,
+                k.search_volume,
+                bp.result_url,
+                bp.is_deleted,
+                bp.is_exposed,
+                bp.rank,
+                bp.is_cross_exposed,
+                bp.cross_keyword1,
+                bp.cross_keyword2,
+                bp.cross_keyword3,
+                bp.cross_keyword4,
+                bp.cross_keyword5,
+                bp.published_at,
+                bp.checked_at,
+                bp.account_id,
+                bp.product,
+                bp.updated_at
+            FROM blog_post bp
+            JOIN keywords k ON bp.keyword_id = k.keyword_id
+            WHERE bp.result_url IS NOT NULL AND bp.result_url != ''
+            ORDER BY bp.id
+        """
+
+        headers = [
+            '키워드', '조회수', 'url',
+            '삭제', '노출', '순위', '교차노출',
+            '교차키워드1', '교차키워드2', '교차키워드3', '교차키워드4', '교차키워드5',
+            '발행시간', '순찰시간', '발행아이디', '제품', '업데이트시간'
+        ]
+
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql)
+                raw_rows = cursor.fetchall()
+
+            rows = []
+            for raw in raw_rows:
+                (keyword, search_volume, result_url,
+                 is_deleted, is_exposed, rank, is_cross_exposed,
+                 cross_kw1, cross_kw2, cross_kw3, cross_kw4, cross_kw5,
+                 published_at, checked_at, account_id,
+                 product, updated_at) = raw
+
+                rows.append([
+                    keyword or '',
+                    search_volume if search_volume is not None else '',
+                    result_url or '',
+                    'O' if is_deleted else 'X',
+                    'O' if is_exposed else 'X',
+                    rank if rank is not None else '',
+                    'O' if is_cross_exposed else 'X',
+                    cross_kw1 or '',
+                    cross_kw2 or '',
+                    cross_kw3 or '',
+                    cross_kw4 or '',
+                    cross_kw5 or '',
+                    str(published_at) if published_at else '',
+                    str(checked_at) if checked_at else '',
+                    account_id or '',
+                    product or '',
+                    str(updated_at) if updated_at else '',
+                ])
+
+            logging.info(f"블로그 patrol_logs {len(rows)}개 행 로드 완료")
+            return headers, rows
+
+        except Exception as e:
+            logging.error(f"블로그 patrol_logs 로드 실패: {e}")
+            return [], []
+
+    def get_blog_keyword_list_from_view(self):
+        """
+        blog_post_list_view 전체 데이터를 Google Sheets(블로그 키워드목록 시트)에 쓸 수 있는 2D 배열로 반환
+
+        Returns:
+            (headers, rows) 튜플
+        """
+        if not self._ensure_connection():
+            logging.error("DB 연결 실패로 blog_post_list_view를 가져올 수 없습니다.")
+            return [], []
+
+        sql = """
+            SELECT
+                `키워드`,
+                `키워드조회수`,
+                `제품`,
+                `삭제`,
+                `노출`,
+                `순위`,
+                `교차노출`,
+                `발행시간`,
+                `블로그url`,
+                `발행아이디`,
+                `교차키워드1`,
+                `교차키워드2`,
+                `교차키워드3`,
+                `교차키워드4`,
+                `교차키워드5`,
+                `확인시간`
+            FROM cafe_auto.blog_post_list_view
+            ORDER BY `키워드조회수` DESC
+        """
+
+        headers = [
+            '키워드', '키워드조회수', '제품',
+            '삭제', '노출', '순위', '교차노출',
+            '발행시간', 'url', '발행아이디',
+            '교차키워드1', '교차키워드2', '교차키워드3', '교차키워드4', '교차키워드5',
+            '확인시간'
+        ]
+
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql)
+                raw_rows = cursor.fetchall()
+
+            rows = []
+            for raw in raw_rows:
+                (keyword, search_volume, product,
+                 is_deleted, is_exposed, rank, is_cross_exposed,
+                 published_at, blog_url, account_id,
+                 cross_kw1, cross_kw2, cross_kw3, cross_kw4, cross_kw5,
+                 checked_at) = raw
+
+                rows.append([
+                    keyword or '',
+                    search_volume if search_volume is not None else '',
+                    product or '',
+                    'O' if is_deleted else 'X',
+                    'O' if is_exposed else 'X',
+                    rank if rank is not None else '',
+                    'O' if is_cross_exposed else 'X',
+                    str(published_at) if published_at else '',
+                    blog_url or '',
+                    account_id or '',
+                    cross_kw1 or '',
+                    cross_kw2 or '',
+                    cross_kw3 or '',
+                    cross_kw4 or '',
+                    cross_kw5 or '',
+                    str(checked_at) if checked_at else '',
+                ])
+
+            logging.info(f"blog_post_list_view {len(rows)}개 행 로드 완료")
+            return headers, rows
+
+        except Exception as e:
+            logging.error(f"blog_post_list_view 로드 실패: {e}")
+            return [], []
+
+    def get_distinct_blog_products(self) -> List[str]:
+        """blog_post 테이블에서 product 고유값 목록 반환 (GUI 제품 드롭다운용)"""
+        if not self._ensure_connection():
+            return []
+        sql = "SELECT DISTINCT product FROM blog_post WHERE product IS NOT NULL AND product != '' ORDER BY product"
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql)
+                return [row[0] for row in cursor.fetchall()]
+        except Exception as e:
+            logging.error(f"블로그 제품 목록 조회 실패: {e}")
+            return []

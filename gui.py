@@ -11,6 +11,7 @@ import logging
 
 from src.scraper import NaverScraper
 from src.monitor import KeywordMonitor
+from src.blog_monitor import BlogMonitor
 from src.db_client import DatabaseClient
 from src.google_sheets import GoogleSheetsClient
 from src.config import (
@@ -18,6 +19,8 @@ from src.config import (
     GOOGLE_CREDENTIALS_PATH,
     GOOGLE_SHEETS_ID, GOOGLE_SHEETS_GID,
     KEYWORD_LIST_SHEETS_ID, KEYWORD_LIST_SHEETS_GID,
+    BLOG_SHEETS_ID, BLOG_SHEETS_GID,
+    BLOG_KEYWORD_LIST_SHEETS_ID, BLOG_KEYWORD_LIST_SHEETS_GID,
 )
 
 
@@ -58,6 +61,18 @@ class MonitoringApp:
         # 제목
         tk.Label(self.root, text="네이버 키워드 노출 모니터링",
                  font=("맑은 고딕", 14, "bold")).pack(**pad)
+
+        # 순찰 유형 선택 (RadioButton: 카페/블로그)
+        self.mode_var = tk.StringVar(value='카페')
+        mode_frame = tk.Frame(self.root)
+        mode_frame.pack(fill='x', padx=12, pady=(6, 0))
+        tk.Label(mode_frame, text='순찰 유형:', font=('맑은 고딕', 10)).pack(side='left', padx=(0, 8))
+        tk.Radiobutton(mode_frame, text='카페', variable=self.mode_var,
+                       value='카페', command=self._on_mode_change,
+                       font=('맑은 고딕', 10)).pack(side='left', padx=4)
+        tk.Radiobutton(mode_frame, text='블로그', variable=self.mode_var,
+                       value='블로그', command=self._on_mode_change,
+                       font=('맑은 고딕', 10)).pack(side='left', padx=4)
 
         # 제품 선택 드롭다운
         frame = tk.Frame(self.root)
@@ -110,8 +125,13 @@ class MonitoringApp:
         logging.getLogger().setLevel(logging.INFO)
         logging.getLogger().addHandler(handler)
 
+    def _on_mode_change(self):
+        """순찰 유형 변경 시 제품 드롭다운 재로드"""
+        logging.info(f"순찰 모드 변경: {self.mode_var.get()}")
+        self._load_products()
+
     def _load_products(self):
-        """DB에서 제품 목록을 불러와 드롭다운에 채움"""
+        """DB에서 제품 목록을 불러와 드롭다운에 채움 (모드에 따라 카페/블로그 제품 구분)"""
         def _fetch():
             try:
                 db = DatabaseClient(
@@ -120,7 +140,11 @@ class MonitoringApp:
                     database=DB_NAME, table=DB_TABLE
                 )
                 if db.connect():
-                    products = db.get_distinct_products()
+                    mode = self.mode_var.get()
+                    if mode == '카페':
+                        products = db.get_distinct_products()
+                    else:  # 블로그
+                        products = db.get_distinct_blog_products()
                     db.disconnect()
                     self.root.after(0, self._set_products, products)
                 else:
@@ -186,49 +210,97 @@ class MonitoringApp:
                 self._loop_active = False
                 return
 
-            # 시트 클라이언트는 넘기지 않고, 모니터링 완료 후 sync_var를 확인해 직접 동기화
+            mode = self.mode_var.get()
             scraper = NaverScraper()
-            monitor = KeywordMonitor(scraper, db_client)
 
-            logging.info("키워드 모니터링 시작...")
-            results = monitor.monitor_keywords(products=products)
-            logging.info(f"회차 완료 (처리 {len(results)}건)")
+            if mode == '카페':
+                # ===== 카페 모드 =====
+                monitor = KeywordMonitor(scraper, db_client)
+                logging.info("카페 키워드 모니터링 시작...")
+                results = monitor.monitor_keywords(products=products)
+                logging.info(f"카페 회차 완료 (처리 {len(results)}건)")
 
-            # 키워드 처리 완료 후 체크박스 상태를 읽어 동기화 여부 결정
-            if self.sync_var.get():
-                logging.info("[1/2] 키워드순찰 시트 동기화 중...")
-                patrol_client = GoogleSheetsClient(
-                    credentials_path=GOOGLE_CREDENTIALS_PATH,
-                    spreadsheet_id=GOOGLE_SHEETS_ID,
-                    sheet_gid=GOOGLE_SHEETS_GID
-                )
-                if patrol_client.connect():
-                    headers, rows = db_client.get_all_patrol_logs()
-                    if rows:
-                        patrol_client.sync_patrol_logs(headers, rows)
-                        logging.info("키워드순찰 시트 동기화 완료 ✓")
+                # 카페 모드 시트 동기화
+                if self.sync_var.get():
+                    logging.info("[1/2] 키워드순찰 시트 동기화 중...")
+                    patrol_client = GoogleSheetsClient(
+                        credentials_path=GOOGLE_CREDENTIALS_PATH,
+                        spreadsheet_id=GOOGLE_SHEETS_ID,
+                        sheet_gid=GOOGLE_SHEETS_GID
+                    )
+                    if patrol_client.connect():
+                        headers, rows = db_client.get_all_patrol_logs()
+                        if rows:
+                            patrol_client.sync_patrol_logs(headers, rows)
+                            logging.info("키워드순찰 시트 동기화 완료 ✓")
+                        else:
+                            logging.warning("동기화할 데이터 없음")
                     else:
-                        logging.warning("동기화할 데이터 없음")
-                else:
-                    logging.warning("키워드순찰 시트 연결 실패 — 동기화 건너뜀")
+                        logging.warning("키워드순찰 시트 연결 실패 — 동기화 건너뜀")
 
-                logging.info("[2/2] 키워드목록 시트 동기화 중...")
-                kl_client = GoogleSheetsClient(
-                    credentials_path=GOOGLE_CREDENTIALS_PATH,
-                    spreadsheet_id=KEYWORD_LIST_SHEETS_ID,
-                    sheet_gid=KEYWORD_LIST_SHEETS_GID
-                )
-                if kl_client.connect():
-                    kl_headers, kl_rows = db_client.get_keyword_list_from_view()
-                    if kl_rows:
-                        kl_client.sync_patrol_logs(kl_headers, kl_rows)
-                        logging.info("키워드목록 시트 동기화 완료 ✓")
+                    logging.info("[2/2] 키워드목록 시트 동기화 중...")
+                    kl_client = GoogleSheetsClient(
+                        credentials_path=GOOGLE_CREDENTIALS_PATH,
+                        spreadsheet_id=KEYWORD_LIST_SHEETS_ID,
+                        sheet_gid=KEYWORD_LIST_SHEETS_GID
+                    )
+                    if kl_client.connect():
+                        kl_headers, kl_rows = db_client.get_keyword_list_from_view()
+                        if kl_rows:
+                            kl_client.sync_patrol_logs(kl_headers, kl_rows)
+                            logging.info("키워드목록 시트 동기화 완료 ✓")
+                        else:
+                            logging.warning("동기화할 데이터 없음")
                     else:
-                        logging.warning("동기화할 데이터 없음")
+                        logging.warning("키워드목록 시트 연결 실패 — 동기화 건너뜀")
                 else:
-                    logging.warning("키워드목록 시트 연결 실패 — 동기화 건너뜀")
+                    logging.info("시트 동기화 비활성화 — 건너뜀")
+
             else:
-                logging.info("시트 동기화 비활성화 — 건너뜀")
+                # ===== 블로그 모드 =====
+                monitor = BlogMonitor(scraper, db_client)
+                logging.info("블로그 포스트 모니터링 시작...")
+                results = monitor.monitor_blog_posts(products=products)
+                logging.info(f"블로그 회차 완료 (처리 {len(results)}건)")
+
+                # 블로그 모드 시트 동기화
+                if self.sync_var.get():
+                    if BLOG_SHEETS_ID and BLOG_SHEETS_GID:
+                        logging.info("[1/2] 블로그순찰 시트 동기화 중...")
+                        blog_client = GoogleSheetsClient(
+                            credentials_path=GOOGLE_CREDENTIALS_PATH,
+                            spreadsheet_id=BLOG_SHEETS_ID,
+                            sheet_gid=BLOG_SHEETS_GID
+                        )
+                        if blog_client.connect():
+                            headers, rows = db_client.get_all_blog_patrol_logs()
+                            if rows:
+                                blog_client.sync_patrol_logs(headers, rows)
+                                logging.info("블로그순찰 시트 동기화 완료 ✓")
+                            else:
+                                logging.warning("블로그 동기화할 데이터 없음")
+                        else:
+                            logging.warning("블로그순찰 시트 연결 실패 — 동기화 건너뜀")
+                    else:
+                        logging.warning("BLOG_SHEETS_ID 또는 BLOG_SHEETS_GID가 설정되지 않음 — 동기화 건너뜀")
+
+                    logging.info("[2/2] 블로그 키워드목록 시트 동기화 중...")
+                    blog_kl_client = GoogleSheetsClient(
+                        credentials_path=GOOGLE_CREDENTIALS_PATH,
+                        spreadsheet_id=BLOG_KEYWORD_LIST_SHEETS_ID,
+                        sheet_gid=BLOG_KEYWORD_LIST_SHEETS_GID
+                    )
+                    if blog_kl_client.connect():
+                        kl_headers, kl_rows = db_client.get_blog_keyword_list_from_view()
+                        if kl_rows:
+                            blog_kl_client.sync_patrol_logs(kl_headers, kl_rows)
+                            logging.info("블로그 키워드목록 시트 동기화 완료 ✓")
+                        else:
+                            logging.warning("블로그 키워드목록 동기화할 데이터 없음")
+                    else:
+                        logging.warning("블로그 키워드목록 시트 연결 실패 — 동기화 건너뜀")
+                else:
+                    logging.info("시트 동기화 비활성화 — 건너뜀")
 
             db_client.disconnect()
 
