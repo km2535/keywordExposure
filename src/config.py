@@ -54,15 +54,6 @@ DB_PASSWORD = os.getenv('DB_PASSWORD', '')
 DB_NAME = os.getenv('DB_NAME', 'cafe_auto')
 DB_TABLE = os.getenv('DB_TABLE', 'keyword_patrol_logs')
 
-# ===========================================
-# 이메일 설정
-# ===========================================
-
-EMAIL_SENDER = "fmonecompany@gmail.com"  # 발신자 이메일
-EMAIL_PASSWORD = "ugbq mgvv wtat sdbn"  # Gmail의 경우 앱 비밀번호 필요
-EMAIL_RECIPIENTS = ["lkm1416@gmail.com", "nnf2913@gmail.com"]  # 수신자 이메일 목록
-# EMAIL_RECIPIENTS = ["lkm1416@gmail.com"]  # 수신자 이메일 목록
-
 # 카테고리별 한글 이름 매핑
 CATEGORY_NAMES = {
     'cancer': '암 카테고리',
