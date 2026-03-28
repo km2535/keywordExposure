@@ -88,13 +88,26 @@ class MonitoringApp:
         )
         self.product_combo.pack(side='left')
 
-        # 시트 동기화 체크박스
+        # 순찰 간격 + 시트 동기화 (같은 줄)
+        option_frame = tk.Frame(self.root)
+        option_frame.pack(fill='x', padx=12, pady=(0, 4))
+
+        tk.Label(option_frame, text="순찰 간격(분):", font=("맑은 고딕", 10)).pack(side='left', padx=(0, 4))
+        self.interval_var = tk.StringVar(value="0")
+        vcmd = (self.root.register(lambda v: v.isdigit() or v == ""), '%P')
+        self.interval_entry = tk.Entry(
+            option_frame, textvariable=self.interval_var,
+            validate='key', validatecommand=vcmd,
+            font=("맑은 고딕", 10), width=5
+        )
+        self.interval_entry.pack(side='left', padx=(0, 16))
+
         self.sync_var = tk.BooleanVar(value=True)
         self.sync_check = tk.Checkbutton(
-            self.root, text="시트 동기화", variable=self.sync_var,
+            option_frame, text="시트 동기화", variable=self.sync_var,
             font=("맑은 고딕", 10)
         )
-        self.sync_check.pack(pady=(0, 4))
+        self.sync_check.pack(side='left')
 
         # 시작/중지 버튼
         self.run_btn = tk.Button(
@@ -176,6 +189,7 @@ class MonitoringApp:
             self._loop_active = True
             self._stopping = False
             self.product_combo.config(state='disabled')
+            self.interval_entry.config(state='disabled')
             self.run_btn.config(
                 text="모니터링 중지", bg="#F44336",
                 activebackground="#B71C1C"
@@ -311,14 +325,35 @@ class MonitoringApp:
 
     def _on_cycle_done(self):
         if self._loop_active:
-            # 즉시 다음 회차 실행
-            logging.info("다음 회차 즉시 시작...")
-            self._start_one_cycle()
+            interval_minutes = int(self.interval_var.get() or 0)
+            if interval_minutes > 0:
+                logging.info(f"다음 회차까지 {interval_minutes}분 대기 중...")
+                self._wait_and_restart(interval_minutes * 60)
+            else:
+                logging.info("다음 회차 즉시 시작...")
+                self._start_one_cycle()
         else:
             # 종료 완료 — 프로그램 종료
             self.progress.stop()
+            self.interval_entry.config(state='normal')
             logging.info("프로그램을 종료합니다.")
             self.root.after(500, self._exit_app)
+
+    def _wait_and_restart(self, remaining_seconds):
+        """남은 초를 카운트다운하며 다음 회차 대기"""
+        if not self._loop_active:
+            self.progress.stop()
+            self.interval_entry.config(state='normal')
+            logging.info("프로그램을 종료합니다.")
+            self.root.after(500, self._exit_app)
+            return
+        if remaining_seconds <= 0:
+            logging.info("대기 완료 — 다음 회차 시작...")
+            self._start_one_cycle()
+            return
+        mins, secs = divmod(remaining_seconds, 60)
+        self.run_btn.config(text=f"중지 ({mins:02d}:{secs:02d} 후 재시작)")
+        self.root.after(1000, self._wait_and_restart, remaining_seconds - 1)
 
     def _exit_app(self):
         self.root.destroy()
