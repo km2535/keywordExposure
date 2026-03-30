@@ -48,8 +48,8 @@ BLOG_SHEETS_ID = os.getenv('BLOG_SHEETS_ID', '')
 BLOG_SHEETS_GID = int(os.getenv('BLOG_SHEETS_GID', 0))
 
 # 블로그 키워드목록 시트 설정
-BLOG_KEYWORD_LIST_SHEETS_ID = '1ZWjmlfrxux4OJ9c0widz74CR-kDWmmRmR-YgTB3LfWU'
-BLOG_KEYWORD_LIST_SHEETS_GID = 1499466916
+BLOG_KEYWORD_LIST_SHEETS_ID = os.getenv('BLOG_KEYWORD_LIST_SHEETS_ID', '')
+BLOG_KEYWORD_LIST_SHEETS_GID = int(os.getenv('BLOG_KEYWORD_LIST_SHEETS_GID', 0))
 
 # ===========================================
 # DB 설정
