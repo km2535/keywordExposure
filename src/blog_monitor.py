@@ -121,9 +121,8 @@ class BlogMonitor:
                         is_exposed = rank is not None
                         exposure_status = "O" if is_exposed else "X"
 
-                        # 인기글 여부
-                        norm_target = self.normalize_url(target_url)
-                        popular_status = "O" if norm_target in popular_urls else "X"
+                        # 인기글 여부 (섹션에 하나라도 있으면 O)
+                        popular_status = "O" if popular_urls else "X"
 
                         # 삭제 확인 (미노출 시에만 — Selenium alert 방식)
                         deletion_status = None
