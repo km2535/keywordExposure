@@ -567,6 +567,11 @@ class DatabaseClient:
                         set_clauses.append('is_deleted = %s')
                         params.append(1 if result['deletion_status'] == 'O' else 0)
 
+                    # 인기글 여부 (O→1, X→0)
+                    if 'popular_status' in result:
+                        set_clauses.append('is_popular = %s')
+                        params.append(1 if result['popular_status'] == 'O' else 0)
+
                     # 교차노출 (cross_keywords 리스트 기반)
                     if 'cross_keywords' in result:
                         cross_kws = result['cross_keywords']
@@ -635,6 +640,7 @@ class DatabaseClient:
                 bp.checked_at,
                 bp.account_id,
                 bp.product,
+                bp.is_popular,
                 bp.updated_at
             FROM blog_post bp
             JOIN keywords k ON bp.keyword_id = k.keyword_id
@@ -646,7 +652,7 @@ class DatabaseClient:
             '키워드', '조회수', 'url',
             '삭제', '노출', '순위', '교차노출',
             '교차키워드1', '교차키워드2', '교차키워드3', '교차키워드4', '교차키워드5',
-            '발행시간', '순찰시간', '발행아이디', '제품', '업데이트시간'
+            '발행시간', '순찰시간', '발행아이디', '제품', '댓글묶음', '인기글여부', '업데이트시간'
         ]
 
         try:
@@ -660,7 +666,7 @@ class DatabaseClient:
                  is_deleted, is_exposed, rank, is_cross_exposed,
                  cross_kw1, cross_kw2, cross_kw3, cross_kw4, cross_kw5,
                  published_at, checked_at, account_id,
-                 product, updated_at) = raw
+                 product, is_popular, updated_at) = raw
 
                 rows.append([
                     keyword or '',
@@ -679,6 +685,8 @@ class DatabaseClient:
                     str(checked_at) if checked_at else '',
                     account_id or '',
                     product or '',
+                    '',  # 댓글묶음 (DB 컬럼 없음)
+                    'O' if is_popular else 'X',
                     str(updated_at) if updated_at else '',
                 ])
 
@@ -711,13 +719,12 @@ class DatabaseClient:
                 `교차노출`,
                 `발행시간`,
                 `블로그url`,
-                `발행아이디`,
+                `인기글여부`,
                 `교차키워드1`,
                 `교차키워드2`,
                 `교차키워드3`,
                 `교차키워드4`,
-                `교차키워드5`,
-                `확인시간`
+                `교차키워드5`
             FROM cafe_auto.blog_post_list_view
             ORDER BY `키워드조회수` DESC
         """
@@ -725,9 +732,8 @@ class DatabaseClient:
         headers = [
             '키워드', '키워드조회수', '제품',
             '삭제', '노출', '순위', '교차노출',
-            '발행시간', 'url', '발행아이디',
+            '발행시간', 'url', '인기글여부',
             '교차키워드1', '교차키워드2', '교차키워드3', '교차키워드4', '교차키워드5',
-            '확인시간'
         ]
 
         try:
@@ -739,9 +745,8 @@ class DatabaseClient:
             for raw in raw_rows:
                 (keyword, search_volume, product,
                  is_deleted, is_exposed, rank, is_cross_exposed,
-                 published_at, blog_url, account_id,
-                 cross_kw1, cross_kw2, cross_kw3, cross_kw4, cross_kw5,
-                 checked_at) = raw
+                 published_at, blog_url, is_popular,
+                 cross_kw1, cross_kw2, cross_kw3, cross_kw4, cross_kw5) = raw
 
                 rows.append([
                     keyword or '',
@@ -753,13 +758,12 @@ class DatabaseClient:
                     'O' if is_cross_exposed else 'X',
                     str(published_at) if published_at else '',
                     blog_url or '',
-                    account_id or '',
+                    'O' if is_popular else 'X',
                     cross_kw1 or '',
                     cross_kw2 or '',
                     cross_kw3 or '',
                     cross_kw4 or '',
                     cross_kw5 or '',
-                    str(checked_at) if checked_at else '',
                 ])
 
             logging.info(f"blog_post_list_view {len(rows)}개 행 로드 완료")

@@ -83,6 +83,7 @@ class BlogMonitor:
                         logging.warning(f"키워드 '{keyword}' 검색 결과 가져오기 실패 (requests+Selenium 모두 실패), 건너뜀")
                         continue
                     search_urls = self.scraper.extract_main_urls(soup)
+                    popular_urls = self.scraper.extract_popular_post_urls(soup)
                 except Exception as e:
                     logging.error(f"키워드 '{keyword}' 검색 중 오류 발생, 건너뜀: {e}")
                     continue
@@ -120,6 +121,10 @@ class BlogMonitor:
                         is_exposed = rank is not None
                         exposure_status = "O" if is_exposed else "X"
 
+                        # 인기글 여부
+                        norm_target = self.normalize_url(target_url)
+                        popular_status = "O" if norm_target in popular_urls else "X"
+
                         # 삭제 확인 (미노출 시에만 — Selenium alert 방식)
                         deletion_status = None
                         if not is_exposed:
@@ -132,6 +137,7 @@ class BlogMonitor:
                             'row': row,
                             'url': target_url,
                             'exposure_status': exposure_status,
+                            'popular_status': popular_status,
                             'cross_keywords': cross_keywords,
                             'rank': rank,
                         }
