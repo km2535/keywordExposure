@@ -425,7 +425,7 @@ class DatabaseClient:
                     rank if rank is not None else '',
                     'O' if is_cross_exposed else 'X',
                     cafe_name or '',
-                    str(published_at) if published_at else '',
+                    published_at.strftime('%Y-%m-%d') if published_at else '',
                     cafe_url or '',
                     'O' if is_popular else 'X',
                     cross_kw1 or '',
