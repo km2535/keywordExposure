@@ -406,7 +406,7 @@ class NaverScraper:
             time.sleep(1.5)  # alert 대기
 
             try:
-                # JavaScript alert 확인
+                # JavaScript alert 확인 (카페 방식)
                 alert = driver.switch_to.alert
                 alert_text = alert.text
                 alert.accept()  # alert 닫기
@@ -416,7 +416,11 @@ class NaverScraper:
                 return False, None
 
             except NoAlertPresentException:
-                # alert이 없으면 글이 존재함
+                # 블로그: alert 없이 페이지로 비공개/제한 표시
+                if 'blog.naver.com' in url:
+                    page_source = driver.page_source
+                    if '비공개 블로그입니다' in page_source or '접근이 제한' in page_source:
+                        return True, "비공개 블로그"
                 return False, None
 
         except UnexpectedAlertPresentException:
