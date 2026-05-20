@@ -110,6 +110,8 @@ class KeywordMonitor:
                     continue
                 search_urls = self.scraper.extract_main_urls(soup)
                 popular_urls = self.scraper.extract_popular_post_urls(soup)
+                if not search_urls:
+                    logging.warning(f"키워드 '{keyword}' — 검색 결과 URL 0개 추출됨 (봇 차단/HTML 변경 의심). 이 키워드의 노출 판정은 신뢰할 수 없습니다.")
             except Exception as e:
                 logging.error(f"키워드 '{keyword}' 검색 중 오류 발생, 건너뜀: {e}")
                 continue
@@ -131,6 +133,13 @@ class KeywordMonitor:
             for item in items:
                 target_url = item['target_url']
                 row = item['row']
+
+                # naver.me 단축 URL → 실제 URL로 해석 (비교 가능하게)
+                if target_url and 'naver.me' in target_url:
+                    resolved = self.scraper.resolve_short_url(target_url)
+                    if resolved != target_url:
+                        logging.info(f"단축URL 해석 (행 {row}): {target_url} → {resolved}")
+                        target_url = resolved
 
                 if not target_url:
                     # URL 없는 항목: 인기글 섹션 존재 여부만 기록

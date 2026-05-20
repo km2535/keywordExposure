@@ -31,13 +31,37 @@ class NaverScraper:
         """무작위 User-Agent 반환"""
         return random.choice(self.user_agents)
 
+    def resolve_short_url(self, url: str) -> str:
+        """
+        단축 URL(naver.me 등)을 실제 URL로 추적.
+        리다이렉트 체인을 따라가 최종 URL 반환.
+        실패 시 원본 URL 반환.
+        """
+        if not url or 'naver.me' not in url:
+            return url
+        try:
+            resp = self._session.head(
+                url, allow_redirects=True, timeout=10,
+                headers={"User-Agent": self.get_random_user_agent()}
+            )
+            return resp.url
+        except Exception:
+            try:
+                resp = self._session.get(
+                    url, allow_redirects=True, timeout=10,
+                    headers={"User-Agent": self.get_random_user_agent()}
+                )
+                return resp.url
+            except Exception:
+                return url
+
     @staticmethod
     def normalize_url(url: str) -> str:
         """
         URL 정규화 (단일 공통 로직):
           1. 쿼리 파라미터(?...) 제거
           2. 카페/블로그 URL의 JWT 토큰(=token) 제거
-          3. 모바일 도메인(m.) 제거
+          3. 모바일 도메인(m.) 제거 — netloc이 'M.' 으로 시작하는 경우만
         """
         if not url:
             return ''
@@ -45,8 +69,10 @@ class NaverScraper:
         if ('cafe.naver.com' in base_url or 'blog.naver.com' in base_url) and '=' in base_url:
             base_url = base_url.split('=')[0]
         parsed = urlparse(base_url)
-        normalized_netloc = parsed.netloc.replace('m.', '', 1)
-        return normalized_netloc + parsed.path
+        netloc = parsed.netloc
+        if netloc.startswith('m.'):
+            netloc = netloc[2:]
+        return netloc + parsed.path
 
     def get_search_results(self, keyword, page=1, delay=True):
         """네이버 검색 결과를 가져오는 함수 (requests 우선, 403 시 Selenium 폴백)"""
@@ -60,7 +86,9 @@ class NaverScraper:
         logging.info(f"'{keyword}' 검색 중 (페이지 {page})...")
 
         # 1단계: requests 시도 (빠름)
+        # 매 검색마다 새 세션 사용 → 쿠키/세션 누적 없이 "처음 방문자" 상태로 검색
         try:
+            fresh_session = requests.Session()
             headers = {
                 "User-Agent": self.get_random_user_agent(),
                 "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
@@ -70,20 +98,27 @@ class NaverScraper:
                 "Connection": "keep-alive",
                 "Upgrade-Insecure-Requests": "1",
             }
-            response = self._session.get(url, headers=headers, timeout=10)
+            response = fresh_session.get(url, headers=headers, timeout=10)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
             # 실제 검색 결과가 있는지 확인 (봇 차단 페이지는 결과 없음)
-            if soup.find('a', attrs={'data-heatmap-target': '.link'}):
+            # data-heatmap-target 속성 또는 네이버 검색 결과 컨테이너(sds-comps) 중 하나라도 있으면 유효
+            has_results = (
+                soup.find('a', attrs={'data-heatmap-target': True}) is not None
+                or soup.find(class_=lambda c: c and 'sds-comps' in ' '.join(c) if isinstance(c, list) else c and 'sds-comps' in c) is not None
+            )
+            if has_results:
                 return soup
             logging.info(f"requests 결과 없음 (봇 차단 추정), Selenium으로 전환")
         except Exception as e:
             logging.info(f"requests 실패 ({e}), Selenium으로 전환")
 
         # 2단계: Selenium 폴백 (느리지만 확실)
+        # 쿠키 초기화 후 검색 — 처음 방문자 상태 유지
         for attempt in range(2):
             try:
                 driver = self._init_driver()
+                driver.delete_all_cookies()
                 driver.get(url)
                 time.sleep(random.uniform(1.5, 2.0))
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
@@ -200,7 +235,8 @@ class NaverScraper:
     def extract_main_urls(self, soup):
         """
         메인 노출 URL만 추출.
-        data-heatmap-target=".link" 인 a 태그만 메인 노출로 판단.
+        1순위: data-heatmap-target=".link" 인 a 태그
+        2순위(폴백): data-heatmap-target 속성이 있는 모든 a 태그 중 naver.com 포함 URL
         data-heatmap-target=".series" 는 서브 노출이므로 제외.
         """
         urls = []
@@ -212,9 +248,26 @@ class NaverScraper:
         except Exception as e:
             logging.info(f"메인 URL 추출 중 오류: {str(e)}")
 
+        # 폴백: .link 속성 방식으로 URL을 하나도 못 찾은 경우 — 네이버 HTML 구조 변경 감지
+        if not urls:
+            logging.warning("data-heatmap-target='.link' URL 없음 — 네이버 HTML 구조 변경 의심, 폴백 추출 시도")
+            try:
+                for a_tag in soup.find_all('a', attrs={'data-heatmap-target': True}):
+                    target_val = a_tag.get('data-heatmap-target', '')
+                    if '.series' in target_val:
+                        continue
+                    href = a_tag.get('href', '')
+                    if href and 'naver.com' in href and ('http://' in href or 'https://' in href):
+                        urls.append(href)
+            except Exception as e:
+                logging.warning(f"폴백 URL 추출 중 오류: {str(e)}")
+
         normalized_urls = [self.normalize_url(url) for url in urls]
         unique_urls = list(dict.fromkeys(normalized_urls))
-        logging.info(f"메인 노출(data-heatmap-target='.link') URL {len(unique_urls)}개 추출 완료")
+        if not unique_urls:
+            logging.warning("extract_main_urls: 추출된 URL 0개 — 봇 차단 또는 HTML 구조 변경 가능성")
+        else:
+            logging.info(f"메인 노출 URL {len(unique_urls)}개 추출 완료")
         return unique_urls
 
     def extract_popular_post_urls(self, soup):
