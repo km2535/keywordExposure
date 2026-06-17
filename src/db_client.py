@@ -92,6 +92,7 @@ class DatabaseClient:
         sql = f"""
             SELECT
                 kr.id,
+                k.keyword_id,
                 k.keyword,
                 kr.result_url,
                 kr.is_deleted,
@@ -110,9 +111,10 @@ class DatabaseClient:
 
             result = []
             for row in rows:
-                db_id, keyword, result_url, is_deleted, is_exposed, account_id = row
+                db_id, keyword_id, keyword, result_url, is_deleted, is_exposed, account_id = row
                 result.append({
                     'row': db_id,
+                    'keyword_id': keyword_id,
                     'keyword': keyword or '',
                     'target_url': result_url or '',
                     'current_status': 'O' if is_exposed else 'X',
@@ -385,6 +387,7 @@ class DatabaseClient:
                 `발행시간`,
                 `카페url`,
                 `인기글여부`,
+                `비대표카페노출여부`,
                 `교차키워드1`,
                 `교차키워드2`,
                 `교차키워드3`,
@@ -399,7 +402,7 @@ class DatabaseClient:
             '키워드', '키워드조회수', '제품',
             '삭제', '노출', '순위', '교차노출',
             '카페', '발행시간', '카페',
-            '인기글여부',
+            '인기글여부', '비대표카페노출여부',
             '교차키워드1', '교차키워드2', '교차키워드3', '교차키워드4', '교차키워드5'
         ]
 
@@ -413,7 +416,7 @@ class DatabaseClient:
                 (keyword, search_volume, product,
                  is_deleted, is_exposed, rank, is_cross_exposed,
                  cafe_name, published_at, cafe_url,
-                 is_popular,
+                 is_popular, non_main_cafe_exposed,
                  cross_kw1, cross_kw2, cross_kw3, cross_kw4, cross_kw5) = raw
 
                 rows.append([
@@ -428,6 +431,7 @@ class DatabaseClient:
                     published_at.strftime('%Y-%m-%d') if published_at else '',
                     cafe_url or '',
                     'O' if is_popular else 'X',
+                    non_main_cafe_exposed or '',
                     cross_kw1 or '',
                     cross_kw2 or '',
                     cross_kw3 or '',
@@ -441,6 +445,31 @@ class DatabaseClient:
         except Exception as e:
             logging.error(f"keyword_list_view 로드 실패: {e}")
             return [], []
+
+    def upsert_main_cafe_status(self, keyword_id: int, is_main_cafe: bool):
+        """
+        keyword_main_cafe 테이블에 대표카페 여부 upsert.
+        이미 존재하면 UPDATE, 없으면 INSERT.
+        """
+        if not self._ensure_connection():
+            logging.error("DB 연결 실패로 대표카페 업데이트를 건너뜁니다.")
+            return
+
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        sql = """
+            INSERT INTO keyword_main_cafe (keyword_id, is_main_cafe, updated_at)
+            VALUES (%s, %s, %s)
+            ON DUPLICATE KEY UPDATE
+                is_main_cafe = VALUES(is_main_cafe),
+                updated_at   = VALUES(updated_at)
+        """
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql, (keyword_id, 1 if is_main_cafe else 0, current_time))
+            self.connection.commit()
+        except Exception as e:
+            self.connection.rollback()
+            logging.error(f"대표카페 upsert 실패 (keyword_id={keyword_id}): {e}")
 
     # ===================================== 블로그 순찰 메서드 =====================================
 

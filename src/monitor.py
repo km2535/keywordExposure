@@ -112,6 +112,13 @@ class KeywordMonitor:
                 popular_urls = self.scraper.extract_popular_post_urls(soup)
                 if not search_urls:
                     logging.warning(f"키워드 '{keyword}' — 검색 결과 URL 0개 추출됨 (봇 차단/HTML 변경 의심). 이 키워드의 노출 판정은 신뢰할 수 없습니다.")
+
+                # 대표카페 여부 확인 및 DB 저장 (키워드당 1회)
+                is_main_cafe = self.scraper.check_all_main_cafe(soup)
+                keyword_id = items[0].get('keyword_id') if items else None
+                if keyword_id:
+                    self.db_client.upsert_main_cafe_status(keyword_id, is_main_cafe)
+                    logging.info(f"키워드 '{keyword}' 대표카페여부={is_main_cafe}")
             except Exception as e:
                 logging.error(f"키워드 '{keyword}' 검색 중 오류 발생, 건너뜀: {e}")
                 continue

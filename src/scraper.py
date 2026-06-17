@@ -302,6 +302,29 @@ class NaverScraper:
         logging.info(f"인기글 섹션 URL {len(popular_urls)}개 추출 완료")
         return popular_urls
 
+    def check_all_main_cafe(self, soup) -> bool:
+        """
+        검색 결과의 카페 항목이 모두 대표카페인지 확인.
+        각 ugcItem 중 cafe.naver.com 링크를 포함하는 항목에서
+        대표카페 배지(SVG viewBox="0 0 20 15") 유무를 확인.
+        비대표카페가 하나라도 있으면 False, 전부 대표카페이면 True(default).
+        """
+        try:
+            items = soup.find_all('div', attrs={'data-template-id': 'ugcItem'})
+            if not items:
+                return True  # 결과 없으면 default(대표카페)
+            for item in items:
+                is_cafe = item.find('a', href=lambda h: h and 'cafe.naver.com' in h)
+                if not is_cafe:
+                    continue
+                badge = item.find('svg', attrs={'viewBox': '0 0 20 15'})
+                if not badge:
+                    logging.info("[대표카페] 비대표카페 항목 발견 → is_main_cafe=False")
+                    return False
+        except Exception as e:
+            logging.info(f"대표카페 확인 중 오류: {e}")
+        return True
+
     def get_cafe_post_views(self, url):
         """
         네이버 카페 글의 조회수를 가져오는 함수
