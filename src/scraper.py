@@ -328,7 +328,7 @@ class NaverScraper:
                 is_cafe = item.find('a', href=lambda h: h and 'cafe.naver.com' in h)
                 if not is_cafe:
                     continue
-                badge = item.find('svg', attrs={'viewBox': '0 0 20 15'})
+                badge = item.find('svg', attrs={'viewbox': '0 0 20 15'})
                 if not badge:
                     logging.info("[대표카페] 비대표카페 항목 발견 → is_main_cafe=False")
                     return False
