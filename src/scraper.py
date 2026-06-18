@@ -1,3 +1,4 @@
+import copy
 import requests
 from bs4 import BeautifulSoup
 import time
@@ -238,10 +239,16 @@ class NaverScraper:
         1순위: data-heatmap-target=".link" 인 a 태그
         2순위(폴백): data-heatmap-target 속성이 있는 모든 a 태그 중 naver.com 포함 URL
         data-heatmap-target=".series" 는 서브 노출이므로 제외.
+        fds-health-cafe-block-wrap(관련 경험 카페글) 섹션은 제외.
         """
+        # 관련 경험 카페글 섹션을 soup에서 제거한 뒤 탐색
+        search_soup = copy.copy(soup)
+        for health_block in search_soup.find_all('div', class_=lambda c: c and 'fds-health-cafe-block-wrap' in c):
+            health_block.decompose()
+
         urls = []
         try:
-            for a_tag in soup.find_all('a', attrs={'data-heatmap-target': '.link'}):
+            for a_tag in search_soup.find_all('a', attrs={'data-heatmap-target': '.link'}):
                 href = a_tag.get('href', '')
                 if href and ('http://' in href or 'https://' in href):
                     urls.append(href)
@@ -252,7 +259,7 @@ class NaverScraper:
         if not urls:
             logging.warning("data-heatmap-target='.link' URL 없음 — 네이버 HTML 구조 변경 의심, 폴백 추출 시도")
             try:
-                for a_tag in soup.find_all('a', attrs={'data-heatmap-target': True}):
+                for a_tag in search_soup.find_all('a', attrs={'data-heatmap-target': True}):
                     target_val = a_tag.get('data-heatmap-target', '')
                     if '.series' in target_val:
                         continue
@@ -308,12 +315,16 @@ class NaverScraper:
         각 ugcItem 중 cafe.naver.com 링크를 포함하는 항목에서
         대표카페 배지(SVG viewBox="0 0 20 15") 유무를 확인.
         비대표카페가 하나라도 있으면 False, 전부 대표카페이면 True(default).
+        파워콘텐츠(광고) 항목(data-power-content-url 속성 보유)은 판정에서 제외.
         """
         try:
             items = soup.find_all('div', attrs={'data-template-id': 'ugcItem'})
             if not items:
                 return True  # 결과 없으면 default(대표카페)
             for item in items:
+                # 파워콘텐츠(광고) 항목은 대표카페 판정에서 제외
+                if item.get('data-power-content-url'):
+                    continue
                 is_cafe = item.find('a', href=lambda h: h and 'cafe.naver.com' in h)
                 if not is_cafe:
                     continue
