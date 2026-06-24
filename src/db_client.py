@@ -241,6 +241,16 @@ class DatabaseClient:
                             set_clauses.append(f'cross_keyword{i} = %s')
                             params.append(cross_kws[i - 1] if i <= len(cross_kws) else None)
 
+                    # 레이아웃 정보: 블록 위치 (head/body/None)
+                    if 'block_position' in result:
+                        set_clauses.append('block_position = %s')
+                        params.append(result['block_position'])  # None → NULL
+
+                    # 레이아웃 정보: 글 Y위치 % (None → NULL)
+                    if 'post_y_pct' in result:
+                        set_clauses.append('post_y_pct = %s')
+                        params.append(result['post_y_pct'])
+
                     if url:
                         params.append(url)
                         sql = f"""
@@ -392,18 +402,23 @@ class DatabaseClient:
                 `교차키워드2`,
                 `교차키워드3`,
                 `교차키워드4`,
-                `교차키워드5`
+                `교차키워드5`,
+                `상하단구분`,
+                `첫카페글위치`,
+                `블록위치`,
+                `글위치`
             FROM cafe_auto.keyword_list_view
             ORDER BY `키워드조회수` DESC
         """
 
-        # 시트 헤더 (두 번째 '카페' 열은 카페url 내용을 담음)
+        # 시트 헤더 (두 번째 '카페' 열은 카페url 내용을 담음, 레이아웃 컬럼 4개 추가)
         headers = [
             '키워드', '키워드조회수', '제품',
             '삭제', '노출', '순위', '교차노출',
             '카페', '발행시간', '카페',
             '인기글여부', '비대표카페노출여부',
-            '교차키워드1', '교차키워드2', '교차키워드3', '교차키워드4', '교차키워드5'
+            '교차키워드1', '교차키워드2', '교차키워드3', '교차키워드4', '교차키워드5',
+            '상하단구분', '첫카페글위치', '블록위치', '글위치'
         ]
 
         try:
@@ -417,7 +432,8 @@ class DatabaseClient:
                  is_deleted, is_exposed, rank, is_cross_exposed,
                  cafe_name, published_at, cafe_url,
                  is_popular, non_main_cafe_exposed,
-                 cross_kw1, cross_kw2, cross_kw3, cross_kw4, cross_kw5) = raw
+                 cross_kw1, cross_kw2, cross_kw3, cross_kw4, cross_kw5,
+                 has_split_block, first_cafe_y_pct, block_position, post_y_pct) = raw
 
                 rows.append([
                     keyword or '',
@@ -437,6 +453,10 @@ class DatabaseClient:
                     cross_kw3 or '',
                     cross_kw4 or '',
                     cross_kw5 or '',
+                    'O' if has_split_block else ('X' if has_split_block is not None else ''),
+                    str(round(float(first_cafe_y_pct), 1)) + '%' if first_cafe_y_pct is not None else '',
+                    block_position or '',
+                    str(round(float(post_y_pct), 1)) + '%' if post_y_pct is not None else '',
                 ])
 
             logging.info(f"keyword_list_view {len(rows)}개 행 로드 완료")
@@ -470,6 +490,56 @@ class DatabaseClient:
         except Exception as e:
             self.connection.rollback()
             logging.error(f"대표카페 upsert 실패 (keyword_id={keyword_id}): {e}")
+
+    def upsert_layout_info(self, keyword_id: int, layout: dict):
+        """
+        keyword_layout_info 테이블에 레이아웃 측정값 upsert.
+        이미 존재하면 UPDATE, 없으면 INSERT.
+
+        Args:
+            keyword_id: keywords.keyword_id
+            layout: {
+                'has_split_block': bool or None,
+                'first_cafe_y_pct': float or None,
+            }
+
+        NOTE: Phase 1 DDL (DB에서 직접 실행 필요):
+        CREATE TABLE keyword_layout_info (
+            keyword_id INT NOT NULL PRIMARY KEY,
+            has_split_block TINYINT(1) DEFAULT NULL,
+            first_cafe_y_pct DECIMAL(5,2) DEFAULT NULL,
+            updated_at DATETIME DEFAULT NULL,
+            CONSTRAINT fk_layout_keyword FOREIGN KEY (keyword_id) REFERENCES keywords (keyword_id)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+        ALTER TABLE keyword_patrol_logs
+            ADD COLUMN block_position ENUM('head','body') DEFAULT NULL,
+            ADD COLUMN post_y_pct DECIMAL(5,2) DEFAULT NULL;
+        """
+        if not self._ensure_connection():
+            logging.error("DB 연결 실패로 레이아웃 정보 업데이트를 건너뜁니다.")
+            return
+
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        has_split_block = layout.get('has_split_block')
+        first_cafe_y_pct = layout.get('first_cafe_y_pct')
+
+        sql = """
+            INSERT INTO keyword_layout_info (keyword_id, has_split_block, first_cafe_y_pct, updated_at)
+            VALUES (%s, %s, %s, %s)
+            ON DUPLICATE KEY UPDATE
+                has_split_block   = COALESCE(VALUES(has_split_block), has_split_block),
+                first_cafe_y_pct  = COALESCE(VALUES(first_cafe_y_pct), first_cafe_y_pct),
+                updated_at        = VALUES(updated_at)
+        """
+
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql, (keyword_id, has_split_block, first_cafe_y_pct, current_time))
+            self.connection.commit()
+        except Exception as e:
+            self.connection.rollback()
+            logging.error(f"레이아웃 정보 upsert 실패 (keyword_id={keyword_id}): {e}")
 
     # ===================================== 블로그 순찰 메서드 =====================================
 

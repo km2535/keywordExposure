@@ -119,6 +119,22 @@ class KeywordMonitor:
                 if keyword_id:
                     self.db_client.upsert_main_cafe_status(keyword_id, is_main_cafe)
                     logging.info(f"키워드 '{keyword}' 대표카페여부={is_main_cafe}")
+
+                # 키워드 단위 레이아웃 측정 (글 단위는 아래 items 루프 내에서 개별 처리)
+                # 노출된 URL 목록 수집 (삭제되지 않은 것만)
+                exposed_urls = [
+                    item['target_url'] for item in items
+                    if item.get('target_url') and item.get('is_deleted') != 'O'
+                ]
+
+                layout_result = None
+                try:
+                    layout_result = self.scraper.get_layout_metrics(keyword, exposed_urls)
+                    if layout_result and keyword_id:
+                        self.db_client.upsert_layout_info(keyword_id, layout_result)
+                    logging.info(f"키워드 '{keyword}' 레이아웃: has_split={layout_result.get('has_split_block')}, first_pct={layout_result.get('first_cafe_y_pct')}")
+                except Exception as e:
+                    logging.warning(f"키워드 '{keyword}' 레이아웃 측정 실패, 건너뜀: {e}")
             except Exception as e:
                 logging.error(f"키워드 '{keyword}' 검색 중 오류 발생, 건너뜀: {e}")
                 continue
@@ -194,6 +210,18 @@ class KeywordMonitor:
                         is_exposed = rank is not None
                         exposure_status = "O" if is_exposed else "X"
 
+                    # 레이아웃 글 단위 값 추출
+                    block_position = None
+                    post_y_pct = None
+                    if layout_result and target_url and exposure_status == 'O':
+                        url_m = layout_result.get('url_metrics', {})
+                        norm = self.normalize_url(target_url)
+                        for k, v in url_m.items():
+                            if self.normalize_url(k) == norm:
+                                block_position = v.get('block_position')
+                                post_y_pct = v.get('post_y_pct')
+                                break
+
                     # 결과 데이터 구성
                     batch_updates.append({
                         'row': row,
@@ -203,6 +231,8 @@ class KeywordMonitor:
                         'cross_keywords': cross_keywords,
                         'rank': rank,
                         'popular_status': popular_status,
+                        'block_position': block_position,
+                        'post_y_pct': post_y_pct,
                     })
                 except Exception as e:
                     logging.error(f"행 {row} 처리 중 오류 발생, 건너뜀: {e}")

@@ -546,3 +546,147 @@ class NaverScraper:
             self.close_driver()
 
         return results
+
+    def get_layout_metrics(self, keyword: str, target_urls: list = None) -> dict:
+        """
+        네이버 검색결과 페이지에서 레이아웃 측정값 반환.
+        Selenium으로 페이지를 렌더링하여 요소 위치를 측정.
+
+        Args:
+            keyword:      검색 키워드 (페이지 로딩에 사용)
+            target_urls:  내 글 URL 목록 (정규화 후 비교). None이면 글 단위 측정 생략.
+
+        Returns:
+            {
+                'has_split_block': bool or None,  -- _fsolid_head 존재 여부
+                'first_cafe_y_pct': float or None,  -- 첫 카페글 Y위치 %
+                'url_metrics': {
+                    'https://cafe.naver.com/xxx/123': {
+                        'block_position': 'head' or 'body' or None,  -- 글이 속한 블록
+                        'post_y_pct': float or None,  -- 글 Y위치 %
+                    },
+                    ...
+                }
+            }
+
+        Returns (on error):
+            {
+                'has_split_block': None,
+                'first_cafe_y_pct': None,
+                'url_metrics': {}
+            }
+        """
+        if target_urls is None:
+            target_urls = []
+
+        result = {
+            'has_split_block': None,
+            'first_cafe_y_pct': None,
+            'url_metrics': {}
+        }
+
+        try:
+            # 1. Selenium 드라이버 초기화
+            driver = self._init_driver()
+
+            # 2. 검색 페이지 로딩
+            search_url = f"https://search.naver.com/search.naver?query={keyword}"
+            driver.get(search_url)
+            time.sleep(2.5)  # 렌더링 대기
+
+            # 3. 페이지 높이 확인
+            scroll_height = driver.execute_script("return document.body.scrollHeight")
+            if scroll_height <= 0:
+                logging.warning(f"레이아웃 측정 '{keyword}': scrollHeight <= 0 (페이지 미렌더링)")
+                return result
+
+            # 4. 키워드 단위: has_split_block (상하단 구분)
+            has_split_block = driver.execute_script("""
+                return document.querySelector('._fsolid_head') !== null;
+            """)
+            result['has_split_block'] = has_split_block
+
+            # 5. 키워드 단위: first_cafe_y_pct (첫 카페글 Y위치)
+            first_cafe_y_pct = driver.execute_script("""
+                var pageHeight = document.body.scrollHeight;
+                // _fsolid_head, _fsolid_body 각각의 링크 중 cafe.naver.com URL 찾기
+                var headLinks = document.querySelectorAll('._fsolid_head a[href*="cafe.naver.com"]');
+                var bodyLinks = document.querySelectorAll('._fsolid_body a[href*="cafe.naver.com"]');
+                var allCafeLinks = Array.from(headLinks).concat(Array.from(bodyLinks));
+
+                if (allCafeLinks.length > 0) {
+                    var rect = allCafeLinks[0].getBoundingClientRect();
+                    var top = rect.top + window.scrollY;
+                    return Math.round(top / pageHeight * 1000) / 10;
+                }
+                return null;
+            """)
+            result['first_cafe_y_pct'] = first_cafe_y_pct
+
+            # 6. 글 단위 측정: 정규화된 target_urls에 대해 block_position, post_y_pct 측정
+            if target_urls:
+                # JavaScript로 한 번에 모든 링크 측정 (성능상 유리)
+                all_links_data = driver.execute_script("""
+                    var pageHeight = document.body.scrollHeight;
+                    var linksData = [];
+
+                    function getBlockPosition(el) {
+                        var cur = el;
+                        while (cur) {
+                            var cls = cur.className || '';
+                            if (cls.indexOf('_fsolid_head') !== -1) return 'head';
+                            if (cls.indexOf('_fsolid_body') !== -1) return 'body';
+                            cur = cur.parentElement;
+                        }
+                        return null;
+                    }
+
+                    function normalizeUrl(url) {
+                        // ?: 쿼리 파라미터 제거
+                        var base = url.split('?')[0];
+                        // JWT 토큰(=token) 제거
+                        if ((base.indexOf('cafe.naver.com') !== -1 || base.indexOf('blog.naver.com') !== -1) && base.indexOf('=') !== -1) {
+                            base = base.split('=')[0];
+                        }
+                        return base;
+                    }
+
+                    // 모든 a 태그 순회
+                    var allLinks = document.querySelectorAll('a[href*="cafe.naver.com"], a[href*="blog.naver.com"]');
+                    allLinks.forEach(function(link) {
+                        var href = link.getAttribute('href') || '';
+                        var rect = link.getBoundingClientRect();
+                        var top = rect.top + window.scrollY;
+                        var yPct = Math.round(top / pageHeight * 1000) / 10;
+                        var blockPos = getBlockPosition(link);
+
+                        linksData.push({
+                            url: normalizeUrl(href),
+                            block_position: blockPos,
+                            post_y_pct: yPct > 0 ? yPct : null
+                        });
+                    });
+
+                    return linksData;
+                """)
+
+                # target_urls 정규화
+                normalized_targets = [self.normalize_url(url) for url in target_urls]
+
+                # 측정된 링크와 target_urls 매칭
+                for link_data in all_links_data:
+                    link_url = link_data['url']
+                    for target_url in target_urls:
+                        if self.normalize_url(target_url) == self.normalize_url(link_url):
+                            result['url_metrics'][target_url] = {
+                                'block_position': link_data['block_position'],
+                                'post_y_pct': link_data['post_y_pct']
+                            }
+                            break
+
+            logging.info(f"레이아웃 측정 완료 '{keyword}': has_split={result['has_split_block']}, first_pct={result['first_cafe_y_pct']}")
+            return result
+
+        except Exception as e:
+            logging.warning(f"레이아웃 측정 예외 '{keyword}': {e}")
+            return result
