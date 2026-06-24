@@ -872,6 +872,191 @@ class DatabaseClient:
             logging.error(f"blog_post_list_view 로드 실패: {e}")
             return [], []
 
+    def get_keywords_for_ranking_analysis(self, products: Optional[List[str]] = None) -> List[Dict]:
+        """
+        레이아웃 분석 대상 키워드 목록 반환 (keyword_id + keyword).
+        keyword_patrol_logs에 등록된 키워드 기준.
+        """
+        if not self._ensure_connection():
+            return []
+
+        where_clause = ""
+        params = []
+        if products:
+            placeholders = ', '.join(['%s'] * len(products))
+            where_clause = f"WHERE kr.product IN ({placeholders})"
+            params = list(products)
+
+        sql = f"""
+            SELECT DISTINCT k.keyword_id, k.keyword
+            FROM keywords k
+            JOIN {self.table} kr ON k.keyword_id = kr.keyword_id
+            {where_clause}
+            ORDER BY k.keyword
+        """
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql, params)
+                return [{'keyword_id': r[0], 'keyword': r[1]} for r in cursor.fetchall()]
+        except Exception as e:
+            logging.error(f"랭킹 분석 키워드 목록 조회 실패: {e}")
+            return []
+
+    def replace_cafe_ranking(self, keyword_id: int, has_split_block: bool,
+                             main_results: list, popular_results: list):
+        """
+        keyword_cafe_ranking 테이블에 해당 keyword_id 데이터를 DELETE 후 INSERT.
+
+        DDL (DB에서 직접 실행 필요):
+        CREATE TABLE keyword_cafe_ranking (
+            id            INT AUTO_INCREMENT PRIMARY KEY,
+            keyword_id    INT NOT NULL,
+            section       ENUM('main','popular') NOT NULL DEFAULT 'main',
+            rank          INT NOT NULL,
+            cafe_name     VARCHAR(500),
+            result_url    VARCHAR(1000),
+            block_type    ENUM('head','body','single') NOT NULL DEFAULT 'single',
+            has_split_block TINYINT(1) NOT NULL DEFAULT 0,
+            updated_at    DATETIME,
+            UNIQUE KEY uq_ranking (keyword_id, section, rank),
+            CONSTRAINT fk_ranking_keyword FOREIGN KEY (keyword_id) REFERENCES keywords (keyword_id)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+        Args:
+            keyword_id:    keywords.keyword_id
+            has_split_block: 상하단 구분 여부
+            main_results:  [{'rank': 1, 'cafe_name': '...', 'url': '...', 'block': 'head'|'body'|'single'}, ...]
+            popular_results: [{'rank': 1, 'cafe_name': '...', 'url': '...'}, ...]
+        """
+        if not self._ensure_connection():
+            logging.error("DB 연결 실패로 카페 랭킹 업데이트를 건너뜁니다.")
+            return
+
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(
+                    "DELETE FROM keyword_cafe_ranking WHERE keyword_id = %s",
+                    (keyword_id,)
+                )
+                rows = []
+                for r in main_results:
+                    block_type = r.get('block', 'single') if has_split_block else 'single'
+                    rows.append((keyword_id, 'main', r['rank'],
+                                 r.get('cafe_name'), r.get('display_name'),
+                                 r.get('url'), block_type,
+                                 r.get('published_at') or None,
+                                 1 if has_split_block else 0,
+                                 current_time))
+                for r in popular_results:
+                    rows.append((keyword_id, 'popular', r['rank'],
+                                 r.get('cafe_name'), r.get('display_name'),
+                                 r.get('url'), 'single',
+                                 r.get('published_at') or None,
+                                 1 if has_split_block else 0,
+                                 current_time))
+                if rows:
+                    cursor.executemany("""
+                        INSERT INTO keyword_cafe_ranking
+                            (keyword_id, section, rank, cafe_name, display_name,
+                             result_url, block_type, published_at, has_split_block, updated_at)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    """, rows)
+            self.connection.commit()
+        except Exception as e:
+            self.connection.rollback()
+            logging.error(f"카페 랭킹 저장 실패 (keyword_id={keyword_id}): {e}")
+
+    def get_cafe_ranking_for_sheet(self, max_main_rank: int = 8,
+                                   max_popular_rank: int = 5):
+        """
+        keyword_cafe_ranking 전체 데이터를 Google Sheets에 쓸 수 있는 2D 배열로 반환.
+
+        시트 헤더:
+        키워드 | 레이아웃 | 1위~N위 (메인) | 인기글1~M위
+
+        셀 값:
+        - 상하단 구분: "카페명(상단)" / "카페명(하단)"
+        - 단일: "카페명"
+        - 없음: ""
+
+        Returns:
+            (headers, rows) 튜플
+        """
+        if not self._ensure_connection():
+            return [], []
+
+        sql = """
+            SELECT
+                k.keyword,
+                kcr.section,
+                kcr.rank,
+                kcr.cafe_name,
+                kcr.display_name,
+                kcr.block_type,
+                kcr.published_at,
+                kcr.has_split_block
+            FROM keyword_cafe_ranking kcr
+            JOIN keywords k ON kcr.keyword_id = k.keyword_id
+            ORDER BY k.keyword, kcr.section, kcr.rank
+        """
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql)
+                raw = cursor.fetchall()
+        except Exception as e:
+            logging.error(f"카페 랭킹 조회 실패: {e}")
+            return [], []
+
+        from collections import defaultdict
+        grouped = defaultdict(lambda: {'has_split': False, 'main': {}, 'popular': {}})
+        for keyword, section, rank, cafe_name, display_name, block_type, published_at, has_split_block in raw:
+            grouped[keyword]['has_split'] = bool(has_split_block)
+            name = display_name or cafe_name or ''
+            if section == 'main':
+                grouped[keyword]['main'][rank] = (name, block_type, published_at)
+            else:
+                grouped[keyword]['popular'][rank] = (name, published_at)
+
+        block_label = {'head': '상단', 'body': '하단', 'single': ''}
+
+        headers = (['키워드', '레이아웃'] +
+                   [f'{i}위' for i in range(1, max_main_rank + 1)] +
+                   [f'인기글{i}위' for i in range(1, max_popular_rank + 1)])
+
+        rows = []
+        for keyword in sorted(grouped.keys()):
+            data = grouped[keyword]
+            layout = '상하단구분' if data['has_split'] else '단일'
+            row = [keyword, layout]
+
+            for i in range(1, max_main_rank + 1):
+                if i in data['main']:
+                    name, block_type, published_at = data['main'][i]
+                    label = block_label.get(block_type, '')
+                    # 예: 컬처블룸(상단) 2026.02.03
+                    cell = name
+                    if label:
+                        cell += f'({label})'
+                    if published_at:
+                        cell += f' {published_at}'
+                else:
+                    cell = ''
+                row.append(cell)
+
+            for i in range(1, max_popular_rank + 1):
+                if i in data['popular']:
+                    name, published_at = data['popular'][i]
+                    cell = f'{name} {published_at}' if published_at else name
+                else:
+                    cell = ''
+                row.append(cell)
+
+            rows.append(row)
+
+        logging.info(f"카페 랭킹 시트 데이터 {len(rows)}개 키워드 준비 완료")
+        return headers, rows
+
     def get_distinct_blog_products(self) -> List[str]:
         """blog_post 테이블에서 product 고유값 목록 반환 (GUI 제품 드롭다운용)"""
         if not self._ensure_connection():

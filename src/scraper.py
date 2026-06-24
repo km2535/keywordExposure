@@ -548,6 +548,163 @@ class NaverScraper:
 
         return results
 
+    def analyze_keyword_layout(self, keyword: str) -> dict:
+        """
+        키워드 검색 결과 레이아웃 분석.
+        상단/하단/단일 블록 구분, 카페별 순위, 발행일 반환.
+
+        Returns:
+            {
+                'has_split_block': bool,
+                'main_results': [
+                    {'rank': 1, 'cafe_name': '씨씨앙', 'display_name': '컬처블룸',
+                     'url': '...', 'block': 'head'|'body'|'single', 'published_at': '2026.02.03'},
+                    ...
+                ],
+                'popular_results': [
+                    {'rank': 1, 'cafe_name': '...', 'display_name': '...', 'url': '...', 'published_at': '...'},
+                    ...
+                ]
+            }
+        """
+        import re
+        from src.config import CAFE_URL_MAP
+
+        result = {
+            'has_split_block': False,
+            'main_results': [],
+            'popular_results': []
+        }
+
+        def get_block(element):
+            node = element
+            while node:
+                classes = node.get('class') or []
+                if '_fsolid_head' in classes:
+                    return 'head'
+                if '_fsolid_body' in classes:
+                    return 'body'
+                node = node.parent
+            return 'single'
+
+        def get_cafe_name(ugc_item):
+            el = ugc_item.find('span', class_=lambda c: c and 'sds-comps-profile-info-title-text' in (
+                c if isinstance(c, str) else ' '.join(c)))
+            return el.get_text(strip=True) if el else None
+
+        def get_slug_from_url(url: str) -> str:
+            """cafe.naver.com/SLUG/... 에서 slug 추출"""
+            if 'cafe.naver.com/' in url:
+                return url.split('cafe.naver.com/')[1].split('/')[0].split('?')[0]
+            return ''
+
+        def get_display_name(cafe_name: str, url: str) -> str:
+            """URL slug로 단축명 조회, 없으면 원래 카페명 반환"""
+            slug = get_slug_from_url(url)
+            return CAFE_URL_MAP.get(slug, cafe_name or '')
+
+        def get_published_at(ugc_item) -> str:
+            """ugcItem에서 발행일 추출 (YYYY.MM.DD 또는 상대시간)"""
+            subtext = ugc_item.find('span', class_=lambda c: c and 'profile-info-subtext' in (
+                c if isinstance(c, str) else ' '.join(c)))
+            if not subtext:
+                return ''
+            text = subtext.get_text(strip=True)
+            # YYYY.MM.DD. 형식
+            m = re.search(r'(\d{4}\.\d{2}\.\d{2})\.?', text)
+            if m:
+                return m.group(1)
+            # 상대시간 (N일 전, N시간 전, 어제 등)
+            m2 = re.search(r'(\d+[일시간분]+\s*전|어제|오늘)', text)
+            if m2:
+                return m2.group(1)
+            return text[:15]
+
+        try:
+            soup = self.get_search_results(keyword, delay=False)
+            if not soup:
+                logging.warning(f"analyze_keyword_layout: '{keyword}' 검색 결과 없음")
+                return result
+
+            # 상하단 구분 여부
+            has_head = soup.find(class_=lambda c: c and '_fsolid_head' in (
+                c if isinstance(c, str) else ' '.join(c)))
+            result['has_split_block'] = has_head is not None
+
+            # 인기글 섹션 추출
+            popular_url_set = set()
+            popular_items_raw = []
+            for h_el in soup.find_all('div', class_=lambda c: c and 'sds-comps-header-title' in (
+                    c if isinstance(c, str) else ' '.join(c))):
+                h2 = h_el.find('h2')
+                if not h2 or '인기글' not in h2.get_text():
+                    continue
+                section = h_el.parent.parent if h_el.parent else None
+                if not section:
+                    continue
+                for a_tag in section.find_all('a', attrs={'data-heatmap-target': '.link'}):
+                    href = a_tag.get('href', '')
+                    if not href:
+                        continue
+                    norm_url = self.normalize_url(href)
+                    if norm_url in popular_url_set:
+                        continue
+                    popular_url_set.add(norm_url)
+                    item_el = a_tag.find_parent('div', attrs={'data-template-id': 'ugcItem'})
+                    cafe_name = get_cafe_name(item_el) if item_el else None
+                    published_at = get_published_at(item_el) if item_el else ''
+                    popular_items_raw.append({
+                        'cafe_name': cafe_name,
+                        'display_name': get_display_name(cafe_name, href),
+                        'url': norm_url,
+                        'published_at': published_at,
+                    })
+
+            for idx, item in enumerate(popular_items_raw):
+                result['popular_results'].append({'rank': idx + 1, **item})
+
+            # 메인 결과: 인기글 섹션 제거 후 ugcItem 순서대로
+            analysis_soup = copy.copy(soup)
+            for h_el in analysis_soup.find_all('div', class_=lambda c: c and 'sds-comps-header-title' in (
+                    c if isinstance(c, str) else ' '.join(c))):
+                h2 = h_el.find('h2')
+                if h2 and '인기글' in h2.get_text():
+                    section = h_el.parent.parent if h_el.parent else None
+                    if section:
+                        section.decompose()
+                    break
+
+            rank = 1
+            for ugc_item in analysis_soup.find_all('div', attrs={'data-template-id': 'ugcItem'}):
+                if ugc_item.get('data-power-content-url'):
+                    continue
+                cafe_link = ugc_item.find('a', attrs={'data-heatmap-target': '.link'},
+                                          href=lambda h: h and 'cafe.naver.com' in h)
+                if not cafe_link:
+                    cafe_link = ugc_item.find('a', href=lambda h: h and 'cafe.naver.com' in h)
+                if not cafe_link:
+                    continue
+                href = cafe_link.get('href', '')
+                cafe_name = get_cafe_name(ugc_item)
+                result['main_results'].append({
+                    'rank': rank,
+                    'cafe_name': cafe_name,
+                    'display_name': get_display_name(cafe_name, href),
+                    'url': self.normalize_url(href),
+                    'block': get_block(ugc_item),
+                    'published_at': get_published_at(ugc_item),
+                })
+                rank += 1
+
+            logging.info(
+                f"레이아웃 분석 완료 '{keyword}': split={result['has_split_block']}, "
+                f"메인={len(result['main_results'])}개, 인기글={len(result['popular_results'])}개"
+            )
+        except Exception as e:
+            logging.error(f"레이아웃 분석 실패 '{keyword}': {e}")
+
+        return result
+
     def get_layout_metrics(self, keyword: str, target_urls: Optional[list] = None) -> dict:
         """
         네이버 검색결과 페이지에서 레이아웃 측정값 반환.
