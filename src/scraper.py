@@ -249,7 +249,7 @@ class NaverScraper:
 
         urls = []
         try:
-            for a_tag in search_soup.find_all('a', attrs={'data-heatmap-target': '.link'}):
+            for a_tag in search_soup.find_all('a', attrs={'data-heatmap-target': lambda v: v in ('.link', '.imgtitlelink')}):
                 href = a_tag.get('href', '')
                 if href and ('http://' in href or 'https://' in href):
                     urls.append(href)
