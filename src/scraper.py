@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import time
 import random
 from urllib.parse import urlparse
+from typing import Optional
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -547,7 +548,7 @@ class NaverScraper:
 
         return results
 
-    def get_layout_metrics(self, keyword: str, target_urls: list = None) -> dict:
+    def get_layout_metrics(self, keyword: str, target_urls: Optional[list] = None) -> dict:
         """
         네이버 검색결과 페이지에서 레이아웃 측정값 반환.
         Selenium으로 페이지를 렌더링하여 요소 위치를 측정.
@@ -588,6 +589,9 @@ class NaverScraper:
         try:
             # 1. Selenium 드라이버 초기화
             driver = self._init_driver()
+            if driver is None:
+                logging.warning(f"레이아웃 측정 '{keyword}': 드라이버 초기화 실패")
+                return result
 
             # 2. 검색 페이지 로딩
             search_url = f"https://search.naver.com/search.naver?query={keyword}"
@@ -638,7 +642,7 @@ class NaverScraper:
                             if (cls.indexOf('_fsolid_body') !== -1) return 'body';
                             cur = cur.parentElement;
                         }
-                        return null;
+                        return 'single';
                     }
 
                     function normalizeUrl(url) {
@@ -669,9 +673,6 @@ class NaverScraper:
 
                     return linksData;
                 """)
-
-                # target_urls 정규화
-                normalized_targets = [self.normalize_url(url) for url in target_urls]
 
                 # 측정된 링크와 target_urls 매칭
                 for link_data in all_links_data:

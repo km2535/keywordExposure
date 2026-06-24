@@ -2,7 +2,6 @@
 키워드 모니터링 모듈 - DB 기반
 """
 
-from datetime import datetime
 from tqdm import tqdm
 from urllib.parse import urlparse
 from typing import List, Dict, Optional

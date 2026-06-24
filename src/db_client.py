@@ -455,7 +455,7 @@ class DatabaseClient:
                     cross_kw5 or '',
                     'O' if has_split_block else ('X' if has_split_block is not None else ''),
                     str(round(float(first_cafe_y_pct), 1)) + '%' if first_cafe_y_pct is not None else '',
-                    block_position or '',
+                    {'head': '상단', 'body': '하단', 'single': '단일'}.get(block_position, '') if block_position else '',
                     str(round(float(post_y_pct), 1)) + '%' if post_y_pct is not None else '',
                 ])
 
