@@ -1,4 +1,6 @@
 import copy
+import glob
+import os
 import requests
 from bs4 import BeautifulSoup
 import time
@@ -418,6 +420,23 @@ class NaverScraper:
         except Exception:
             return False
 
+    def _get_chromedriver_path(self) -> str:
+        """ChromeDriverManager로 드라이버 경로를 가져오되, WinError 5(접근 거부)시 기존 캐시 경로로 폴백"""
+        try:
+            return ChromeDriverManager().install()
+        except OSError as e:
+            if hasattr(e, 'winerror') and e.winerror == 5:
+                logging.warning(f"ChromeDriverManager 파일 이동 실패 (접근 거부), 캐시 내 기존 경로로 폴백: {e}")
+                # wdm 캐시에서 chromedriver.exe 검색 (하위 폴더 포함)
+                wdm_base = os.path.join(os.path.expanduser('~'), '.wdm', 'drivers', 'chromedriver')
+                candidates = glob.glob(os.path.join(wdm_base, '**', 'chromedriver.exe'), recursive=True)
+                if candidates:
+                    # 가장 최근 수정된 파일 사용
+                    path = max(candidates, key=os.path.getmtime)
+                    logging.info(f"폴백 chromedriver 경로 사용: {path}")
+                    return path
+            raise
+
     def _init_driver(self):
         """Selenium WebDriver 초기화 (죽은 세션이면 재생성)"""
         if not self._is_driver_alive():
@@ -440,8 +459,9 @@ class NaverScraper:
             chrome_options.add_argument('--disable-cache')
             chrome_options.add_argument(f'user-agent={self.get_random_user_agent()}')
 
+            driver_path = self._get_chromedriver_path()
             self._driver = webdriver.Chrome(
-                service=Service(ChromeDriverManager().install()),
+                service=Service(driver_path),
                 options=chrome_options
             )
             logging.info("Selenium WebDriver 초기화 완료")

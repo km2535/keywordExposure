@@ -388,25 +388,17 @@ class GoogleSheetsClient:
             logging.error("sync_patrol_logs: 워크시트가 연결되지 않았습니다.")
             return
 
-        if not rows:
-            logging.warning("sync_patrol_logs: 동기화할 데이터가 없습니다.")
-            return
-
         try:
-            if keep_header:
-                # 헤더 유지: 2행부터 모든 내용 삭제
-                self.worksheet.clear()
-                # 헤더는 다시 1행에 씀 (기존 헤더 유지 의도이므로 덮어쓰지 않고 보존)
-                # 전체 데이터를 A1부터 한 번에 씀
-                all_data = [headers] + rows
-                self.worksheet.update('A1', all_data, value_input_option='RAW')
-                logging.info(f"sync_patrol_logs(keep_header): {len(rows)}개 행 동기화 완료")
-            else:
-                # 전체 초기화 후 헤더+데이터 일괄 입력
-                self.worksheet.clear()
-                all_data = [headers] + rows
-                self.worksheet.update('A1', all_data, value_input_option='RAW')
-                logging.info(f"sync_patrol_logs: 헤더 포함 {len(rows)}개 행 동기화 완료")
+            # 기존 데이터 전체 삭제 (rows 유무와 무관하게 항상 실행)
+            self.worksheet.clear()
+
+            if not rows:
+                logging.warning("sync_patrol_logs: 동기화할 데이터가 없습니다. 시트를 비웠습니다.")
+                return
+
+            all_data = [headers] + rows
+            self.worksheet.update('A1', all_data, value_input_option='RAW')
+            logging.info(f"sync_patrol_logs: 헤더 포함 {len(rows)}개 행 동기화 완료")
 
         except Exception as e:
             logging.error(f"sync_patrol_logs 실패: {e}")
